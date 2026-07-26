@@ -13,16 +13,18 @@ Oracle SQL 실습 자료와 SQLD 학습 포트폴리오를 함께 관리하는 �
 
 ```ts
 {
-  slug: "subquery",
+  date: "2026-07-26",
+  day: "DAY 06",
   title: "서브쿼리 실행 원리",
   summary: "메인쿼리와 서브쿼리의 실행 관계를 예제로 정리했습니다.",
-  category: "SQL 활용",
+  learned: ["단일행 서브쿼리", "다중행 서브쿼리"],
   tags: ["서브쿼리", "상관쿼리"],
-  date: "2026-07-26",
+  folder: "Oracle_SQL/20260726",
+  readTime: 5,
 },
 ```
 
-로드맵 진도는 같은 파일의 `roadmap`에서 `done: true` 또는 `false`로 바꿉니다.
+`folder`에는 해당 날짜의 SQL 파일이 있는 폴더 경로를 입력합니다.
 
 ## 내 컴퓨터에서 미리보기
 

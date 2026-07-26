@@ -1,84 +1,97 @@
-export type StudyNote = {
-  slug: string;
+export type DailyPost = {
+  date: string;
+  day: string;
   title: string;
   summary: string;
-  category: "데이터 모델링" | "SQL 기본" | "SQL 활용";
+  learned: string[];
   tags: string[];
-  date: string;
+  folder: string;
+  readTime: number;
 };
 
-// 새 학습 기록은 이 배열 맨 위에 추가하세요.
-// 저장 후 GitHub에 올리면 사이트가 자동으로 다시 배포됩니다.
-export const notes: StudyNote[] = [
+// 새 글은 이 배열의 맨 위에 추가하세요.
+// folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
+export const posts: DailyPost[] = [
   {
-    slug: "join-types",
-    title: "JOIN, 관계를 따라 데이터를 연결하는 법",
-    summary: "INNER·OUTER JOIN의 차이를 기준 집합 관점에서 정리하고 실행 결과로 비교했습니다.",
-    category: "SQL 활용",
-    tags: ["JOIN", "OUTER JOIN"],
     date: "2026-07-24",
+    day: "DAY 05",
+    title: "JOIN으로 테이블을 연결하고 서브쿼리로 답을 찾기",
+    summary:
+      "서로 다른 테이블의 관계를 따라 데이터를 연결했다. INNER·OUTER·SELF JOIN의 차이를 비교하고, 단일행 서브쿼리로 다른 쿼리의 결과를 조건에 활용했다.",
+    learned: [
+      "Cartesian Product와 CROSS JOIN",
+      "EQUI·NATURAL·INNER JOIN",
+      "LEFT·RIGHT·FULL OUTER JOIN",
+      "SELF JOIN과 단일행 서브쿼리",
+    ],
+    tags: ["JOIN", "OUTER JOIN", "서브쿼리"],
+    folder: "Oracle_SQL/20260724",
+    readTime: 6,
   },
   {
-    slug: "normalization",
-    title: "정규화는 왜 필요한가",
-    summary: "이상 현상을 줄이는 1·2·3정규화의 원리와 반정규화의 판단 기준을 기록했습니다.",
-    category: "데이터 모델링",
-    tags: ["정규화", "이상현상"],
+    date: "2026-07-23",
+    day: "DAY 04",
+    title: "NULL 처리부터 GROUP BY와 ROLLUP까지",
+    summary:
+      "NULL 때문에 계산 결과가 사라지는 문제를 일반 함수로 해결하고, 집계 함수와 GROUP BY를 사용해 여러 행을 의미 있는 통계로 요약했다.",
+    learned: [
+      "NVL·NVL2·NULLIF·COALESCE",
+      "DECODE와 CASE 조건 표현",
+      "COUNT·AVG·SUM·MIN·MAX",
+      "GROUP BY·HAVING·ROLLUP·CUBE",
+    ],
+    tags: ["NULL", "GROUP BY", "ROLLUP"],
+    folder: "Oracle_SQL/20260723",
+    readTime: 7,
+  },
+  {
+    date: "2026-07-22",
+    day: "DAY 03",
+    title: "문자·숫자·날짜를 다루는 Oracle 단일행 함수",
+    summary:
+      "데이터를 원하는 형태로 가공하기 위해 문자, 숫자, 날짜 함수를 연습했다. 날짜 형식과 NLS 설정이 결과에 미치는 영향도 함께 확인했다.",
+    learned: [
+      "UPPER·LOWER·INITCAP과 LENGTH",
+      "SUBSTR·INSTR·LPAD·RPAD",
+      "ROUND·TRUNC·MOD",
+      "TO_CHAR·TO_DATE와 날짜 연산",
+    ],
+    tags: ["단일행 함수", "날짜 함수", "TO_CHAR"],
+    folder: "Oracle_SQL/20260722",
+    readTime: 8,
+  },
+  {
     date: "2026-07-21",
+    day: "DAY 02",
+    title: "WHERE 조건식으로 필요한 행만 정확하게 찾기",
+    summary:
+      "별칭과 연결 연산자로 결과를 읽기 쉽게 만들고, WHERE 절의 비교·논리 연산자를 조합해 원하는 행만 조회하는 법을 익혔다.",
+    learned: [
+      "열 별칭과 문자열 연결 연산자",
+      "WHERE와 AND·OR·NOT",
+      "BETWEEN과 IN",
+      "LIKE 패턴 검색과 NULL 조건",
+    ],
+    tags: ["WHERE", "LIKE", "조건식"],
+    folder: "Oracle_SQL/20260721",
+    readTime: 6,
   },
   {
-    slug: "group-functions",
-    title: "GROUP BY와 집계 함수",
-    summary: "행을 그룹으로 묶는 과정과 WHERE·HAVING의 실행 순서 차이를 예제로 확인했습니다.",
-    category: "SQL 기본",
-    tags: ["GROUP BY", "HAVING"],
-    date: "2026-07-18",
-  },
-  {
-    slug: "window-functions",
-    title: "윈도우 함수로 순위와 누계 구하기",
-    summary: "RANK, DENSE_RANK, ROW_NUMBER의 차이와 PARTITION BY 사용법을 정리했습니다.",
-    category: "SQL 활용",
-    tags: ["WINDOW", "RANK"],
-    date: "2026-07-15",
-  },
-  {
-    slug: "entity-relationship",
-    title: "엔터티와 관계를 식별하는 기준",
-    summary: "업무에서 엔터티를 찾고 식별자·관계·카디널리티를 표현하는 순서를 살펴봤습니다.",
-    category: "데이터 모델링",
-    tags: ["엔터티", "ERD"],
-    date: "2026-07-12",
-  },
-  {
-    slug: "null",
-    title: "NULL은 값이 아니다",
-    summary: "3값 논리와 NVL·COALESCE, 비교 연산에서 자주 틀리는 포인트를 모았습니다.",
-    category: "SQL 기본",
-    tags: ["NULL", "COALESCE"],
-    date: "2026-07-09",
+    date: "2026-07-20",
+    day: "DAY 01",
+    title: "Oracle SQL 첫걸음: 테이블을 확인하고 조회하기",
+    summary:
+      "테이블 구조를 살펴본 뒤 SELECT 문으로 필요한 열을 조회했다. DISTINCT와 ORDER BY를 사용해 중복을 제거하고 결과의 순서를 정리했다.",
+    learned: [
+      "DESC로 테이블 구조 확인",
+      "SELECT와 FROM의 기본 구조",
+      "필요한 열만 선택해 조회",
+      "DISTINCT와 ORDER BY",
+    ],
+    tags: ["SELECT", "DISTINCT", "ORDER BY"],
+    folder: "Oracle_SQL/20260720",
+    readTime: 4,
   },
 ];
 
-export const roadmap = [
-  {
-    title: "데이터 모델링의 이해",
-    description: "엔터티, 속성, 관계와 정규화",
-    done: true,
-  },
-  {
-    title: "SQL 기본 및 활용",
-    description: "SELECT부터 서브쿼리와 윈도우 함수까지",
-    done: true,
-  },
-  {
-    title: "기출문제 회독",
-    description: "오답의 근거를 설명하는 반복 학습",
-    done: false,
-  },
-  {
-    title: "시험 & 회고",
-    description: "실전 응시와 학습 과정 정리",
-    done: false,
-  },
-];
+export const allTags = Array.from(new Set(posts.flatMap((post) => post.tags)));

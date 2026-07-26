@@ -1,210 +1,171 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { notes, roadmap } from "./study-data";
+import { allTags, posts } from "./study-data";
 
-const ArrowIcon = () => <span aria-hidden="true">↗</span>;
+const repositoryUrl = "https://github.com/jungryulip/study/tree/main";
+
+function formatDate(value: string) {
+  return new Intl.DateTimeFormat("ko-KR", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  }).format(new Date(`${value}T00:00:00`));
+}
 
 export default function Home() {
+  const [selectedTag, setSelectedTag] = useState("전체");
   const [query, setQuery] = useState("");
-  const [activeCategory, setActiveCategory] = useState("전체");
-  const categories = ["전체", ...Array.from(new Set(notes.map((note) => note.category)))];
 
-  const filteredNotes = useMemo(() => {
-    const normalizedQuery = query.trim().toLowerCase();
-
-    return notes.filter((note) => {
-      const matchesCategory =
-        activeCategory === "전체" || note.category === activeCategory;
-      const matchesQuery =
-        !normalizedQuery ||
-        [note.title, note.summary, note.category, ...note.tags]
+  const filteredPosts = useMemo(() => {
+    const normalized = query.trim().toLowerCase();
+    return posts.filter((post) => {
+      const tagMatches =
+        selectedTag === "전체" || post.tags.includes(selectedTag);
+      const queryMatches =
+        !normalized ||
+        [post.title, post.summary, ...post.learned, ...post.tags]
           .join(" ")
           .toLowerCase()
-          .includes(normalizedQuery);
-
-      return matchesCategory && matchesQuery;
+          .includes(normalized);
+      return tagMatches && queryMatches;
     });
-  }, [activeCategory, query]);
-
-  const completed = roadmap.filter((item) => item.done).length;
-  const progress = Math.round((completed / roadmap.length) * 100);
+  }, [query, selectedTag]);
 
   return (
     <main>
-      <header className="site-header">
-        <a className="brand" href="#top" aria-label="SQLD Log 홈">
-          <span className="brand-mark">S</span>
-          <span>SQLD LOG</span>
+      <header className="topbar">
+        <a className="logo" href="#top" aria-label="SQL 하루 홈">
+          SQL<span>하루</span>
         </a>
-        <nav aria-label="주요 메뉴">
-          <a href="#notes">학습 노트</a>
-          <a href="#roadmap">로드맵</a>
-          <a href="#about">소개</a>
+        <nav>
+          <a href="#posts">글 목록</a>
+          <a href="https://github.com/jungryulip/study">GitHub</a>
         </nav>
-        <a
-          className="github-link"
-          href="https://github.com/jungryulip/study"
-          aria-label="GitHub study 저장소"
-        >
-          GITHUB <ArrowIcon />
-        </a>
       </header>
 
-      <section className="hero" id="top">
-        <div className="hero-copy">
-          <p className="eyebrow">SQL DEVELOPER CERTIFICATION · STUDY ARCHIVE</p>
-          <h1>
-            데이터를 이해하고,
-            <br />
-            <em>SQL로 증명합니다.</em>
-          </h1>
-          <p className="hero-description">
-            SQLD 자격증을 준비하며 배운 개념과 쿼리, 실수와 깨달음을
-            기록하는 학습 아카이브입니다.
-          </p>
-          <div className="hero-actions">
-            <a className="primary-button" href="#notes">
-              노트 둘러보기 <span aria-hidden="true">↓</span>
-            </a>
-            <span className="updated">LAST UPDATED · 2026.07</span>
-          </div>
-        </div>
-
-        <div className="query-card" aria-label="SQL 코드 예시">
-          <div className="query-card-top">
-            <span>study_log.sql</span>
-            <span className="window-dots" aria-hidden="true">● ● ●</span>
-          </div>
-          <pre>
-            <code>
-              <span className="sql-keyword">SELECT</span>
-              {"\n  "}topic, COUNT(*){" "}
-              <span className="sql-keyword">AS</span> learned
-              {"\n"}<span className="sql-keyword">FROM</span> study_log
-              {"\n"}<span className="sql-keyword">WHERE</span> understood ={" "}
-              <span className="sql-value">TRUE</span>
-              {"\n"}<span className="sql-keyword">GROUP BY</span> topic
-              {"\n"}<span className="sql-keyword">ORDER BY</span> learned DESC;
-            </code>
-          </pre>
-          <div className="query-result">
-            <span>6 rows returned</span>
-            <span>0.018 sec</span>
-          </div>
-        </div>
-      </section>
-
-      <section className="status-strip" aria-label="학습 현황">
-        <div>
-          <strong>{notes.length.toString().padStart(2, "0")}</strong>
-          <span>작성한 노트</span>
-        </div>
-        <div>
-          <strong>{progress}%</strong>
-          <span>학습 진도</span>
-        </div>
-        <div>
-          <strong>{new Set(notes.map((note) => note.category)).size}</strong>
-          <span>핵심 영역</span>
-        </div>
-        <p>꾸준히 쌓인 기록은 가장 솔직한 포트폴리오가 됩니다.</p>
-      </section>
-
-      <section className="notes-section" id="notes">
-        <div className="section-heading">
-          <div>
-            <p className="eyebrow">01 · STUDY NOTES</p>
-            <h2>최근 학습 노트</h2>
-          </div>
-          <label className="search">
-            <span className="sr-only">학습 노트 검색</span>
-            <span aria-hidden="true">⌕</span>
-            <input
-              type="search"
-              value={query}
-              onChange={(event) => setQuery(event.target.value)}
-              placeholder="키워드로 검색"
-            />
-          </label>
-        </div>
-
-        <div className="category-list" aria-label="노트 카테고리">
-          {categories.map((category) => (
-            <button
-              key={category}
-              type="button"
-              className={activeCategory === category ? "active" : ""}
-              onClick={() => setActiveCategory(category)}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-
-        <div className="note-grid">
-          {filteredNotes.map((note, index) => (
-            <article className="note-card" key={note.slug}>
-              <div className="note-meta">
-                <span>{note.category}</span>
-                <time dateTime={note.date}>{note.date.replaceAll("-", ".")}</time>
-              </div>
-              <h3>{note.title}</h3>
-              <p>{note.summary}</p>
-              <div className="tag-list">
-                {note.tags.map((tag) => <span key={tag}>#{tag}</span>)}
-              </div>
-              <a href={`#note-${note.slug}`} aria-label={`${note.title} 읽기`}>
-                READ NOTE <ArrowIcon />
-              </a>
-              <span className="card-number">{String(index + 1).padStart(2, "0")}</span>
-            </article>
-          ))}
-        </div>
-
-        {filteredNotes.length === 0 && (
-          <p className="empty-state">검색 조건에 맞는 노트가 없습니다.</p>
-        )}
-      </section>
-
-      <section className="roadmap-section" id="roadmap">
-        <div className="roadmap-intro">
-          <p className="eyebrow">02 · ROADMAP</p>
-          <h2>합격까지의 여정</h2>
+      <section className="profile" id="top">
+        <div className="avatar" aria-hidden="true">SQL</div>
+        <div className="profile-copy">
+          <p className="profile-label">ORACLE SQL STUDY LOG</p>
+          <h1>배운 것을 하루씩 기록합니다.</h1>
           <p>
-            체크리스트를 따라 개념 학습부터 실전 대비까지,
-            현재 위치를 투명하게 기록합니다.
+            Oracle SQL과 SQLD를 공부하며 새롭게 알게 된 것,
+            헷갈렸던 것, 직접 실행해 본 쿼리를 날짜별로 남기는 공간입니다.
           </p>
-          <div className="progress-label">
-            <span>전체 진도</span>
-            <strong>{progress}%</strong>
-          </div>
-          <div className="progress-track">
-            <span style={{ width: `${progress}%` }} />
+          <div className="profile-stats">
+            <span><strong>{posts.length}</strong>개의 기록</span>
+            <span><strong>{allTags.length}</strong>개의 태그</span>
+            <span>2026.07부터 기록 중</span>
           </div>
         </div>
-        <ol className="roadmap-list">
-          {roadmap.map((item, index) => (
-            <li key={item.title} className={item.done ? "done" : ""}>
-              <span className="roadmap-number">{String(index + 1).padStart(2, "0")}</span>
-              <div>
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
-              </div>
-              <span className="roadmap-state" aria-label={item.done ? "완료" : "진행 예정"}>
-                {item.done ? "✓" : "—"}
-              </span>
-            </li>
-          ))}
-        </ol>
       </section>
 
-      <footer id="about">
-        <div>
-          <span className="brand-mark">S</span>
-          <p>배운 것을 설명할 수 있을 때, 비로소 내 지식이 됩니다.</p>
-        </div>
-        <p>BUILT WITH CURIOSITY & SQL · © 2026 SQLD LOG</p>
+      <div className="content-layout" id="posts">
+        <section className="post-section">
+          <div className="list-header">
+            <div>
+              <h2>학습 기록</h2>
+              <p>최신 글부터 차곡차곡</p>
+            </div>
+            <label className="search">
+              <span aria-hidden="true">⌕</span>
+              <input
+                type="search"
+                value={query}
+                onChange={(event) => setQuery(event.target.value)}
+                placeholder="배운 내용 검색"
+                aria-label="학습 기록 검색"
+              />
+            </label>
+          </div>
+
+          <div className="mobile-tags" aria-label="태그 필터">
+            {["전체", ...allTags].map((tag) => (
+              <button
+                key={tag}
+                type="button"
+                className={selectedTag === tag ? "active" : ""}
+                onClick={() => setSelectedTag(tag)}
+              >
+                {tag}
+              </button>
+            ))}
+          </div>
+
+          <div className="post-list">
+            {filteredPosts.map((post) => (
+              <article className="post-card" key={post.date}>
+                <div className="date-column">
+                  <span>{post.day}</span>
+                  <time dateTime={post.date}>{formatDate(post.date)}</time>
+                </div>
+                <div className="post-body">
+                  <div className="post-tags">
+                    {post.tags.map((tag) => <span key={tag}>#{tag}</span>)}
+                  </div>
+                  <h3>{post.title}</h3>
+                  <p>{post.summary}</p>
+                  <div className="learned-box">
+                    <strong>오늘 배운 것</strong>
+                    <ul>
+                      {post.learned.map((item) => <li key={item}>{item}</li>)}
+                    </ul>
+                  </div>
+                  <div className="post-footer">
+                    <span>{post.readTime}분 분량</span>
+                    <a
+                      href={`${repositoryUrl}/${post.folder}`}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      실습 코드 보기 <span aria-hidden="true">→</span>
+                    </a>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          {filteredPosts.length === 0 && (
+            <div className="empty">
+              <strong>검색 결과가 없어요.</strong>
+              <p>다른 키워드나 태그를 선택해 보세요.</p>
+            </div>
+          )}
+        </section>
+
+        <aside>
+          <div className="aside-block">
+            <h2>태그</h2>
+            <div className="tag-menu">
+              {["전체", ...allTags].map((tag) => (
+                <button
+                  key={tag}
+                  type="button"
+                  className={selectedTag === tag ? "active" : ""}
+                  onClick={() => setSelectedTag(tag)}
+                >
+                  <span>{tag}</span>
+                  <small>
+                    {tag === "전체"
+                      ? posts.length
+                      : posts.filter((post) => post.tags.includes(tag)).length}
+                  </small>
+                </button>
+              ))}
+            </div>
+          </div>
+          <div className="aside-note">
+            <span>WRITE, RUN, LEARN.</span>
+            <p>직접 실행해 본 한 줄이 읽기만 한 열 줄보다 오래 남는다.</p>
+          </div>
+        </aside>
+      </div>
+
+      <footer>
+        <a className="logo" href="#top">SQL<span>하루</span></a>
+        <p>Oracle SQL을 배우는 매일의 기록 · 2026</p>
       </footer>
     </main>
   );

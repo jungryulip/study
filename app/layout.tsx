@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "SQLD Log | SQL 학습 포트폴리오",
-  description: "SQLD 자격증을 준비하며 배운 데이터 모델링과 SQL을 기록하는 학습 아카이브",
+  title: "SQL하루 | Oracle SQL 학습 기록",
+  description: "Oracle SQL과 SQLD를 공부하며 배운 것을 날짜별로 기록하는 개발 블로그",
   icons: {
     icon: "/favicon.svg",
   },
