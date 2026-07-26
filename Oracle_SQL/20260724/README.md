@@ -41,21 +41,6 @@ JOIN department d
 - [HR 실습 — 다양한 JOIN과 서브쿼리](./20260724_hr.sql)
 - [SCOTT 실습 — SELF JOIN으로 사원과 관리자 연결](./20260724_scott.sql)
 
-
---카티션 곱: 연결고리가 없어서 행을 모두 결합해서 만들어짐
-select studno, name, s.deptno, d.deptno, dname
-from student s, department d;
-
---cross join: 카티션 곱과 동일한 결과
-select studno, name, s.deptno, d.deptno, dname
-from student s cross join department d;
-
---학생테이블과 부서 테이블을 equi join하여 학번과 이름, 학과, 번호, 소속학과 이름, 학과 위치를 출력하여라*/
-select s.studno, s.name, s.deptno, d.dname, d.loc
-from student s, department d
-where s.deptno = d.deptno;
-
-
 #### 오늘의 한 줄
 
 JOIN은 테이블을 붙이는 문법이 아니라 데이터 사이의 관계를 표현하는 문법이다.
