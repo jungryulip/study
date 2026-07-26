@@ -42,7 +42,11 @@ export default function Home() {
           <a href="#roadmap">로드맵</a>
           <a href="#about">소개</a>
         </nav>
-        <a className="github-link" href="#" aria-label="GitHub 프로필 링크">
+        <a
+          className="github-link"
+          href="https://github.com/jungryulip/study"
+          aria-label="GitHub study 저장소"
+        >
           GITHUB <ArrowIcon />
         </a>
       </header>
