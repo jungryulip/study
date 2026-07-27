@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-07-27",
+    day: "DAY 06",
+    title: "다중행 서브쿼리와 데이터 조작어",
+    summary:
+      "IN, ANY, ALL, EXISTS를 이용한 다중행 서브쿼리와 INSERT, UPDATE, DELETE, MERGE를 연습하고 COMMIT과 ROLLBACK의 차이를 확인했다.",
+    learned: [
+      "IN·ANY·ALL 다중행 서브쿼리",
+      "EXISTS와 NOT EXISTS",
+      "Pairwise·Unpairwise 비교",
+      "INSERT·UPDATE·DELETE·MERGE",
+    ],
+    tags: ["서브쿼리", "DML", "트랜잭션"],
+    folder: "Oracle_SQL/20260727",
+    readTime: 10,
+  },
+  {
     date: "2026-07-24",
     day: "DAY 05",
     title: "JOIN으로 테이블을 연결하고 서브쿼리로 답을 찾기",

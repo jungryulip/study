@@ -1,0 +1,637 @@
+01)
+//다중행 서브쿼리 
+/*정보미디어 학부(부서:100)에 소속된 모든 학생의 학번, 이름, 학과번호를 출력하여라.*/
+select name, grade, deptno
+from student
+where deptno in (select deptno
+                 from department
+                 where college =100
+                 );
+NAME 	GRADE	DEPTNO
+전인하	4	101
+박미경	1	101
+김영균	3	101
+지은경	2	101
+임유진	2	101
+서재진	1	101
+이광훈	4	101
+류민정	2	101
+김진영	2	102
+오유석	4	102
+하나리	1	102
+윤진욱	3	102
+
+02)
+/*any
+모든 학생 중에서 4학년 학생 중에서 키가 제일 작은 학생보다 키가 큰 학생의 학번, 이름, 키를 출력하여라*/             
+select studno, name, height
+from student
+where height > any(select height 
+                   from student
+                   where grade = '4'
+                   );
+STUDNO	NAME	HEIGHT
+10106	서재진	186
+20104	조명훈	184
+20102	박동진	182
+10202	오유석	177
+10101	전인하	176
+
+03)
+/*all
+모든 학생 중에서 4학년 학생 중에서 키가 제일 작은 학생보다 키가 큰 학생의 학번, 이름, 키를 출력하여라*/             
+select studno, name, height
+from student
+where height > all(select height 
+                   from student
+                   where grade = '4'
+                   );
+STUDNO	NAME	HEIGHT
+20102	박동진	182
+20104	조명훈	184
+10106	서재진	186
+
+04)
+/*exists <> not exists
+보직 수당을 받는 교수가 한 명이라도 있으면 모든 교수의 번호, 이름, 보직수당, 그리고 급여와 보직수당의 합을 출력하여라*/
+select profno, name, sal, comm, sal+nvl(comm, 0)
+from professor
+where exists (select profno
+              from professor
+              where comm is not null);
+PROFNO	NAME	SAL	COMM	SAL+COMM(COMM,0)
+9901	김도훈	500	20	520
+9902	이재우	320		320
+9903	성연희	360	15	375
+9904	염일웅	240		240
+9905	권혁일	450	25	475
+9906	이만식	420		420
+9907	전은지	210		210
+9908	남은혁	400	17	417
+
+05)
+/*학생 중 goodstudent라는 사용자 아이디가 없으면 1을 출력하여라*/
+select 1 useid_exist
+from dual
+where not exists (select userid
+                  from student
+                  where userid = 'goodstudent');
+userid_exist
+1
+
+06)--group by, having을 잘 써야함
+/*학과별 평균 몸무게가 최대인 학과 번호와 최대 몸무게를 출력하세요.*/
+select deptno, avg(weight)
+from student
+group by deptno
+having avg(weight) = (select max(avg(weight))
+                      from student
+                      group by deptno);
+DEPTNO	AVG(WEIGHT)
+102	69.5
+
+07)
+/*학과별 평균 몸무게가 최대인 학과번호, 학과명, 최대몸무게를 출력하세요*/
+select s.deptno 학과번호, d.dname 학과명, avg(s.weight) 최대몸무게
+from student s, department d
+where s.deptno = d.deptno
+group by s.deptno, d.dname
+having avg(s.weight) = (select max(avg(weight))
+                      from student 
+                      group by deptno);
+                      
+select s.deptno 학과번호, d.dname 학과명, avg(s.weight) 최대몸무게
+from student s inner join department d
+on s.deptno = d.deptno
+group by s.deptno, d.dname
+having avg(s.weight) = (select max(avg(weight))
+                      from student 
+                      group by deptno);
+학과번호	학과명		최대몸무게
+102	멀티미디어학과	69.5
+
+08)
+/*다중컬럼 서브쿼리*/
+//pairwise
+/*pairwise 비교 방법에 의해 학년별로 몸무게가 최소인 학생의 이름, 학년, 몸무게를 출력하라*/
+select name, grade, weight
+from student
+where (grade, weight) in (select grade, min(weight)
+                          from student
+                          group by grade)
+order by grade;
+NAEM 	GRADE	WEIGHT
+박미경	1	52
+지은경	2	42
+윤진욱	3	70
+전인하	4	72
+
+09)
+/*unpairwise 비교 방법에 의해 학년별로 몸무게가 최소인 학생의 이름, 학년, 몸무게를 출력하여라*/
+select name, grade, weight
+from student
+where grade in (select grade
+                from student
+                group by grade
+                )
+and weight in (select min(weight)
+               from student
+               group by grade)
+order by weight;
+NAME	GRADE	WEIGHT
+지은경	2	42
+박미경	1	52
+박동진	1	70
+윤진욱	3	70
+전인하	4	72
+서재진	1	72
+류민정	2	72
+
+10)
+/*평균 급여 이상을 받는 모든 사원에 대해서 사원 번호와 이름을 디스플레이 하는 질의문을 생성하라, 출력은 급여 내림차순으로 정렬*/\
+select empno, ename, sal
+from emp
+where sal > (select avg(sal)
+                   from emp)
+order by sal desc;
+EMPNO	ENAME	SAL
+7839	KING	5000
+7902	FORD	3000
+7788	SCOTT	3000
+7566	JONES	2975
+7698	BLAKE	2850
+7782	CLARK	2450
+
+11) 
+/*부서번호와 급여가 보너스를 받는 어떤 사원의 부서번호와 급여에 일치하는 사원이름, 부서번호, 그리고 급여를 디스플레이 하라*/
+select ename, deptno, sal
+from emp
+where (deptno, sal) in (select deptno, sal 
+                        from emp
+                        where comm is not null);
+ENAME	DEPTNO	SAL
+ALLEN	30	1600
+WARD	30	1250
+MARTIN	30	1250
+TURNER	30	1500
+
+12)
+//데이터 조작어
+--insert
+
+insert into student
+values(10110, '홍길동', 'hong', '1', '8501011143098', '85/01/01', '041)630-3114', 170, 70, 101, 9903);
+--1 행 이(가) 삽입되었습니다.
+13)
+select studno, name
+from student
+where studno = 10110;
+STUDNO	NAME
+10110	홍길동
+
+14)
+DESC DEPARTMENT;
+insert into department(deptno, dname)
+values (300, '생명공학부');
+--1 행 이(가) 삽입되었습니다.
+
+15)
+select *
+from department
+where deptno = 300;
+DEPRTNO DNAME	  COLLEGE	LOC
+300	생명공학부		
+
+16)
+insert into department
+values (301, '환경보건학과', '', '');
+--1 행 이(가) 삽입되었습니다.
+
+17)
+select *
+from department
+where deptno = 301;
+DEPRTNO DNAME	  COLLEGE	LOC
+301	환경보건학과		
+
+18)
+insert into professor(profno, name, position, hiredate, deptno)
+values (9920, '최윤식', '조교수', to_date('2006/01/01', 'YYYY/MM/DD'),102);
+--1 행 이(가) 삽입되었습니다.
+
+commit;
+--커밋 완료.
+
+19)
+select *
+from professor
+where profno = 9920;
+PROFNO	NAME	USERID	POSITION	SAL	HIREDATE	COMM	DEPTNO
+9920	최윤식		조교수		06/01/01		102
+
+20)
+insert into professor
+values (9910, '백미선', 'white', '전임강사', 200, sysdate, 10, 101);
+
+21)
+select * from professor where profno = 9910;
+
+22)
+rollback;
+
+23)
+select * from professor where profno = 9910;
+
+24) 
+insert into professor
+values (9910, '백미선', 'white', '전임강사', 200, sysdate, 10, 101);
+
+commit;
+
+25)
+select * from professor where profno = 9910;
+PROFNO	NAME	USERIN	POSITION	SAL	HIREDATE	COMM	DEPTNO
+9910	백미선	white	전임강사	200	26/07/27	10	101
+
+26)
+//단일 테이블에 다중행 입력
+
+--t_student테이블 생성
+create table T_STUDENT
+as select * from student
+where 1 = 0;//거짓조건=껍질을 만드는 것
+
+27)
+--t_student 테이블로 insert
+insert into T_STUDENT
+select * from student;
+
+desc t_student;
+
+/*교수테이블과 동일한 구조를 갖는 imsi_professor 테이블을 생성하고 동일한 데이터를 입력해보세요.*/
+
+28)
+create table IMSI_PROFESSOR
+as select * from professor
+where 1 = 0;
+
+29)
+insert into IMSI_PROFESSOR
+select *from professor;
+
+desc imsi_professor;
+
+30) 두단계로 나눠서 생성하는 것이 아니라 create부터 insert까지 같이함
+create table I_PROFESSOR
+as select * from professor;
+
+31)
+desc i_professor;
+
+32)
+/*다중행 입력을 위한 height_info, weight_info 예제 테이블을 생성*/
+
+create table height_info(
+studno  number(5),
+name    varchar2(10),
+height  number(5,2));
+--Table HEIGHT_INFO이(가) 생성되었습니다.
+
+33)
+create table weight_info(
+studno  number(5),
+name    varchar2(10),
+weight  number(5,2));
+--Table WEIGHT_INFO이(가) 생성되었습니다.
+
+34)
+insert all
+into height_info values (studno, name, height)
+into weight_info values (studno, name, weight)
+select studno, name, height, weight
+from student
+where grade >= '2';
+-20개 행 이(가) 삽입되었습니다.
+
+35~36)
+select * from height_info;
+select * from weight_info;
+
+37)
+delete from height_info;
+delete from weight_info;
+
+rollback;
+commit;
+
+38)
+insert all
+when height > 170 then
+into height_info values (studno, name, height)
+when weight > 70 then
+into weight_info values (studno, name, weight)
+select studno, name, height, weight
+from student
+where grade >= '2';
+--10개 행 이(가) 삽입되었습니다.
+
+39)
+select * from height_info;
+STUDNO	NAME	HEIGHT
+10101	전인하	176
+10202	오유석	177
+10105	임유진	171
+10204	윤진욱	171
+10107	이광훈	175
+
+40)
+select * from weight_info;
+STUDNO	NAME	WEIGHT
+10101	전인하	72
+10103	김영균	88
+10202	오유석	92
+10107	이광훈	92
+10108	류민정	72
+
+41)
+/*교수 테이블에서 교수 번호, 교수 이름으로 구성된 테이블 PROF1, PROF2를 생성해보세요.*/
+desc professor;
+create table PROF1(
+profno number(4),
+name varchar2(10));
+--Table PROF1이(가) 생성되었습니다.
+select * from prof1;
+
+create table PROF2(
+profno number(4),
+name varchar2(10));
+--Table PROF2이(가) 생성되었습니다.
+select * from prof2;
+
+/*교수 테이블에서 교수 번호가 9901~9905까지인 교수의 교수번호와 이름은 prof1테이블에 입력
+교수 번호가 9906~9920인 까지인 교수의 교수번호와 이름은 prof2테이블에 입력해서 보세요*/
+
+42)
+insert all
+when profno between 9901 and 9905 then
+into prof1 values (profno, name)
+when profno between 9906 and 9920 then
+into prof2 values (profno, name)
+select profno, name
+from professor;
+--10개 행 이(가) 삽입되었습니다.
+
+43~44) insert result
+43)
+PROFNO	NAME
+9901	김도훈
+9902	이재우
+9903	성연희
+9904	염일웅
+9905	권혁일
+
+44)
+PROFNO	NAME
+9906	이만식
+9907	전은지
+9908	남은혁
+9920	최윤식
+9910	백미선
+
+45)첫번째 조건을 걸러내고 두번째를 찾는다.
+//다중행 입력conditional-first insert
+
+insert first
+when height > 170 then
+into height_info values (studno, name, height)
+when weight > 70 then
+into weight_info values (studno, name, weight)
+select studno, name, height, weight
+from student
+where grade >= '2';
+--7개 행 이(가) 삽입되었습니다.
+
+46)
+//데이터 수정
+//update
+select profno, name, position
+from professor
+where profno = 9903;
+PROFNO	NAME	POSITION
+9903	성연희	조교수
+
+47)
+update professor
+set position = '부교수'
+where profno = 9903;
+--1 행 이(가) 업데이트되었습니다.
+PROFNO	NAME	POSITION
+9903	성연희	부교수
+
+48)
+//update subquery
+select * from student
+where studno = 10103;
+update student
+set (grade, deptno) = (select grade, deptno
+                       from student
+                       where studno = 10103)
+where studno = 10201;
+select * from student
+where studno = 10201;
+
+rollback;
+
+49)/*남은혁 교수 userid를 black으로 변경*/
+
+select name, userid from professor
+where name = '남은혁';
+update professor
+set userid = 'black'
+where name = '남은혁';// 
+
+50)
+//delate
+delete
+from student
+where studno = 20103;
+select studno from student
+where studno = 20103;
+
+51)
+delete from student
+where deptno = (select deptno
+                from department
+                where dname = '컴퓨터공학과');
+
+
+52)
+/*사원 테이블에서 DALLAS에 근무하는 사원들을 모두 삭제하세요. [EMP,DEPT]*/
+desc dept;
+Delete from emp
+where deptno = (select deptno 
+                from dept
+                where loc = 'DALLAS');
+
+53)
+/*학생테이블에서 학번이 20000에서 25000번에 해당하는 학생들을 삭제하세요*/
+delete from student
+where studno between 20000 and 25000;
+
+54)
+//marge : 추가하기 위한 조작어
+create table professor_temp as
+select * from professor
+where position = '교수';
+--Table PROFESSOR_TEMP이(가) 생성되었습니다.
+
+update professor_temp
+set position='명예교수'
+where position='교수';
+--2개 행 이(가) 업데이트되었습니다.
+
+insert into professor_temp
+values(9999, '김도경', 'arom21', '전임강사',200,sysdate, 10, 101 );
+--1 행 이(가) 삽입되었습니다.
+
+55)
+select * from professor_temp;
+PROFNO	NAME	USERID	POSITION	SAL 	HIREDATE	COMM	DEPTNO
+9901	김도훈	capool	명예교수	500	82/06/24	20	101
+9905	권혁일	refresh	명예교수	450	86/01/08	25	102
+9999	김도경	arom21	전임강사	200	26/07/27	10	101
+select * from professor;
+PROFNO	NAME	USERID	POSITION	SAL 	HIREDATE	COMM	DEPTNO
+9901	김도훈	capool	교수	500	82/06/24	20	101
+9902	이재우	sweat413	조교수	320	95/04/12		201
+9903	성연희	Pascal	조교수	360	93/05/17	15	101
+9904	염일웅	Blue77	전임강사	240	98/12/02		102
+9905	권혁일	refresh	교수	450	86/01/08	25	102
+9906	이만식	Pocari	부교수	420	88/09/13		101
+9907	전은지	totoro	전임강사	210	01/06/01		101
+9908	남은혁	black	부교수	400	90/11/18	17	202
+9920	최윤식		조교수		06/01/01		102
+9910	백미선	white	전임강사	200	26/07/27	10	101
+
+56)
+merge into professor p
+using professor_temp f
+on (p.profno = f.profno)
+when matched then
+update set p.position = f.position
+when not matched then
+insert values(f.profno, f.name, f.userid,f.position, f.sal, f.hiredate, f.comm, f.deptno);
+--3개 행 이(가) 병합되었습니다.
+select * from professor
+order by position;
+PROFNO	NAME	USERID	POSITION	SAL 	HIREDATE	COMM	DEPTNO
+9901	김도훈	capool	명예교수	500	82/06/24	20	101
+9905	권혁일	refresh	명예교수	450	86/01/08	25	102
+9906	이만식	Pocari	부교수	420	88/09/13		101
+9908	남은혁	black	부교수	400	90/11/18	17	202
+9999	김도경	arom21	전임강사	200	26/07/27	10	101
+9907	전은지	totoro	전임강사	210	01/06/01		101
+9910	백미선	white	전임강사	200	26/07/27	10	101
+9904	염일웅	Blue77	전임강사	240	98/12/02		102
+9902	이재우	sweat413	조교수	320	95/04/12		201
+9920	최윤식		조교수		06/01/01		102
+9903	성연희	Pascal	조교수	360	93/05/17	15	101
+
+57)
+/*1. 교수 테이블에서 성연희 교수의 직급과 동일 직급을 가진 교수들 중 현재
+급여가 410이 안 되는 교수들의 급여를 12% 인상하세요.*/
+
+select * from professor where name = '성연희'; //조교수
+
+select name, sal, position, round(sal*1.12)
+from professor
+group by name, sal, position
+having sal in (select sal
+               from professor
+               where sal < 410)
+and position =(select position
+               from professor
+               where name = '성연희');
+NAME	SAL	POSITION	ROUND(SAL*1.12)
+이재우	320	조교수	358
+성연희	360	조교수	403
+
+58)
+/*2. STUDNO, NAME, USERID, GRADE 그리고 DEPTNO 열만을 포함하는
+STUDENT 테이블의 구조를 기초로 STUDENT2 테이블을 생성하세요.*/
+
+desc student;
+create table student2(
+studno number(5), 
+name varchar(20), 
+userid varchar(10), 
+grade varchar(1), 
+deptno number(4));
+select * from student2;
+
+59)
+/*2-1. student2 테이블에 데이터 2개를 입력하세요.
+-1명 입력 4444,'테스트', 'test', '2',101
+-1명 업데이트 10103, '김영균', 'manu1', '3', 102*/
+
+insert into student2 values (55555,'테스트', 'test', '2',101);
+--1 행 이(가) 삽입되었습니다.
+
+60)
+/*3. STUDENT 테이블과 STUDENT2테이블을 MERGE 시키세요.(결과 테이블:student)*/
+
+merge into student s
+using student2 st
+on (s.studno = st.studno)
+when matched then
+update set s.name = st.name
+when not matched then
+insert (s.studno, s.name, s.userid, s.grade, s.deptno)
+values(st.studno, st.name, st.userid, st.grade, st.deptno);//student와 student2의 값이 같아야함.
+
+61)
+/*4. 교수 테이블에 교수 3명을 입력하세요. ( 직급: '시간강사')*/
+
+desc professor;
+select * from professor;
+
+insert into professor values(9998, '김민지', 'kim01', '시간강사', 270, sysdate, 10, 101);
+insert into professor values(9988, '초민지', 'cho', '시간강사',220,sysdate, '', 102);
+insert into professor values(9980, '이선미', 'leesm', '시간강사',180,sysdate, 10, 102);
+
+62)
+/*5. 입력한 교수 중에서 2명을 삭제하세요.*/
+
+delete from professor
+where profno between 9980 and 9990;
+--2개 행 이(가) 삭제되었습니다.
+
+63)
+/*6. 입력한 교수 중 1명은 직급을 '전문가'로 수정해 보세요.*/
+
+update professor 
+set position = '전문가'
+where position = '시간강사';
+--1 행 이(가) 업데이트되었습니다.
+
+64)
+/*7. 각 학과별로 입사일이 가장 오래된 교수의 교수번호와 이름, 입사일, 학과명을 출력하세요.
+(입사일 순으로 정렬하세요.)
+교수 NO. 교수명 입사일 학과
+===== ===== ===== ===========
+9901 김도훈 82/06/24 컴퓨터공학과
+9905 권혁일 86/01/08 멀티미디어학과
+9908 남은혁 90/11/18 기계공학과
+9902 이재우 95/04/12 전자공학과*/
+
+select * from department;
+select p.profno, p.name, p.hiredate, d.dname, d.deptno
+from professor p inner join department d on p.deptno = d.deptno
+group by p.profno, p.name, p.hiredate, d.dname, d.deptno
+having p.hiredate in (select min(p.hiredate)
+                    from professor p
+                    group by p.deptno)
+order by d.deptno;
+
+
+
