@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-07-28",
+    day: "DAY 07",
+    title: "시퀀스, 테이블 관리와 무결성 제약조건",
+    summary:
+      "시퀀스로 번호를 생성하고 DDL로 테이블 구조를 관리했다. 데이터 사전을 조회하고 기본 키·외래 키를 비롯한 제약조건을 직접 추가하고 변경했다.",
+    learned: [
+      "시퀀스와 Identity Column",
+      "CREATE·ALTER·DROP·TRUNCATE",
+      "데이터 사전 조회",
+      "기본 키·외래 키·무결성 제약조건",
+    ],
+    tags: ["시퀀스", "DDL", "제약조건"],
+    folder: "Oracle_SQL/20260728",
+    readTime: 11,
+  },
+  {
     date: "2026-07-27",
     day: "DAY 06",
     title: "다중행 서브쿼리와 데이터 조작어",
