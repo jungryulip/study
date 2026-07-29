@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-07-29",
+    day: "DAY 08",
+    title: "인덱스, 뷰, 권한과 동의어",
+    summary:
+      "조회 성능을 위한 인덱스와 쿼리 재사용을 위한 뷰를 만들었다. 시스템·객체 권한, Role, Private·Public Synonym으로 사용자 접근을 관리했다.",
+    learned: [
+      "고유·결합·함수 기반 인덱스",
+      "단순·복합·인라인 뷰",
+      "시스템 권한과 객체 권한",
+      "Role과 Private·Public Synonym",
+    ],
+    tags: ["인덱스", "뷰", "권한"],
+    folder: "Oracle_SQL/20260729",
+    readTime: 12,
+  },
+  {
     date: "2026-07-28",
     day: "DAY 07",
     title: "시퀀스, 테이블 관리와 무결성 제약조건",

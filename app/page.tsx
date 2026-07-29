@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { allTags, posts } from "./study-data";
+import { posts } from "./study-data";
 
 const repositoryUrl = "https://github.com/jungryulip/study/tree/main";
 
@@ -14,23 +14,19 @@ function formatDate(value: string) {
 }
 
 export default function Home() {
-  const [selectedTag, setSelectedTag] = useState("전체");
   const [query, setQuery] = useState("");
 
   const filteredPosts = useMemo(() => {
     const normalized = query.trim().toLowerCase();
-    return posts.filter((post) => {
-      const tagMatches =
-        selectedTag === "전체" || post.tags.includes(selectedTag);
-      const queryMatches =
+    return posts.filter(
+      (post) =>
         !normalized ||
-        [post.title, post.summary, ...post.learned, ...post.tags]
+        [post.title, post.summary, ...post.learned]
           .join(" ")
           .toLowerCase()
-          .includes(normalized);
-      return tagMatches && queryMatches;
-    });
-  }, [query, selectedTag]);
+          .includes(normalized),
+    );
+  }, [query]);
 
   return (
     <main>
@@ -55,7 +51,6 @@ export default function Home() {
           </p>
           <div className="profile-stats">
             <span><strong>{posts.length}</strong>개의 기록</span>
-            <span><strong>{allTags.length}</strong>개의 태그</span>
             <span>2026.07부터 기록 중</span>
           </div>
         </div>
@@ -80,19 +75,6 @@ export default function Home() {
             </label>
           </div>
 
-          <div className="mobile-tags" aria-label="태그 필터">
-            {["전체", ...allTags].map((tag) => (
-              <button
-                key={tag}
-                type="button"
-                className={selectedTag === tag ? "active" : ""}
-                onClick={() => setSelectedTag(tag)}
-              >
-                {tag}
-              </button>
-            ))}
-          </div>
-
           <div className="post-list">
             {filteredPosts.map((post) => (
               <article className="post-card" key={post.date}>
@@ -101,9 +83,6 @@ export default function Home() {
                   <time dateTime={post.date}>{formatDate(post.date)}</time>
                 </div>
                 <div className="post-body">
-                  <div className="post-tags">
-                    {post.tags.map((tag) => <span key={tag}>#{tag}</span>)}
-                  </div>
                   <h3>{post.title}</h3>
                   <p>{post.summary}</p>
                   <div className="learned-box">
@@ -130,37 +109,10 @@ export default function Home() {
           {filteredPosts.length === 0 && (
             <div className="empty">
               <strong>검색 결과가 없어요.</strong>
-              <p>다른 키워드나 태그를 선택해 보세요.</p>
+              <p>다른 키워드로 검색해 보세요.</p>
             </div>
           )}
         </section>
-
-        <aside>
-          <div className="aside-block">
-            <h2>태그</h2>
-            <div className="tag-menu">
-              {["전체", ...allTags].map((tag) => (
-                <button
-                  key={tag}
-                  type="button"
-                  className={selectedTag === tag ? "active" : ""}
-                  onClick={() => setSelectedTag(tag)}
-                >
-                  <span>{tag}</span>
-                  <small>
-                    {tag === "전체"
-                      ? posts.length
-                      : posts.filter((post) => post.tags.includes(tag)).length}
-                  </small>
-                </button>
-              ))}
-            </div>
-          </div>
-          <div className="aside-note">
-            <span>WRITE, RUN, LEARN.</span>
-            <p>직접 실행해 본 한 줄이 읽기만 한 열 줄보다 오래 남는다.</p>
-          </div>
-        </aside>
       </div>
 
       <footer>

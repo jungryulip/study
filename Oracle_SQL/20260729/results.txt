@@ -1,0 +1,461 @@
+scott/tiger ==> hr/hr
+system/manager ==> sys, system/oracle
+: 교재 세팅과 우리가 만든것의 차이 
+
+
+인덱스 INDEX
+
+01)
+//고유 인덱스
+create unique index idx_dept_name
+on department(dname);
+--Index IDX_DEPT_NAME이(가) 생성되었습니다.
+
+02)
+//비고유 인덱스
+create index idex_stud_birthdate
+on student(birthdate);
+--Index IDEX_STUD_BIRTHDATE이(가) 생성되었습니다.
+
+03)
+//결합인덱스
+create index idx_stud_dno_grade
+on student(deptno, grade);
+--Index IDX_STUD_DNO_GRADE이(가) 생성되었습니다.
+
+04)
+//DESENDING INDEX
+create index fidx_stud_no_name on student(deptno desc, name asc);
+--Index FIDX_STUD_NO_NAME이(가) 생성되었습니다.
+
+05)
+create index uppercase_idx on emp(upper(ename));
+select * from emp where upper(ename) = 'KING';
+EMPNO	ENAME	JOB	MGR		HIREDATE	SAL	COMM	DEPTNO
+7839	KING	PRESIDENT		81/11/17	5000		10
+
+06)
+//함수기반 인덱스
+create index idx_standard_weight on student((height-100)*0.9);
+--Index IDX_STANDARD_WEIGHT이(가) 생성되었습니다.
+
+07)
+//인덱스 실행경로 확인법
+select deptno, dname
+from department
+where dname = '정보미디어학부';// 확인하고 싶으면 F10
+
+08~09) SQL  PLUS에서 확인하는 방법
+hr/ hr
+set autot on //입력후 
+select deptno, dname
+from department
+where dname = '정보미디어학부'; // 실행경로 및 결과를 확인할 수 있음
+set autot off//실행취소
+set autot trace//실행계획, 통계정보만 보여줌
+
+10)
+//인덱스 삭제
+drop index idx_dept_name;
+
+//인덱스 실행경로 확인법
+select deptno, dname
+from department
+where dname = '정보미디어학부';// 블록으로 드래그해서 실행하지 않으면 값이 나오지 않음
+
+11)
+//실행
+select name, birthdate
+from student
+where birthdate = '79/04/02';
+
+12)
+drop index idex_stud_birthdate;
+--Index IDEX_STUD_BIRTHDATE이(가) 삭제되었습니다.
+
+13)
+//인덱스 관리 USER_INDEXES
+select index_name, uniqueness
+from user_indexes
+where table_name = 'STUDENT';
+INDEX_NAME		UNIQUENESS
+STUD_NO_PK		UNIQUE
+STUD_IDNUM_UK		UNIQUE
+IDX_STUD_DNO_GRADE	NONUNIQUE
+FIDX_STUD_NO_NAME	NONUNIQUE
+IDX_STANDARD_WEIGHT	NONUNIQUE
+
+14)
+--columns
+select index_name, column_name
+from user_ind_columns
+where table_name = 'STUDENT';
+INDEX_NAME		COLUMN_NAME
+STUD_NO_PK		STUDNO
+STUD_IDNUM_UK		IDNUM
+IDX_STUD_DNO_GRADE	DEPTNO
+IDX_STUD_DNO_GRADE	GRADE
+FIDX_STUD_NO_NAME	SYS_NC00012$
+FIDX_STUD_NO_NAME	NAME
+IDX_STANDARD_WEIGHT	SYS_NC00013$
+
+15)
+//drop
+drop index fidx_stud_no_name;
+--Index FIDX_STUD_NO_NAME이(가) 삭제되었습니다.
+
+16)
+//재구성
+alter index stud_no_pk rebuild;
+--Index STUD_NO_PK이(가) 변경되었습니다.
+
+17~19)
+create view v_stud_dept101 as
+       select studno, name, deptno
+       from student
+       where deptno = 101;
+--오류 보고 -
+/*ORA-01031: 권한이 불충분합니다
+
+https://docs.oracle.com/error-help/db/ora-01031/01031. 00000 -  "insufficient privileges"
+*Document: YES
+*Cause:    A database operation was attempted without the required
+           privilege(s).
+*Action:   Ask your database administrator or security administrator to grant
+           you the required privilege(s).*/
+//SQL PLUS =권한부여
+//재실행
+--View V_STUD_DEPT101이(가) 생성되었습니다.
+
+20)
+
+21)
+//복합뷰
+create view v_stud_dept102
+as select s.studno, s.name, s.grade, d.dname
+from student s, department d
+where s.deptno = d.deptno and s.deptno = 102;
+
+select * from v_stud_dept102;
+
+22)
+//replace
+create or replace view v_stud_dept102
+as select s.studno, s.name, s.grade, d.dname, d.deptno
+from student s, department d
+where s.deptno = d.deptno and s.deptno = 102;
+
+select * from v_stud_dept102;//결과보기
+
+23)
+//함수 이용
+create view v_prof_avg_sal
+as select deptno, sum(sal), avg(sal) 
+from professor
+group by deptno;
+--오류 보고 -
+ORA-00998: 이 식은 열의 별명과 함께 지정해야 합니다
+
+https://docs.oracle.com/error-help/db/ora-00998/00998. 00000 -  "must name this expression with a column alias"
+*Cause:    An expression or function was used in a CREATE VIEW
+           statement, but no corresponding column name was specified.
+           When expressions or functions are used in a view, all column
+           names for the view must be explicitly specified in the CREATE
+           VIEW statement.
+*Action:   Enter a column name for each column in the view in
+           parentheses after the view name.
+
+create view v_prof_avg_sal
+as select deptno, sum(sal) sum_sal, avg(sal) avg_sal
+from professor
+group by deptno;
+--View V_PROF_AVG_SAL이(가) 생성되었습니다.
+
+24)
+//inline view
+select dname, avg_height, avg_weight
+from (select deptno, avg(height) avg_height, avg(weight) avg_weight
+      from student
+      group by deptno) s, department d
+where s.deptno = d.deptno;
+
+DNAME		AVG_HEIGHT 	AVG_WEIGHT
+컴퓨터공학과	171.125		68
+전자공학과	176		61.75
+멀티미디어학과	168		69.5
+
+//@C:\oracle\table.sql//테이블 다시 불러오기
+
+---HR 파일에 문제가 있어서, SCOTT에 HR의 테이블을 다시깜.
+
+25)
+/*각 학년의 평균키를 구하고 평균 키보다 큰 학생의 학년, 이름, 키, 각 학년의 평균 키를 출력하세요*/ 
+select s.grade, s.name, s.height, a.avg_height
+from (select grade, round(avg(height)) avg_height
+      from student
+      group by grade) a, student s
+where a.grade = s.grade
+and s.height > a.avg_height
+order by 1;
+GRADE	NAME 	HEIGHT	AVG_HEIGHT
+1	박동진	182	175
+1	조명훈	184	175
+1	서재진	186	175
+2	김진경	166	165
+2	임유진	171	165
+4	오유석	177	176
+
+26)
+/*EMP, DEPT 데이블을 조회하여 부서번호와 부서별 최대 급여, 부서명을 출력해 보세요*/
+DESC emp;
+select e.deptno, e.max_sal, d.dname
+from (select deptno, max(sal) max_sal
+      from emp
+      group by deptno) e, dept d
+where e.deptno = d.deptno
+order by 1;
+DEPTNO	MAX_SAL	DNAME
+10	5000	ACCOUNTING
+20	3000	RESEARCH
+30	2850	SALES
+
+27)
+//뷰의 내부처리과정
+create view v_stud_dept101
+as select studno, name, deptno
+from student
+where deptno =101;
+--View V_STUD_DEPT101이(가) 생성되었습니다.
+
+28)
+select * from v_stud_dept101
+where name = '김영균';
+
+29)
+// 뷰 조회
+select view_name, text
+from user_views;
+VIEW_NAEM	TEXT
+V_STUD_DEPT101	"select studno, name, deptno
+		from student
+		where deptno =101"
+
+
+30)
+//뷰 수정
+create or replace view v_stud_dept101
+as select studno, name, deptno, grade
+   from student
+   where deptno = 101;
+--View V_STUD_DEPT101이(가) 생성되었습니다.
+
+31)
+//drop 뷰
+drop view v_stud_dept101;
+--View V_STUD_DEPT101이(가) 삭제되었습니다.
+
+32)sql plus에서 권한 부여
+사용자 로그인
+grant query rewrite to scott;
+grant query rewrite to public;
+--권한이 부여되었다.
+
+33)
+//사용자 권한 제어
+2select * from user_sys_privs;
+
+34)sql plus에서 권한 철회
+conn /as sysdba[oracle]
+revoke query rewrite from scott;
+--권한이 취소되었습니다. 
+
+35)새로운 유저 생성 후 새 유저에 테이블 접근 권한 부여
+select * from scott.student;
+
+36)sql plus에서 추가로 권한 부여후 
+update scott.student
+set height = 180, weight = 80
+where deptno = 101;
+
+37)권한  조회
+select * from user_tab_privs_made;
+select * from user_tab_privs_recd;
+SCOTT	STUDENT	SCOTT	SELECT	NO	NO	NO	TABLE	NO
+
+38)
+//SQL Plus에서 접속하여 권한 철회
+SQL> conn scott/tiger
+--연결되었습니다.
+SQL> revoke update on student from tiger;
+--권한이 취소되었습니다.
+SQL> revoke select on student from tiger;
+--권한이 취소되었습니다.
+
+//SQL D에 Tiger로 접속후 테이블 확인
+select * from scott.student;
+--ORA-00942: 테이블 또는 뷰가 존재하지 않습니다
+
+39~42
+role
+SQL> conn tiger/tiger123
+
+SQL> conn system/oracle
+연결되었습니다
+
+SQL> alter session set "_oracle_script"=true;
+
+--세션이 변경되었습니다.
+
+SQL> create role hr_clerk;
+
+--롤이 생성되었습니다.
+
+SQL> create role hr_mgr;
+
+--롤이 생성되었습니다.
+
+SQL> create role hr_mgr1
+  2  identified by manager;
+
+--롤이 생성되었습니다.
+
+SQL> grant create session to hr_mgr1;
+
+--권한이 부여되었습니다.
+
+SQL> grant select,insert,delete on scott.student to hr_clerk;
+
+--권한이 부여되었습니다.
+
+SQL> grant hr_clerk to hr_mgr1;
+
+--권한이 부여되었습니다.
+
+SQL> grant hr_clerk to tiger;
+
+--권한이 부여되었습니다.
+
+SQL> conn tiger/tiger123
+연결되었습니다.
+SQL> select * from scott.student;
+
+43)
+//롤 조회
+select * from user_role_privs;
+TIGER	CONNECT	NO	NO	YES	NO	YES	NO
+TIGER	HR_CLERK	NO	NO	YES	NO	YES	NO
+TIGER	RESOURCE	NO	NO	YES	NO	YES	NO
+
+44)
+//project db
+create table project(
+project_id  number(5) constraint pro_id_pk primary key,
+project_name varchar2(100),
+studno number(5),
+profno number(5));
+--Table PROJECT이(가) 생성되었습니다.
+
+45)
+insert into project values(12345, 'portfolio', 10101, 9910);
+--1 행 이(가) 삽입되었습니다.
+select * from project;//값확인용
+
+PROJECT_ID PROJECT_NAME STUDNO PROFNO
+12345	    portfolio	10101	9910
+
+
+46)
+//동의어 생성법
+grant select on project to scott;
+--Grant을(를) 성공했습니다.
+
+47)
+select * from system.project;
+
+48)
+grant create synonym to scott;
+--Grant을(를) 성공했습니다.
+
+49)
+create synonym my_project for system.project;
+--Synonym MY_PROJECT이(가) 생성되었습니다.
+
+select * from my_project;//결과 확인
+
+50~51)
+//공용 동의어 생성
+create public synonym pub_project for project;
+--Synonym PUB_PROJECT이(가) 생성되었습니다.
+
+51)
+//동의어 드랍
+drop synonym my_project;
+--Synonym MY_PROJECT이(가) 삭제되었습니다.
+
+52)
+//공용 동의어 드랍
+drop public synonym pub_project;
+--Synonym PUB_PROJECT이(가) 삭제되었습니다.
+
+//
+
+54) 
+//실습1-2
+SQL> conn /as sysdba
+--연결되었습니다.
+SQL> alter session set "_oracle_script"=true;
+--세션이 변경되었습니다.
+SQL> create user kosa identified by kosa
+  2  default tablespace users
+  3  temporary tablespace temp;
+--사용자가 생성되었습니다.
+SQL> grant connect, resource to kosa;
+--권한이 부여되었습니다.
+SQL> grant select on scott.employee to kosa;
+grant select on scott.employee to kosa
+                      *
+1행에 오류:
+ORA-00942: 테이블 또는 뷰가 존재하지 않습니다
+/*system에서 table을 만듬*/
+SQL> grant select on system.employee to kosa;
+--권한이 부여되었습니다.
+
+//실습3
+create table employee(
+id  number(7) constraint emp_id_pk primary key,
+last_name varchar2(25),
+first_name varchar2(25),
+dept_id number(7));
+--Table EMPLOYEE이(가) 생성되었습니다.
+select * from employee;
+insert into employee values(0000000,'REO','JEONG',9999999);
+--1 행 이(가) 삽입되었습니다.
+/*
+EMPLOYEE 테이블 출력결과
+ID  FIRST_NAME lAST_NAME DEPT_ID
+0	REO	       JEONG	 9999999*/
+
+
+//실습4
+grant select on employee to kosa;
+--Grant을(를) 성공했습니다.
+
+grant create synonym to kosa;
+--Grant을(를) 성공했습니다.
+
+create public synonym pub_employee for employee;
+--Synonym PUB_EMPLOYEE이(가) 생성되었습니다.
+/*
+kosa테이블 출력결과
+ID  FIRST_NAME lAST_NAME DEPT_ID
+0	REO	       JEONG	 9999999*/
+
+//실습5
+select * from pub_employee;
+/*
+ID  	FIRST_NAME    lAST_NAME	DEPT_ID
+0	REO	       JEONG	 9999999*/
+
+//실습6
+drop public synonym pub_employee;
+--Synonym MY_PROJECT이(가) 삭제되었습니다.
