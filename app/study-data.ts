@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-07-30",
+    day: "DAY 09",
+    title: "계층형 질의와 Java 첫걸음",
+    summary:
+      "START WITH와 CONNECT BY로 조직의 계층 구조를 탐색했다. Java의 바이트코드와 JVM을 이해하고 Hello World, 주석, 변수와 기본 연산을 실습했다.",
+    learned: [
+      "START WITH·CONNECT BY PRIOR",
+      "LEVEL·SYS_CONNECT_BY_PATH",
+      "Java·JVM·바이트코드",
+      "Hello World·주석·변수",
+    ],
+    tags: ["계층형 질의", "Java", "JVM"],
+    folder: "Oracle_SQL/20260730",
+    readTime: 12,
+  },
+  {
     date: "2026-07-29",
     day: "DAY 08",
     title: "인덱스, 뷰, 권한과 동의어",

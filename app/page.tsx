@@ -31,8 +31,8 @@ export default function Home() {
   return (
     <main>
       <header className="topbar">
-        <a className="logo" href="#top" aria-label="SQL 하루 홈">
-          SQL<span>하루</span>
+        <a className="logo" href="#top" aria-label="코드 하루 홈">
+          코드<span>하루</span>
         </a>
         <nav>
           <a href="#posts">글 목록</a>
@@ -41,13 +41,13 @@ export default function Home() {
       </header>
 
       <section className="profile" id="top">
-        <div className="avatar" aria-hidden="true">SQL</div>
+        <div className="avatar" aria-hidden="true">CODE</div>
         <div className="profile-copy">
-          <p className="profile-label">ORACLE SQL STUDY LOG</p>
+          <p className="profile-label">ORACLE SQL &amp; JAVA STUDY LOG</p>
           <h1>배운 것을 하루씩 기록합니다.</h1>
           <p>
-            Oracle SQL과 SQLD를 공부하며 새롭게 알게 된 것,
-            헷갈렸던 것, 직접 실행해 본 쿼리를 날짜별로 남기는 공간입니다.
+            Oracle SQL, SQLD와 Java를 공부하며 새롭게 알게 된 것,
+            헷갈렸던 것, 직접 실행해 본 코드와 쿼리를 날짜별로 남기는 공간입니다.
           </p>
           <div className="profile-stats">
             <span><strong>{posts.length}</strong>개의 기록</span>
@@ -116,8 +116,8 @@ export default function Home() {
       </div>
 
       <footer>
-        <a className="logo" href="#top">SQL<span>하루</span></a>
-        <p>Oracle SQL을 배우는 매일의 기록 · 2026</p>
+        <a className="logo" href="#top">코드<span>하루</span></a>
+        <p>Oracle SQL과 Java를 배우는 매일의 기록 · 2026</p>
       </footer>
     </main>
   );
