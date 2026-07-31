@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-07-31",
+    day: "DAY 10",
+    title: "Java 변수, 자료형과 연산자",
+    summary:
+      "변수 이름 규칙과 기본 자료형, final 상수를 익혔다. 자동·명시적 형변환과 산술·증감·논리·삼항 연산자를 예제로 연습했다.",
+    learned: [
+      "변수 선언·초기화와 이름 규칙",
+      "기본 자료형과 final 상수",
+      "자동·명시적 형변환",
+      "산술·증감·논리·삼항 연산자",
+    ],
+    tags: ["Java", "자료형", "연산자"],
+    folder: "Java/20260731",
+    readTime: 10,
+  },
+  {
     date: "2026-07-30",
     day: "DAY 09",
     title: "계층형 질의와 Java 첫걸음",

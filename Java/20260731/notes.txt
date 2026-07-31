@@ -1,0 +1,487 @@
+변하는 수. 프로그래밍에서 값을 사용하기 위해 선언하는 것을 변수라고 한다.
+사용하기 전에 반드시 선언해야한다. 
+variable이라고 함. 
+
+변수 선언[int level]과 초기화 [int level = 10]
+유의점
+변수 이름은 알파벳, 숫자, _, $로 구성되며, 대소문자를 구분한다.
+숫자로 시작항 수 없고, 공백이 없다. [키워드도 변수로 지정할 수 없다.]
+변수의 이름은 변수 역할에 어울리는 의미 있는 이름으로 지어야한다.
+
+01)
+package chap02;
+
+public class _02_VariableNaming {
+    public static void main(String[] args) {
+
+        //변수 이름 짓는법
+        //1. 지정할 값에 어울리는 값으로 지어야한다
+        //2. 밑줄, 문자, 숫자 사용가능
+        //3. 밑줄 또는 문자로 시작가능
+        //4. 한단어 또는 2개이산의 단어의 연속
+        //5. 소문자로 시작, 각단어의 시작글자는 대문자
+        //6.예약어 사용 불가(public, static, void, for..)
+
+        // 자바 수업 학생 정보
+        String studentname = "김자바";
+        String studentid = "20260001";
+        String major = "컴퓨터공학과";
+        String courseName = "Java programing";
+        String professorName = "홍길동";
+        String classroom = "공학관 301호";
+
+        //변수 예씨
+        String _courseName = "Java Programing";
+        String course_name_2 = "Java Programing";
+        /*String 2course = "Java";// 숫자 시작 불가
+        String calss="Java"*/ //예약어 사용 불가
+
+        int classHour = 3;
+        int studentCount = 30;
+
+        String subject = "자바";
+        String subject2 = "데이터베이스";
+//        String 3 subject = "웹"; // 숫자 사용 불가
+
+        // 반복문에 자주 사용되는 변수
+        int i = 0;
+        String s = "";
+        String str = "";
+
+    }
+}
+
+02)
+//자료형
+--실무에서 byte[정수형 1바이트], short[정수형 2바이트]는 쓰지 않음
+정수 자료형에서는 int[20억], long[930경]을 사용한다.
+
+//int
+기본적으로 사용하는 자료형
+
+//long
+8바이트 자료형 가장큰 정수 자료형
+long은 정수 뒤에 L(대문자)을 붙여야 한다.
+
+//char
+자료형 출력
+
+//float, double 
+실수 자료형, float4바이트 double은 8바이트 실수 자료형
+
++부동 소수점의 방식이면, 실수는 고민하지 않고, double을 사용해라
+
+//boolean 논리형
+논리값으로 자료의 표형하는 자료형으로 true, false로 정함
+
+package chap02;
+
+public class _03_DataTypes {
+    public static void main(String[] args) {
+
+        int a = 100; //정수
+//        int num1 = 12345678900; //인트의 값을 넘는 값을 대입해서 오류
+        // 자바는 기본적으로 모는 정수를 int형을 기본으로 처리 long형으로  처리하라고 컴파일러에게 알려주어야함.
+        //L or l
+        long num2 = 12345678900L;
+        long num3 = 1000; //int 형이 long형으로 자동 변환됩니다.
+        double b = 10.5;
+        double dnum = 3.14;
+        float fnum = 3.14F;
+
+        boolean c = true; // 블리언boolean은 true, false 입력 가능
+        char d = 'A';
+        String e = "Hello Java";
+
+        System.out.println(a);
+        System.out.println(num2);
+        System.out.println(num3);
+        System.out.println(b);
+        System.out.println(dnum);
+        System.out.println(fnum);
+        System.out.println(d);
+        System.out.println(e);
+        System.out.println(c);
+    }
+}
+
+03)
+//상수
+변하지 않는 값으로 final호 선언한다.
+상수 이름은 대문자를 사용한다. 
+package chap02;
+
+import javax.swing.plaf.synth.SynthOptionPaneUI;
+
+public class _04_Constant {
+    public static void main(String[] args) {
+        //상수 관용적으로 대문자로 정의
+        final int MAX_NUM = 100; //선언과 동시에 초기화
+        final int MIN_NUM;
+        MIN_NUM = 0;
+
+        System.out.println(MAX_NUM);
+        System.out.println(MIN_NUM);
+
+        final int STUDENT_NUM = 30;
+        System.out.println(STUDENT_NUM);
+
+        final String KR_COUNTRY_CODE = "+82";
+        System.out.println(KR_COUNTRY_CODE);
+    }
+}
+
+04)연습
+package chap02;
+
+public class _05_Variable2 {
+    public static void main(String[] args) {
+
+        //학생정보
+        String name = "김자바";
+        int hour = 10;
+
+        System.out.println(name + "님의 자바 수업은 " + hour + "시에 시작됩니다.");
+        System.out.println(name+"님이 자바 수업에 출석하셨습니다.");
+        System.out.println(name+"님 퇴실하셨습니다.");
+
+        // 성적 정보
+        double score = 95.5;
+        char garde = 'A';
+        name = "이코사";
+
+        System.out.println(name + "님의 자바 시혐 평균 점수는 " + score + "점입니다.");
+        System.out.println("학점은 " + garde + "입니다.");
+
+        // 합격 여부
+        boolean pass = false;
+        System.out.println("자바 과정을 수료했을까요? " + pass);
+        boolean isMarried = true;
+        System.out.println("결혼여부 " + isMarried);
+
+        //실수형
+        double d = 3.14123456789; //정밀한 수를 다룰 경우 double을 사용
+        float f = 3.14123456789F;// float는 뒤에 F를 붙여야함
+
+        System.out.println(d);
+        System.out.println(f);
+
+        //정수형
+        long l = 1000000000000L; // -21~21억정도 표현하는 int의 범위를 벗어난다.
+        long l2 = 1000_000_000_000L;
+
+        System.out.println(l);
+        System.out.println(l2);
+        
+        //자료형 예시
+        // int : 정수,  long :큰 정수, float : 실수(정밀도 낮음), double:실수(정밀도 높음)
+        // char:문자 1개, string:문자열,  boolean : true or false
+    }
+}
+
+
+05)문제
+package chap02;
+
+import org.w3c.dom.ls.LSOutput;
+
+public class _02_Quiz {
+
+    public static void main(String[] args) {
+        //문제1
+        String subjectName = "Java Programing";
+        String professor = "홍길동";
+        int studentCount = 30;
+        double classHour = 3.0;
+
+        System.out.println(subjectName);
+        System.out.println("담당교수 : " + professor);
+        System.out.println("수강인원 : " + studentCount + "명");
+        System.out.println("강의시간 : " + classHour + "시간");
+
+        //문제2
+        String studentName = "김자바";
+        int age = 20;
+        boolean isAttend = true;
+
+        System.out.println("학생이름 : " + studentName);
+        System.out.println("나이 : " + age);
+        System.out.println("출석 여부 : " + isAttend);
+    }
+}
+
+06)
+// 리터럴 ; 개발자가 직업 고정한 값.
+
+//형변환
+묵시적 형변환: 작은수에서 큰수로 덜 정밀한 수에서 더 정밀한 수로 대입되는 경우
+명시적 형변환: 변환되는 자료형을 명시해야함. 그렇지 않으면 자료의 손실이 발생할 수 있다.
+
+package chap02;
+
+public class _07_TypeCasting {
+    public static void main(String[] args) {
+        // 형변환 TypeCasting
+        // 정수형에서 실수형으로
+        // 실수형에서 정수형으로
+
+//        int score = 85 + 76.5;
+        //연산 결과는 실수형인데 변수에 넣으려고 하니 오류가 발생
+
+        //int to float, double
+        int point = 85;
+        System.out.println(point);
+        System.out.println((float) point);
+        System.out.println((double) point);
+
+        System.out.println("----");
+
+        //float, double to int
+        float point_f =87.5F;
+        System.out.println(point_f); //87.5
+        System.out.println((int) point_f); //87
+
+        double point_d = 76.5;
+        System.out.println(point_d); //76.5
+        System.out.println((int)point_d); //76
+
+        System.out.println("----");
+
+        point = 85 + (int) 76.5;
+        System.out.println(point);//161
+
+        point_d = (double) 85 + 76.5;//85.0+76.5 더블로 변환
+        System.out.println(point_d);
+
+        double changPointDouble = point;
+        System.out.println(changPointDouble); //161.0
+        //작은 범위에서 큰 범위로 갈때 자동으로 형변환이 일어남
+        // int -> long -> float -> double (자동형 변환, 묵시적 형변환)
+
+        int changPointInt = (int) point_d;
+        System.out.println(changPointInt); //161
+        //큼 범위 데이터를 작은 범위로 넣으려고 하면 소수점 이하가 버려짐
+        // 이 경우(int) 수동으로 형변환 해 주셔야 합니다.
+        // double -> float -> long -> int(수동 형변환, 명시적 형변환)
+
+        System.out.println("----");
+
+        //숫자를 문자열로
+        String text1 = String.valueOf(85);
+        text1 = Integer.toString(85);
+        System.out.println(text1);
+
+        String text2 = String.valueOf(76.5);
+        text2 = Double.toString(76.5);
+        System.out.println(text2);
+
+        //문자열을 숫자로
+        int number = Integer.parseInt("85");
+        System.out.println(number);
+        double decimal = Double.parseDouble("76.5");
+        System.out.println(decimal);
+        System.out.println(number + decimal);
+
+//        int error = Integer.parseInt("자바"); // 자바를 어떤 숫자로 바꿔야하는지 알 수 없기 때문에 프로그램 종료(1)
+    }
+}
+
+07)
+//항과 연산자
+단항연산자++num
+이항연산자num1_num2
+삼항연산자(5>3) ? 1:3
+
+대입 연산자 : 변수의 값을 대입하는 연산자로, 연잔의 결과를 변수에 대입하는 것으로 우선순위가 가장 낮다. 
+산술 연산자
+
+package chap03;
+
+public class _01_OperationEx {
+    public static void main(String[] args) {
+        //대입연산자
+
+        int matScore = 90;
+        int engScore = 70;
+
+        int totalScore = matScore + engScore;
+        System.out.println(totalScore);
+
+        double avgScore = totalScore / 2.0;
+        System.out.println(avgScore);
+
+        System.out.println("----");
+
+        // % 나머지 연산자
+        int number = 10;
+        int quotient = number / 3;
+        int remainder = number % 3;
+
+        System.out.println("몫 = " + quotient);
+        System.out.println("나머지 = " + remainder);
+
+        // 부호 연산자
+        int num = 10;
+        int num2 = -num;
+        System.out.println(num);
+        System.out.println(num2);
+
+        num = -num;
+        System.out.println(num);
+
+        System.out.println("----");
+
+        // 복합 대입연산자
+        num = 10;
+//        num = num + 2; // num += 2와 결과값이 같다.
+        num += 2;
+        System.out.println(num);//12
+
+        // num num-2;
+        num -= 2;
+        System.out.println(num);//10
+
+        // num * 2 = num
+        num *= 2;
+        System.out.println(num);//20
+
+        // num /2 = num
+        num /= 2;
+        System.out.println(num);//10
+
+        // num = num % 2
+        num %= 2;
+        System.out.println(num);//0
+    }
+}
+
+
+08)
+증가감소 연산자[전위연산자 후위연산자]
+값에++나 --의 위치에 따라 값이 달라진다. 
+package chap03;
+
+public class _02_OperationEx2 {
+    public static void main(String[] args) {
+
+        // 증감 연산자 ++,--
+        int gameScore = 150;
+        System.out.println(gameScore); //150
+        System.out.println(++gameScore); //151 전위연산자
+        System.out.println(gameScore); //151
+
+        gameScore = 150;
+        System.out.println(gameScore); //150
+        System.out.println(gameScore++); //150 후위연산자
+        System.out.println(gameScore); //151
+
+        System.out.println("----");
+
+        gameScore = 150;
+        System.out.println(gameScore); //150
+        System.out.println(--gameScore); //149
+        System.out.println(gameScore); //149
+
+        gameScore = 150;
+        System.out.println(gameScore); //150
+        System.out.println(gameScore--); //150
+        System.out.println(gameScore); //149
+
+        System.out.println("----");
+
+        // 식당 대기번호 표
+        int waiting = 0;
+        System.out.println("대기 인원 : "+waiting++); //0
+        System.out.println("대기 인원 : "+waiting++); //1
+        System.out.println("대기 인원 : "+waiting++); //2
+        System.out.println("대기 인원 : "+waiting); //3
+
+
+    }
+}
+
+09)
+package chap03;
+
+public class _03_OperationEx3 {
+    public static void main(String[] args) {
+        // 논리연산자
+        int num1 = 100;
+        int i = 2;
+
+        // and 연산자
+        boolean value = ((num1 = num1 + 10) < 10) && ((i = i + 2) < 10);
+        System.out.println(value); // false 110<10 && 4<10
+        System.out.println(num1); // 110
+        System.out.println(i); // 2
+
+        // or 연산자
+        value = ((num1 = num1 + 10) < 10) || ((i = i + 2) < 10);
+        System.out.println(value); // true 110<10 && 4<10
+        System.out.println(num1); // 120
+        System.out.println(i); // 4
+
+        // 논리 부정 연산자
+        System.out.println(!true);
+        System.out.println(!false);
+        System.out.println(!(5 == 5));
+        System.out.println(!(5 == 3));
+
+    }
+}
+
+
+10)
+package chap03;
+
+public class _04_OpreationEx {
+    public static void main(String[] args) {
+
+        int fatherAge = 45;
+        int motherAge = 47;
+
+        char ch;
+        ch = (fatherAge > motherAge) ? 'T' : 'F';
+        System.out.println(ch);
+    }
+}
+
+11)실습 문제
+package chap03;
+
+public class Quiz_03 {
+    public static void main(String[] args) {
+        //문제 1
+        int shipNum = 1234567890;
+        int dalyDate = 1;
+        String days = "일";
+        double boxWeight = 2.5;
+        String k = "kg";
+
+        System.out.println("운송장번호 : " + shipNum);
+        System.out.println("배송까지 " + (++dalyDate) + days + " 남았습니다.");
+        System.out.println("택배 무게 : " + boxWeight + k);
+
+        System.out.println("----");
+        //문제 2
+        int age = 15;
+        int guest = 17;
+
+        String allow;
+        allow = (guest > age) ? "관람가능합니다." : "관감이 불가능합니다.";
+
+        System.out.println("나이가 " + guest + "이므로 " + allow);
+
+        System.out.println("----");
+        //문제 3
+        int price = 25000;
+        String won = "원";
+
+        String shippingCost;
+        shippingCost = (price > 30000) ? "무료 배송입니다" : "배송비가 부과됩니다.";
+
+        System.out.println("구매 금액이 " + price + won + "이므로 " + shippingCost);
+    }
+}
+
+
