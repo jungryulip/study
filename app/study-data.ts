@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-08-03",
+    day: "DAY 11",
+    title: "Java 조건문과 반복문",
+    summary:
+      "if와 switch로 조건에 따라 실행 흐름을 나누고, while·do-while·for문으로 작업을 반복했다. 중첩 반복문과 break·continue도 함께 연습했다.",
+    learned: [
+      "if·else if 다중 조건문",
+      "switch-case와 switch 표현식",
+      "while·do-while·for 반복문",
+      "중첩 반복·break·continue",
+    ],
+    tags: ["Java", "조건문", "반복문"],
+    folder: "Java/20260803",
+    readTime: 12,
+  },
+  {
     date: "2026-07-31",
     day: "DAY 10",
     title: "Java 변수, 자료형과 연산자",
