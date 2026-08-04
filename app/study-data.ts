@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-08-04",
+    day: "DAY 12",
+    title: "Java 객체와 클래스",
+    summary:
+      "객체의 속성과 기능을 클래스의 멤버 변수와 메서드로 표현했다. 인스턴스 생성, 생성자 오버로딩, 참조 자료형과 private을 이용한 정보 은닉을 연습했다.",
+    learned: [
+      "객체지향과 클래스 설계",
+      "멤버 변수·메서드·인스턴스",
+      "생성자와 생성자 오버로딩",
+      "참조 자료형·private·getter·setter",
+    ],
+    tags: ["Java", "클래스", "객체지향"],
+    folder: "Java/20260804",
+    readTime: 11,
+  },
+  {
     date: "2026-08-03",
     day: "DAY 11",
     title: "Java 조건문과 반복문",
