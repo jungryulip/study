@@ -1,0 +1,789 @@
+클래스와 객체
+
+..
+
+캡슐화은 필요한 정보와 기능을 하나의 클래스에 모아둠. 외부에 필요한 메서드만 오픈
+
+..
+
+01)
+--Phone class
+package chap05.encapsulation;
+
+public class Phone {
+    private String modle;
+    private double price;
+
+    public Phone(String modle, double price) {
+        this.modle = modle;
+        this.price = price;
+    }
+
+    public String getModle() {
+        return modle;
+    }
+
+    public void setModle(String modle) {
+        this.modle = modle;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+}
+
+--Customer
+package chap05.encapsulation;
+
+public class Customer {
+    private String name;
+    private double buget;
+
+    public Customer(String name, double buget) {
+        this.name = name;
+        this.buget = buget;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void buyPhone(PhoneStore store) {
+        Phone phone = store.sellPhone("아이폰", buget);
+        if (phone != null) {
+            System.out.println("고객 : 핸드폰 구입이 완료되었습니다.");
+        } else {
+            System.out.println("고객 : 핸드폰을 구입하지 못했습니다.");
+        }
+    }
+}
+
+--PhoneStore
+
+package chap05.encapsulation;
+
+public class PhoneStore {
+    private Phone phone;
+
+    public PhoneStore(Phone phone) {
+        this.phone = phone;
+    }
+
+    public Phone sellPhone(String model, double buget) {
+        String phoneModel = phone.getModle();
+
+        if (model.equals(phoneModel) && buget >= phone.getPrice()) {
+            registerPayment();
+            discountPromotion();
+            saveDate();
+            return phone;
+        } else return null;
+    }
+
+    private void registerPayment() {
+        System.out.println("대리점 : 요금베 등록을 합니다. 약정을 등록");
+    }
+
+    private void discountPromotion() {
+        System.out.println("대리점 : 프로모션으로 할인합니다.");
+    }
+
+    private void saveDate() {
+        System.out.println("대리점 : 데이터를 저장하고 새로운 폰으로 이동합니다.");
+    }
+}
+
+--PhoneStoreTest
+package chap05.encapsulation;
+
+public class PhoneStoreTest {
+    public static void main(String[] args) {
+        Phone phone = new Phone("아이폰", 100000);
+        PhoneStore store = new PhoneStore(phone);
+        Customer customer = new Customer("김코사", 100000);
+        customer.buyPhone(store);
+
+    }
+}
+
+..
+
+02)this
+
+This 생성자
+자신을 가르키는 this
+생성된 인스턴스 스스로를 가르키는 예약어
+
+..
+
+package chap06.thisex;
+
+class Birthday {
+    int day;
+    int month;
+    int year;
+
+    //태어난 연도를 지정하는 메서드
+    public void setYear(int year) {
+        this.year = year;
+    }
+    //this를 출력하는 메서드
+    public void printThis() {
+        System.out.println(this);
+    }
+}
+
+public class ThisExample {
+    public static void main(String[] args) {
+
+        Birthday b1 = new Birthday();
+        b1.setYear(2000);
+        System.out.println(b1);
+        b1.printThis();
+        Birthday b2 = new Birthday();
+        System.out.println(b2);
+        b2.printThis();
+    }
+}
+--출력결과
+chap06.thisex.Birthday@b4c966a
+chap06.thisex.Birthday@b4c966a
+chap06.thisex.Birthday@2f4d3709
+chap06.thisex.Birthday@2f4d3709
+
+..
+
+다른 생성자를 호출하는 this
+
+02)this
+
+package chap06.thisex;
+
+import chap05.encapsulation.Phone;
+
+class Person {
+    String name;
+    int age;
+
+    Person() {
+        this("이름없음",1);
+    }
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+}
+
+public class CallAnotherConst {
+    public static void main(String[] args) {
+        Person p1 = new Person();
+        System.out.println(p1.name);
+        System.out.println(p1.age);
+
+    }
+}
+
+--출력결과
+이름없음
+1
+
+..
+
+Builder 패턴
+복잡한 객테를 생성할때 객체를 생성하는 과정과 표현하는 방법을 분리하여 다양한 구성의 인스턴스를 만드는 생성패턴으로
+동일한 생성 절차에서 서로 다른 표현결과를 만들 수 있다.
+파라미터가 많을때 유용하다. 
+
+..
+
+객체간의 협력
+
+..
+
+02)
+
+--Student
+package chap06.cooperation;
+
+public class Student {
+    public String studentName;
+    public int grade;
+    public int money;
+
+    public Student(String studentName, int money) {
+        this.studentName = studentName;
+        this.money = money;
+    }
+
+    public void takeBus(Bus bus) {
+        bus.take(1000);
+        this.money -= 1000;
+    }
+
+    public void takeSubway(Subway subway) {
+        subway.take(1500);
+        this.money -= 1500;
+    }
+
+    public void showInfo() {
+        System.out.println(studentName + "님의 남은 돈은" + money + "입니다.");
+    }
+}
+
+
+--Bus
+package chap06.cooperation;
+
+public class Bus {
+    int busNumber;
+    int passengerCount;
+    int money;
+
+    public Bus(int busNumber) {
+        this.busNumber = busNumber;
+    }
+    // 승객이 버스를 탔을때
+    public void take(int money) {
+        this.money += money;
+        passengerCount++;
+    }
+
+    public void showInfo() {
+        System.out.println("버스" + busNumber + "번의 승객은 " + passengerCount + "명, 수입은 " + money + "입니다.");
+    }
+
+}
+
+
+--Subway
+
+package chap06.cooperation;
+
+public class Subway {
+    public String lineNumber;
+    public int passengerCount;
+    public int money;
+
+    public Subway(String lineNumber) {
+        this.lineNumber = lineNumber;
+    }
+
+    //승객이 지하철을 탔을때
+    public void take(int money) {
+        this.money += money;
+        passengerCount++;
+    }
+
+    public void showInfo() {
+        System.out.println("지하철" + lineNumber + "번의 승객은 " + passengerCount + "명이고, 수입은 " + money + "입니다.");
+    }
+
+}
+
+
+--Test
+
+package chap06.cooperation;
+
+public class TakeTrans {
+    public static void main(String[] args) {
+        Student studentJ = new Student("James", 5000);
+        Student studentT = new Student("Tomas", 10000);
+
+        Bus bus100 = new Bus(100);
+        studentJ.takeBus(bus100);
+        studentJ.showInfo();
+        bus100.showInfo();
+
+        Subway subway100 = new Subway("2호선");
+        studentT.takeSubway(subway100);
+        studentT.showInfo();
+        subway100.showInfo();
+    }
+}
+
+..
+
+static변수
+기준이 되는 변수로 생성되어 유지함. 여러 인스턴스가 하나의 메모리 값을 공유하며,
+메서드에 static 키워드로 사용해서 구현
+
+..
+
+
+03)
+--Student
+package chap06.staticex;
+
+public class Student {
+    public static int serialNum = 1000;
+
+    int studentID;
+    String studentName;
+}
+
+--test1
+package chap06.staticex;
+
+public class StudentTest1 {
+    public static void main(String[] args) {
+        Student studentLee = new Student();
+        studentLee.studentName = "이코사";
+        studentLee.serialNum++;
+
+        Student studentSon = new Student();
+        studentSon.studentName = "손코사";
+
+        System.out.println(studentSon.serialNum);
+        System.out.println(studentLee.serialNum);
+        //결국 두 인스턴스가 공유되고 있다.
+        //이 값을 쓰면 모든 학생의 번호가 같다.
+    }
+}
+
+--Student1
+package chap06.staticex;
+
+public class Student1 {
+    public static int serialNum = 1000;
+
+    int studentID;
+    String studentName;
+
+    public Student1() {
+        serialNum++; //이 값이 공유 되면서 증가할 것이다.
+        studentID = serialNum; //studentID에 serialNum복사되어 각각 studentID 각각 가질 것이다.
+    }
+
+}
+
+--test2
+package chap06.staticex;
+
+public class StudentTest2 {
+    public static void main(String[] args) {
+        Student1 studentLee = new Student1();
+        studentLee.studentName = "이코사";
+
+        System.out.println(studentLee.studentName+"학번"+studentLee.studentID);
+
+        Student1 studentSon = new Student1();
+        studentSon.studentName = "손코사";
+        System.out.println(studentSon.studentName+"학번"+studentSon.studentID);
+
+        System.out.println(studentLee.serialNum);
+        System.out.println(studentSon.serialNum);
+    }
+}
+
+--test3
+package chap06.staticex;
+
+public class StudentTest3 {
+    public static void main(String[] args) {
+        Student1 studentLee = new Student1();
+        studentLee.studentName = "이코사";
+
+        System.out.println(studentLee.studentName+"학번"+studentLee.studentID);
+        System.out.println(Student1.serialNum);
+
+        Student1 studentSon = new Student1();
+        studentSon.studentName = "손코사";
+        System.out.println(studentSon.studentName+"학번"+studentSon.studentID);
+/*
+        System.out.println(studentLee.serialNum);
+        System.out.println(studentSon.serialNum);*/
+        System.out.println(Student1.serialNum);
+
+        //static 변수는 클래스를 선언할때 이미 만들어지는 것이다.
+    }
+}
+
+
+..
+
+로컬 함수; 함수 내부에서 선언하여, 함수가 호출될때 생성되어, 함수가 끝나면 소멸된다.
+
+..
+
+04)
+--Student
+package chap06.staticex;
+
+public class Student2 {
+    public static int serialNum = 1000;
+
+    int studentID;
+    String studentName;
+
+    public Student2() {
+        serialNum++; //이 값이 공유 되면서 증가할 것이다.
+        studentID = serialNum; //studentID에 serialNum복사되어 각각 studentID 각각 가질 것이다.
+    }
+
+    public static int getSerialNum() {
+        int i = 10;
+        i++;
+        System.out.println(i);
+
+        return serialNum;
+    }
+
+}
+
+--test
+package chap06.staticex;
+
+public class StudentTest4 {
+    public static void main(String[] args) {
+        Student2 studentLee = new Student2();
+        studentLee.studentName = "이코사";
+
+        System.out.println(studentLee.studentName+"학번"+studentLee.studentID);
+        System.out.println(Student2.getSerialNum());
+
+        Student2 studentSon = new Student2();
+        studentSon.studentName = "손코사";
+        System.out.println(studentSon.studentName+"학번"+studentSon.studentID);
+/*
+        System.out.println(studentLee.serialNum);
+        System.out.println(studentSon.serialNum);*/
+        System.out.println(Student2.getSerialNum());
+
+        //static 변수는 클래스를 선언할때 이미 만들어지는 것이다.
+    }
+}
+
+..
+
+singleton 패턴 [static응용]
+프로그램에서 객체를 단 하나만 생성하도록 보장하는 디자인 패턴
+객체를 하나만 만들어서 야러곳에 공유해서 사용하는 것으로
+
+..
+
+05)
+--Company
+package chap06.singleton;
+
+public class Company {
+    private static Company instance = new Company();
+
+    //company라는 생성자를 만듬
+    private Company() {
+
+    }
+
+    //프로그램이 시작될때 Company 객체를 딱 한번만 생성합니다.
+    //인스턴스를 외부에서 참조할 수 있도록 public get() 구현
+
+    public static Company getInstance() {
+        if (instance == null) {
+            instance = new Company();//유일하게 생성된 인스턴스
+        }return instance;// 새로 만든 것이 아니라 이미 만들어져 있는 객체를 돌려주는 것이다.
+    }
+
+}
+--Test
+package chap06.singleton;
+
+public class CompanyTest {
+    public static void main(String[] args) {
+        //클래스 이름으로 getInstance()을 호풀하여 참조 변수에 대입
+        Company myCompany1 = Company.getInstance();
+        Company myCompany2 = Company.getInstance();
+
+        //두 변수 같은 주소인지 확인
+        System.out.println(myCompany1 == myCompany2);
+    }
+}
+
+..
+
+배열은 동일한 자료형의 데이터가 여러개 있을때, 그걸 전부 사람이 지정하라고 하면, 비효율적이로 변수관리도 힘들기 때문에
+동일한 자료형의 변수를 한꺼번에 순차적으로 관리하기 위해 사용된다.
+
+선언
+int[] arr=new int[10];
+int arr[]=new int[10];의 방식으로 작업
+
+초기화 
+선언과 동시에 초기화 가능, 배열을 초기화할때 배열의 개수를 명시화하지 않는다. 
+아무런 초기화 값이 없으면 정수는 0, 실수는 0.0 객체는 null로 표기된다.
+
+..
+
+06)
+package chap07.array;
+
+public class ArrayTest {
+    public static void main(String[] args) {
+        int[] numbers = new int[10];// 1
+        // int[] numbers = new int[]{0, 1, 2};// 2 _자바에서는 이렇게 많이 사용한다.
+        // int[] numbers = new int[3]{0, 1, 2};// 이렇게 하면 오류가 난다.
+        // int[] numbers = {0, 1, 2,}; //3
+        // int numbers[] = new int[10];//2
+
+        int[] number = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        for (int i = 0; i < number.length; i++) {
+            System.out.println(number[i]);
+        }
+
+    }
+}
+--출력결과
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+..
+
+allay에서 length는 배열의 길이의 속성을 말하는 것으로 출력하려면 크기에 대한 지정을 따로 해야한다. 
+
+..
+
+07)
+package chap07.array;
+
+public class ArrayTest2 {
+    public static void main(String[] args) {
+        double[] data = new double[5];
+        data[0] = 10.0;
+        data[1] = 20.0;
+        data[2] = 40.0;
+
+        for (int i = 0; i < data.length; i++) {
+            System.out.println(data[i]);
+        }
+    }
+}
+--출력결과
+10.0
+20.0
+40.0
+0.0
+0.0
+
+
+07)_
+package chap07.array;
+
+public class ArrayTest3 {
+    public static void main(String[] args) {
+        double[] data = new double[5];
+        int size = 0;
+
+        data[0]= 10.0; size++;
+        data[1]= 20.0; size++;
+        data[2]= 30.0; size++;
+
+        for (int i = 0; i < size; i++) {
+            System.out.println(data[i]);
+        }
+    }
+}
+
+..
+
+문제 1
+
+package chap07.array.quiz;
+
+public class Quiz1 {
+    public static void main(String[] args) {
+        int[] score = new int[]{80, 90, 75, 100, 85};
+
+        for (int i = 0; i < score.length; i++) {
+            System.out.println(score[i]);// 보여주고하는 값을 제대로 선택하기score[i]여야하는 데 i만 넣었다.
+        }
+    }
+}
+--출력결과
+80
+90
+75
+100
+85
+
+..
+
+문제2
+
+package chap07.array.quiz;
+
+public class Quiz2 {
+    public static void main(String[] args) {
+        int[] data = {10,40,20,50,30};
+        for (int i = 0; i < data.length; i++) {
+            if(data[i] >= 30)
+            {
+                System.out.println(data[i]);
+            }
+        }
+    }
+}
+--출력결과
+40
+50
+30
+
+..
+
+문제3
+
+package chap07.array.quiz;
+
+public class Quiz3 {
+    public static void main(String[] args) {
+            int[] data = {10, 40, 20 , 50, 30};
+            int sum = 0;
+            for(int v : data){
+                if(v >= 30){
+                    System.out.println(v);
+                }
+                sum+=v;
+            }
+            System.out.println("합계: "+sum);
+
+    }
+}
+--출력결과
+40
+50
+30
+합계: 150
+
+..
+
+배열 복사
+
+..
+
+08)
+package chap07.array;
+
+public class ArrayCopy {
+    public static void main(String[] args) {
+        int[] array1 = {10, 20, 30, 40, 50};
+        int[] array2 = {1, 2, 3, 4, 5};
+
+//        System.arraycopy(array1, 0, array2, 1, 4); // 배열copy 소스, 소스 포지션, 목적지, 길이 몆게
+        System.arraycopy(array1,0,array2,0,4);
+        for (int i = 0; i < array2.length; i++) {
+            System.out.println(array2[i]);
+        }
+    }
+}
+--출력결과
+10
+20
+30
+40
+5
+
+..
+
+이차원 배열
+
+package chap07.array;
+
+public class TwoDimension {
+    public static void main(String[] args) {
+        int[][] arr = {{1, 2, 3}, {4, 5, 6}};
+
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                System.out.println(arr[i][j]);
+            }
+            System.out.println();
+        }
+    }
+}
+
+--출력결과
+1
+2
+3
+
+4
+5
+6
+
+..
+
+Q4
+-Book
+package chap06.quiz.book;
+
+public class Book {
+    String title;
+    int price;
+    static int count = 0;
+
+    public Book(String title, int price) {
+        this.title = title;
+        this.price = price;
+
+        count++;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void showBookInfo() {
+        System.out.println("책 제목 : " + title);
+        System.out.println("가격 : " + price + "원");
+    }
+
+    public void discount() {
+        price -= 5000;
+    }
+
+    public static int bookCount() {
+        System.out.println("전체 책 수 : " + count);
+        return count;
+    }
+}
+
+
+-BookTest
+package chap06.quiz.book;
+
+import static chap06.quiz.book.Book.bookCount;
+
+public class BookTest {
+    public static void main(String[] args) {
+        Book book1 = new Book("자바 입문", 30000);
+        book1.discount();
+        book1.showBookInfo();
+
+        Book book2 = new Book("스프링 부트", 35000);
+
+        book2.showBookInfo();
+        bookCount();
+    }
+}
+
+
+
+
+--출력결과
+
+책 제목 : 자바 입문
+가격 : 25000원
+책 제목 : 스프링 부트
+가격 : 35000원
+전체 책 수 : 2

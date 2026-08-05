@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-08-05",
+    day: "DAY 13",
+    title: "Java 캡슐화, this, static과 배열",
+    summary:
+      "객체의 내부 구현을 캡슐화하고 this와 this()의 역할을 확인했다. static 공유 변수, 지역 변수, 싱글턴 패턴과 1·2차원 배열을 실습했다.",
+    learned: [
+      "캡슐화와 객체 협력",
+      "this와 this() 생성자 호출",
+      "static·지역 변수·싱글턴",
+      "배열·복사·2차원 배열",
+    ],
+    tags: ["Java", "캡슐화", "배열"],
+    folder: "Java/20260805",
+    readTime: 13,
+  },
+  {
     date: "2026-08-04",
     day: "DAY 12",
     title: "Java 객체와 클래스",
