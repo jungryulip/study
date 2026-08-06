@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-08-06",
+    day: "DAY 14",
+    title: "Java 객체 배열과 상속",
+    summary:
+      "객체 배열의 생성과 얕은·깊은 복사를 비교하고 ArrayList로 목록을 관리했다. extends 상속, 업캐스팅과 메서드 오버라이딩도 실습했다.",
+    learned: [
+      "객체 배열과 요소별 인스턴스",
+      "얕은 복사·깊은 복사",
+      "향상된 for문·ArrayList",
+      "상속·업캐스팅·오버라이딩",
+    ],
+    tags: ["Java", "배열", "상속"],
+    folder: "Java/20260806",
+    readTime: 13,
+  },
+  {
     date: "2026-08-05",
     day: "DAY 13",
     title: "Java 캡슐화, this, static과 배열",
