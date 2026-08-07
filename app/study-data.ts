@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-08-07",
+    day: "DAY 15",
+    title: "Java 다형성, 다운캐스팅과 추상화",
+    summary:
+      "상위 타입으로 여러 하위 객체를 다루는 다형성을 연습했다. instanceof를 이용한 안전한 다운캐스팅과 추상 클래스, 템플릿 메서드, 인터페이스 기반 구현 교체도 학습했다.",
+    learned: [
+      "다형성과 IS-A·HAS-A 관계",
+      "다운캐스팅과 instanceof",
+      "추상 클래스·템플릿 메서드",
+      "인터페이스와 구현 교체",
+    ],
+    tags: ["Java", "다형성", "인터페이스"],
+    folder: "Java/20260807",
+    readTime: 15,
+  },
+  {
     date: "2026-08-06",
     day: "DAY 14",
     title: "Java 객체 배열과 상속",
