@@ -1,0 +1,928 @@
+다형성
+하나의 코드가 여러가지 자료형으로 구현되어 실행되는 것.
+객체지향 프로그램의 가장 큰 특징
+상위 클래스 타입으로 선언된 하나의 변수가 여러 인스턴스에 대입되어 다양한 구현이 실행될 수 있음
+
+..
+
+01)
+--AnimalTest
+package chap08.polymorphism;
+
+class Animal {
+    public void move() {
+        System.out.println("동물이 움직입니다.");
+    }
+}
+class Human extends Animal {
+    public void move() {
+        System.out.println("사람이 두 발로 걷습니다.");
+    }
+}
+class Tiger extends Animal {
+    public void move() {
+        System.out.println("호랑이는 네 발로 뜁니다.");
+    }
+}
+class Eagle extends Animal {
+    public void move() {
+        System.out.println("독수리가 하늘을 날아갑니다.");
+    }
+}
+public class AnimalTest {
+    public static void main(String[] args) {
+        AnimalTest test = new AnimalTest();
+        test.moveAnimal(new Human());
+        test.moveAnimal(new Tiger());
+        test.moveAnimal(new Eagle());
+    }
+    public void moveAnimal(Animal animal) {
+        animal.move();// 다양성을 나타냄
+        //Human animal = new Human()==> 상속전에
+        //Animal animal = new Animal() == (Animal animal)
+    }
+}
+
+--출력결과
+사람이 두 발로 걷습니다.
+호랑이는 네 발로 뜁니다.
+독수리가 하늘을 날아갑니다.
+
+..
+
+>>추가설명
+
+ public void moveAnimal(Animal animal) {
+        animal.move();// 다양성을 나타냄
+        //Human animal = new Human()==> 상속전에
+        //Animal animal = new Animal() == (Animal animal)
+    }
+기존에 moveAnimal(Animal animal)의 매서드를 지정할때, moveAnimal()의 모습으로 ()안에 상속받을 범위를 따로 지정하지 않았지만
+animal의 하위 클래스들이 값으로 출력될 수 있게 Animal animal로 함수를 지정해준다.
+
+..
+
+IS-A관계는 상속 관계이고(extends),
+HAS-A관계는 포함 관계이다(객체를 멤버로 가짐).
+
+..
+
+문제1-arraylist
+--customer
+package chap08.witharraylist;
+
+public class Customer {
+	
+	protected int customerID;
+	protected String customerName;
+	protected String customerGrade;
+	int bonusPoint;
+	double bonusRatio;
+	
+	public Customer()
+	{
+		initCustomer();
+	}
+
+	public Customer(int customerID, String customerName){
+		this.customerID = customerID;
+		this.customerName = customerName;
+		
+		initCustomer();
+	}
+	
+	private void initCustomer()
+	{
+		customerGrade = "SILVER";
+		bonusRatio = 0.01;	
+	}
+	
+	public int calcPrice(int price){
+		bonusPoint += price * bonusRatio;
+		return price;
+	}
+
+	public String showCustomerInfo(){
+		return customerName + " 님의 등급은 " + customerGrade + "이며, 보너스 포인트는 " + bonusPoint + "점입니다.";
+	}
+	
+	public int getCustomerID() {
+		return customerID;
+	}
+
+	public void setCustomerID(int customerID) {
+		this.customerID = customerID;
+	}
+
+	public String getCustomerName() {
+		return customerName;
+	}
+
+	public void setCustomerName(String customerName) {
+		this.customerName = customerName;
+	}
+
+	public String getCustomerGrade() {
+		return customerGrade;
+	}
+
+	public void setCustomerGrade(String customerGrade) {
+		this.customerGrade = customerGrade;
+	}
+}
+
+--vipcustomer
+package chap08.witharraylist;
+
+public class VIPCustomer extends Customer{
+
+	private int agentID;
+	double saleRatio;
+	
+	public VIPCustomer(int customerID, String customerName, int agentID){
+		super(customerID, customerName);
+	
+		customerGrade = "VIP";
+		bonusRatio = 0.05;
+		saleRatio = 0.1;
+		this.agentID = agentID;
+	}
+	
+	public int calcPrice(int price){
+		bonusPoint += price * bonusRatio;
+		return price - (int)(price * saleRatio);
+	}
+
+	public String showCustomerInfo(){
+		return super.showCustomerInfo() + " 담당 상담원 번호는 " + agentID + "입니다.";
+	}
+
+	public int getAgentID(){
+		return agentID;
+	}
+}
+
+--goldcustomer
+package chap08.witharraylist;
+
+public class GoldCustomer extends Customer{
+
+	double saleRatio;
+	
+	public GoldCustomer(int customerID, String customerName){
+		super(customerID, customerName);
+	
+		customerGrade = "GOLD";
+		bonusRatio = 0.02;
+		saleRatio = 0.1;
+	
+	}
+	
+	public int calcPrice(int price){
+		bonusPoint += price * bonusRatio;
+		return price - (int)(price * saleRatio);
+	}
+}
+
+--customer test
+package chap08.witharraylist;
+
+import java.util.ArrayList;
+
+public class CustomoerTest {
+    public static void main(String[] args) {
+
+        ArrayList<Customer> customerList = new ArrayList<>();
+        Customer customerLee = new Customer(100, "이순신");
+        Customer customerKim = new Customer(110, "김지현");
+        Customer customerCho = new GoldCustomer(120, "초수영");
+        Customer customerSin = new GoldCustomer(130, "신지혁");
+        Customer customerHong = new VIPCustomer(140, "홍미연",10011);
+
+        customerList.add(customerLee);
+        customerList.add(customerKim);
+        customerList.add(customerCho);
+        customerList.add(customerSin);
+        customerList.add(customerHong);
+
+        for (Customer customer: customerList) {
+            System.out.println(customer.showCustomerInfo());
+        }
+
+        int price = 10000;
+        for (Customer customer : customerList) {
+            int cost = customer.calcPrice(price);
+            System.out.println(customer.getCustomerName() + "님이" + cost + "을 지불하셨습니다.");
+            System.out.println(customer.showCustomerInfo());
+        }
+
+    }
+}
+--출력결과
+이순신 님의 등급은 SILVER이며, 보너스 포인트는 0점입니다.
+김지현 님의 등급은 SILVER이며, 보너스 포인트는 0점입니다.
+초수영 님의 등급은 GOLD이며, 보너스 포인트는 0점입니다.
+신지혁 님의 등급은 GOLD이며, 보너스 포인트는 0점입니다.
+홍미연 님의 등급은 VIP이며, 보너스 포인트는 0점입니다. 담당 상담원 번호는 10011입니다.
+이순신님이10000을 지불하셨습니다.
+이순신 님의 등급은 SILVER이며, 보너스 포인트는 100점입니다.
+김지현님이10000을 지불하셨습니다.
+김지현 님의 등급은 SILVER이며, 보너스 포인트는 100점입니다.
+초수영님이9000을 지불하셨습니다.
+초수영 님의 등급은 GOLD이며, 보너스 포인트는 200점입니다.
+신지혁님이9000을 지불하셨습니다.
+신지혁 님의 등급은 GOLD이며, 보너스 포인트는 200점입니다.
+홍미연님이9000을 지불하셨습니다.
+홍미연 님의 등급은 VIP이며, 보너스 포인트는 500점입니다. 담당 상담원 번호는 10011입니다.
+
+..
+
+다운캐스팅 하위 클래스가 상위 클래스로 형 변환되는 것은 묵시적으로 이뤄짐
+
+..
+
+02)
+package chap08.downcasting;
+
+class Animal {
+    public void move() {
+        System.out.println("동물이 움직입니다.");
+    }
+}
+class Human extends Animal {
+    public void move() {
+        System.out.println("사람이 두 발로 걷습니다.");
+    }
+
+    public void readBook() {
+        System.out.println("사람이 책을 읽습니다.");
+    }
+
+}
+class Tiger extends Animal {
+    public void move() {
+        System.out.println("호랑이는 네 발로 뜁니다.");
+    }
+
+    public void hunting() {
+        System.out.println("호랑이가 사냥을 합니다.");
+    }
+}
+class Eagle extends Animal {
+    public void move() {
+        System.out.println("독수리가 하늘을 날아갑니다.");
+    }
+
+    public void flying() {
+        System.out.println("하늘을 날아갑니다.");
+    }
+}
+public class AnimalTest {
+    public static void main(String[] args) {
+        AnimalTest test = new AnimalTest();
+        test.moveAnimal(new Human());
+        test.moveAnimal(new Tiger());
+        test.moveAnimal(new Eagle());
+    }
+    public void moveAnimal(Animal animal) {
+        animal.move();
+       /* Human human=(Human) animal;
+        human.readBook(); ==> 눈으로는 보이지만 자바가 다운된다.*/
+        //instanceof를 사용해 다운캐스팅해야함
+        if(animal instanceof Human) {
+            Human human = (Human) animal;
+            human.readBook();
+        } else if (animal instanceof Tiger) {
+            Tiger tiger = (Tiger) animal;
+            tiger.hunting();
+        } else if (animal instanceof Eagle) {
+            Eagle eagle = (Eagle) animal;
+            eagle.flying();
+        } else {
+            System.out.println("기능이 없습니다.");
+        }
+    }
+}
+--출력결과
+사람이 두 발로 걷습니다.
+사람이 책을 읽습니다.
+호랑이는 네 발로 뜁니다.
+호랑이가 사냥을 합니다.
+독수리가 하늘을 날아갑니다.
+하늘을 날아갑니다.
+
+..
+
+추상 클래스
+추상메서드를 포함한 클래스. 구현코드 없이 메서드 선언만 있음. abstract로 선언
+각 하위클래스마다 다르게 구현되어야하는 기능
+
+..
+03)
+--computer
+package chap09.abstractex;
+
+public abstract class Computer {
+    //추상 메서드- 이 메서드들은 구현 부분이 없습니다.
+    public abstract void display();
+    public abstract void typing();
+
+    //구현 메서드
+    public void trunOn() {
+        System.out.println("전원을 켭니다.");
+    }
+    public void trunOff() {
+        System.out.println("전원을 끕니다.");
+    }
+}
+
+--desktop
+package chap09.abstractex;
+
+public class Desktop extends Computer {
+
+
+    @Override
+    public void display() {
+        System.out.println("Desktop Display");
+    }
+
+    @Override
+    public void typing() {
+        System.out.println("Desktop Typing");
+
+    }
+}
+
+--notebook
+package chap09.abstractex;
+
+//typing을 구편하던지 노트북도 abstract로 만들어라
+public abstract class NoteBook extends Computer {
+    @Override
+    public void display() {
+        System.out.println("NoteBook Display()");
+    }
+}
+
+--mynotebook
+package chap09.abstractex;
+
+public class MyNoteBook extends NoteBook {
+
+    @Override
+    public void typing() {
+        System.out.println("MyNoteBook typing()");
+    }
+}
+
+
+--computertest
+
+package chap09.abstractex;
+
+public class ComputerTest {
+    public static void main(String[] args) {
+
+       // Computer c1 =new Computer() ; 추상매서드
+        Computer c2 =new Desktop() ;
+       // Computer c3 =new NoteBook() ; 추상매서드
+        Computer c4 =new MyNoteBook() ;
+
+        c2.display();
+        c4.display();
+        // 상속과 다형성의 원리를 가져 오면서 추상 메서드
+    }
+}
+--출력결과
+Desktop Display
+NoteBook Display()
+
+..
+
+--car
+package chap09.template;
+
+public abstract class Car {
+    //이곳에 다 구현할 수 없고, 자동차 마다 기능이 다름.
+    public abstract void drive();
+    public abstract void stop();
+
+    public void startCar() {
+        System.out.println("시동을 겁니다.");
+    }
+    public void trunOff() {
+        System.out.println("시동을 끕니다.");
+    }
+    // 템플릿 메서드 프로그램이 돌아갈때 시나리오 일련의 순서
+    // 템플릿 메서든 하위 클래스에서 변경 할 수 없으므로 final호
+    final void run() {
+        startCar();
+        drive();
+        stop();
+        trunOff();
+    }
+}
+
+
+--AIcar
+package chap09.template;
+
+public class AICar extends Car {
+
+    @Override
+    public void drive() {
+        System.out.println("지율 주행합니다.");
+        System.out.println("자동차가 할아서 ai로 움직입니다.");
+    }
+
+    @Override
+    public void stop() {
+        System.out.println("스스로 움직입니다.");
+
+    }
+}
+
+--manualcar
+package chap09.template;
+
+public class ManualCar extends Car{
+
+    @Override
+    public void drive() {
+        System.out.println("사람이 운전합니다.");
+        System.out.println("사람이 핸들을 조작합니다.");
+
+    }
+
+    @Override
+    public void stop() {
+        System.out.println("브레이크로 정지합니다.");
+    }
+}
+
+--cartest
+package chap09.template;
+
+public class CarTest {
+    public static void main(String[] args) {
+        System.out.println("-----자율 주행하는 자동차-----");
+        Car mycar = new AICar();
+        mycar.run();
+
+        System.out.println("-----사람이 운전하는 자동차-----");
+        Car mycar1 = new ManualCar();
+        mycar1.run();
+    }
+}
+
+--출력결과
+-----자율 주행하는 자동차-----
+시동을 겁니다.
+지율 주행합니다.
+자동차가 할아서 ai로 움직입니다.
+스스로 움직입니다.
+시동을 끕니다.
+-----사람이 운전하는 자동차-----
+시동을 겁니다.
+사람이 운전합니다.
+사람이 핸들을 조작합니다.
+브레이크로 정지합니다.
+시동을 끕니다.
+
+..
+
+final- 상수값으로 지정[바뀌지 않는 값]
+
+..
+
+05)
+
+--player
+package chap09.gamelevel;
+
+public class Player {
+    private PlayerLevel level;
+
+    public Player() {
+        level = new BeginnerLevel();
+        level.showLevelMessage();
+    }
+
+    public PlayerLevel getLevel() {
+        return level;
+    }
+
+    public void upgradeLevel(PlayerLevel level) {
+        this.level =level;
+        level.showLevelMessage();
+    }
+
+    public void play(int count) {
+        level.go(count);
+    }
+}
+
+--playerlevel
+package chap09.gamelevel;
+
+public abstract class PlayerLevel {
+    public abstract void run();
+    public abstract void jump();
+    public abstract void turn();
+    public abstract void showLevelMessage();
+
+    final public void go(int count) {
+        run();
+        for (int i = 0; i < count; i++) {
+            jump();
+        }
+        //jump();
+        turn();
+    }
+}
+
+--beginnerlevel
+package chap09.gamelevel;
+
+public class BeginnerLevel extends PlayerLevel {
+
+    @Override
+    public void run() {
+        System.out.println("천천히 달립니다.");
+    }
+
+    @Override
+    public void jump() {
+        System.out.println("Jump할 줄 모르지롱.");
+    }
+
+    @Override
+    public void turn() {
+        System.out.println("Turn할 줄 모르지롱.");
+
+    }
+
+    @Override
+    public void showLevelMessage() {
+        System.out.println("***** 초급자 레벨입니다. *****");
+
+    }
+}
+
+--advencedlevel
+package chap09.gamelevel;
+
+public class AdvencedLevel extends PlayerLevel {
+
+    @Override
+    public void run() {
+        System.out.println("빨리 달립니다.");
+    }
+
+    @Override
+    public void jump() {
+        System.out.println("높이 Jump 합니다.");
+    }
+
+    @Override
+    public void turn() {
+        System.out.println("Turn할 줄 모르지롱.");
+
+    }
+
+    @Override
+    public void showLevelMessage() {
+        System.out.println("***** 중급자 레벨입니다. *****");
+
+    }
+}
+
+--superlevel
+package chap09.gamelevel;
+
+public class SuperLevel extends PlayerLevel {
+
+    @Override
+    public void run() {
+        System.out.println("엄청 빨리 달립니다.");
+    }
+
+    @Override
+    public void jump() {
+        System.out.println("아주 높이 Jump 합니다.");
+    }
+
+    @Override
+    public void turn() {
+        System.out.println("한바퀴 돕니다.");
+
+    }
+
+    @Override
+    public void showLevelMessage() {
+        System.out.println("***** 고급자 레벨입니다. *****");
+
+    }
+}
+
+--mainbord
+package chap09.gamelevel;
+
+public class MainBoard {
+    public static void main(String[] args) {
+        Player player = new Player();
+        player.play(1);
+
+        AdvencedLevel alevel = new AdvencedLevel();
+        player.upgradeLevel(alevel);
+        player.play(2);
+
+        SuperLevel sLevel = new SuperLevel();
+        player.upgradeLevel(sLevel);
+        player.play(3);
+    }
+}
+..
+
+인터페이스는 모든 메서드가 추상 메서드로 이뤄진 클래스
+전체적인 명세만 가지고 있을때, 데이터 베이스 연동할때 사용한다.
+
+추상 클래스는 미완성된 클래스라면 인터페이스는 뼈대만 제공하는 구조이다.
+..
+
+06)
+--calc
+package chap10.interfaceex;
+
+public interface Calc {
+
+    //    public static final double PI = 3.14
+    double PI = 3.14;
+    int ERROR = -9999999;
+
+    int add(int num1, int num2);
+    int substract(int num1, int num2);
+    int times(int num1, int num2);
+    int divide(int num1, int num2);
+}
+
+--calculator
+package chap10.interfaceex;
+
+public abstract class Calculator implements Calc {
+
+    @Override
+    public int add(int num1, int num2) {
+        return num1 + num2;
+    }
+
+    @Override
+    public int substract(int num1, int num2) {
+        return num1 - num2;
+    }
+}
+
+--completecalc
+package chap10.interfaceex;
+
+public class CompleteCalc extends Calculator {
+
+    @Override
+    public int times(int num1, int num2) {
+        return num1 * num2;
+    }
+
+    @Override
+    public int divide(int num1, int num2) {
+        if (num2 != 0)
+        return num1 / num2;
+        else return Calc.ERROR;
+    }
+}
+
+--calculatortest
+package chap10.interfaceex;
+
+public class CalculatorTest {
+    public static void main(String[] args) {
+
+        int num1 = 10;
+        int num2 = 5;
+
+        Calc calc = new CompleteCalc();
+        System.out.println(calc.add(num1, num2));
+        System.out.println(calc.substract(num1, num2));
+
+    }
+}
+
+--출력결과
+15
+5
+
+--
+
+07)
+--schedualer
+package chap10.schedualer;
+
+public interface Schedualer {
+    // 콜대기 상잠원 - 정책에 따라 구현
+    public void getNextCall(); // 다음 고객의 콜을 가져오는 것
+    public void sendCallToAgent(); // 상담원에게 콜을 던지는 것
+
+}
+
+--roundrobin
+package chap10.schedualer;
+
+public class RoundRobin implements Schedualer {
+    @Override
+    public void getNextCall() {
+        System.out.println("상담 전화를 순서대로 대기열에서 가져옵니다.");
+    }
+
+    @Override
+    public void sendCallToAgent() {
+        System.out.println("다음 순서 상담원에게 배분합니다.");
+    }
+}
+
+--leastjob
+package chap10.schedualer;
+
+public class LeastJob implements Schedualer {
+
+
+    @Override
+    public void getNextCall() {
+        System.out.println("상담전화를 순서대로 대기열에서 가져옵니다.");
+    }
+
+    @Override
+    public void sendCallToAgent() {
+        System.out.println("현재 상담 없무가 없거나 대기가 가장 적은 상담원에게 할당");
+    }
+}
+
+--priorityAllocation
+package chap10.schedualer;
+
+public class PriorotyAllocation implements Schedualer {
+
+    @Override
+    public void getNextCall() {
+        System.out.println("고객 등급이 높은 전화를 먼저 가져 옵니다.");
+    }
+
+    @Override
+    public void sendCallToAgent() {
+        System.out.println("업무 스킬이 높은 상담원에게 우선적으로 배분");
+    }
+}
+
+--schedualertest
+package chap10.schedualer;
+
+import java.io.IOException;
+
+public class SchedulerTest {
+    public static void main(String[] args) throws IOException {
+        System.out.println("전화 상담 할당 방식 선택");
+        System.out.println("R: 한명씩 차례대로 할당");
+        System.out.println("L: 쉬고 있거나 대기 적은 상담원 할당");
+        System.out.println("R: 우선순위가 높은 고객할당");
+
+        int ch = System.in.read();
+        Schedualer schedualer = null;
+        if (ch == 'R' || ch == 'r') {
+            schedualer = new RoundRobin();
+        } else if (ch == 'L' || ch == 'l') {
+            schedualer = new LeastJob();
+        } else if (ch == 'P' || ch == 'p') {
+            schedualer = new PriorotyAllocation();
+        } else {
+            System.out.println("지원되지 않는 기능입니다.");
+            return;
+        }
+        schedualer.getNextCall();
+        schedualer.sendCallToAgent();
+    }
+}
+
+
+--출력결과
+전화 상담 할당 방식 선택
+R: 한명씩 차례대로 할당
+L: 쉬고 있거나 대기 적은 상담원 할당
+R: 우선순위가 높은 고객할당
+
+
+..
+
+문제8
+
+..
+--Sort
+package chap10.sorting;
+
+public interface Sort {
+    public void ascending(int[] arr);
+    public void descending(int[] arr);
+    default void description(){
+            System.out.println("숫자를 정하는 알고리즘입니다.");
+    }
+}
+
+--BubbleSort
+package chap10.sorting;
+
+public class BubbleSort implements Sort {
+    @Override
+    public void ascending(int[] arr) {
+        System.out.println("BubbleSort ascending");
+    }
+
+    @Override
+    public void descending(int[] arr) {
+        System.out.println("BubbleSort descending");
+    }
+}
+--HeapSort
+package chap10.sorting;
+
+public class HeapSort implements Sort {
+    @Override
+    public void ascending(int[] arr) {
+        System.out.println("HeapSort ascending");
+    }
+
+    @Override
+    public void descending(int[] arr) {
+        System.out.println("HeapSort descending");
+    }
+
+}
+
+--QuickSort
+package chap10.sorting;
+
+public class QuickSort implements Sort {
+
+    @Override
+    public void ascending(int[] arr) {
+        System.out.println("QuickSort ascending");
+    }
+
+    @Override
+    public void descending(int[] arr) {
+        System.out.println("QuickSort descending");
+    }
+}
+
+--SortTest
+package chap10.sorting;
+
+import java.io.IOException;
+
+public class SortTest {
+    public static void main(String[] args) throws IOException {
+        System.out.println("정렬 방식을 선택하세요.");
+        System.out.println("B : Bubblesort");
+        System.out.println("H : HeapSort");
+        System.out.println("Q : QuickSort");
+
+        int ch = System.in.read();
+        Sort sort = null;
+
+        if (ch == 'B' || ch == 'b') {
+            sort = new BubbleSort();
+        } else if (ch == 'H' || ch == 'h') {
+            sort = new HeapSort();
+        } else if (ch == 'Q' || ch == 'q') {
+            sort = new QuickSort();
+        } else {
+            System.out.println("지원되지 않는 기능입니다.");
+            return;
+        }
+
+        int[] arr = new int[10];
+        sort.ascending(arr);
+        sort.descending(arr);
+        sort.description();
+
+    }
+}
+
+--출력결과
+정렬 방식을 선택하세요.
+B : Bubblesort
+H : HeapSort
+Q : QuickSort
+q
+QuickSort ascending
+QuickSort descending
+숫자를 정하는 알고리즘입니다.
+
+
