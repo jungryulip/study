@@ -1,10 +1,11 @@
 # Study
 
-Oracle SQL, SQLD와 Java 학습 자료를 함께 관리하는 저장소입니다.
+Oracle SQL, SQLD, Java와 HTML 학습 자료를 함께 관리하는 저장소입니다.
 
 - 포트폴리오: https://jungryulip.github.io/study/
 - SQL 실습 기록: [`Oracle_SQL/`](./Oracle_SQL/)
 - Java 학습 기록: [`Java/`](./Java/)
+- HTML 학습 기록: [`HTML/`](./HTML/)
 
 `main` 브랜치에 변경 사항을 올리면 GitHub Actions가 포트폴리오를 자동으로 다시 배포합니다.
 
@@ -25,7 +26,7 @@ Oracle SQL, SQLD와 Java 학습 자료를 함께 관리하는 저장소입니다
 },
 ```
 
-`folder`에는 해당 날짜의 SQL 또는 Java 학습 폴더 경로를 입력합니다.
+`folder`에는 해당 날짜의 SQL, Java 또는 HTML 학습 폴더 경로를 입력합니다.
 
 ## 내 컴퓨터에서 미리보기
 
