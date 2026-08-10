@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-08-10",
+    day: "DAY 16",
+    title: "HTML 웹 문서의 기본 구조",
+    summary:
+      "클라이언트와 서버, IP·도메인·DNS 등 웹의 기본 동작을 이해했다. HTML 문서 구조를 만들고 텍스트, 목록, 표, 이미지와 대체 텍스트를 직접 작성했다.",
+    learned: [
+      "웹·클라이언트·서버와 DNS",
+      "HTML 문서 구조와 텍스트 태그",
+      "목록·표·셀 병합",
+      "이미지·상대 경로·대체 텍스트",
+    ],
+    tags: ["HTML", "웹", "접근성"],
+    folder: "HTML/20260810",
+    readTime: 12,
+  },
+  {
     date: "2026-08-07",
     day: "DAY 15",
     title: "Java 다형성, 다운캐스팅과 추상화",

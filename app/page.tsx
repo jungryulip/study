@@ -46,7 +46,7 @@ export default function Home() {
           <p className="profile-label">ORACLE SQL &amp; JAVA STUDY LOG</p>
           <h1>배운 것을 하루씩 기록합니다.</h1>
           <p>
-            Oracle SQL, SQLD와 Java를 공부하며 새롭게 알게 된 것,
+            Oracle SQL, SQLD, Java와 HTML을 공부하며 새롭게 알게 된 것,
             헷갈렸던 것, 직접 실행해 본 코드와 쿼리를 날짜별로 남기는 공간입니다.
           </p>
           <div className="profile-stats">
@@ -117,7 +117,7 @@ export default function Home() {
 
       <footer>
         <a className="logo" href="#top">코드<span>하루</span></a>
-        <p>Oracle SQL과 Java를 배우는 매일의 기록 · 2026</p>
+        <p>Oracle SQL, Java와 HTML을 배우는 매일의 기록 · 2026</p>
       </footer>
     </main>
   );
