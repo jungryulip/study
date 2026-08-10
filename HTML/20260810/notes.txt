@@ -1,0 +1,259 @@
+Html
+
+..
+
+- 여러 형태의 웹
+
+인터넷의 다양한 서비스를 사용할 수 있는 출발점으로, 
+디지털 트렌스폼, 오프라인의 모든 정보와 서비스를 온라인으로 옮기는 작업,
+Html,css, javascript
+
+-네트워크 이해
+
+인터넷은 네트워크의 네트워크, 라우팅(중간 중계점)
+클라이언트-정보를 보여달라고 작업을 처리해달라고 요청하는 쪽- 와 서버-정보를 보내주거나 처리하는 쪽-
+프론트엔드는-웹브라우저 화면에 보이는 것을 개발, 백엔드-보이지 않는 서버를 개발
+
+[요즘은 풀스팩으로 원함]
+
+-웹기본 동작
+
+IP주소와 도메인, DNS서버-domain name server-
+인터넷에 연결된 수많은 컴퓨터를 구별하기 위한 주소, 4자리에서 6자리로 구성됨. 
+숫자대신 영문으로 된 주소를 사용하면 서버에서 자동으로 IP주소로 변환해서 사용한다.
+HTTP, HTTPS[암호화가 추가된 것]
+
+-웹 접근성
+
+고려사항- 접근성, 시각장애, 이동장애, 청각장애, 인지장애 고려해야한다. 
+(참고사이트: 무인정보단말기 UI 플랫폼, 널리, AOA11Y)
+
+..
+
+뼈대는 HTML, 웹 문서를 꾸미는 것 CSS, 사용자 동작에 반응하는 것 자바스크립트
+
+..
+
+hyper text mark-up langage
+자유롭게 오갈 수 있는 링크
+
+..
+
+문서구조
+html로 시작해서, /html로 끝납니다. head-필요한 정보를 입력, body-화면에 나타내는 내용.
+
+..
+
+control+/는 주석달기
+
+..
+
+텍스트 입력
+<hn></hn> 제목
+<p> </p> 내용
+<br> 줄바꿈
+<hr>가로줄
+<strong></strong> 굵게 강조
+<b> </b> 굵게
+<em> </em> 기울여쓰기
+<i></i> 기울여쓰기
+<cite> </cite>저작물의 제목표시
+<ol><li></li></ol>순서가 있는 목록[ol이 아니라 ul을 하면 점이 나옴]
+lorme[숫자] 더미택스트
+
+<dl><dt><dd>: 설명하는 목록을 만들때 사용. </-->로 닫기
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>상품소개 페이지</title>
+</head>
+<body>
+  <h1>레드향</h1>
+  <p>껍질에 붉은 빛이 돌아 <b>레드향</b>이라 불린다.</p>
+  <p>레드향은 <em>한라봉과 귤의 교배한 것</em>으로
+    <br>일반 귤보다 2~3배 크고, 과육이 붉고 통통하다</p>
+  <blockquote>비타민 c와 비타민p가 풍부해 <strong>혈액순환</strong>,
+    <br> <i>감기예방에 좋은 것</i>으로 알려져 있다.</i></blockquote>
+
+    <hr>
+  <h2>레드향 샐러드 레시피</h2>
+  <p><b>재료</b> : 레드향 1개, 양상추 1/4통, 방울토마토 5개, 오이 1/2개, 올리브오일 2큰술, 소금 약간</p>
+  <p><b>드래싱</b> : 키위드레싱</p>
+  <ol type="i">
+    <li>레드향은 껍질을 벗기고, 과육을 한입 크기로 자른다.</li>
+    <li>양상추는 깨끗이 씻어 물기를 제거하고, 먹기 좋은 크기로 자른다.</li>
+    <li>방울토마토는 꼭지를 제거하고, 반으로 자른다.</li>  
+    <li>오이는 껍질을 벗기고, 얇게 썬다.</li>
+    <li>Lorem ipsum dolor sit amet.</li>
+  </ol>
+
+  <h2>상품구성</h2>
+  <dl>
+    <dt>선물용 3kg</dt>
+    <dd>소과 13~16과</dd>
+    <dd>중과 10~12과</dd>
+    <dt>선물용 5kg</dt>
+    <dd>중과 15~19과</dd>
+    <dt>레드향 3kg</dt>
+  </dl>
+</body>
+</html>
+
+표만들기
+<table> 표 전체
+<caption> 제목
+<tr>행
+<td>셀
+<th>행의 이름
+<thead>
+<tbody>
+<td rowspan>
+<td colspan>
+<col>
+<col group>
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>상품소개 페이지</title>
+  <style>
+    table, th, td{
+      border: 1px solid #ccc;/*1픽셀 두께의 실선 테두리*/
+      border-collapse: collapse;/*테두리 겹침 방지*/
+    } th, td { padding: 10px 20px; }/*상하여백은 10px, 좌우여백은 20px*/
+    </style>
+</head>
+<body>
+  <img src="images/tangerines.jpg" alt="레드향">
+  <h1>레드향</h1>
+  <p>껍질에 붉은 빛이 돌아 <b>레드향</b>이라 불린다.</p>
+  <p>레드향은 <em>한라봉과 귤의 교배한 것</em>으로 <br>일반 귤보다 2~3배 크고, 과육이 붉고 통통하다</p>
+  <blockquote>비타민 c와 비타민p가 풍부해 <strong>혈액순환</strong>, <br> <i>감기예방에 좋은 것</i>으로 알려져 있다.</i></blockquote>
+  <img src="images/salad.jpg" alt="샐러드" width="320">
+  <p>width= "50%", height= "50%"지정한 이미지</p>
+  <img src="images/salad.jpg" alt="샐러드" width="50%" height="50%">
+  <p>width= "150", height= "50%"지정한 이미지</p>
+  <img src="images/salad.jpg" alt="샐러드" width="150">
+  <h2>상품구성</h2>
+  <!-- <p>테이블 만들기</p> -->
+  <table>
+    <caption>선물용과 가정용 상품구성</caption>
+    <colgroup>
+      <col style="background-color: #eee;"> 
+      <col>
+      <col style="width: 150px;">
+      <col style="width: 150px;"> 
+    </colgroup>
+    <thead>
+    <tr> 
+      <th>용도</th>
+      <th>중량</th>
+      <th>갯수</th>
+      <th>가격</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td rowspan="2">선물용</td>
+      <td>3kg</td>
+      <td>11~16과</td>
+      <td>35,000원</td>
+    </tr>
+    <tr>
+      <td>3kg</td>
+      <td>11~16과</td>
+      <td>30,000원</td>
+    </tr>
+    <tr>
+      <td rowspan="2">가정용</td>
+      <td>5kg</td>
+      <td>18~26과</td>
+      <td>47,000원</td>
+    </tr>
+    <tr>
+      <td>5kg</td>
+      <td>18~26과</td>
+      <td>47,000원</td>
+    </tr>
+    </tbody>
+  </table>
+</body>
+</html> 
+
+이미지 넣기
+<img src="" alt="">
+src=파일의 이미지 경로 지정
+alt=이미지의 이름을 지정
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>제주의 사계절</title>
+</head>
+<body>
+  <!-- <figure>
+    <img src="../../05/images/notice.jpg" alt="제주의 봄">
+    <figcaption>가장 먼저 봄을 맞이하는 제주도</figcaption>
+  </figure> -->
+  
+<figure>
+    <img src="images/spring.png" alt="제주의 봄">
+    <figcaption>가장 먼저 봄을 맞이하는 제주도</figcaption>
+  </figure>
+
+  <figure>
+    <img src="images/summer.png" alt="제주의 여름">
+    <figcaption>가장 더운 여름을 맞이하는 제주도</figcaption>
+  </figure>
+  
+  <figure>
+    <img src="images/fall.png" alt="제주의 가을">
+    <figcaption>가장 아름다운 가을을 맞이하는 제주도</figcaption>
+  </figure>
+  <figure>
+    <img src="images/winter.png" alt="제주의 겨울">
+    <figcaption>가장 추운 겨울을 맞이하는 제주도</figcaption>
+  </figure>
+  <h1>제주도의 사계절...</h1>
+</body>
+</html>
+
+..
+
+test
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test</title>
+</head>
+<body>
+  <h1>수습 국원 모집</h1>
+  <h2>방송에 관심이 있는 새내기 여러분 환영합니다.</h2>
+  <p>교내 방송국에서 신입생을 대상으로 수습국원을 모집합니다. 학부나 전공에 상관없습니다.
+  <br>평소 방송에 관심있었던 여러 학우들의 지원바랍니다.</p>
+  <ul>
+    <li><strong>모집 기간 :</strong> 3월 2일 ~3월 11일</li>
+    <li><strong>모집 분야 :</strong> 아나운서, PD, 엔지니어</li>
+    <li><strong>지원 방법 :</strong> 양식 작성 후 이메일 접수</li>
+  </ul>
+  <blockquote><i><p>지원서 양식은 교내 방송국 홈페이지 공지 게시판에 있습니다.</p></i></blockquote>
+
+  <h2>혜택</h2>
+  <ol type="a">
+    <li>수습기자 활동 중 소정의 활동비 지급</li>
+    <li>정기자로 진급하면 장학금 지급</li>
+  </ol> 
+  <img src="images/mic.jpg" alt="마이크">
+
+</body>
+</html>
