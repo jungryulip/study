@@ -1,0 +1,991 @@
+JDK기본 클래스
+
+..
+
+java.lang패키지
+import문
+
+import java.lang.*; //로 인포트
+
+..
+
+Object 클래스
+: 모든 클래스의 최상위 클래스로, 'java.lang.Object'이다.
+
+..
+
+javaDoc
+src에서 모듈설정 열기, 그곳에서 플랫픔설정에 SDK를 눌러서 책p.234 참조해서 설정
+
+..
+
+to string 매서드
+
+..
+
+01)package chap11._01_object;
+
+
+class Book {
+    int bookNumber;
+    String bookTitle;
+
+    public Book(int bookNumber, String bookTitle) {
+        this.bookNumber = bookNumber;
+        this.bookTitle = bookTitle;
+    }
+
+    @Override
+    public String toString() {
+        return bookTitle + ", " + bookNumber;
+    }
+}
+public class ToStringEx {
+    public static void main(String[] args) {
+        Book book1 = new Book(200,"개미");
+        System.out.println(book1);
+        System.out.println(book1.toString());
+    }
+
+}
+--출력결과
+개미, 200
+개미, 200
+
+..
+
+equals
+
+..
+
+02)
+package chap11._01_object;
+
+public class _02_StringEquals {
+    public static void main(String[] args) {
+        String str1 = new String("abc");
+        String str2 = new String("abc");
+
+
+        System.out.println(str1 == str2); // 힙 메모리 주소가 다르므로 false
+        System.out.println(str1.equals(str2)); // 문자열이 같은지 = 논리적으로 동일성
+        
+    }
+}
+--출력결과
+false
+true
+
+..
+
+03)
+package chap11._01_object;
+
+class Student {
+    int studentId;
+    String studentName;
+
+    public Student(int studentId, String studentName) {
+        this.studentId = studentId;
+        this.studentName = studentName;
+    }
+    @Override
+    public String toString() {
+        return studentId +", "+ studentName;
+    }
+}
+public class EqualsTest {
+    public static void main(String[] args) {
+        Student studenLee = new Student(100, "이상원");
+        Student studentLee2 = studenLee;
+        Student studentSang = new Student(100, "이상원");
+
+        if (studenLee == studentLee2) {
+            System.out.println("studentLee와 studentLee2의 주소는 같습니다.");
+        } else {
+            System.out.println("studentLee와 studentLee2의 주소는 다릅니다.");
+        }
+        if (studenLee.equals(studentLee2)) {
+            System.out.println("studentLee와 studentLee2는 동일합니다.");
+        } else {
+            System.out.println("studentLee와 studentLee2는 동일하지 않습니다.");
+        }
+    }
+}
+--출력결과
+studentLee와 studentLee2의 주소는 같습니다.
+studentLee와 studentLee2는 동일합니다.
+
+03_1
+
+package chap11._01_object;
+
+class Student {
+    int studentId;
+    String studentName;
+
+    public Student(int studentId, String studentName) {
+        this.studentId = studentId;
+        this.studentName = studentName;
+    }
+    @Override
+    public String toString() {
+        return studentId +", "+ studentName;
+    }
+}
+public class EqualsTest {
+    public static void main(String[] args) {
+        Student studenLee = new Student(100, "이상원");
+        Student studentLee2 = studenLee;
+        Student studentSang = new Student(100, "이상원");
+
+        if (studenLee == studentLee2) {
+            System.out.println("studentLee와 studentLee2의 주소는 같습니다.");
+        } else {
+            System.out.println("studentLee와 studentLee2의 주소는 다릅니다.");
+        }
+        if (studenLee.equals(studentLee2)) {
+            System.out.println("studentLee와 studentLee2는 동일합니다.");
+        } else {
+            System.out.println("studentLee와 studentLee2는 동일하지 않습니다.");
+        }
+
+        if (studenLee == studentSang) {
+            System.out.println("studentLee와 studentSang은 주소는 같습니다.");
+        } else {
+            System.out.println("studentLee와 studentSang은 주소는 다릅니다.");
+        }
+        if (studenLee.equals(studentSang)) {
+            System.out.println("studentLee와 studentSang은 동일합니다.");
+        } else {
+            System.out.println("studentLee와 studentSang은 동일하지 않습니다.");
+        }
+    }
+}
+
+--출력결과
+studentLee와 studentLee2의 주소는 같습니다.
+studentLee와 studentLee2는 동일합니다.
+studentLee와 studentSang은 주소는 다릅니다.
+studentLee와 studentSang은 동일하지 않습니다.
+
+..
+
+03_2
+package chap11._01_object;
+
+class Student {
+    int studentId;
+    String studentName;
+
+    public Student(int studentId, String studentName) {
+        this.studentId = studentId;
+        this.studentName = studentName;
+    }
+
+    @Override
+    public String toString() {
+        return studentId + ", " + studentName;
+    }
+    //논리적으로 같은 사람 재정의
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Student) {
+            Student std = (Student) obj;
+            if (studentId == std.studentId) {
+                return true;
+            } else {
+                return false;
+            }
+        }return false;
+    }
+}
+public class EqualsTest {
+    public static void main(String[] args) {
+        Student studenLee = new Student(100, "이상원");
+        Student studentLee2 = studenLee;
+        Student studentSang = new Student(100, "이상원");
+
+        if (studenLee == studentLee2) {
+            System.out.println("studentLee와 studentLee2의 주소는 같습니다.");
+        } else {
+            System.out.println("studentLee와 studentLee2의 주소는 다릅니다.");
+        }
+        if (studenLee.equals(studentLee2)) {
+            System.out.println("studentLee와 studentLee2는 동일합니다.");
+        } else {
+            System.out.println("studentLee와 studentLee2는 동일하지 않습니다.");
+        }
+
+        if (studenLee == studentSang) {
+            System.out.println("studentLee와 studentSang은 주소는 같습니다.");
+        } else {
+            System.out.println("studentLee와 studentSang은 주소는 다릅니다.");
+        }
+        if (studenLee.equals(studentSang)) {
+            System.out.println("studentLee와 studentSang은 동일합니다.");
+        } else {
+            System.out.println("studentLee와 studentSang은 동일하지 않습니다.");
+        }
+
+    }
+}
+
+--출력결과
+studentLee와 studentLee2의 주소는 같습니다.
+studentLee와 studentLee2는 동일합니다.
+studentLee와 studentSang은 주소는 다릅니다.
+studentLee와 studentSang은 동일합니다.
+
+..
+
+hashCode 매서드
+어떤 정보를 저장 검색하기 위해 사용하는 자료구조
+
+..
+
+04)
+package chap11._01_object;
+
+class Student {
+    int studentId;
+    String studentName;
+
+    public Student(int studentId, String studentName) {
+        this.studentId = studentId;
+        this.studentName = studentName;
+    }
+
+    @Override
+    public String toString() {
+        return studentId + ", " + studentName;
+    }
+
+    //논리적으로 같은 사람 재정의
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Student) {
+            Student std = (Student) obj;
+            if (studentId == std.studentId) {
+                return true;
+            } else {
+                return false;
+            }
+        }return false;
+    }
+    // hashCode
+    @Override
+    public int hashCode() {
+        return studentId; // 학번이 같으면 True
+    }
+
+}
+public class EqualsTest {
+    public static void main(String[] args) {
+        Student studenLee = new Student(100, "이상원");
+        Student studentLee2 = studenLee;
+        Student studentSang = new Student(100, "이상원");
+
+        if (studenLee == studentLee2) {
+            System.out.println("studentLee와 studentLee2의 주소는 같습니다.");
+        } else {
+            System.out.println("studentLee와 studentLee2의 주소는 다릅니다.");
+        }
+        if (studenLee.equals(studentLee2)) {
+            System.out.println("studentLee와 studentLee2는 동일합니다.");
+        } else {
+            System.out.println("studentLee와 studentLee2는 동일하지 않습니다.");
+        }
+
+        if (studenLee == studentSang) {
+            System.out.println("studentLee와 studentSang은 주소는 같습니다.");
+        } else {
+            System.out.println("studentLee와 studentSang은 주소는 다릅니다.");
+        }
+        if (studenLee.equals(studentSang)) {
+            System.out.println("studentLee와 studentSang은 동일합니다.");
+        } else {
+            System.out.println("studentLee와 studentSang은 동일하지 않습니다.");
+        }
+        System.out.println("studenLee의 hashCode : " + studenLee.hashCode());
+        System.out.println("studentSang의 hashCode : " + studentSang.hashCode());
+    }
+}
+--출력결과
+studentLee와 studentLee2의 주소는 같습니다.
+studentLee와 studentLee2는 동일합니다.
+studentLee와 studentSang은 주소는 다릅니다.
+studentLee와 studentSang은 동일합니다.
+studenLee의 hashCode : 100
+studentSang의 hashCode : 100
+
+..
+
+identityhashcode
+
+package chap11._01_object;
+
+public class _02_StringEquals {
+    public static void main(String[] args) {
+        String str1 = new String("abc");
+        String str2 = new String("abc");
+
+        // 실제 주소 값을 출력
+        System.out.println(System.identityHashCode(str1));
+        System.out.println(System.identityHashCode(str2));
+    }
+}
+--출력 곃과
+189568618
+793589513
+...
+
+04_1
+package chap11._01_object;
+
+class Student {
+    int studentId;
+    String studentName;
+
+    public Student(int studentId, String studentName) {
+        this.studentId = studentId;
+        this.studentName = studentName;
+    }
+
+    @Override
+    public String toString() {
+        return studentId + ", " + studentName;
+    }
+
+    //논리적으로 같은 사람 재정의
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Student) {
+            Student std = (Student) obj;
+            if (studentId == std.studentId) {
+                return true;
+            } else {
+                return false;
+            }
+        }return false;
+    }
+    // hashCode
+    @Override
+    public int hashCode() {
+        return studentId; // 학번이 같으면 True
+    }
+
+}
+public class EqualsTest {
+    public static void main(String[] args) {
+        Student studentLee = new Student(100, "이상원");
+        Student studentLee2 = studentLee;
+        Student studentSang = new Student(100, "이상원");
+
+        System.out.println(System.identityHashCode(studentLee));
+        System.out.println(System.identityHashCode(studentSang));
+    }
+}
+--출력결과
+2093176254
+1854731462
+
+..
+
+String class
+String을 선언하는 방법은 힙메모리나 상수로 생성하는 두가지 방식이 있다. 
+
+..
+
+05)
+package chap11._02_string;
+
+public class _01_StringTest {
+    public static void main(String[] args) {
+        String str1 = new String("abc");
+        String str2 = new String("abc");
+
+
+        System.out.println(str1 == str2); // 힙 메모리 주소가 다르므로 false
+        System.out.println(str1.equals(str2)); // 문자열이 같은지 = 논리적으로 동일성
+
+        String str3 = "abc";
+        String str4 = "abc";
+        System.out.println(str3 == str4);
+        System.out.println(str3.equals(str4));
+    }
+}
+
+--출력결과
+false
+true
+true
+true
+
+..
+
+문자열 연결
+문자열을 연결하면 새로운 인스턴스가 생성됨. [계속 연결하면 메모리에 쓰레기가 쌓임]
+
+..
+
+06)
+package chap11._02_string;
+
+public class _02_StringTest2 {
+    public static void main(String[] args) {
+        String javaStr = new String("Jave");
+        String androidStr = new String("Android");
+
+        System.out.println(javaStr);
+        System.out.println(androidStr);
+        System.out.println("처음 문자열의 주소 값 " + System.identityHashCode(javaStr));
+
+        javaStr = javaStr.concat(androidStr);
+        System.out.println(javaStr);
+        System.out.println("연결된 문자열 주소 값 " + System.identityHashCode(javaStr));
+    }
+}
+--출력결과
+Jave
+Android
+처음 문자열의 주소 값 189568618
+JaveAndroid
+연결된 문자열 주소 값 664223387
+
+..
+
+StringBuilder, StringBuffer를 사용해서 줄일 수 있음,
+
+..
+
+--Stringbuffer
+07)
+package chap11._02_string;
+
+public class _03_StringBuilderTest {
+    public static void main(String[] args) {
+        String str1 = new String("java");
+        System.out.println("문자열 주소 " + System.identityHashCode(str1));
+
+
+        StringBuffer buffer = new StringBuffer(str1);
+        System.out.println("연산전 buffer 메모리 주소 : " + System.identityHashCode(buffer));
+
+        buffer.append(" abcd");
+        buffer.append(" android");
+        buffer.append(" programming id funn!!");
+        System.out.println("연산 후 buffer 메모리 주소 : "+System.identityHashCode(buffer));
+
+        String str2 = buffer.toString();
+        System.out.println(str2);
+        System.out.println("새로 만들어진 str2 문자열 주소 : " + System.identityHashCode(str2));
+    }
+}
+--출력결과
+문자열 주소 189568618
+연산전 buffer 메모리 주소 : 664223387
+연산 후 buffer 메모리 주소 : 664223387
+java abcd android programming id funn!!
+새로 만들어진 str2 문자열 주소 : 824909230
+
+.. 
+
+enum
+비슷한 역할을 하는 상수 여러개를 각각 다른 값으로 선언하여 쓰는 경우 사용
+상수 집합 클래스처럼 사용함
+
+..
+
+record 클래스
+변하지 않는 데이터 객체를 정의하는 클래스로, 모든 필드를 private final로 선언, 변루보다 필드라고 함, 재정의 할 수 없음
+
+..
+
+08)
+package chap11._03_recordclass;
+
+import java.util.Objects;
+
+public class Student {
+
+    private int id;
+    private String name;
+
+    public Student(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        /*if (obj instanceof Student) {
+            Student std = (Student) obj;
+            if (name == std.name || id == std.id) {
+                return true;
+            } else {
+                return false;
+            }
+        }return false;*/
+        if (this== obj) return true;
+        if (obj==null|| getClass() != obj.getClass()) return false;
+        Student student = (Student) obj;
+        return id == student.id && Objects.equals(name, student.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name);
+    }
+
+    public static void main(String[] args) {
+        Student studentLee = new Student(12345, "이순신");
+        Student studentLee2 = new Student(12345, "이순신");
+
+        System.out.println(studentLee);
+        System.out.println(studentLee.equals(studentLee2));
+
+
+    }
+}
+--출력결과
+chap11._03_recordclass.Student@30ad960
+true
+
+..
+
+record
+
+09)
+package chap11._03_recordclass;
+
+public record StudentInfo(int id, String name) {
+
+    public static void main(String[] args) {
+        StudentInfo studentInfo = new StudentInfo(12345, "이순신");
+        StudentInfo studentInfo2 = new StudentInfo(12345, "이순신");
+
+        System.out.println(studentInfo.equals(studentInfo2));
+        System.out.println(studentInfo.name());
+        System.out.println(studentInfo);
+    }
+}
+--출력결과
+true
+이순신
+StudentInfo[id=12345, name=이순신]
+
+..
+
+class.forName() 매서드
+동적로딩하는 것, 실행 중에 데이터 타입을 알고 binding.되는 방식
+예외처리를 해서 정상 종료할 수 있게 도와주는 것.
+
+
+..
+
+컬렉션 프레임워크
+
+..
+
+제네릭 프로그래밍. 안정적인 방식으로 
+정의하기. 여러 참조 잘형으로 대체될 수 있는 부분을 하나의 문자로 표현함. 
+ArrayList<String> = ArrayList<T>
+
+..
+
+10)
+--GenericPrinter
+package chap12.generics;
+
+public class GenericPrinter <T>{
+    private T material;
+
+    public T getMaterial() {
+        return material;
+    }
+
+    public void setMaterial(T material) {
+        this.material = material;
+    }
+
+    @Override
+    public String toString() {
+        return material.toString();
+    }
+}
+
+--Plastic
+package chap12.generics;
+
+public class Plastic {
+    public static void main(String[] args) {
+        System.out.println("Plastic 재료로 출력합니다.");
+    }
+    public String toString(){
+            return "재료는 Plastic입니다.";
+    }
+}
+
+--Powder
+package chap12.generics;
+
+public class Powder {
+    public static void main(String[] args) {
+        System.out.println("Powder 재료로 출력합니다.");
+    }
+    public String toString(){
+        return "재료는 Powder입니다.";
+    }
+}
+
+--Water
+package chap12.generics;
+
+public class Water {
+    public static void main(String[] args) {
+        System.out.println("Water 재료로 출력합니다.");
+    }
+    public String toString(){
+        return "재료는 Water입니다.";
+    }
+}
+
+--GenericPrinterTest
+package chap12.generics;
+
+public class GenericPrinterTest {
+    public static void main(String[] args) {
+        GenericPrinter<Powder> powderPrinter = new GenericPrinter<Powder>();
+        powderPrinter.setMaterial(new Powder());
+//        Powder powder = (Powder) powderPrinter.getMaterial(); // 다운캐스팅을 해야지만 출력이 된다
+        Powder powder = powderPrinter.getMaterial();
+        System.out.println(powderPrinter);
+
+        GenericPrinter<Plastic> plasticPrinter = new GenericPrinter<Plastic>();
+        plasticPrinter.setMaterial(new Plastic());
+//        Plastic plastic = (Plastic) plasticPrinter.getMaterial(); // 다운캐스팅을 해야지만 출력이 된다
+        Plastic plastic = plasticPrinter.getMaterial();
+        System.out.println(plasticPrinter);
+
+        GenericPrinter<Water> waterPrinter = new GenericPrinter<Water>();
+        waterPrinter.setMaterial(new Water());
+        Water water = waterPrinter.getMaterial();
+        System.out.println(waterPrinter);
+
+    }
+}
+--출력
+재료는 Powder입니다.
+재료는 Plastic입니다.
+재료는 Water입니다.
+
+
+..
+
+<T extends클래스>
+T가 사용될 클래스를 제한하기 위해 사용. 
+
+..
+
+11)
+--GenericPrinter
+package chap12._01_generics;
+
+public class GenericPrinter <T extends Material>{
+    private T material;
+
+    public T getMaterial() {
+        return material;
+    }
+
+    public void setMaterial(T material) {
+        this.material = material;
+    }
+
+    @Override
+    public String toString() {
+        return material.toString();
+    }
+}
+
+--Material
+package chap12._01_generics;
+
+public abstract class Material {
+    public abstract void doPrinting();
+
+}
+
+--Plastic
+package chap12._01_generics;
+
+public class Plastic extends Material {
+    public void doPrinting () {
+        System.out.println("Plastic 재료로 출력합니다.");
+    }
+    public String toString(){
+            return "재료는 Plastic입니다.";
+    }
+}
+
+
+--Powder
+package chap12._01_generics;
+
+public class Powder extends Material {
+    public void doPrinting() {
+        System.out.println("Powder 재료로 출력합니다.");
+    }
+    public String toString(){
+        return "재료는 Powder입니다.";
+    }
+}
+
+
+--Water
+package chap12._01_generics;
+
+public class Water {
+
+    public String toString(){
+        return "재료는 Water입니다.";
+    }
+}
+
+
+--GenericPrinterTest
+
+package chap12._01_generics;
+
+public class GenericPrinterTest<T extends Material> {
+    public static void main(String[] args) {
+        GenericPrinter<Powder> powderPrinter = new GenericPrinter<Powder>();
+        powderPrinter.setMaterial(new Powder());
+//        Powder powder = (Powder) powderPrinter.getMaterial(); // 다운캐스팅을 해야지만 출력이 된다
+        Powder powder = powderPrinter.getMaterial();
+        System.out.println(powderPrinter);
+
+        GenericPrinter<Plastic> plasticPrinter = new GenericPrinter<Plastic>();
+        plasticPrinter.setMaterial(new Plastic());
+//        Plastic plastic = (Plastic) plasticPrinter.getMaterial(); // 다운캐스팅을 해야지만 출력이 된다
+        Plastic plastic = plasticPrinter.getMaterial();
+        System.out.println(plasticPrinter);
+
+        GenericPrinter<Water> waterPrinter = new GenericPrinter<Water>();
+        waterPrinter.setMaterial(new Water());
+        Water water = waterPrinter.getMaterial();
+        System.out.println(waterPrinter);
+    }
+}
+
+--출력결과
+재료는 Powder입니다.
+재료는 Plastic입니다.
+
+..
+
+컬렉션프레임
+프로그램 구현에 필요한 자료구조를 구현해 놓은 라이브러리
+
+..
+
+collection 인터페이스
+하나의 객체를 관리하기 위해 메서드가 선언된 인터페이스
+하위에 list, set등이 있음. 
+
+..
+
+map 인터페이스
+쌍으로 이뤄진 객체를 관리하는 key-value로 이뤄짐
+
+..
+
+list 인터페이스
+arraylist(배열시키는 것), vactor(), linked list(다음요소에 대한 참조값을 가지고 있어서 요소추가와 삭제에 드는 비용이 배열보다 적음).  
+
+..
+
+Stack과 Queue
+Stack은 맨 마지막에 추가된 요소가 먼저 나오는 것. 
+Queue은 선입선출. 먼저들어간게 나오는 구조.
+
+..
+
+12) Stack
+package chap12._02_collceion._01_arraylist;
+
+import java.util.ArrayList;
+
+class MyStack {
+    private ArrayList<String> arrayStack = new ArrayList<String>();
+    public void push(String date) {
+        arrayStack.add(date);
+    }
+    public String pop() {
+        int len = arrayStack.size();
+        if (len == 0) {
+            System.out.println("스택이 비었습니다.");
+             return null;
+        }
+        return (arrayStack.remove(len - 1));
+    }
+}
+public class StackTest {
+    public static void main(String[] args) {
+        MyStack stack = new MyStack();
+        stack.push("A");
+        stack.push("B");
+        stack.push("C");
+
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+
+    }
+}
+
+
+.. 
+
+13)Queue
+package chap12._02_collceion._01_arraylist;
+
+import chap05.quiz.mydate.MyDate;
+
+import java.util.ArrayList;
+
+class MyQueue {
+    private ArrayList<String> arrayQueue = new ArrayList<String>();
+
+    public void enQueue(String date) {
+        arrayQueue.add(date);
+    }
+
+    public String deQueue() {
+        int len = arrayQueue.size();
+        if (len == 0) {
+            System.out.println("큐가 비었습니다.");
+            return null;
+        }
+        return (arrayQueue.remove(0));
+    }
+}
+
+public class QueueTest {
+    public static void main(String[] args) {
+        MyQueue queue = new MyQueue();
+        queue.enQueue("A");
+        queue.enQueue("B");
+        queue.enQueue("C");
+        queue.enQueue("D");
+
+        System.out.println(queue.deQueue());
+        System.out.println(queue.deQueue());
+        System.out.println(queue.deQueue());
+        System.out.println(queue.deQueue());
+
+    }
+}
+--출력
+A
+B
+C
+D
+
+종료 코드 0(으)로 완료된 프로세스
+
+..
+
+linkedlist
+
+14)
+package chap12._02_collceion._02_linkedlist;
+
+import java.util.LinkedList;
+
+public class LinkedlistTest {
+    public static void main(String[] args) {
+
+        LinkedList<String> myList = new LinkedList<String>();
+
+        myList.add("A");
+        myList.add("B");
+        myList.add("C");
+
+        System.out.println(myList);
+        myList.add(1, "D");
+
+        myList.addFirst("O");
+        System.out.println(myList);
+        System.out.println(myList.remove());
+
+        System.out.println(myList);
+    }
+}
+package chap12._02_collceion._02_linkedlist;
+
+import java.util.LinkedList;
+
+public class LinkedlistTest {
+    public static void main(String[] args) {
+
+        LinkedList<String> myList = new LinkedList<String>();
+
+        myList.add("A");
+        myList.add("B");
+        myList.add("C");
+
+        System.out.println(myList);
+        myList.add(1, "D");
+
+        myList.addFirst("O");
+        System.out.println(myList);
+        System.out.println(myList.remove());
+
+        System.out.println(myList);
+    }
+}
+--출력결과
+[A, B, C]
+[O, A, D, B, C]
+O
+[A, D, B, C]
+
+..
+
+15)
+package chap12._02_collceion._03_hashset;
+
+import java.util.HashSet;
+
+public class HashSetTest {
+    public static void main(String[] args) {
+        HashSet<String> hashSet = new HashSet<String>();
+        hashSet.add(new String("임점순"));
+        hashSet.add(new String("이코사"));
+        hashSet.add(new String("김코사"));
+        hashSet.add(new String("강감찬"));
+        hashSet.add(new String("이민아"));
+
+        System.out.println(hashSet);
+
+    }
+}
+
+--출력결과
+[임점순, 이민아, 이코사, 강감찬, 김코사]
