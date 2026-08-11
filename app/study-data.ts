@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-08-11",
+    day: "DAY 17",
+    title: "Java 기본 클래스, 제네릭과 컬렉션",
+    summary:
+      "Object의 toString·equals·hashCode를 재정의하고 String의 불변성을 확인했다. enum과 record, 제네릭을 익힌 뒤 ArrayList·LinkedList·Stack·Queue·HashSet을 비교했다.",
+    learned: [
+      "Object·toString·equals·hashCode",
+      "String·StringBuilder·StringBuffer",
+      "enum·record·제네릭",
+      "ArrayList·LinkedList·Stack·Queue·HashSet",
+    ],
+    tags: ["Java", "제네릭", "컬렉션"],
+    folder: "Java/20260811",
+    readTime: 16,
+  },
+  {
     date: "2026-08-10",
     day: "DAY 16",
     title: "HTML 웹 문서의 기본 구조",
