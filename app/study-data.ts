@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-08-12",
+    day: "DAY 18",
+    title: "Java 람다, 스트림과 예외 처리",
+    summary:
+      "ArrayList와 HashSet을 비교하고 익명 클래스와 람다로 동작을 간결하게 표현했다. Stream의 filter·map·sorted·collect·reduce와 try-catch-finally·throws 예외 처리도 실습했다.",
+    learned: [
+      "ArrayList·HashSet과 Iterator",
+      "익명 내부 클래스·함수형 인터페이스·람다",
+      "Stream 중간·최종 연산",
+      "try-catch-finally·throws",
+    ],
+    tags: ["Java", "Stream", "예외 처리"],
+    folder: "Java/20260812",
+    readTime: 17,
+  },
+  {
     date: "2026-08-11",
     day: "DAY 17",
     title: "Java 기본 클래스, 제네릭과 컬렉션",
