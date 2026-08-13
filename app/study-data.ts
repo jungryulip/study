@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-08-13",
+    day: "DAY 19",
+    title: "Java 예외 처리, 입출력과 스레드",
+    summary:
+      "try-catch-finally와 try-with-resources로 예외와 자원을 관리했다. 바이트·문자·버퍼 스트림을 비교하고 Thread와 Runnable, sleep·join·interrupt, synchronized 동기화를 실습했다.",
+    learned: [
+      "try-catch-finally·try-with-resources",
+      "바이트·문자 입출력 스트림",
+      "BufferedStream",
+      "스레드·sleep·join·interrupt·동기화",
+    ],
+    tags: ["Java", "입출력", "스레드"],
+    folder: "Java/20260813",
+    readTime: 18,
+  },
+  {
     date: "2026-08-12",
     day: "DAY 18",
     title: "Java 람다, 스트림과 예외 처리",
