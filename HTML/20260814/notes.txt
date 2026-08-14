@@ -1,0 +1,338 @@
+html
+
+..
+
+오디오와 비디오 삽입
+<object width=  height= data=></object>
+<audio></audio>
+<video></video>
+
++ 속성값을 줄 수 있다. (controls, autoplay, loop, muted, preload, width, height, poster="파일이미지"(썸네일 이미지))
+
+01-03
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>좋아하는 음식</title>
+</head>
+<body>
+  <h1>좋아하는 음식</h1>
+<ol type="i">
+  <li>치킨</li>
+  <li>복숭아</li>
+  <li>포카칩</li>
+</ol>
+<img src="images/salad.jpg" alt="샐러드"> 
+<!-- <object width="900" height="800" data="product.pdf"> -->
+<!-- <embed src="medias/spring.mp3" type=""> -->
+<audio src="medias/spring.mp3" autoplay loop> </audio>
+<video src="medias/salad.mp4" controls width="900" height="800" autoplay muted loop> </video>
+</object>
+</body>
+</html>
+
+..
+
+하이퍼링크 삽입
+<a></a>
++속성에 
+
+..
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>좋아하는 음식</title>
+</head>
+<body>
+  <h1>좋아하는 음식</h1>
+<ol type="i">
+  <li>치킨</li>
+  <li>복숭아</li>
+  <li>포카칩</li>
+</ol>
+
+<img src="images/salad.jpg" alt="샐러드"> <br>
+
+<a href="order.html" target="_blank">주문서</a>확인<br>
+<a href="https://www.naver.com/" target="_blank">네이버 사이트 방문</a> 
+
+<audio src="medias/spring.mp3" autoplay loop> </audio>
+<video src="medias/salad.mp4" controls width="900" height="800" poster="images/salad.jpg" loop> </video>
+
+
+</object>
+</body>
+</html>
+
+..
+
+테이블 만들기
+
+..
+
+06)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>table  </title>
+  <style>
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 10px 20px;
+    } td:last-child{
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+  <h1>수습국원지원양식</h1>
+  <table>
+    <tr>
+      <th rowspan="3">개인정보</th>
+      <td>이름</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>학과/학번</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>연락처</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>지원분야 </th>
+      <td colspan="3"></td>
+    </tr>
+    
+  </table>
+
+
+</body>
+</html>
+
+..
+
+폼 삽입하기
+사용자가 웹 사이트로 보낼 수 있는 모든 요소들을 폼이라고 말한다. 
+데이터베이스를 기반으로 한다. 
+<form></form>
++ 속성 : -method get[보안에 취약], post[들어나지 않음], name, action[다른 서버에 있는 액션이 실행된다.], target
+<label> <input></label>
+<label> 
+
+..
+
+07)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>레드향 주문하기</title>
+  <link rel="stylesheet" href="css/order.css">
+</head>
+
+<body>
+  <h1>레드향 주문하기</h1>
+  <form action="">
+    <fieldset>
+      <legend>상품 선택</legend>
+      <p><b>주문할 상품을 선택해 주세요.</b></p>
+      <ul>
+        <li>
+        <label> <input type="checkbox" value="s_3"> 상품 3kg </label>
+        <input type="number" min="0" max="5"> 개 <small> (최대 5개) </small>
+        </li>
+        <li>
+          <label> <input type="checkbox" value="s_5"> 상품 5kg </label>
+          <input type="number" min="0" max="3" value="1"> 개 <small> (최대 3개) </small>
+        </li>
+        <li>
+          <label> <input type="checkbox" value="f_3"> 가정 3kg </label>
+          <input type="number" min="0" max="5"> 개 <small> (최대 5개) </small>
+        </li>
+        <li>
+          <label> <input type="checkbox" value="f_5"> 가정 5kg </label>
+          <input type="number" min="0" max="3"> 개 <small> (최대 3개) </small>
+        </li>
+      </ul>
+      
+         <p><b>포장 선택</b></p>
+      <ul>
+        <li> <label> <input type="radio" name="gift" value="yes"> 선물 포장 </label> </li>
+        <li> <label> <input type="radio" name="gift" value="no"> 선물 포장 안함 </label> </li>
+      </ul>
+
+    </fieldset>
+
+    <fieldset>
+      <legend>배송 정보</legend>
+      <ul>
+        <li>
+          <label for="user-name"> 이름 <input type="text" size="10" id="user-name"></label>
+          <label for="user-password"> 비밀번호 <input type="password" size="10" id="user-password"></label>
+          <input type="submit" value="로그인">
+        </li>
+
+        <li>
+          <label for="addr"> 배송 주소 </label>
+          <input type="text" id="addr">
+        </li>
+        <li>
+          <label for="mail"> 메일  </label>
+          <input type="email" id="mail">
+        </li>
+        <li>
+          <label for="phone"> 연락처 </label>
+          <input type="tel" id="phone">
+        </li>
+        <li>
+          <label for="memo"> 메모</label>
+          <textarea id="memo" rows="4" cols="40"></textarea>
+        </li>
+      </ul> 
+    </fieldset>
+    <div>
+      <input type="submit" value="주문하기">
+      <input type="reset" value="취소하기">
+    </div>
+    </form>
+
+</body>
+</html>
+
+..
+
+submit, 
+
+..
+
+08)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>레드향 주문하기</title>
+  <link rel="stylesheet" href="css/order.css">
+</head>
+<body>
+  <h1>레드향 주문하기</h1>
+  <form action="">
+    
+    <input type="botton" value="공지 창 열기" onclick="window.open('notice.html')">
+
+
+    <fieldset>
+      <legend>반품 정보</legend>
+      <p>만일 수령한 상품에 문제가 있다면 즉시 <b>반품 신쳥</b> 해주세요.</p>
+      <p>반품 신청시 상품의 상태를 사진으로 첨부해 주세요.</p>
+    <hr>
+    <input type="file">
+    </fieldset>
+
+    <div>
+    <input type="submit" value="반품 신청">
+    <input type="reset" value="취소하기">  
+    </div>
+
+
+  </form> 
+
+</body>
+</html>
+
+..
+
+09)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>레드향 주문하기</title>
+  <link rel="stylesheet" href="css/order.css">
+</head>
+
+<body>
+  <h1>레드향 주문하기</h1>
+  <form action="">
+    <fieldset>
+      <legend>상품 선택</legend>
+      <p><b>주문할 상품을 선택해 주세요.</b></p>
+      <ul>
+        <li>
+        <label> <input type="checkbox" value="s_3"> 상품 3kg </label>
+        <input type="range" min="0" max="5"> 개 <small> (최대 5개) </small>
+        </li>
+        <li>
+          <label> <input type="checkbox" value="s_5"> 상품 5kg </label>
+          <input type="number" min="0" max="3" value="1"> 개 <small> (최대 3개) </small>
+        </li>
+        <li>
+          <label> <input type="checkbox" value="f_3"> 가정 3kg </label>
+          <input type="number" min="0" max="5"> 개 <small> (최대 5개) </small>
+        </li>
+        <li>
+          <label> <input type="checkbox" value="f_5"> 가정 5kg </label>
+          <input type="number" min="0" max="3"> 개 <small> (최대 3개) </small>
+        </li>
+      </ul>
+      
+         <p><b>포장 선택</b></p>
+      <ul>
+        <li> <label> <input type="radio" name="gift" value="yes"> 선물 포장 </label> </li>
+        <li> <label> <input type="radio" name="gift" value="no"> 선물 포장 안함 </label> </li>
+      </ul>
+
+    </fieldset>
+
+    <fieldset>
+      <legend>배송 정보</legend>
+      <ul>
+        <li>
+          <label for="user-name"> 이름 <input type="text" size="10" id="user-name" autofocus required></label>
+          <label for="user-password"> 비밀번호 <input type="password" size="10" id="user-password"></label>
+          <input type="submit" value="로그인">
+        </li>
+
+        <li>
+          <label for="addr"> 배송 주소 </label>
+          <input type="text" id="addr" required>
+        </li>
+        <li>
+          <label for="mail"> 메일  </label>
+          <input type="email" id="mail">
+        </li>
+        <li>
+          <label for="phone"> 연락처 </label>
+          <input type="tel" id="phone" placeholder="하이픈을 빼고 입력해 주세요.(01012345678)" required>
+        </li>
+        <li>
+          <label for="memo"> 메모</label>
+          <textarea id="memo" rows="4" cols="40"></textarea>
+        </li>
+      </ul> 
+    </fieldset>
+    <div>
+      <input type="submit" value="주문하기">
+      <input type="reset" value="취소하기">
+    </div>
+    </form>
+
+</body>
+</html>
+
+..
+
+
+
