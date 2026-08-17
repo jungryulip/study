@@ -13,6 +13,38 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-08-17",
+    day: "DAY 21",
+    title: "HTML·CSS 기본 스타일과 레이아웃",
+    summary:
+      "CSS를 HTML에 적용하는 방법과 선택자·캐스케이딩을 익혔다. 글꼴·색상·텍스트·목록·표를 꾸미고 박스 모델, 여백, 테두리, display·float·position으로 레이아웃을 구성했다.",
+    learned: [
+      "인라인·내부·외부 스타일 시트",
+      "선택자·캐스케이딩·우선순위",
+      "글꼴·색상·텍스트·목록·표",
+      "박스 모델·display·float·position",
+    ],
+    tags: ["HTML", "CSS", "레이아웃"],
+    folder: "HTML/20260817",
+    readTime: 20,
+  },
+  {
+    date: "2026-08-14",
+    day: "DAY 20",
+    title: "HTML 미디어, 링크와 폼",
+    summary:
+      "audio와 video로 미디어를 삽입하고 하이퍼링크와 표를 만들었다. form 안에서 체크박스·라디오·파일·날짜·범위 입력과 required·autofocus·placeholder도 실습했다.",
+    learned: [
+      "audio·video와 미디어 속성",
+      "외부·내부 하이퍼링크",
+      "table과 셀 병합",
+      "form·input type·입력 속성",
+    ],
+    tags: ["HTML", "폼", "미디어"],
+    folder: "HTML/20260814",
+    readTime: 17,
+  },
+  {
     date: "2026-08-13",
     day: "DAY 19",
     title: "Java 예외 처리, 입출력과 스레드",
