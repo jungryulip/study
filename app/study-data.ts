@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-08-18",
+    day: "DAY 22",
+    title: "CSS 배경, 반응형 웹과 Flexbox",
+    summary:
+      "배경 이미지의 위치·크기·적용 범위를 조절하고 선형·원형 그라데이션을 만들었다. object-fit과 미디어 쿼리, Flexbox의 방향·정렬·크기 속성을 활용해 다양한 화면에 대응하는 레이아웃을 실습했다.",
+    learned: [
+      "배경 이미지·위치·크기·적용 범위",
+      "선형·원형 그라데이션",
+      "반응형 이미지·object-fit·미디어 쿼리",
+      "Flexbox 방향·정렬·flex-grow",
+    ],
+    tags: ["CSS", "반응형 웹", "Flexbox"],
+    folder: "HTML/20260818",
+    readTime: 21,
+  },
+  {
     date: "2026-08-17",
     day: "DAY 21",
     title: "HTML·CSS 기본 스타일과 레이아웃",
