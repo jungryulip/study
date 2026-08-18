@@ -1,0 +1,1774 @@
+이미지와 그라데이션효과로 배경꾸미기
+
+..
+
+background-color
+background-clip
+-border-box
+-paddig-box
+-contant-box
+
+..
+
+01)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>상품 소개 페이지</title>
+  <style>
+    .desc {
+      border:5px dotted #222;
+      background-color:#ffd9a0;
+      width:350px;
+      padding:20px;
+      margin-right:20px;
+      float:left;
+    }
+    /* Do it! 배경색 적용 범위 지정하기 */
+    #clip-border{
+      background-clip: border-box;
+    }
+    #clip-padding{
+      background-clip: padding-box;
+    }
+    #clip-content{
+      background-clip: content-box;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div class="desc"  id="clip-border">
+      <h1>레드향</h1>
+      <p>껍질에 붉은 빛이 돌아 <b>레드향</b>이라 불린다.</p>
+      <p>레드향은 <em>한라봉과 귤을 교배</em>한 것으로<br>일반 귤보다 2~3배 크고, 과육이 붉고 통통하다.</p>
+    </div>
+    <div class="desc" id="clip-padding">
+      <h1>레드향</h1>
+      <p>껍질에 붉은 빛이 돌아 <b>레드향</b>이라 불린다.</p>
+      <p>레드향은 <em>한라봉과 귤을 교배</em>한 것으로<br>일반 귤보다 2~3배 크고, 과육이 붉고 통통하다.</p>
+    </div>
+    <div class="desc" id="clip-content">
+      <h1>레드향</h1>
+      <p>껍질에 붉은 빛이 돌아 <b>레드향</b>이라 불린다.</p>
+      <p>레드향은 <em>한라봉과 귤을 교배</em>한 것으로<br>일반 귤보다 2~3배 크고, 과육이 붉고 통통하다.</p>
+    </div>        
+  </div>
+</body>
+</html>
+
+..
+
+background-image
+background-repeat
+
+..
+
+02)<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>배경 이미지</title>
+  <style>
+    /* Do it! images/bg1.jpg를 문서 배경 이미지로 사용하기 */
+    body{
+      background-image: url('images/bg1.jpg');
+      background-repeat: repeat-x;
+      /* background-repeat: repeat-y; */
+      /* background-repeat: no-repeat; */
+    }
+  </style>
+</head>
+<body>
+  
+</body>
+</html>
+
+..
+
+background-position
+
+..
+
+03)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>불릿 바꾸기</title>
+  <style>
+    ul {
+      list-style:none;   /* 불릿 없앰 */
+      margin-left:-30px;  /* 왼쪽 여백 줄임 */
+    }
+    
+    li {
+      padding-left:50px;  /* 왼쪽 패딩 (박스 모델) */
+      line-height:40px;  /* 줄간격 */
+      /* Do it! 목록 불릿 대신 배경 이미지 사용하기  */
+
+      background-image: url('images/book-icon.png');
+      background-repeat: no-repeat;
+      background-position: left center;
+
+
+    }
+  </style>
+</head>
+<body>
+  <h1>이지스퍼블리싱</h1>
+  <ul>
+    <li>회사소개</li>
+    <li>도서</li>
+    <li>자료실</li>
+    <li>질문답변</li>
+    <li>동영상강의</li>
+  </ul>
+</body>
+</html>
+
+..
+
+backgorund-origin
+backgorund-attachment
+
+..
+
+04)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>배경 이미지</title>
+  <style>    
+    body {  
+      background-image:url('images/bg2.png');  /* 문서 전체 배경 이미지 */ 
+      /* Do it! 문서 전체 배경 이미지 오른쪽 상단에 고정하기 */
+      background-repeat: no-repeat;
+      background-position: right top;
+      background-attachment: fixed;
+    }
+    div {
+      width:400px;
+      height:250px;
+      padding: 20px;
+      border: 20px  solid rgba(204, 204, 204, 0.493);        
+      margin-bottom:20px;
+      overflow:auto;
+      background-image:url('images/bg3.png');  /* 텍스트 상자의 배경 이미지 */
+      background-repeat:no-repeat;  /* 배경 이미지 반복 안 함 */      
+      background-position:right top;  /* 배경 이미지를 오른쪽 상단에 위치시킴 */
+    }
+    /* Do it! #bg1 ~ #bg3 스타일을 사용해 배경 이미지 범위 지정하기 */
+    #bg1{
+      background-origin: padding-box;
+    }
+    #bg2{
+      background-origin: border-box;
+    }
+    #bg3{
+      background-origin: content-box;
+    }
+  </style>
+</head>
+<body>
+  <div id="bg1">
+    <h2>바빠 시리즈 </h2>
+    <h3>-바쁜 학생을 위한 빠른 학습법</h3>
+    <p>쉬운 내용은 압축하여 빠르게, 어려운 내용은 더 많이 공부하는 효율적인 학습 설계가 되어 있는 바빠 연산법과 ‘손이 기억하는 훈련 프로그램’인 바빠 영어 시리즈가 있습니다.</p>
+  </div>
+	<div id="bg2">
+    <h2>바빠 시리즈 </h2>
+    <h3>-바쁜 학생을 위한 빠른 학습법</h3>
+    <p>쉬운 내용은 압축하여 빠르게, 어려운 내용은 더 많이 공부하는 효율적인 학습 설계가 되어 있는 바빠 연산법과 ‘손이 기억하는 훈련 프로그램’인 바빠 영어 시리즈가 있습니다.</p>
+  </div>
+	<div id="bg3">
+    <h2>바빠 시리즈 </h2>
+    <h3>-바쁜 학생을 위한 빠른 학습법</h3>
+    <p>쉬운 내용은 압축하여 빠르게, 어려운 내용은 더 많이 공부하는 효율적인 학습 설계가 되어 있는 바빠 연산법과 ‘손이 기억하는 훈련 프로그램’인 바빠 영어 시리즈가 있습니다.</p>
+  </div>
+ </body>
+</html>
+
+..
+
+background 속성
+줄여서 표기 가능, 
+
+background-size 속성
+배경크기를 조절. auto, contain, cover,값은 가로세로로 주어진다. 백분율로 가능
+
+..
+
+05)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>배경 이미지</title>
+  <style>
+    #container{
+      width:1100px;
+      margin:50px auto;
+    }
+    .box{
+      float:left;
+      border:1px solid #222;
+      width:300px;
+      height:300px;      
+      margin:20px;
+      background:url('images/bg4.jpg') no-repeat left top;
+    }
+    /* Do it! #bg1 ~ #bg6 스타일을 사용해 배경 이미지 크기 조절하기 */
+    #bg1{
+      background-size: auto;
+    }
+    #bg2{
+      background-size: 200px;
+    }
+    #bg3{
+      background-size: 50%;
+    }
+    #bg4{
+      background-size: 100%;
+    }
+    #bg5{
+      background-size: contain;
+    }
+    #bg6{
+      background-size: cover;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div class="box" id="bg1"></div>
+    <div class="box" id="bg2"></div>
+    <div class="box" id="bg3"></div>
+    <div class="box" id="bg4"></div>
+    <div class="box" id="bg5"></div>
+    <div class="box" id="bg6"></div>
+  </div>
+ </body>
+</html>
+
+..
+
+그라데이션 
+
+..
+
+06)
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>선형 그러데이션</title>
+  <style>
+	div {
+		width:500px;
+		height:300px;
+		border-radius:10px;
+	}
+	/* Do it! 왼쪽 위에서 오른쪽 아래로, blue에서 white로 변하는 선형 그러데이션 스타일 .grad 만들기 */
+	.grad{
+		background: blue;
+		background: linear-gradient(to right bottom, blue, white);
+	}
+  </style>
+</head>
+<body>
+  <div class="grad"></div>
+</body>
+</html>
+
+..
+
+linear-deg
+
+..
+
+07)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>선형 그러데이션</title>
+  <style>
+		div {
+			width:500px;
+			height:300px;
+			border-radius:10px;
+		}
+		/* Do it! 45도 각도로, #f00에서 #fff로 변하는 선형 그러데이션 .grad 스타일 만들기 */
+		.grad{
+			background: #f00;
+			background: linear-gradient(45deg, #f00, #fff);
+		}
+  </style>
+</head>
+<body>
+  <div class="grad"></div>
+ </body>
+</html>
+
+..
+
+원형 그라데이션
+
+..
+
+08)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>원형 그러데이션</title>
+  <style>
+		div {
+			width:500px;
+			height:300px;
+			margin:10px;
+		}
+		/* Do it!  타원형으로 흰색, 노란색, 빨간색으로 바뀌는 그러데이션 .grad1 스타일 만들기 */
+		.grad1{
+			background: red;
+			background: radial-gradient(white, yellow, red);
+		}
+
+		/* Do it! 원형으로 흰색, 노란색, 빨간색으로 바뀌는 그러데이션 .grad2 스타일 만들기  */
+
+		.grad2{
+			background: red;
+			background: radial-gradient(circle, white, yellow, red);
+		}
+
+
+  </style>
+</head>
+<body>
+  <div class="grad1"></div>
+  <div class="grad2"></div>
+</body>
+</html>
+
+..
+
+09)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>원형 그러데이션</title>
+  <style>
+    li {
+			display:inline-block;
+			width:300px;
+			height:300px;
+			border:1px solid black;
+			margin:10px;
+    }	
+    #div1{
+			background:darkgreen;
+			background:radial-gradient(circle closest-side at 30% 40%, white, yellow, green);  /* 그러데이션 중심에서 가장 가까운 측면에 닿을 때까지 */
+    }
+    #div2{
+			background:darkgreen;
+			background:radial-gradient(circle closest-corner at 30% 40%, white, yellow, green);  /* 그러데이션 중심에서 가장 가까운 꼭짓점에 닿을 때까지 */
+    }
+    #div3{
+			background:darkgreen;
+			background:radial-gradient(circle farthest-side at 30% 40%, white, yellow, green);  /* 그러데이션 중심에서 가장 멀리 떨어진 측면에 닿을 때까지 */
+    }
+    #div4{
+			background:darkgreen;
+			background:radial-gradient(circle farthest-corner at 30% 40%, white, yellow, green);  /* 그러데이션 중심에서 가장 멀리 떨어진 꼭짓점에 닿을 때까지 */
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li id="div1"></li>
+    <li id="div2"></li>
+    <li id="div3"></li>
+    <li id="div4"></li>
+  </ul>
+ </body>
+</html>
+
+..
+
+10)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>원형 그러데이션</title>
+  <style>
+    div {
+      width:300px;
+      height:300px;
+      border-radius:50%;
+      box-shadow: 10px 5px 10px #ccc;
+    }
+    /* Do it! 20% 20%에서 시작하여 흰색에서 파란색으로 바뀌는 원형 그러데이션 .grad 스타일 만들기 */
+    .grad{
+      background: blue;
+      background: radial-gradient(circle at 20% 20%, white, blue);
+    }
+  </style>
+</head>
+<body>
+  <div class="grad"></div>
+</body>
+</html>
+
+..
+
+반응형웹과 미디어쿼리
+
+..
+
+반응형 웹
+웹사이트에 내용을 유지하며 화면의 크기에 맞게 웹사이트를 표시하는 것
+
+뷰포인트(viewport) 앵커점이 있기 때문에 모바일과 태블릿, 데스크탑에 맞춰 볼 수 있다. 
+https://yesviz.com/devices.php (디바이스 화면을 사이즈를 확인 할 수 있는 사이트)
+
+em의 단위 부모요소에 따라서 지정된 글꼴의 대단위M의 사이즈를 기준으로 한다.
+rem root를 기준으로 지정한 크기를 기준으로 상대적인 크기를 계산함
+
+..
+
+반응형 이미지
+
+..
+
+11)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>반응형 이미지 만들기</title>
+  <style>
+    p {
+      font-size: 1.5rem;
+    }
+    /* Do it! 이미지를 반응형으로 만들기 */
+    .top{
+      /* width: 100%; */
+      max-width: 100%;
+      height: auto;
+    }
+
+</style>
+</head>
+<body>
+  <div>
+    <p>브라우저 창의 크기를 조절해보세요.</p>
+    <img src="images/kitten.jpg" alt="베개 뒤에 숨어 있는 고양이" class="top">
+  </div>
+</body>
+</html>
+
+..
+
+object-fit
+
+..
+
+12)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>object-fit 속성</title>
+  <style>
+    body {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 5px;
+    }
+    .container {
+      width: 200px;
+      height: 400px;
+      border: 1px solid #000;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  /* Do it! object-fit 속성을 사용하여 이미지 크기 조절하기 */
+  .fill{
+   object-fit: fill; 
+  }
+  .contain{
+    object-fit: contain;
+  }
+  .cover{
+    object-fit: cover;
+  }
+  .none{
+    object-fit: none;
+  }
+  .scale-down{
+  object-fit: scale-down;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="images/cat.png" alt="고양이" class="fill">
+    <h3>object-fit: fill</h3>
+  </div>
+  <div class="container">
+    <img src="images/cat.png" alt="고양이" class="contain">
+    <h3>object-fit: contain</h3>
+  </div>
+  <div class="container">
+    <img src="images/cat.png" alt="고양이" class="cover">
+    <h3>object-fit: cover</h3>
+  </div>
+  <div class="container">
+    <img src="images/cat.png" alt="고양이" class="none">
+    <h3>object-fit: none</h3>
+  </div>
+  <div class="container">
+    <img src="images/cat.png" alt="고양이" class="scale-down">
+    <h3>object-fit: scale-down</h3>
+  </div>
+</body>
+</html>
+
+..
+
+미디어쿼리
+
+..
+
+13)
+--html
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INSPIRATIONAL QUOTES</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="container">
+    <div class="card">
+      <img src="images/1.jpg">    
+      <div class="words">
+        <h2>일 분 전만큼 먼 시간은 없다.</h2>
+        <h3>- Jim Bishop</h3>
+      </div>            
+    </div>
+    <div class="card">
+      <img src="images/2.jpg">    
+      <div class="words">
+        <h2>낡은 옷은 그냥 입고 새 책을 사라.</h2>
+        <h3>- Austin Phelps</h3>
+      </div>            
+    </div>            
+  </div>
+</body>
+</html>
+
+--css/ style
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body {
+    background:rgb(9, 100, 160);
+}
+#container {
+    width:320px;        
+    margin:50px auto;
+}
+.card {
+    position:relative;    
+    width:300px;
+    height:500px;
+    margin:20px 10px;
+    border:1px solid #0f0f0f33;
+    background-color:#ffffff;      
+}
+.words {
+    position:absolute;    
+    left:10px;
+    top:300px;
+    padding:10px;
+    text-align:center;   
+}
+
+@media screen and (min-width:768px) and (max-width:1439px) {
+    #container {
+        width:570px;        
+        margin:50px auto;
+    }
+    .card {
+        position:relative;    
+        width:550px;
+        height:250px;
+        margin:20px 10px;
+        border:1px solid #0f0f0f33;
+        background-color:#ffffff;      
+    }
+    .words {
+        position:absolute;    
+        left:310px;
+        top:50px;
+        text-align:center;
+        width:200px;          
+    }
+}
+
+@media screen and (min-width:1440px) {
+    #container {
+        width:1140px;
+        margin:50px auto;
+    }    
+    .card {
+        position:relative;
+        float:left;  /* 카드를 가로로 배치 */
+        width:550px;
+        height:250px;
+        margin:10px;
+        border:1px solid #0f0f0f33;
+        background-color:#ffffff;      
+    }
+    .words {
+        position:absolute;    
+        left:310px;
+        top:50px;
+        text-align:center;
+        width:200px;          
+    }
+}
+
+..
+
+미디어쿼리 구문 css
+only, not, and 등이 있음
+-가로세로 너비, 그리고 미디어쿼리 레벨
+https;//www.w3.org/TR/
+
+중단점: 서로 다른 css를 적용할 크기
+
+방법: (외부 css 연결) link사용, style사이에 삽입
+
+..
+
+https://developers.naver.com/main/ [미디어쿼리 참고]
+
+..
+
+14)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>미디어 쿼리 사용하기</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    h1 {
+      font-size: 4rem;
+    }
+    /* Do it! 미디어 쿼리 사용  */
+    body {
+      background: url(images/bg-light.jpg) no-repeat fixed;  
+      background-size: cover;
+    }
+    @media screen and (min-width:768px) and (max-width:1023px) {
+      body{
+        background: url(images/bg-dark.jpg) no-repeat fixed;
+        background-size: cover;
+        color: #fff;
+      }
+    }
+    @media screen and (max-width:767px) {
+      body{
+        background: url(images/bg-small.jpg) no-repeat fixed;
+        background-size: cover;
+        color: #fff;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <h1>미디어 쿼리</h1>
+</body>
+</html>
+
+..
+
+플렉스 박스 레이아웃
+플렉스 컨테이너: 부모박스. 적용할 대상을 묶는 요소
+플렉스 항목 : 자식박스. 플렉스 박스 레이아웃을 적용할 대상으로
+주축: 박스에서 항목을 배치하는 기본방향, 왼쪽-주축 시작점에서 오른쪽-주축 끝점으로 
+교차축: 항목을 배치하는 위치로, 기본 위에서 아래로.
+
+..
+
+15)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>플렉스 박스 레이아웃</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .container {
+      width:700px;
+      /* Do it! 플렉스 컨테이너 지정 */
+      display: flex;
+      background-color:#eee;
+      border:1px solid #222;
+      margin-bottom:30px;
+    }
+    .box {
+      padding:5px 45px;
+      margin:5px;   
+	  	width:80px;
+    }   
+    .box:nth-child(odd) {
+      background-color: rgb(255, 187, 0);
+    }           
+    .box:nth-child(even) {
+      background-color: rgb(35, 220, 35);
+    }
+    p {
+      text-align: center;
+      font-weight: bold;
+    }
+    /* Do it! 주축의 방향을 지정하는 #opt1 ~ #opt4 스타일 만들기 */
+    #opt1{
+      flex-direction: row;
+    }
+    #opt2{
+      flex-direction: row-reverse;
+    }
+    #opt3{
+      flex-direction: column;
+    }
+    #opt4{
+      flex-direction: column-reverse;
+    }  
+  </style>
+</head>
+<body>
+  <div class="container" id="opt1">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+  </div>
+  <div class="container" id="opt2">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+  </div>
+  <div class="container" id="opt3">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+   </div>
+  <div class="container" id="opt4">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+  </div>            
+</body>
+</html>
+
+..
+
+flex-wrap 속성
+
+16)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>플렉스 박스 레이아웃</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .container {
+      display:flex;  /* 플렉스 컨테이너 지정 */
+      justify-content: row; /* 주축의 방향을 지정 */
+      background-color:#eee;
+      border:1px solid #222;
+      margin-bottom:30px;
+    }
+    .box {
+      padding:5px 45px;
+      margin:5px;   
+	  	width:80px;
+      background-color:#222;   
+    }                
+    p {
+      color:#fff;
+      text-align: center;
+    }
+    /* Do it! 줄바꿈을 지정하는 #opt1 ~ #opt3 스타일 만들기 */
+
+    #opt1{
+      flex-wrap: nowrap;
+    }
+    #opt2{
+      flex-wrap: wrap;
+    }
+    #opt3{
+      flex-wrap: wrap-reverse;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="opt1">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+    <div class="box"><p>4</p></div>
+    <div class="box"><p>5</p></div>
+    <div class="box"><p>6</p></div>    
+  </div>
+  <div class="container" id="opt2">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+    <div class="box"><p>4</p></div>
+    <div class="box"><p>5</p></div>
+    <div class="box"><p>6</p></div>    
+  </div>
+  <div class="container" id="opt3">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+    <div class="box"><p>4</p></div>
+    <div class="box"><p>5</p></div>
+    <div class="box"><p>6</p></div>    
+   </div>          
+</body>
+</html>
+
+..
+
+justify-content 
+
+..
+
+17)<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>플렉스 박스 레이아웃</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .container {
+      display:flex;  /* 플렉스 컨테이너 지정 */
+      background-color:#eee;
+      border:1px solid #222;
+      margin-bottom:30px;
+    }                  
+    .box {
+      padding:5px 45px;
+      margin:5px;   
+	  	width:80px;
+    }   
+    .box:nth-child(odd) {
+      background-color: rgb(255, 187, 0);
+    }           
+    .box:nth-child(even) {
+      background-color: rgb(35, 220, 35);
+    }
+    p {
+      text-align: center;
+      font-weight: bold;
+    } 
+    /* Do it! 주축의 정렬 방법을 지정하는 #opt1 ~ #opt5 스타일 만들기 */
+    #opt1{
+      justify-content: flex-start;
+    }
+    #opt2{
+      justify-content: flex-end;
+    }
+    #opt3{
+      justify-content: center;
+    }
+    #opt4{
+      justify-content: space-between;
+    }
+    #opt5{
+      justify-content: space-around;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container" id="opt1">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+    <div class="box"><p>4</p></div>
+  </div>
+  <div class="container" id="opt2">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+    <div class="box"><p>4</p></div>
+  </div>
+  <div class="container"  id="opt3">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+    <div class="box"><p>4</p></div>
+   </div>
+  <div class="container" id="opt4">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+    <div class="box"><p>4</p></div>
+  </div>            
+  <div class="container" id="opt5">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+    <div class="box"><p>4</p></div>
+  </div>    
+</body>
+</html>
+
+..
+
+margin
+
+18)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>플렉스 박스 레이아웃</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .container {
+      width:700px;
+      display:flex; /* 플렉스 컨테이너 지정 */
+      justify-content: flex-end;  /* 주축 정렬 - 끝점에 맞춰서 */
+      background-color:#eee;
+      border:1px solid #222;
+      margin-bottom:30px;
+    }
+    .box {
+      padding:5px 45px;
+      margin:5px;   
+	  	width:80px;
+    }   
+    .box:nth-child(odd) {
+      background-color: rgb(255, 187, 0);
+    }           
+    .box:nth-child(even) {
+      background-color: rgb(35, 220, 35);
+    }
+    p {
+      text-align: center;
+      font-weight: bold;
+    }
+
+    /* Do it! 첫번째 박스만 시작점으로 옮기도록 margin 설정하기 */
+    #box1{
+      margin-right: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box" id="box1"><p>1</p></div>
+    <div class="box" id="box2"><p>2</p></div>
+    <div class="box" id="box3"><p>3</p></div>
+  </div>          
+</body>
+</html>
+
+..
+
+align
+
+18)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>플렉스 박스 레이아웃</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .container {
+      width:100%;
+      height:150px;
+      display:flex;
+      justify-content: flex-start;  /* 주축 정렬 방법 - 시작점 기준 */
+      background-color:#eee;
+      border:1px solid #222;
+      margin-bottom:20px;
+    }                                       
+    .box {
+      padding:5px 45px;
+      margin:5px;   
+	  	width:80px;
+    }   
+    .box:nth-child(odd) {
+      background-color: rgb(255, 187, 0);
+    }           
+    .box:nth-child(even) {
+      background-color: rgb(35, 220, 35);
+    }
+    p {
+      text-align: center;
+      font-weight: bold;
+    }
+
+    /* Do it! 교차축 정렬 방법을 지정하는 #opt1 ~ #opt5 스타일 만들기 */
+     #opt1{
+      align-items: flex-start ;
+     }
+     #opt2{
+      align-items: flex-end ;
+     }
+     #opt3{
+      align-items: center ;
+     }
+     #opt4{
+      align-items: baseline ;
+     }
+     #opt5{
+      align-items: stretch;
+     }
+
+  </style>
+</head>
+<body>
+  <div class="container" id="opt1">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+    <div class="box"><p>4</p></div>
+  </div>
+  <div class="container" id="opt2">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+    <div class="box"><p>4</p></div>
+  </div>
+  <div class="container" id="opt3">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+    <div class="box"><p>4</p></div>
+  </div>
+  <div class="container" id="opt4">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p style="font-size:14px;">2</p></div>
+    <div class="box"><p style="font-size:25px;">3</p></div>
+    <div class="box"><p style="font-size:10px">4</p></div>
+  </div>       
+  <div class="container" id="opt5">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+    <div class="box"><p>4</p></div>
+  </div>            
+</body>
+</html>
+
+..
+
+align-self
+auto, normal, flex-start, flex-end, self-start, self-end, baseline, center 등
+
+..
+
+align-content
+여러줄로 교차될때 교차축 기준
+
+..
+
+20)
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>플렉스 박스 레이아웃</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .container {
+      float:left;
+      width:300px;
+      height:300px;
+      display:flex;          /* 플렉스 컨테이너 지정 */
+      flex-flow: row wrap;   /* 왼쪽에서 오른쪽, 여러 줄 표시 */
+      border:1px solid #222;
+      background-color:#eee;
+      margin:30px;
+    }
+    .box {
+      padding:10px;
+      margin:5px;  
+      width: 80px; 
+    } 
+    .box:nth-child(odd) {
+      background-color: rgb(255, 187, 0);
+    }           
+    .box:nth-child(even) {
+      background-color: rgb(35, 220, 35);
+    }
+    p {
+      text-align: center;
+      font-weight: bold;
+    }
+
+    /* Do it! align-content 값을 다양하게 적용하는 #opt1 ~ #opt7 스타일 만들기 */                          
+    #opt1{
+      align-content: flex-start;
+    }
+    #opt2{
+      align-content: flex-end;
+    }
+    #opt3{
+      align-content: center;
+    }
+    #opt4{
+      align-content: space-between;
+    }
+    #opt5{
+      align-content: space-around;
+    }
+    #opt6{
+      align-content: stretch;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="opt1">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+    <div class="box"><p>4</p></div>
+  </div>
+  <div class="container" id="opt2">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+    <div class="box"><p>4</p></div>
+  </div>
+  <div class="container" id="opt3">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+    <div class="box"><p>4</p></div>
+   </div>
+  <div class="container" id="opt4">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+    <div class="box"><p>4</p></div>
+  </div>            
+  <div class="container" id="opt5">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+    <div class="box"><p>4</p></div>
+  </div>    
+  <div class="container" id="opt6">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+    <div class="box"><p>4</p></div>
+  </div>  
+</body>
+</html>
+
+..
+
+레이아웃 기본 속성
+
+..
+
+21)
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>버튼을 화면 중앙에 배치하기</title>
+  <style>
+    /* Do it! 버튼을 화면 중앙에 배치하기 */
+
+    * {
+      margin:0;
+      box-sizing: border-box;
+    }
+    body {      
+      background:url('images/bg5.jpg') no-repeat left top fixed;
+      background-size:cover;      
+
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    button {
+      background-color:#ccc;
+      font-size: 1.2em; 
+      padding:1em 2em;
+      border:none;
+      border-radius:5px;    
+      box-shadow:1px 1px 2px #fff;  
+    }
+  </style>  
+</head>
+<body>
+  <button>클릭!</button>             
+</body>
+</html>
+
+..
+
+gap
+인접한 항목의 간격을 주는 것
+
+..
+
+flex-basis
+
+..
+
+22)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>플렉스 박스 레이아웃</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .container {
+      width: 800px;
+      display:flex;          
+      border:1px solid #222;
+      background-color:#eee;
+      gap: 30px;
+    }         
+    /* Do it! flex-basis 속성을 사용해 플렉스 항목의 기본 크기 지정하기 */                       
+    .box {
+      background-color:#222; 
+      flex-basis: 150px;  
+    }
+    p {
+      color:#fff;
+      text-align: center;
+      font-size: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box"><p>가나다라마</p></div>
+    <div class="box"><p>가나다라마바사</p></div>
+    <div class="box"><p>ABCDE</p></div>
+  </div>
+  
+</body>
+</html>
+
+..
+
+flex-grow
+
+..
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>플렉스 박스 레이아웃</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1 1">
+  <style>
+    .container {
+      width:800px;
+      height:100px;
+      display:flex;
+      border:1px solid #222;
+      gap: 10px;
+    }                               
+    .box {
+      flex-basis: 150px;  
+    }
+    .box:nth-child(odd) {
+      background-color: #ffc400;
+    }
+    .box:nth-child(even) {
+      background-color: #a6ff00;
+    }
+    p {
+      font-weight: bold;
+      text-align: center;
+    }
+    /* Do it! 플렉스 항목의 flex-grow 지정하기 */
+    #box1{
+      flex-grow:1 ;
+    }
+    #box2{
+      flex-grow: 1;
+    }
+    #box4{
+      flex-grow: 2;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box" id="box1"><p>1</p></div>
+    <div class="box" id="box2"><p>2</p></div>
+    <div class="box" id="box3"><p>3</p></div>
+    <div class="box" id="box4"><p>4</p></div>
+  </div>          
+</body>
+</html>
+
+..
+
+flex-shrink
+
+..
+
+flex
+첫번째는 grow값, 두번째는 shrink값이다.
+
+..
+
+--css
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #f5f5f5;
+}
+#container {
+  padding: 1em 7em;
+}
+h1 {
+  font-size: 3.5em;
+  text-align: center;
+}
+.column {
+  width: 100%;
+  padding: 0.5em 0;
+}
+.card {
+  background-color: #fff;
+  color: #1f003b;
+  padding: 3.5em 1em;
+  border-radius: 0.6em;
+  box-shadow: 0 0 2.4em rgba(25, 0, 58, 0.1);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.card .img-container {
+  width:8em;
+  height: 8em;
+  background-color: #a993ff;
+  padding: 0.5em;
+  border-radius: 50%;
+  margin-bottom: 2em;
+}
+.card img {
+  width: 100%;
+  border-radius: 50%;
+}
+.card h2 {
+  font-weight: 500;
+}
+.card p {
+  font-weight: 300;
+  text-transform: uppercase;
+  margin: 0.5em 0 2em 0;
+  letter-spacing: 2px;
+}
+.card:hover {
+  background: linear-gradient(#6045ea, #8567f7);
+  color: #fff;
+}
+.card:hover a {
+  color:#fff;
+}
+a {
+  text-decoration: none;
+  color: #222;
+}
+a:hover {
+  color: #fff;
+}
+
+.social{
+  width: 50%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 1024px) {
+  #container{
+    padding: 1em;
+  }
+}
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2em 1em;
+  text-align: center;
+}
+
+.card{
+  padding: 5em 1em;
+
+}
+
+.column { 
+  flex: 0 0 33.33%;
+  max-width: 33.33%;
+  padding: 0 1em;
+}
+
+--html
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Team</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/0818our-team.css">
+</head>
+<body>
+  <div id="container">
+    <h1>Our Team</h1>
+    <div class="row">
+      <div class="column">
+        <div class="card">
+          <div class="img-container">
+            <img src="images/member-1.png">
+          </div>
+          <h2>James Turner</h2>
+          <p>Founder</p>
+          <div class="social">
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-github"></i></a>
+            <a href="#"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="card">
+          <div class="img-container">
+            <img src="images/member-2.png">
+          </div>
+          <h2>Luna Hall</h2>
+          <p>Developer</p>
+          <div class="social">
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-github"></i></a>
+            <a href="#"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="card">
+          <div class="img-container">
+            <img src="images/member-3.png">
+          </div>
+          <h2>Hope Carpenter</h2>
+          <p>Designer</p>
+          <div class="social">
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-github"></i></a>
+            <a href="#"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+..
+
+css그리드 레이아웃
+플랙스박스와 달리 양방향 모두 사용
+
+..
+
+25)
+  <!DOCTYPE html>
+  <html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSS Grid Layout</title>
+    <style>
+      /* Do it! 그리드 컨테이너에서 열과 행 지정하기 */
+      .container{
+        display: grid;
+        grid-template-columns: 100px 200px 300px;
+        grid-template-rows: 50px 100px;
+      }
+
+      .items{
+        border: 1px solid #222;
+        padding:10px;      
+        font-size: 20px;
+        text-align: center;
+      }   
+      .items:nth-child(even){
+        background-color:#ffc400;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="items">1</div>
+      <div class="items">2</div>
+      <div class="items">3</div>
+      <div class="items">4</div>
+      <div class="items">5</div>
+      <div class="items">6</div>
+    </div>
+  </body>
+  </html>
+
+..
+
+fr : 상대적인 단위. 
+너비가 2:1:2인 칼럼이라면 2fr:1fr:2fr로 나타낼 수 있다.
+
+값이 반복되면 repeat
+최소최대는 minmax
+
+26)
+  <!DOCTYPE html>
+  <html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSS Grid Layout</title>
+    <style>
+      /* Do it! 행 높이를 자동으로 지정하기 */
+      .container {
+        width:600px;
+        border: 1px solid #ccc;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: minmax(100px, auto);
+      }
+      .items{
+        padding:10px;
+        font-size: 16px;
+      }   
+      .items:nth-child(odd){
+        background-color:#ffc400;
+      }
+    </style>
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="items">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, reprehenderit.Lorem ipsum dolor, sit amet consectetur adipisicing elit. </div>
+      <div class="items">Lorem ipsum dolor, sit amet consectetur adipisicing elit.Lorem ipsum dolor, sit amet consectetur adipisicing elit</div>
+      <div class="items">Lorem ipsum dolor sit amet.Lorem ipsum dolor, sit amet consectetur adipisicing elit</div>
+      <div class="items">Lorem ipsum dolor sit.Lorem ipsum dolor, sit amet consectetur adipisicing elit</div>
+      <div class="items">Lorem, ipsum dolor.</div>
+      <div class="items">Lorem, ipsum dolor. Lorem ipsum dolor sit amet.</div>
+    </div>
+  </body>
+  </html>
+..
+
+gap
+
+27)
+  <!DOCTYPE html>
+  <html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSS Grid Layout</title>
+    <style>
+      /* Do it! 그리드 항목 사이에 간격 지정하기 */
+      .container {
+        width: 600px;        
+        border: 2px solid #222;
+        display:grid;
+        grid-template-columns:repeat(3, 1fr);  /* 열 3개 */ 
+        gap: 20px 30px;
+      }
+      .items{
+        padding:10px;
+        font-size: 20px;        
+        text-align: center;
+      }   
+      .items:nth-child(odd){
+        background-color:#d6faff;
+      }
+      .items:nth-child(even){
+        background-color:#00b7ff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="items">1</div>
+      <div class="items">2</div>
+      <div class="items">3</div>
+      <div class="items">4</div>
+      <div class="items">5</div>
+      <div class="items">6</div>
+    </div>
+  </body>
+  </html>
+
+..
+
+28)
+
+  <!DOCTYPE html>
+  <html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSS Grid Layout</title>
+    <style>
+      /* Do it! 그리드 항목 사이에 간격 지정하기 */
+      .container {
+        width: 600px;        
+        border: 2px solid #222;
+        display:grid;
+        grid-template-columns:repeat(3, 1fr);  /* 열 3개 */ 
+        gap: 20px 30px;
+      }
+      .items{
+        padding:10px;
+        font-size: 20px;        
+        text-align: center;
+      }   
+      .items:nth-child(odd){
+        background-color:#d6faff;
+      }
+      .items:nth-child(even){
+        background-color:#00b7ff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="items">1</div>
+      <div class="items">2</div>
+      <div class="items">3</div>
+      <div class="items">4</div>
+      <div class="items">5</div>
+      <div class="items">6</div>
+    </div>
+  </body>
+  </html>
+
+
+..
+
+grid-template-area
+
+29)
+  <!DOCTYPE html>
+  <html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSS Grid Layout</title>
+    <style>      
+      .gallery{
+        width:700px;   
+        margin: 20px auto;
+        
+        display: grid;
+        grid-template-areas:
+        "photo1 photo1 photo2"
+        "photo1 photo1 photo3"
+        "photo4 photo5 photo6";
+        gap: 5px;
+
+      }
+      .photo1{
+        grid-area:photo1;
+      }
+      .photo2{
+        grid-area:photo2;
+      }
+      .photo3{
+        grid-area:photo3;
+      }
+      .photo4{
+        grid-area:photo4;
+      }
+      .photo5{
+        grid-area:photo5;
+      }
+      .photo6{
+        grid-area:photo6;
+      }
+    
+      .gallery img{
+        width:100%;
+        height:100%;
+        border-radius: 10px;
+        object-fit:cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="gallery">
+      <img class="photo1" src="images/photo-1.jpg" alt="따뜻한 차가 있는 겨울 풍경">
+      <img class="photo2" src="images/photo-2.jpg" alt="남극 펭귄">
+      <img class="photo3" src="images/photo-3.jpg" alt="눈이 가득 쌓인 시골 풍경">
+      <img class="photo4" src="images/photo-4.jpg" alt="오로라가 보이는 밤 풍경">
+      <img class="photo5" src="images/photo-5.jpg" alt="눈 쌓인 배경">
+      <img class="photo6" src="images/photo-6.jpg" alt="나뭇가지에 앉아있는 빨간 새">
+    </div>
+  </body>
+  </html>
+
