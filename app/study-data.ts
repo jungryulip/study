@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-08-19",
+    day: "DAY 23",
+    title: "CSS 고급 선택자·애니메이션과 JavaScript 기초",
+    summary:
+      "연결·속성·가상 선택자로 요소를 정밀하게 선택하고 필터, transform, transition, keyframes 애니메이션을 실습했다. JavaScript를 HTML에 연결한 뒤 DOM 이벤트와 변수·상수·자료형·문자열·배열의 기본도 익혔다.",
+    learned: [
+      "연결·속성·가상 선택자와 가상 요소",
+      "filter·transform·transition·animation",
+      "JavaScript 연결·DOM 선택·이벤트",
+      "let·const·자료형·템플릿 리터럴·배열",
+    ],
+    tags: ["CSS", "JavaScript", "애니메이션"],
+    folder: "HTML/20260819",
+    readTime: 23,
+  },
+  {
     date: "2026-08-18",
     day: "DAY 22",
     title: "CSS 배경, 반응형 웹과 Flexbox",
