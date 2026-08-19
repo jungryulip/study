@@ -1,0 +1,1615 @@
+CSS 고급 선택자
+
+..
+
+-연결선택자 선택자를 연결해서 적용 대상을 제한하는 선택자
+-하위선택자[A B] 부모 요소에 포함된 모든 하위 요소에 스타일이 적용된다. 
+-자식선택자[A>B] 선행요소에만 적용한다.
+-인접 형제 선택자{A+B} 같은 부모를 가진 선택자만 
+-형제 선택자[A~B] 형제 요소들에게 적용
+
+..
+
+01)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>고급 선택자</title>
+  <style>
+    body {
+      background-color:#eee;
+    }
+    section {
+      width:600px;
+      margin:20px auto;
+    }
+    p {
+      width:500px;
+      padding:10px;
+      background-color:#fff;
+      border:1px solid #ccc;
+      line-height:2;
+    }
+    /* Do it! section 요소의 모든 하위 p 요소의 스타일 바꾸기 */
+    /*1)section 요소의 모든 하위 p 요소의 스타일 변경*/
+    section p {
+      color: blue; 
+    }
+    /*2)section 요소의 하위 p 스타일 변경*/
+    /* section > p {
+      color: red;
+    } */
+    /*3)인접형제 선택자 h1요소의 형제 중 첫번째 p 스타일 변경*/
+    /* h1 + p {
+      color: blue;
+    } */
+    /*4)형제 선택자 h1요소의 형제 중 첫번째 p 스타일 변경*/
+    /* h1 ~ p {
+      background-color: #222;
+      color: #fff;
+    } */
+
+  </style>
+</head>
+<body>
+  <section>
+    <h1>예약 방법 & 사용 요금</h1>
+    <p>아직 온라인 예약 신청이 준비되어 있지 않습니다. <br>전화(xxx-xxxx-xxxx)로 문의 바랍니다.</p>
+    <div>
+      <p>가족실(2~4인) : 60,000원/일</p>
+      <p>도미토리(4인 공용) : 25,000원/일</p>
+  </section>   
+</body>
+</html>
+
+..
+
+속성 선택자 지정된 속성을 가진 요소를 찾아서 스타일을 적용
+
+02)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>속성 선택자</title>
+<style>
+   ul {
+		 list-style:none;
+   }
+	 li {
+		 width:120px;	 
+		 display:inline-block;
+		 margin:10px;
+	 }
+		li a {
+			padding: 5px 20px;
+			font-size: 14px;
+			text-decoration: none;
+			font-weight: bold;
+		}
+		/* Do it! href 속성이 있는 a 요소의 스타일 지정하기 */
+
+		a[href] {
+			background-color: yellow;
+			border: 1px solid #ccc;
+			font-weight: normal;
+		}
+
+</style>
+</head>
+
+<body>
+	<ul>
+		<li><a>메인 메뉴 : </a></li>
+		<li><a href="#">메뉴 1</a></li>
+		<li><a href="#">메뉴 2</a></li>
+		<li><a href="#">메뉴 3</a></li>
+		<li><a href="#">메뉴 4</a></li>
+	</ul>
+  </body>
+ </html>
+
+..
+
+속성 선택자
+
+03)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>속성 선택자</title>
+<style>
+  ul { 
+		 list-style:none;
+  }
+	li {
+		padding: 5px 30px;
+	}
+	li a {
+		font-size: 16px;
+		text-decoration: none;
+		color:#000;
+	}
+	/* Do it! target 속성 값이 _blank인 a 요소에만 스타일 지정하기 */
+	a[target="_blank"] {
+	 	padding-right: 30px;
+		background: url(images/newwindow.png) no-repeat center right;
+	}
+</style>
+</head>
+
+<body>
+	<ul>
+		<li><a href="hhttps://html.spec.whatwg.org" target="_blank">HTML</a></li>
+		<li><a href="https://www.w3.org/TR/selectors">CSS Selector Level 3</a></li>
+		<li><a href="https://www.w3.org/TR/css3-mediaqueries">미디어쿼리</a></li>		
+	</ul>
+  </body>
+ </html>
+
+..
+
+속성 ~= 값 선택자
+
+04)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>속성 선택자</title>
+<style>
+   ul { list-style:none; }
+	 li {
+		 display:inline-block;
+		 margin:10px;
+	  }
+		li a {
+			padding: 5px 20px;
+			font-size: 14px;
+			color: blue;
+			text-decoration: none;
+		}
+		.flat {
+      background:#eee;
+      border:1px solid #222;
+		}
+		/* Do it! class 속성 값에 button이 포함된 요소에 스타일 지정하기 */
+		a[class ~= "button"]{
+			box-shadow: rgba(0, 0, 0, 0.5) 4px 4px;
+			border-radius: 5px;
+			border: 1px solid #222;
+		}
+
+
+</style>
+</head>
+<body>
+	<ul>
+		<li><a href="#" class="flat">메뉴 1</a></li>
+		<li><a href="#" class="flat">메뉴 2</a></li>
+		<li><a href="#" class="button">메뉴 3</a></li>
+		<li><a href="#" class="flat button" >메뉴 4</a></li>
+	</ul>
+  </body>
+ </html>
+
+..
+
+속성 |= 값 선택자
+하이픈이 연결된것까지 찾아줌
+
+05)
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>속성 선택자</title>
+<style>
+   ul { list-style:none; }
+	 li {
+		 display:inline-block;
+		 margin:10px;
+	 }
+		li a {
+			padding: 5px 20px;
+			font-size: 14px;
+			color: blue;
+			text-decoration: none;
+		}
+		/* Do it! 속성 값의 시작 부분이 일치하는 요소에라 스타일 지정하기 */
+		a[title |= "us"]{
+			background: url(images/us.png) no-repeat left center;
+		}
+		a[title |= "ja"]{
+			background: url(images/jp.png) no-repeat left center;
+		}
+		a[title |= "chn"]{
+			background: url(images/ch.png) no-repeat left center;
+		}
+
+</style>
+</head>
+
+<body>
+	<ul>
+		<li>외국어 서비스 : </li>
+		<li><a href="#" title="us-english">영어</a></li>
+		<li><a href="#" title="ja">일본어</a></li>
+		<li><a href="#" title="chn">중국어</a></li>
+	</ul>
+</body>
+ </html>
+
+..
+
+속성^=값 선택자
+특정 값으로 시작하는 속성을 가진 요소를 찾아 적용
+
+..
+
+속성$=값 선택자
+특정 값으로 끝나는 속성을 가진 요소를 찾아 적용
+
+..
+
+속성*=값 선택자
+갑의 일부가 일치하는 속성을 가진 요소를 찾아 적용
+
+..
+
+가상클래스
+사용자의 동작에 반응하는 가상 클래스 선택자
+:like->:visited->:active->:hover
+
+:like
+:visited
+:active
+:hover
+:focus
+
+06)<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>link 스타일</title>
+<style>
+  .container {
+    width: 960px;
+    margin : 0 auto;
+  }
+  .navi{
+    width:960px;
+    height:60px;
+    padding-bottom:10px;
+    border-bottom:2px solid #ccc;
+  }
+  .navi ul{
+    list-style: none;
+    padding-top:10px; 
+    padding-bottom:5px;
+  }
+  .navi ul li {
+    float:left;
+    width:150px;
+    padding:10px;   
+  }
+  /* Do it! 가상 선택자를 사용해 링크 스타일 지정하기 */
+  .navi a:link, .navi a:visited {
+    display: block;
+    font-size: 14px;
+    color: #000;
+    padding: 10px;
+    text-decoration: none;
+    text-align: center;
+  }
+  .navi a:hover, .navi a:focus{
+    background-color: #222;
+    color: white;
+  }
+  .navi a:active{
+    background-color: #f00;
+  }
+
+
+</style>
+</head>
+
+<body>
+<div class="container">
+    <nav class="navi">
+      <ul>
+        <li><a href="#">이용 안내</a></li>
+        <li><a href="#">객실 소개</a></li>
+        <li><a href="#">예약 방법 및 요금</a></li>
+        <li><a href="#">예약하기</a></li>
+      </ul>
+    </nav>  
+  </div>
+</body>
+</html>
+
+..
+
+가상요소
+요소 상태에 따라 가상클래스
+target enabled disabled chacked
+
+07)
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>가상 클래스</title>
+  <style>
+    .container {
+      width: 960px;
+      margin : 0 auto;
+    }
+    .navi{
+      width:960px;
+      height:60px;
+      padding-bottom:10px;
+      border-bottom:2px solid #ccc;
+    }
+
+    .navi ul{
+      list-style: none;
+      padding-top:10px; 
+      padding-bottom:5px;
+    }
+    .navi ul li {
+      display:inline-block;
+      width:150px;
+      padding:10px;   
+    }
+    .navi a:link, .navi a:visited {
+      font-size:14px;
+      padding: 10px; 
+      text-decoration: none;  /* 밑줄 없음 */
+
+    }
+    .navi a:hover,  .navi a:focus {
+      background-color:#222;  /* 배경색 */
+      color:#fff;  /* 글자색 */
+    }
+
+    .navi a:active {
+      background-color:#f00;  /* 배경색 */
+    }
+
+    #signup {
+      background:#fff;
+      border:1px solid #222;
+      border-radius: 5px;
+      padding: 20px;
+      width: 400px;	
+      margin:30px auto;
+    }
+
+    #signup fieldset {
+      border: 1px solid #ccc;
+      margin-bottom: 30px;
+    }
+        
+    #signup legend {
+      font-size: 16px;
+      font-weight: bold;
+      padding-left:5px;
+      padding-bottom: 10px;	
+    }
+  
+    #signup ul li {
+      line-height: 30px;
+      list-style: none;
+      padding: 5px 10px;
+      margin-bottom: 2px;
+    }
+          
+    #signup fieldset:first-of-type label {
+      float: left;
+      font-size: 13px;
+      width: 60px;
+    }
+
+    #signup input[type=text], input[type=tel] {
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      padding: 5px;
+      width: 200px;
+    }
+
+    #signup button {	
+      border: 1px solid #222;
+      border-radius: 20px;
+      display: block;
+      font: 16px 맑은고딕,굴림,돋움;
+      letter-spacing: 1px;
+      margin: auto;
+      padding: 7px 25px; 
+    }
+
+    #signup b {
+      float: left;
+      font-size: 13px;
+      width: 110px;
+    }
+    /* Do it! 라디오 버튼을 클릭했을 때 label 스타일 지정하기 */
+    #signup input:checked + label{
+      color: red;
+      font-weight: bold;
+    }    
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav class="navi">
+      <ul>
+        <li><a href="ps-1.html#intro">이용 안내</a></li>
+        <li><a href="ps-1.html#room">객실 소개</a></li>
+        <li><a href="ps-1.html#reservation">예약 방법 및 요금</a></li>
+        <li><a href="ps-2.html">예약하기</a></li>
+      </ul>
+    </nav>  
+
+    <form id="signup">    
+      <fieldset>
+        <legend>개인 정보</legend>
+        <ul>
+          <li>
+            <label for="fullname">이름</label>
+            <input id="fullname" name="fullname" type="text" required>
+          </li>
+          <li>
+            <label for="tel">연락처</label>
+            <input id="tel" name="tel" type="tel">
+          </li>          
+        </ul>
+      </fieldset>
+      <fieldset>  
+        <legend>객실 형태</legend>
+        <ul>
+          <li>
+            <input type="radio" name="room" id="basic">
+            <label for="basic">기본형(최대 2인)</label>
+          <li>      
+          <li>
+            <input type="radio" name="room" id="family">
+            <label for="family">가족형(최대 8인)</label>
+          </li>          
+        </ul>
+      </fieldset>
+      <button type="submit"> 제출 </button> 
+    </form>
+  </div>
+</body>
+</html>
+
+..
+
+문서구조에 따른 가상 클래스 선택자
+first-child, last-child, only-child, nth-child(숫자 수식), A:nth-of-type(숫자 수식)
+
+..
+
+08)<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>가상 선택자</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      gap: 20px;
+    }
+    .container {
+      width: 300px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      text-align: center;
+    }
+    /* Do it! 가상 선택자를 사용해 항목 선택하기 */
+    .container p:first-child{
+      background-color: #fc2;
+    }
+    .container :last-child{
+      background-color: #2cf;
+    }
+    .container div:only-child{
+      background-color: #f0c8fc;
+    }
+    
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <p>첫 번째</p>
+    <div>두 번째</div>
+    <p>세 번째</p>
+    <div>네 번째</div>
+  </div>
+  <div class="container">
+    <div>혼자~</div>
+  </div>
+</body>
+</html>
+
+..
+
+//요즘 많이 씀
+nth-child()
+괄호안이 위칫갑, (n+4)= 네번째부터 끝까지/ (-n+4)= 처음부터 네번째까지
+
+..
+
+09)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>가상 선택자</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      width: 600px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 5px;
+    }
+    .item {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 20px;
+    }
+    /* Do it! 가상 선택자를 사용해 항목 선택하기 */
+    /* .container :nth-child(2n){
+      background-color: #fc2;
+    } */
+    /* .container :nth-child(2n+1){
+      background-color: #fc2;
+    } */
+    /* .container :nth-child(n+4){
+      background-color: #fc2;
+    } */
+    .container :nth-child(-n+4){
+      background-color: #fc2;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+    <div class="item">7</div>
+    <div class="item">8</div>
+  </div>
+</body>
+</html>
+
+..
+
+nth-of-type
+같은 타입의 요소의 순서를 주는 것
+
+..
+
+not()
+괄호안에 있는 요소를 제외하고 선택
+간결하게 표현할 수 있다.
+
+10)
+--css
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #ccc;
+	padding: 20px;	
+}
+
+#signup {
+	background:#fff;
+	border:1px solid #222;
+	border-radius: 5px;
+	padding: 20px;
+	width: 400px;	
+	margin:30px auto;
+}
+		
+#signup fieldset {
+	border: 1px solid #ccc;
+	margin-bottom: 30px;
+}
+		
+#signup legend {
+	font-size: 16px;
+	font-weight: bold;
+	padding-left:5px;
+	padding-bottom: 10px;	
+}
+			
+#signup ul li {
+	line-height: 30px;
+	list-style: none;
+	padding: 5px 10px;
+	margin-bottom: 2px;
+}
+			
+#signup button {	
+	border: 1px solid #222;
+	border-radius: 20px;
+	display: block;
+	font-size: 16px;
+	letter-spacing: 1px;
+	margin: auto;
+	padding: 7px 25px;
+}
+
+#signup label {
+	float: left;  /* 왼쪽으로 배치 */
+	font-size: 13px;  /* 글자 크기 - 13px */
+	width: 110px;  /* 너비 - 110px */
+}
+
+#signup input[type=text], #signup input[type=password], #signup input[type=tel], #signup input[type=email] {  /* 속성 선택자 사용 */
+	border: 1px solid #ccc;  /* 텍스트 필드 테두리 지정 */
+	border-radius: 3px;  /* 텍스트 필드 모서리를 둥글게 지정 */
+	font-size: 13px;  /* 텍스트 필드 안의 글자 크기 지정 */
+	padding: 5px;  /* 텍스트 필드와 내용 사이의 패딩 지정 */
+	width: 200px;  /* 텍스트 필드 너비 지정 */
+}					
+/* = */
+#signup input:not[type=radio] {  /* 속성 선택자 사용 */
+	border: 1px solid #ccc;  /* 텍스트 필드 테두리 지정 */
+	border-radius: 3px;  /* 텍스트 필드 모서리를 둥글게 지정 */
+	font-size: 13px;  /* 텍스트 필드 안의 글자 크기 지정 */
+	padding: 5px;  /* 텍스트 필드와 내용 사이의 패딩 지정 */
+	width: 200px;  /* 텍스트 필드 너비 지정 */
+}		
+
+#signup input[required] {  /* 필수 입력 필드의 스타일 */
+	border:1px red solid;  
+}
+
+#signup input[readonly] {  /* 읽기 전용 필드의 스타일 */
+	border:none;
+}
+--html
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>회원 가입</title>
+  <link rel="stylesheet" href="css/register3.css">
+
+</head>
+<body>
+  <form id="signup">
+    <fieldset>
+      <legend>로그인 정보</legend>
+      <ul>
+        <li>
+          <label for="userid">아이디</label>
+          <input id="userid" name="userid" type="text" required autofocus>
+        </li>
+        <li>
+          <label for="pwd1">비밀번호</label>
+          <input id="pwd1" name="pwd1" type="password"  required>
+        </li>
+        <li>
+          <label for="pwd2">비밀번호 확인</label>
+          <input id="pwd2" name="pwd2" type="password" required>
+        </li>  
+        <li>
+          <label for="level">회원 등급</label>
+          <input id="level" name="level" type="text" readonly value="준회원">
+        </li>
+      </ul>
+    </fieldset>
+    <fieldset>
+      <legend>개인 정보</legend>
+      <ul>
+        <li>
+          <label for="fullname">이름</label>
+          <input id="fullname" name="fullname" type="text" placeholder="5자미만 공백없이" required>
+        </li>
+        <li>
+          <label for="email">메일 주소</label>
+          <input id="email" name="email" type="email" placeholder="abcd@domain.com" required autocomplete="off">
+        </li>
+        <li>
+          <label for="tel">연락처</label>
+          <input id="tel" name="tel" type="tel" autocomplete="off">
+        </li>  
+      </ul>
+    </fieldset>
+    <fieldset>
+      <button type="submit"> 제출 </button> 
+    </fieldset>
+  </form>
+</body>
+</html>
+
+..
+
+11)
+--css
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #ccc;
+	padding: 20px;	
+}
+
+#signup {
+	background:#fff;
+	border:1px solid #222;
+	border-radius: 5px;
+	padding: 20px;
+	width: 400px;	
+	margin:30px auto;
+}
+		
+#signup fieldset {
+	border: 1px solid #ccc;
+	margin-bottom: 30px;
+}
+		
+#signup legend {
+	font-size: 16px;
+	font-weight: bold;
+	padding-left:5px;
+	padding-bottom: 10px;	
+}
+			
+#signup ul li {
+	line-height: 30px;
+	list-style: none;
+	padding: 5px 10px;
+	margin-bottom: 2px;
+}
+			
+#signup button {	
+	border: 1px solid #222;
+	border-radius: 20px;
+	display: block;
+	font-size: 16px;
+	letter-spacing: 1px;
+	margin: auto;
+	padding: 7px 25px;
+}
+
+#signup label {
+	float: left;  /* 왼쪽으로 배치 */
+	font-size: 13px;  /* 글자 크기 - 13px */
+	width: 110px;  /* 너비 - 110px */
+}
+
+#signup input[type=text],
+#signup input[type=password],
+#signup input[type=tel],
+#signup input[type=email]{
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	font-size: 13px;
+	padding: 5px;
+	width: 200px;
+}
+
+#signup input[required]{
+	border: 1px solid red;
+}
+--html
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>회원 가입</title>
+  <link rel="stylesheet" href="css/register2.css">
+</head>
+<body>
+  <form id="signup">
+    <fieldset>
+      <legend>로그인 정보</legend>
+      <ul>
+        <li>
+          <label for="userid">아이디</label>
+          <input id="userid" name="userid" type="text" required autofocus>
+        </li>
+        <li>
+          <label for="pwd1">비밀번호</label>
+          <input id="pwd1" name="pwd1" type="password"  required>
+        </li>
+        <li>
+          <label for="pwd2">비밀번호 확인</label>
+          <input id="pwd2" name="pwd2" type="password" required>
+        </li>  
+        <li>
+          <label for="level">회원 등급</label>
+          <input id="level" name="level" type="text" readonly value="준회원">
+        </li>
+      </ul>
+    </fieldset>
+    <fieldset>
+      <legend>개인 정보</legend>
+      <ul>
+        <li>
+          <label for="fullname">이름</label>
+          <input id="fullname" name="fullname" type="text" placeholder="5자미만 공백없이" required>
+        </li>
+        <li>
+          <label for="email">메일 주소</label>
+          <input id="email" name="email" type="email" placeholder="abcd@domain.com" required autocomplete="off">
+        </li>
+        <li>
+          <label for="tel">연락처</label>
+          <input id="tel" name="tel" type="tel" autocomplete="off">
+        </li>  
+      </ul>
+    </fieldset>
+    <fieldset>
+      <button type="submit"> 제출 </button> 
+    </fieldset>
+  </form>
+</body>
+</html>
+
+..
+
+::first-line
+::first-letter
+첫줄이나 첫번째 글자에 스타일 적용
+
+..
+
+::before, ::after
+웹요소의 앞이나 뒤에 스타일을 넣을 수 있다. 
+웹사이트에 footer에 있는 요소
+
+..
+
+:root 가상 클래스
+문서 최상위 요소 선택
+css변수 
+변수 이름 앞에 --을 불여서 변수 용도를 알 수 있도록 이름을 붙여야함
+var()사용자가 만든 css변수를 사용할때, 괄호안에 변수 이름을 넣어서 만들기
+calc() 괄호 안에 크기값이나 각도, 시간, 백분유르 숫자들의 단위 값을 사용한 계산식이 들어감
+min(),max()
+
+..
+
+filter 속성
+blur() 함수 흐림효과
+
+11)<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>다양한 filter 함수</title>
+<style>
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+  }
+  .gallery img {
+    width: 80%;
+    border-radius: 50%;
+  }
+  .title {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom:20px;
+  }
+  .image-container {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 10px;
+    background: #f9f9f9;
+  }
+
+  /* Do it! filter 함수 사용해서 스타일 지정하기 */
+  .blur {filter: blur(5px);}
+  .brightness {filter: brightness(2);}
+  .contrast {filter: contrast(200%);}
+  .drop-shadow {filter: drop-shadow(16px 16px 10px black);}
+  .grayscale {filter: grayscale(100%);}
+  .invert {filter: invert(100%);}
+  .sepia {filter: sepia(100%);}
+  .opacity {filter: opacity(50%);}
+  .hue-rotate {filter: hue-rotate(90deg);}
+  .saturate {filter: saturate(200%);}
+
+</style>
+</head>
+<body>
+
+<div class="orgin">
+  <img src="images/cat.jpg" style="border-radius: 50%;">
+</div>
+<div class="gallery">
+  <div class="image-container">
+    <div class="title">filter:blur(5px)</div>
+    <img src="images/cat.jpg" class="blur">
+  </div>
+  <div class="image-container">
+    <div class="title">filter:brightness(2)</div>
+    <img src="images/cat.jpg" class="brightness">
+  </div>
+  <div class="image-container">
+    <div class="title">filter:contrast(200%)</div>
+    <img src="images/cat.jpg" class="contrast">
+  </div>
+  <div class="image-container">
+    <div class="title">filter:drop-shadow(16px 16px 10px black)</div>
+    <img src="images/cat.jpg" class="drop-shadow">
+  </div>
+  <div class="image-container">
+    <div class="title">filter:grayscale(100%)</div>
+    <img src="images/cat.jpg" class="grayscale">
+  </div>
+  <div class="image-container">
+    <div class="title">filter:invert(100%)</div>
+    <img src="images/cat.jpg" class="invert">
+  </div>
+  <div class="image-container">
+    <div class="title">filter:sepia(100%)</div>
+    <img src="images/cat.jpg" class="sepia">
+  </div>
+  <div class="image-container">
+    <div class="title">filter:opacity(50%)</div>
+    <img src="images/cat.jpg" class="opacity">
+  </div>
+  <div class="image-container">
+    <div class="title">filter:hue-rotate(90deg)</div>
+    <img src="images/cat.jpg" class="hue-rotate">
+  </div>
+  <div class="image-container">
+    <div class="title">filter:saturate(200%)</div>
+    <img src="images/cat.jpg" class="saturate">
+  </div>
+
+  
+</div>
+
+</body>
+</html>
+
+..
+
+트랜스폼 특정 요소의 크기나 형태 등 스타일이 바뀌는 것
+translate 함수 지정한 방향으로 ㅇ이동할 걸리를 지전하면 해당요소를 이동시킴
+
+13)
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<title>Transform - translate</title>
+    <style>
+			.container {
+				width:800px;
+				height:200px;
+				margin:20px auto;
+			}
+			.origin {
+				width: 100px;
+				height: 100px;
+				border: 1px solid black;
+				float: left;
+				margin: 40px;
+			}
+			.origin > div {				
+				width:100px;
+				height:100px;
+				background-color:orange;
+			}
+      /* Do it! 마우스 오버하면 사각형 이동하기 */
+			#movex:hover {
+				transform: translate(50px);
+			}
+			#movey:hover {
+				transform: translateY(20px);
+			}
+			#movexy:hover {
+				transform: translate(10px, 20px);
+			}
+
+
+
+		</style>
+	</head>
+	<body>		
+		<div class="container">
+			<div class="origin">
+				<div id="movex"></div>		
+			</div>
+			<div class="origin">
+				<div id="movey"></div>	
+			</div>
+			<div class="origin">
+				<div id="movexy"></div>		
+			</div>
+		</div>
+	</body>
+</html>
+
+..
+
+tranform-scale
+
+..
+
+14)
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<title>Transform:scale</title>
+    <style>
+			#container{
+				width:600px;
+				margin:20px auto;
+			}
+			.origin {
+				width: 100px;
+				height: 100px;
+				border: 1px solid black;
+				float: left;
+				margin: 40px;
+			}
+			.origin > div {				
+				width:100px;
+				height:100px;
+				background-color:orange;
+			}
+
+      /* Do it! scale 함수로 확대,축소하기 */
+			#scalex:hover{
+				transform: scaleX(2);
+			}
+			#scaley:hover{
+				transform: scaleY(1.5);
+			}
+			#scale:hover{
+				transform: scale(0.7);
+			}
+
+		</style>
+	</head>
+	<body>
+		<div id="container">		
+			<div class="origin">
+				<div id="scalex"></div>
+			</div>
+			<div class="origin">
+				<div id="scaley"></div>
+			</div>
+			<div class="origin">
+				<div id="scale"></div>
+			</div>
+		</div>		
+	</body>
+</html>
+
+..
+
+transform-rotate
+
+15)<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Transform:rotate</title>
+  <style>
+		#container{
+			width:800px;
+			margin:20px auto;
+		}
+		.origin {
+			width: 100px;
+			height: 100px;
+			float: left;
+			margin: 40px;
+		}
+
+		/* Do it! rotate 함수로 회전하기 */
+		#rotate1:hover{
+			transform: rotate(40deg);
+		}
+		#rotate2:hover{
+			transform: rotate(-40deg);
+		}
+
+  </style>
+</head>
+<body>		
+	<div id="container"> 
+		<div class="origin" id="rotate1">
+			<img src="images/home.png" alt="">	
+		</div>
+		<div class="origin" id="rotate2">
+			<img src="images/home.png" alt="">							
+	</div>
+</body>
+</html>
+
+..
+
+트랜스폼
+
+15)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Transform</title>
+  <style>
+    #container{
+      width:800px;
+      margin:20px auto;
+    }
+    .origin {
+      width: 100px;
+      height: 100px;
+      margin: 40px;
+      float: left;
+      border: 1px solid black;
+      /* Do it! 원근감 추가하기  */
+      
+    }
+    .origin > div {				
+      width:100px;
+      height:100px;
+      background-color:orange;
+      /* Do it! 트랜지션 효과 추가하기 */
+        transition: all 1s;
+    }
+
+    /* Do it! 각 요소에 rotate 함수 적용하기 */
+    #rotatex:hover {
+      transform: rotateX(55deg);
+    }
+    #rotatey:hover {
+      transform: rotatey(55deg);
+    }
+    #rotatez:hover {
+      transform: rotatez(55deg);
+    }
+    #rotatexyz:hover {
+      transform: rotate3d(2.5, 1.2, -1.5, 55deg);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <div class="origin">
+      <div id="rotatex"></div>
+    </div>
+    <div class="origin">
+      <div id="rotatey"></div>
+    </div>
+    <div class="origin">		
+      <div id="rotatez"></div>
+    </div>
+    <div class="origin">	
+      <div id="rotatexyz"></div>	
+    </div>
+  </div>
+</body>
+</html>
+
+..
+
+skew
+요소를 지정한 만큼 비튼다.
+
+17)
+
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<title>Transform</title>
+    <style>
+			#container{
+				width:600px;
+				margin:20px auto;
+			}
+			.origin {
+				width: 100px;
+				height: 100px;
+				border: 1px solid black;
+				float: left;
+				margin: 40px;
+			}
+			.origin > div {				
+				width:100px;
+				height:100px;
+				background-color:orange;
+				transition: all 1s;
+			}
+			/* Do it! skew 함수를 사용해 웹 요소 비틀기 */
+			#skewx:hover{
+				transform: skewX(30deg);
+			}
+			#skewy:hover{
+				transform: skewY(15deg);
+			}
+			#skewxy:hover{
+				transform: skew(25deg, -17deg);
+			}
+
+		</style>
+	</head>
+	<body>		
+		<div id="container">		
+			<div class="origin">
+				<div id="skewx"></div>
+			</div>
+			<div class="origin">
+				<div id="skewy"></div>
+			</div>
+			<div class="origin">
+				<div id="skewxy"></div>
+			</div>
+		</div>
+
+		
+	</body>
+</html>
+
+..
+
+실제 사용되는 예시
+[버튼에 동적효과 넣기]
+
+18)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>버튼에 동적인 효과 만들기</title>
+  <style>
+    body {
+      background-image: linear-gradient(to right, #ff5e62, #ff9966);
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;      
+    }
+    .button {
+      text-decoration: none;
+      font-size: 1.5em;
+      letter-spacing: 2px;
+      color: #fff;
+      outline: 2px solid #fff;  
+      padding:20px 60px;
+      position: relative;
+      overflow: hidden;
+      transition: color 1s;
+    }
+    .button::before{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -50px;
+      width: 0;
+      height: 100%;
+      background-color: #fff;
+      z-index: -10;
+      transform: skewX(35deg);
+      transition: width 1s;
+    }
+    .button:hover{
+      color: #ff5e62;
+    }
+    .button:hover::before{
+      width: 150%;
+    }
+
+  </style>
+</head>
+
+<body>
+	<a href="#" class="button">둘러보기</a>
+</body>
+</html>
+
+..
+
+트렌지션
+웹요소와 스타일 속성이 조금씩 자연스럽게 바뀌는 것
+
+19)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Transition</title>
+<style>
+	.box {
+		margin:50px auto;
+		width: 100px;
+		height: 100px;
+		background-color: #fb5;
+		border: 1px solid #222;
+		/* Do it! 모든 대상에 2초 동안 ease-in 속도 곡선을 적용하는 트랜지션 */
+		transition: 2s ease-in;
+	}
+	.box:hover {  /* 여기에 있는 속성이 모두 트랜지션 대상 */
+		width: 200px;
+		height: 200px;
+		background-color: #f50;
+		transform: rotate(270deg);			
+	}
+</style>
+</head>
+
+<body>
+	<div class="box"></div>
+</body>
+</html>
+
+..
+
+애니메이션
+웹요소에 애니메이션을 추가하는 것으로, @로  바뀌는 지점을 지정한다. 
+
+20)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Animation</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: #fa0;
+      /* Do it! 2초 동안 애니메이션 실행하기 */
+      animation-name: slideRight;
+      animation-duration: 2s;  
+    }
+
+    /* Do it! @keyframes로 애니메이션 정의하기 */
+   @keyframes slideRight {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(500px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+	<div class="box">	</div>
+</body>
+</html>
+
+21)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Animation</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;      
+      background-color: #07f;
+      animation-name: slideRight;
+      animation-duration: 2s;
+      /* Do it! 애니메이션 무한 반복 & 방향 지정하기 */
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+
+    @keyframes slideRight {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(500px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+	<div class="box">	</div>
+</body>
+</html>
+
+..
+
+animation-timing-function
+
+22)
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Animation</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      margin: 60px auto;      
+      animation: rotate 1.5s infinite, background 1.5s infinite alternate;
+    }
+
+    /* Do it! 0도 -> x축 -180도 회전 -> y축 -180도 회전하는 애니메이션 정의하기 */
+    @keyframes rotate {  
+      from { transform: perspective(120px) rotateX(0deg) rotateY(0deg); }
+      50% { transform: perspective(120px) rotateX(-180deg) rotateY(0deg); }
+      to { transform: perspective(120px) rotateX(-180deg) rotateY(-180deg); }
+    }
+
+    /* 배경색을 빨강 -> 초록 -> 파랑순으로 바꾸는 애니메이션 정의하기 */
+    @keyframes background {  
+      from { background-color: red; }
+      50% { background-color: green }
+      to { background-color: blue; }
+    }
+  </style>
+</head>
+
+<body>
+	<div class="box">	</div>
+</body>
+</html>
+
+..
+
+자바스크립트
+
+역할: 웹요소를 제어, 웹 애블리케이션, 라이브러리 사용, 서버 구성, 서버용 프로그램을 만든다. 
+
+23) 위아래 동일한 결과
+--html
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>글자색 바꾸기</title>
+	<style>
+		body { text-align:center; }
+		h1 { color:blue; }
+	</style>
+</head>
+<body>
+	<h1 id="heading">자바스크립트</h1>
+	<p id="text">위 텍스트를 클릭해 보세요</p>
+  
+	<!-- Do it! 내부 스크립트 코드 작성하기 -->
+
+	<script>	
+	let heading = document.getElementById('heading');
+		heading.onclick = function(){
+			heading.style.color = 'red';
+		}
+	</script>
+</body>
+</html>
+
+--link
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>글자색 바꾸기</title>
+	<style>
+		body { text-align:center; }
+		h1 { color:blue; }
+	</style>
+</head>
+<body>
+	<h1 id="heading">자바스크립트</h1>
+	<p id="text">위 텍스트를 클릭해 보세요</p>
+  
+	<!-- Do it! 내부 스크립트 코드 작성하기 -->
+
+	<script src="color.js">	</script>
+</body>
+</html>
+
+..
+
+웹문서
+
+24)
+document.write
+console.log
+conform
+
+..
+
+자바스크립트 스타일 가이드
+자바스크립트는 다른 프로그래밍 언어에 비해 데이터 유형이 유연해서 오류발생이 잦다. 
+통일된 코딩 규칙이 필요하다. 규칙에 의해 작성된 웹사이트는 유지보수도 수월하고 그만큼 비용이 줄어든다.
+
+기본 규칙 
+1. 코드를 보기 좋게 줄여쓴다. 
+2. 세미콜론으로 분장을 구분한다.
+3. 공백을 넣어 읽기 쉽게 작성한다. 
+4. 코드를 설명하는 주석을 작성한다.
+5. 식별자는 정해진 규칙을 지켜 작성한다. 
+
+..
+
+변수variable
+규칙, 영문자_, 숫자를 이용하지만 첫글자는 영문자. 뜨이쓰기나 기호는 허용되지 않는다. camelcase로 작성
+
+25)
+
+..
+
+상수 const 뒤에 변수 이름 작성 한번 할당하면 프로그램 안에서 값이 바뀌지 않음.
+
+26)
+
+..
+
+자료형
+원시형은 숫자형,Bigint, 문자열, 논리형이 있고, 복합유형은 배열, 객체가 있고, 특수형은 undefined, null 등이 있다. 
+
+27~28)
+
+..
+
+템플릿 리터럴 백틱 기호를 이용해서 문자열을 만든다. 식은 $()로 표현한다. 
+
+29)
+
+..
+
+배열
+하나의 변수에 여러 값을 저장할 수 있는 복합 유형
+
+30)
+
+..
+
+자료형 변환
+
+31)
+
+..
+
