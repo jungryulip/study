@@ -1,0 +1,871 @@
+연산자
+
+산술 연산자
+
+01)
+
+..
+
+비교 연산자
+데이터타입까지 체크하려면 '===', 형변환해서 비교되는 것은'=='
+
+02)
+
+..
+
+논리 연산자 ||, &&, ! 
+
+..
+
+if if-else문
+
+03)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문</title>
+</head>
+<body>
+    <script>
+      // Do it! 사용자가 입력한 숫자가 3의 배수인지 판별하기
+      let userNumer = parseInt(prompt('숫자를 입력하세요.'));
+
+      if(userNumer % 3 === 0)
+        alert('3의 배수입니다.');
+    else 
+    alert('3의 배ㅜ가 아닙니다.');
+    </script>
+</body>
+</html>
+
+..
+
+중첩된 if-else문
+
+04)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문</title>
+</head>
+<body>
+    <script>
+      //  Do it! 사용자가 입력한 숫자가 3의 배수인지 판별하기 
+      let userNumer = parseInt(prompt('숫자를 입력하세요.'));
+      if(userNumer !== null){
+        if(parseInt(userNumer) %3 === 0)
+            alert('3의 배수입니다.');
+        else
+            alert('3의 배수가 아닙니다..');
+      }
+      else
+      alert('입력이 취소 되었습니다.');
+    </script>
+</body>
+</html>
+
+..
+
+조건연산자 == 상항연산자
+
+05)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문</title>
+</head>
+<body>
+    <script>
+      // 조건 연산자를 사용해 사용자가 입력한 숫자가 3의 배수인지 판별하기 
+     let userNumer = parseInt(prompt('숫자를 입력하세요.'));
+
+      if(userNumer !== null)
+        (parseInt(userNumer) %3 === 0) ? alert('3의 배수입니다.'):
+            alert('3의 배수가 아닙니다..');
+      else
+            alert('입력이 취소되었습니다.');
+    </script>
+</body>
+</html>
+
+..
+
+or
+
+06)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>조건문</title>
+</head>
+<body>
+  <script>
+    //  Do it! OR 연산자를 사용해 조건 체크하기 
+    let a = parseInt(prompt('50미만의 숫자를 입력하세요.'));
+    let b = parseInt(prompt('50미만의 숫자를 입력하세요.'));
+    console.log('a = '+a, 'b = '+ b);
+
+    if( a < 10 || b < 10 )
+    alert("두 개의 숫자 중에 최소한 하나는 10미만입니다.");
+    else
+    alert("두 개의 숫자 중 10미만인 수는 없습니다.");
+  </script>
+</body>
+</html>
+
+..
+
+switch
+
+07)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>세션 선택 - switch문</title>
+	<link rel="stylesheet" href="css/switch.css">
+</head>
+<body>	
+	<script>
+		// Do it! switch문으로 조건 체크하기
+		let session = prompt("관심세션을 선택해주세요. 1-마케팅, 2-개발, 3-디자인");
+
+		switch(session){
+			case "1" : document.write("<p>마케팅 세션은 <strong>201호</strong>에서 진행됩니다.</p>")
+			break;
+			case "2" : document.write("<p>개발 세션은 <strong>203호</strong>에서 진행됩니다.</p>")
+			break;
+			case "3" : document.write("<p>디자인 세션은 <strong>205호</strong>에서 진행됩니다.</p>")
+			break;
+		 default: alert("잘못 입력!");
+		}
+
+	</script>
+</body>
+</html>
+
+..
+
+for
+
+08)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>1에서 5까지 더하기</title>
+	<style>
+		body {
+			font-size:1.5em;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+		}
+	</style>
+</head>
+<body>
+	<script>
+		// Do it! 1부터 5까지 더하기
+		let sum = 0;
+
+		for(let i = 1; i < 6; i++){
+			sum += i;
+		}
+		document.write(`1부터 5까지 더하면 ${sum}`);
+
+	</script>
+</body>
+</html>
+
+..
+
+중첩된 for문
+
+09)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>구구단 - for문</title>
+</head>
+<body>
+	<h1>구구단</h1>
+	<script>
+		// Do it! for문을 사용해 구구단 출력하기	
+		for( let i = 1; i<=9; i++){
+			document.write(`<h3>${i}</h3>`);
+			for (let j =1 ; j<=9; j++){
+				document.write(`${i}X ${j}=${i*j}<br>`);
+			}
+		}
+	</script>
+</body>
+</html>
+
+..
+
+while문, do-while문
+
+10)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>while</title>
+  <style>
+    body {
+      font-size:2em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    // Do it! while문을 사용해 별 표시하기
+    let stars = parseInt(prompt('몇개의 별을 표시할까요.'));
+
+    while (stars > 0){
+      document.write('*')
+      stars--;
+    }
+
+  </script>
+</body>
+</html>
+
+11)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>while</title>
+  <style>
+    body {
+      font-size:2em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    // Do it! while문을 사용해 별 표시하기
+    let stars = parseInt(prompt('몇개의 별을 표시할까요.'));
+
+    do {
+      document.write('*')
+      stars--;
+    } while (stars > 0)
+
+  </script>
+</body>
+</html>
+
+..
+
+break 문
+
+12)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>구구단 - break문</title>
+	<link rel="stylesheet" href="css/timestable.css">
+</head>
+<body>
+	<h1>구구단</h1>
+  <div class="container">
+    <script>
+      // Do it! 구구단, 2단에서 4단까지만 표시하기
+      for (let i = 2; i <= 9; i++) {
+          document.write(`<div class="times">`);
+          document.write(`<h3>${i}단</h3>`);
+          for (let j = 1; j <= 9; j++) {
+            document.write(`${i} X ${j} = ${i * j} <br>`);
+          }
+          document.write(`</div>`);
+          if(i===4){
+            break;
+          }
+
+        }
+    </script>
+  </div>
+</body>
+</html>
+
+..
+
+contiune 문
+
+13)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>짝수 더하기</title>
+  <style>
+    body {
+      font-size:2em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+	<h1>짝수끼리 더하기</h1>
+	<script>
+		// Do it! 1부터 10까지 짝수만 더하기
+
+    let n =10;
+    let sum = 0;
+
+    for(let i = 1; i <= n; i++){
+      if(i % 2 === 1 ){
+        continue
+      }
+      sum += i;
+
+      document.write(`${i}----${sum}<br>`)
+    }
+
+	</script>
+</body>
+</html>
+
+..
+
+Q 2단부터 8단까지 중에서 짝수 단만 출력하시오.
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>구구단 - break문</title>
+	<link rel="stylesheet" href="css/timestable.css">
+</head>
+<body>
+	<h1>구구단</h1>
+  <div class="container">
+    <script>
+      // Do it! 구구단, 2단에서 4단까지만 표시하기
+      for (let i = 2; i <= 9; i++) {
+        if(i % 2 === 1){
+            continue;
+          }
+          document.write(`<div class="times">`);
+          document.write(`<h3>${i}단</h3>`);
+          for (let j = 1; j <= 9; j++) {
+            document.write(`${i} X ${j} = ${i * j} <br>`);
+          }
+          document.write(`</div>`);
+        }
+    </script>
+  </div>
+</body>
+</html>
+
+Q 사용자로부터 메뉴번호를 입력받으세요.
+
+--css
+body {
+	background-color:#6f6a64;
+	color:rgb(243, 243, 243);
+}
+
+p {
+	margin-top:80px;
+	font-size: 2em;
+	font-weight:700;
+	text-align: center;
+	text-shadow:1px 2px 1px #424040;
+}
+
+p strong {
+	font-size:2.2em;
+	color:rgb(255, 255, 235);
+}
+
+--html
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>세션 선택 - switch문</title>
+	<link rel="stylesheet" href="css/switchQ2.css">
+</head>
+<body>	
+	<script>
+		let maun = prompt("메뉴를 선택해주세요. 1: 아메리카노, 2: 카페라떼, 3: 녹차");
+
+		switch(maun){
+			case "1" : document.write("<p>-1: 아메리카노 - 3000원</p>")
+			break;
+			case "2" : document.write("<p>-2: 카페라떼 - 4500원</p>")
+			break;
+			case "3" : document.write("<p>-3: 녹차 - 3500원</p>")
+			break;
+		 default: alert("잘못된 메뉴입니다.");
+		}
+	</script>
+</body>
+</html>
+
+..
+
+함수
+
+14)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>함수</title>
+	<style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+			font-size: 1.2em;
+    }
+	</style>
+</head>
+<body>
+	<script>		
+		// Do it! 매개변수를 사용한 함수 선언하기 및 호출하기
+		function addNumber(){
+			let num1 = 3;
+			let num2 = 3;
+			let sum = num1 + num2;
+			alert(sum);
+		}
+
+		addNumber();
+
+	</script>	
+</body>
+</html>
+
+..
+
+변수와 상수
+
+var, let: 변수/ 재선언(let은 불가), 재할당
+const 상수
+
+15-16)
+
+..
+
+변수 스코프
+
+지역변수
+함수 안에서 선언하고 함수 안에서만 사용함. var과 함께 변수 이름 지정.
+
+전역변수 
+스크립트 소스전체에서 사용함. 
+
+17)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>var 예약어로 변수 선언하기</title>
+</head>
+<body>
+	<script>		
+    // Do it! var 예약어로 변수 선언하기
+
+    var sum = 0; //전역변수
+
+    function addNumber(){
+      var result; // 지역변수
+      sum = 10+20;
+      result = 10*20;
+    }
+
+    addNumber();
+    console.log(sum);
+    console.log(result);
+
+  </script>
+</body>
+</html>
+
++호이스팅 변수를 뒤에 선언하지만 마치 앞에서 미리 앞에서 선언한 것처럼 인식함. 아예 오류를 발생하는 것이 안전하다. 
+선언부분을 뒤에 두더라도 앞으로 끌어올려 인식함. 엉뚱한 겨과가 발생
+
+재선언-선언한 변수를 다시 선언할 수 있다.
+재할당- 같은 변수에 다른 값을 할당할 수 있다.
+
+18)
+
+..
+
+let을 사용한 변수의 특징
+블록변수, 재할당은 가능하지만 재선언은 할 수 없다. 호이스팅은 없다. 
+
+19)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>블록 스코프</title>
+</head>
+<body>
+	<script>		
+    // Do it! let 변수를 사용해 1부터 10까지 더하는 코드를 작성하기
+    function sum(){
+      let n = 10;
+      let result = 0;
+
+      for(let i = 1; i<= n; i++){
+        result += i;
+      }
+      console.log(result);
+    }
+
+    sum();
+    console.log(result);
+
+  </script>
+</body>
+</html>
+
+..
+
+변수시 유의사항
+전역변수는 최소한으로 사용
+var변수를 써야한다면 시작부분 선언[호이스팅을 통한 오류 방지]
+var보다는 let을 사용하는 것이 낫다.
+
+..
+
+매개변수와 인수, return문
+
+매개변수, 실행할때마다 바뀌는 값을 변수로 처리하는 것
+인수 함수를 실행할 때 매개 변수 자리에 넘겨주는 값
+
+..
+
+재사용할 수 있는 함수 
+
+20)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>함수</title>
+	<style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+			font-size: 1.2em;
+    }
+	</style>
+</head>
+<body>
+	<script>		
+    // Do it! 매개변수 기본값 사용하기
+    function multiple(a, b = 5, c = 10) {
+        return a * b +c; 
+    }
+
+    let result1 = multiple(5, 10, 20);//a=5, b=10, c=20
+    document.write(`multiple(5, 10, 20) = ${result1}<br>`);
+
+    let result2 = multiple(10, 20);//a=10, b=20, c=10
+    document.write(`multiple(10, 20) = ${result2}<br>`);
+
+    let result3 = multiple(30);//a=30, b=5, c=10
+    document.write(`multiple(30) = ${result3}<br>`);
+
+	</script>	
+</body>
+</html>
+
+..
+
+익명 함수
+이름이 없는 함수로 함수 자체가 식이라 함수를 변수레 할당할 수도 있고, 다른 함수의 매개변수로 사용될 수 있다. 
+
+21)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>즉시 실행 함수</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+	</style>
+</head>
+<body>
+	<script>		
+    // Do it! 익명 함수 선언 및 실행하기
+    let sum = function(a,b){
+      return a + b;
+    }
+    document.write(`함수 실행 결과 : ${sum(10,200)}`);
+  </script>	
+</body>
+</html>
+
+..
+
+즉시 실행 함수
+
+22)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>즉시 실행 함수</title>
+  <style>
+		body {
+			padding-top:20px;
+			text-align:center;
+		}
+	</style>
+</head>
+<body>
+	<script>		
+	// Do it! 매개변수가 있는 즉시 실행 함수 사용하기
+		(function(a,b){
+			sum = a+b;
+		}(100,200));
+		document.write(`함수 실행 결과 : ${sum}`)
+  </script>	
+</body>
+</html>
+
+..
+
+화살표 함수
+=>표기법, 익명 함수에만 사용할 수 있다. 
+
+23~24)
+
+..
+
+이벤트 
+웹 브라우저에서 사용자가 행하는 동작.
+
+이벤트 처리기(이벤트 핸들러) 이벤트가 발생했을깨 처리하는 함수
+
+25)
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>자바스크립트 이벤트</title>
+	<link rel="stylesheet" href="css/function.css">
+</head>
+<body>
+	<!-- Do it! HTML 요소에 이벤트 처리 함수 연결하기 -->
+	<ul>
+		<li><a href="#" onclick="changeBg('green')">Green</a></li>
+		<li><a href="#" onclick="changeBg('orange')">Orange</a></li>
+		<li><a href="#" onclick="changeBg('purple')">Purple</a></li>
+	</ul>		
+	<div id="result"></div>
+	
+	<script>
+		function changeBg(color) {
+			let result = document.querySelector('#result');
+			result.style.backgroundColor = color;
+		}
+	</script>
+</body>
+</html>  
+
+..
+
+자바 객체
+프로그램에서 인식할 수 있는 모든 대상
+데이터를 저장하고 처리하는 기본 단위
+
+미리 정의된 객체 :  문서 객체 모델, 브라우저 관련 객체, 내장 객체
+사용자 정의 객체 : 필요할때마다 사용자가 직접 만드는 객체
+
+..
+
+1. 사용자로부터 구매 금액을 입력받으세요.
+
+구매 금액에 따라 다음과 같이 회원 등급을 출력하세요.
+- 100,000원 이상 → VIP 회원
+- 50,000원 이상 → GOLD 회원
+- 10,000원 이상 → SILVER 회원
+- 그 외 → 일반 회원
+
+if ~ else if ~ else 문을 사용하세요.
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문</title>
+</head>
+<body>
+    <script>
+      let price = parseInt(prompt('구매 금액을 입력하세요.'));
+      if (price >= 100000) {
+        alert('VIP회원');
+      } else if (price >= 50000){
+        alert('GOLD회원');
+      } else if (price >= 10000){
+        alert('SILVER회원');
+      } else {
+        alert('일반회원');
+      }
+
+    </script>
+</body>
+</html>
+
+2. 점수를 매개변수로 전달받아 합격 여부를 반환하는 checkScore() 함수를 작성하세요.
+
+조건
+- 60점 이상 → "합격입니다."
+- 60점 미만 → "불합격입니다."
+checkScore(75)를 호출하여 결과를 출력하세요.
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>함수</title>
+	<style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+			font-size: 1.2em;
+    }
+	</style>
+</head>
+<body>
+	<script>		
+	  
+		function checkScore() {
+    let num = parseInt(prompt('점수를 입력하세요.'));
+
+    if (num >= 60) {
+        alert("합격입니다.");
+    } else {
+        alert("불합격입니다.");
+    }
+}
+
+checkScore();
+
+	</script>	
+</body>
+</html>
+
+3. 다음 코드의 마지막 console.log(result)에서 오류가 발생하는 이유를 설명하고 정상적으로 결과를 출력하도록 수정하세요.
+function addNumber() {
+let result = 10 + 20;
+console.log(result);
+}
+addNumber();
+console.log(result);
+
+-지역함수로 정의되어 있는 result를 함수 밖에서 정의해서 사용할 수 없다. 
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>재선언과 재할당</title>
+</head>
+<body>
+	<script>
+
+  let result = 10 + 20;
+
+   function addNumber() {
+    console.log(result);
+  }
+  addNumber();
+  console.log(result);
+
+  </script>
+</body>
+</html>
+
+4.
+상품 가격과 할인 금액을 전달받아 최종 가격을 반환하는 함수를 화살표 함수로 작성하세요.
+
+호출
+discount(30000, 5000)
+
+실행 결과
+할인된 가격 : 25000원
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>화살표 함수</title>
+</head>
+<body>
+	<script>		
+
+    let discount = (num1, num2) => {
+			let result = Math.abs(num1 - num2);
+			document.write(`차액 : ${result}원`);
+		};
+
+		discount(30000, 5000);
+
+  </script>	
+</body>
+</html>
