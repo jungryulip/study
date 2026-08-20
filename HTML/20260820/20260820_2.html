@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>세션 선택 - switch문</title>
+	<link rel="stylesheet" href="css/switchQ2.css">
+</head>
+<body>	
+	<script>
+		let maun = prompt("메뉴를 선택해주세요. 1: 아메리카노, 2: 카페라떼, 3: 녹차");
+
+		switch(maun){
+			case "1" : document.write("<p>-1: 아메리카노 - 3000원</p>")
+			break;
+			case "2" : document.write("<p>-2: 카페라떼 - 4500원</p>")
+			break;
+			case "3" : document.write("<p>-3: 녹차 - 3500원</p>")
+			break;
+		 default: alert("잘못된 메뉴입니다.");
+		}
+	</script>
+</body>
+</html>

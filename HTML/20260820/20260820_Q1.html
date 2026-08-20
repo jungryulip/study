@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문</title>
+</head>
+<body>
+    <script>
+      let price = parseInt(prompt('구매 금액을 입력하세요.'));
+      if (price >= 100000) {
+        alert('VIP회원');
+      } else if (price >= 50000){
+        alert('GOLD회원');
+      } else if (price >= 10000){
+        alert('SILVER회원');
+      } else {
+        alert('일반회원');
+      }
+
+    </script>
+</body>
+</html>
