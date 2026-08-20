@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-08-20",
+    day: "DAY 24",
+    title: "JavaScript 제어문, 함수와 이벤트",
+    summary:
+      "연산자와 if·switch 조건문, for·while 반복문으로 실행 흐름을 제어했다. var·let·const와 스코프를 비교하고 매개변수·반환값·익명·즉시 실행·화살표 함수, DOM 이벤트와 객체 개념을 실습했다.",
+    learned: [
+      "연산자·if·switch 조건문",
+      "for·while·do-while·break·continue",
+      "var·let·const·스코프·호이스팅",
+      "함수·화살표 함수·DOM 이벤트·객체",
+    ],
+    tags: ["JavaScript", "제어문", "함수"],
+    folder: "HTML/20260820",
+    readTime: 22,
+  },
+  {
     date: "2026-08-19",
     day: "DAY 23",
     title: "CSS 고급 선택자·애니메이션과 JavaScript 기초",
