@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-08-21",
+    day: "DAY 25",
+    title: "JavaScript 객체와 문서 객체 모델",
+    summary:
+      "객체의 프로퍼티와 메서드를 이해하고 Array·Date와 브라우저 객체를 실습했다. DOM 트리에서 요소를 선택·변경하고 이벤트를 등록한 뒤 노드를 생성·추가·삭제하고 classList를 제어했다.",
+    learned: [
+      "객체·프로퍼티·메서드와 Array 객체",
+      "Date·Window와 브라우저 객체",
+      "DOM 트리·요소 선택·내용과 속성 변경",
+      "addEventListener·NodeList·노드·classList",
+    ],
+    tags: ["JavaScript", "객체", "DOM"],
+    folder: "HTML/20260821",
+    readTime: 21,
+  },
+  {
     date: "2026-08-20",
     day: "DAY 24",
     title: "JavaScript 제어문, 함수와 이벤트",
