@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Array 객체의 메서드</title>
+	<style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+			font-size: 1.2em;
+    }
+		hr {
+			width: 100%;			
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<script>
+			let nums = [1, 2, 3];
+			let chars = ["a", "b", "c", "d"];
+	
+			// 두 2개의 배열 합치기
+			let numsChars = nums.concat(chars);
+			console.log(numsChars);
+
+			let charsNums = chars.concat(nums);
+			console.log(charsNums);
+			document.write(`nums에 chars  합치면 ; ${numsChars}, <br> char에 nums 합치면 ${charsNums}`)
+			document.write(`<hr>`);
+
+			// 두 개의 배열 합치기]
+
+			let str1 = nums.join(' ');
+			console.log(str1);
+			let str2 = nums.join('/');
+			console.log(str2);
+			document.write(`구분자 없이 ${str1}<br>`);
+			document.write(`/ 구분자 지정 : ${str2}`);
+			document.write(`<hr>`);
+	
+			// 요소 추가 - 새로운 length 값 반환
+			let ret1 = nums.push(4,5); // 배열 끝에 추가
+			let ret2 = chars.unshift(0); // 배열 앞에 추가
+			console.log(`새 배열 : ${nums}, 반환값 : ${ret1}`)
+			console.log(`새 배열 : ${chars}, 반환값 : ${ret2}`)
+	
+			// 요소 추출 - 꺼낸 요소 반환
+			let pop1 = chars.pop(); //마지막 요소 꺼냄
+			console.log(`꺼낸 요소 : ${pop1}, chars : ${chars}`);
+			let pop2 = chars.shift(); // 첫 번째 요소 꺼냄
+			console.log(`꺼낸 요소 : ${pop2}, chars : ${chars}`);
+	
+		</script>
+	</div>
+</body>
+</html>
