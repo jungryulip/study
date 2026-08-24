@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-08-24",
+    day: "DAY 26",
+    title: "Java JDBC로 Oracle 데이터베이스 다루기",
+    summary:
+      "JDBC로 Java와 Oracle을 연결하고 PreparedStatement에 값을 바인딩해 INSERT와 UPDATE를 실행했다. SELECT 결과를 ResultSet에서 읽어 Java 객체에 매핑하고 예외 처리와 자원 해제 흐름도 익혔다.",
+    learned: [
+      "JDBC 드라이버와 Oracle Connection",
+      "PreparedStatement·파라미터 바인딩",
+      "INSERT·UPDATE·executeUpdate",
+      "SELECT·ResultSet·객체 매핑·자원 해제",
+    ],
+    tags: ["Java", "JDBC", "Oracle"],
+    folder: "Java/20260824",
+    readTime: 18,
+  },
+  {
     date: "2026-08-21",
     day: "DAY 25",
     title: "JavaScript 객체와 문서 객체 모델",
