@@ -1,0 +1,211 @@
+JDBC
+데이터 베이스를 연결해서 데이터 입출력 작업을 할 수 있도록 하이브러리 패키지 제공, 
+
+01)
+
+--intellj
+package jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class ConnectioExample {
+    public static void main(String[] args) {
+        Connection conn = null;
+        //1. JDBC Driver를 메모리로 코딩, DriverManager에 등록
+        try {
+            Class.forName("oracle.jdbc.OracleDriver");
+            //연결하기
+            conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521/xe", "<DB_USER>", "<DB_PASSWORD>");
+            System.out.println("연결 성공");
+
+            //DB 작업
+
+        } catch (ClassNotFoundException e){
+            e.printStackTrace();
+        } catch (SQLException e){
+            e.printStackTrace();
+        } finally {
+            if (conn != null){
+                try {
+                    //DB 연결 끊기
+                    conn.close();
+                    System.out.println("연결 끊기");
+                } catch (SQLException e){}
+            }
+        }
+    }
+}
+
+02) insert
+
+--intellj
+package jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class UserInsertExample {
+    public static void main(String[] args) {
+        Connection conn = null;
+        //1. JDBC Driver를 메모리로 코딩, DriverManager에 등록
+        try {
+            Class.forName("oracle.jdbc.OracleDriver");
+            //연결하기
+            conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521/xe", "<DB_USER>", "<DB_PASSWORD>");
+            System.out.println("연결 성공");
+
+            //DB 작업
+            String sql = "" +
+                    "INSERT INTO users (userid, username, userpassword, userage, useremail) " +
+                    "VALUES (?, ?, ?, ?, ?)";
+            System.out.println(sql);
+
+            //PreparedStatement 얻기 및 값 지정
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1,"fall");
+            pstmt.setString(2,"한가을");
+            pstmt.setString(3,"12345");
+            pstmt.setInt(4,30);
+            pstmt.setString(5,"fallr@company.com");
+
+            //sql문 실행
+            int rows = pstmt.executeUpdate();
+            System.out.println("저장된 행 수 " + rows);
+            pstmt.close();
+
+        } catch (ClassNotFoundException e){
+            e.printStackTrace();
+        } catch (SQLException e){
+            e.printStackTrace();
+        } finally {
+            if (conn != null){
+                try {
+                    //DB 연결 끊기
+                    conn.close();
+                    System.out.println("연결 끊기");
+                } catch (SQLException e){}
+            }
+        }
+    }
+}
+
+
+03) update
+
+--intellj
+package jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class BoardUpdateExample {
+    public static void main(String[] args) {
+        Connection conn = null;
+        //1. JDBC Driver를 메모리로 코딩, DriverManager에 등록
+        try {
+            Class.forName("oracle.jdbc.OracleDriver");
+            //연결하기
+            conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521/xe", "<DB_USER>", "<DB_PASSWORD>");
+            System.out.println("연결 성공");
+
+            //DB 작업
+            String sql = new StringBuilder()
+                    .append("UPDATE boards SET ")
+                    .append("btitle =?, ")
+                    .append("bcontent =? ")
+                    .append("WHERE bno =? ")
+                    .toString();
+
+            //PreparedStatement 얻기 및 값 지정
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1,"눈사람");
+            pstmt.setString(2,"눈으로 만든 사람");
+            pstmt.setInt(3,1);
+
+            //sql문 실행
+            int rows = pstmt.executeUpdate();
+            System.out.println("저장된 행 수 " + rows);
+            pstmt.close();
+
+        } catch (ClassNotFoundException e){
+            e.printStackTrace();
+        } catch (SQLException e){
+            e.printStackTrace();
+        } finally {
+            if (conn != null){
+                try {
+                    //DB 연결 끊기
+                    conn.close();
+                    System.out.println("연결 끊기");
+                } catch (SQLException e){}
+            }
+        }
+    }
+}
+
+
+04) select
+
+--intellj
+package jdbc.select;
+
+import java.sql.*;
+
+public class UserSelectExample {
+    public static void main(String[] args) {
+        Connection conn = null;
+        //1. JDBC Driver를 메모리로 코딩, DriverManager에 등록
+        try {
+            Class.forName("oracle.jdbc.OracleDriver");
+            //연결하기
+            conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521/xe", "<DB_USER>", "<DB_PASSWORD>");
+            System.out.println("연결 성공");
+
+            //DB 작업
+            String sql = "" +
+                    "SELECT userid, username, userpassword, userage, useremail " +
+                    "FROM users " +
+                    "WHERE userid =?";
+
+            System.out.println(sql);
+
+            //PreparedStatement 얻기 및 값 지정
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1,"winter2");
+
+            //sql문 실행
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()){
+                User user = new User();
+                user.setUserId(rs.getString("userid"));
+                user.setUserName(rs.getString("username"));
+                user.setUserPassword(rs.getString("userpassword"));
+                user.setUserAge(rs.getInt(4));
+                user.setUserEmail(rs.getString(5));
+                System.out.println(user);
+            } else {
+                System.out.println("사용자 아이디가 존재하지 않습니다.");
+            }
+            pstmt.close();
+
+        } catch (ClassNotFoundException e){
+            e.printStackTrace();
+        } catch (SQLException e){
+            e.printStackTrace();
+        } finally {
+            if (conn != null){
+                try {
+                    //DB 연결 끊기
+                    conn.close();
+                    System.out.println("연결 끊기");
+                } catch (SQLException e){}
+            }
+        }
+    }
+}
