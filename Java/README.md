@@ -7,6 +7,7 @@ Java 수업에서 배운 개념과 직접 작성한 코드를 날짜별로 정�
 
 | 날짜 | 주요 학습 내용 | 기록 |
 | --- | --- | --- |
+| 2026-08-24 | JDBC, Oracle 연결, PreparedStatement, INSERT·UPDATE·SELECT, ResultSet | [DAY 26 보기](./20260824/) |
 | 2026-08-13 | 예외 처리, try-with-resources, 입출력 스트림, 스레드와 동기화 | [DAY 19 보기](./20260813/) |
 | 2026-08-12 | ArrayList·HashSet, 익명 클래스, 람다, Stream, 예외 처리 | [DAY 18 보기](./20260812/) |
 | 2026-08-11 | Object 메서드, String, enum·record, 제네릭, 컬렉션 프레임워크 | [DAY 17 보기](./20260811/) |
