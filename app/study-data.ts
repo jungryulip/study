@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-08-25",
+    day: "DAY 27",
+    title: "BookMate 미니프로젝트 기획과 요구사항 정의",
+    summary:
+      "독서 취향 공유 커뮤니티 BookMate의 기획 발표 자료와 요구사항정의서를 작성했다. 프로젝트 목표와 핵심 기능, 역할·일정을 구조화하고 게시판·댓글·관리자·승인 기능을 사용자·입력·처리·완료 기준까지 구체화했다.",
+    learned: [
+      "기획 발표 자료·제안서의 정보 구조 설계",
+      "요구사항 ID·입력·처리·출력·완료 기준 정의",
+      "게시판·댓글·관리자·승인 기능 분석",
+      "Java 계층 구조와 Oracle 스키마의 연결 흐름",
+    ],
+    tags: ["Mini Project", "BookMate", "요구사항 정의"],
+    folder: "Project/20260825",
+    readTime: 12,
+  },
+  {
     date: "2026-08-24",
     day: "DAY 26",
     title: "Java JDBC로 Oracle 데이터베이스 다루기",
