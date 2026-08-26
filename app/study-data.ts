@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-08-26",
+    day: "DAY 28",
+    title: "BookMate 게시판 기능 구현과 웹 실행 환경",
+    summary:
+      "Maven과 Tomcat으로 BookMate를 실행하고 게시글의 DTO·DAO·Service·Controller 계층을 구현했다. DB 연동 기능을 롤백 방식으로 검증한 뒤 목록·상세·작성 API를 HTML·CSS·JavaScript 화면과 연결했다.",
+    learned: [
+      "Maven 빌드·Tomcat WAR 배포와 컨텍스트 경로",
+      "PostDTO·PostDAO·PostService 계층별 책임",
+      "트랜잭션·소프트 삭제·작성자와 관리자 권한",
+      "fetch·JSON·게시글 목록·상세·작성 화면 연결",
+    ],
+    tags: ["Mini Project", "BookMate", "Java Web"],
+    folder: "Project/20260826",
+    readTime: 13,
+  },
+  {
     date: "2026-08-25",
     day: "DAY 27",
     title: "BookMate 미니프로젝트 기획과 요구사항 정의",
