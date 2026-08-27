@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-08-27",
+    day: "DAY 29",
+    title: "BookMate UI 리디자인과 디자인 시스템",
+    summary:
+      "기존 BookMate 화면을 분석하고 사이트맵과 디자인 규칙을 정리했다. 메인·책 목록·랭킹·책 취향·커뮤니티의 와이어프레임을 만든 뒤 검색·필터·카드·게시글 작성 흐름을 일관된 UI로 리디자인했다.",
+    learned: [
+      "사이트맵·화면 우선순위·공통 내비게이션",
+      "화이트·그레이·바다색·핑크 디자인 토큰",
+      "메인·책·랭킹·책 취향·커뮤니티 와이어프레임",
+      "검색·필터·카드·폼·상태 배지 컴포넌트 규칙",
+    ],
+    tags: ["Mini Project", "BookMate", "UI/UX"],
+    folder: "Project/20260827",
+    readTime: 14,
+  },
+  {
     date: "2026-08-26",
     day: "DAY 28",
     title: "BookMate 게시판 기능 구현과 웹 실행 환경",
