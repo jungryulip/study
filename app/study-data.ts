@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-08-28",
+    day: "DAY 30",
+    title: "BookMate 관리자·커뮤니티 기능 연동과 검증",
+    summary:
+      "세션과 권한에 맞춰 공통 헤더와 관리자 회원 관리를 연결하고 커뮤니티의 필터·검색, 게시글 작성·상세·작성자 권한을 구현했다. DAO와 Service의 정상·예외 시나리오를 검증하고 테스트 데이터를 원상복구했다.",
+    learned: [
+      "세션·역할에 따른 공통 헤더와 접근 메뉴",
+      "관리자 회원 잠금·해제와 관리자 계정 보호",
+      "커뮤니티 카테고리·장르·기간·검색 필터",
+      "게시글 작성·상세·작성자 권한과 계층별 검증",
+    ],
+    tags: ["Mini Project", "BookMate", "권한·검증"],
+    folder: "Project/20260828",
+    readTime: 16,
+  },
+  {
     date: "2026-08-27",
     day: "DAY 29",
     title: "BookMate UI 리디자인과 디자인 시스템",
