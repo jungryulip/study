@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-08-30",
+    day: "DAY 32",
+    title: "BookMate 게시글 좋아요 등록·취소와 상태 동기화",
+    summary:
+      "BookMate 커뮤니티의 게시글 좋아요 등록·취소 API를 만들고 POST_LIKE 테이블과 상세 화면을 연결했다. 회원별 중복 좋아요를 방지하고 좋아요 수와 현재 상태가 새로고침 후에도 유지되도록 구현해 PR로 main에 병합했다.",
+    learned: [
+      "POST_LIKE 기반 회원별 좋아요 상태 저장",
+      "중복 방지와 등록·취소 토글 트랜잭션",
+      "상세 화면의 좋아요 수·버튼 상태 동기화",
+      "오류 점검과 화면·API·DB 단계별 검증",
+    ],
+    tags: ["Mini Project", "BookMate", "좋아요·상태"],
+    folder: "Project/20260830",
+    readTime: 11,
+  },
+  {
     date: "2026-08-29",
     day: "DAY 31",
     title: "BookMate 게시글 수정·삭제·숨김과 작성자 권한",
