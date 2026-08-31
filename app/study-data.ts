@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-08-31",
+    day: "DAY 33",
+    title: "BookMate 댓글·신고와 관리자 콘텐츠 관리",
+    summary:
+      "게시글 상세에 댓글 조회·등록·작성자 수정과 소프트 삭제를 연결하고 게시글·댓글 공통 신고와 중복 방지를 구현했다. 관리자 게시글·댓글 관리 화면도 분리해 두 단계의 PR로 main에 병합했다.",
+    learned: [
+      "댓글 조회·등록·작성자 수정과 소프트 삭제",
+      "게시글·댓글 공통 신고와 본인·중복 신고 방지",
+      "댓글·신고 상태와 트랜잭션 관리",
+      "관리자 게시글·댓글 관리 화면 분리",
+    ],
+    tags: ["Mini Project", "BookMate", "댓글·신고"],
+    folder: "Project/20260831",
+    readTime: 15,
+  },
+  {
     date: "2026-08-30",
     day: "DAY 32",
     title: "BookMate 게시글 좋아요 등록·취소와 상태 동기화",
