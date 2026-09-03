@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-09-03",
+    day: "DAY 35",
+    title: "Spring Boot IoC·DI, AOP와 Lombok",
+    summary:
+      "Spring Boot의 자동 설정과 내장 서버를 이해하고 커피 머신 예제로 직접 객체 생성에서 인터페이스 기반 DI와 Spring Container 관리로 발전시키는 과정을 실습했다. 여러 Bean 선택·정렬, AOP 실행 시간 측정과 Lombok·SLF4J도 함께 익혔다.",
+    learned: [
+      "Spring Boot와 Spring Framework의 역할",
+      "IoC·DI·Container·Bean과 결합도",
+      "Qualifier·List 주입·Order로 여러 Bean 관리",
+      "AOP·Lombok·Builder·EqualsAndHashCode·SLF4J",
+    ],
+    tags: ["Java", "Spring Boot", "IoC·DI"],
+    folder: "Java/20260903",
+    readTime: 16,
+  },
+  {
     date: "2026-09-01",
     day: "DAY 34",
     title: "BookMate 관리자 승인·신고 처리와 GPT 협업",
