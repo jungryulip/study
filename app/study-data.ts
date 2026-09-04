@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-09-04",
+    day: "DAY 36",
+    title: "Spring Boot 데이터베이스와 MyBatis",
+    summary:
+      "Spring Data JDBC로 Oracle의 Member 테이블을 객체와 매핑하고 CrudRepository를 이용해 저장·조회·수정·삭제와 조건 조회를 실습했다. HikariCP 커넥션 풀을 이해하고 H2 기반 MyBatis에서 XML·애노테이션 SQL 매핑도 구현했다.",
+    learned: [
+      "Spring Data JDBC·Oracle과 테이블 객체 매핑",
+      "CrudRepository CRUD와 메서드 이름 기반 조회",
+      "DataSource·HikariCP와 스키마 연결 오류 점검",
+      "H2·MyBatis의 XML 및 애노테이션 SQL 매핑",
+    ],
+    tags: ["Spring Boot", "Spring Data JDBC", "MyBatis"],
+    folder: "Java/20260904",
+    readTime: 18,
+  },
+  {
     date: "2026-09-03",
     day: "DAY 35",
     title: "Spring Boot IoC·DI, AOP와 Lombok",
