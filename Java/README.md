@@ -7,6 +7,7 @@ Java 수업에서 배운 개념과 직접 작성한 코드를 날짜별로 정�
 
 | 날짜 | 주요 학습 내용 | 기록 |
 | --- | --- | --- |
+| 2026-09-05 | Spring Data JPA, 엔티티 매핑, JpaRepository, RESTful CRUD API | [DAY 37 보기](./20260905/) |
 | 2026-09-04 | Spring Data JDBC, Oracle, CrudRepository, HikariCP, H2, MyBatis | [DAY 36 보기](./20260904/) |
 | 2026-09-03 | Spring Boot, IoC·DI, Bean, AOP, Lombok, SLF4J | [DAY 35 보기](./20260903/) |
 | 2026-08-24 | JDBC, Oracle 연결, PreparedStatement, INSERT·UPDATE·SELECT, ResultSet | [DAY 26 보기](./20260824/) |

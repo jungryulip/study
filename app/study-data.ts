@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-09-05",
+    day: "DAY 37",
+    title: "Spring Data JPA와 RESTful CRUD API",
+    summary:
+      "Member 엔티티를 테이블과 매핑하고 JpaRepository로 저장·조회·조건 검색·삭제를 실습했다. Query by Example으로 동적 조건을 만들고 REST Controller와 연결해 Postman으로 POST·GET·PUT·DELETE 요청과 H2 반영 결과를 검증했다.",
+    learned: [
+      "JPA 엔티티와 테이블·컬럼·기본키 매핑",
+      "JpaRepository CRUD와 이름 기반 조회·삭제",
+      "Query by Example을 이용한 동적 조건 조회",
+      "REST Controller와 HTTP 메서드별 CRUD 검증",
+    ],
+    tags: ["Spring Boot", "Spring Data JPA", "REST API"],
+    folder: "Java/20260905",
+    readTime: 14,
+  },
+  {
     date: "2026-09-04",
     day: "DAY 36",
     title: "Spring Boot 데이터베이스와 MyBatis",
