@@ -36,6 +36,9 @@ export default function Home() {
         </a>
         <nav>
           <a href="#posts">글 목록</a>
+          <a href="https://github.com/jungryulip/study#전체-학습-일지">
+            전체 일지
+          </a>
           <a href="https://github.com/jungryulip/study">GitHub</a>
         </nav>
       </header>

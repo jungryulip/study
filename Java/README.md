@@ -7,6 +7,7 @@ Java 수업에서 배운 개념과 직접 작성한 코드를 날짜별로 정�
 
 | 날짜 | 주요 학습 내용 | 기록 |
 | --- | --- | --- |
+| 2026-09-08 | Spring Boot 테스트, JUnit 생명주기, Spring MVC, Thymeleaf | [DAY 39 보기](./20260908/) |
 | 2026-09-07 | Service 계층, DTO, Transaction, JPA 연관관계·Auditing, REST CRUD | [DAY 38 보기](./20260907/) |
 | 2026-09-05 | Spring Data JPA, 엔티티 매핑, JpaRepository, RESTful CRUD API | [DAY 37 보기](./20260905/) |
 | 2026-09-04 | Spring Data JDBC, Oracle, CrudRepository, HikariCP, H2, MyBatis | [DAY 36 보기](./20260904/) |
