@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-09-09",
+    day: "DAY 40",
+    title: "Spring MVC 폼 처리와 Spring Security 인증·인가",
+    summary:
+      "Thymeleaf 폼의 회원 데이터를 Controller에서 받아 JPA로 저장·수정하고 H2에서 결과를 확인했다. Spring Security의 인증과 인가를 구분하고 BCrypt, DB 기반 UserDetailsService와 SecurityFilterChain으로 공개·로그인·관리자 URL을 나눠 검증했다.",
+    learned: [
+      "Thymeleaf 폼 바인딩과 JPA 저장·수정",
+      "Post/Redirect/Get과 H2 데이터 확인",
+      "Spring Security 인증·인가와 세션",
+      "BCrypt·UserDetailsService·URL별 접근 제어",
+    ],
+    tags: ["Spring Boot", "Spring MVC", "Spring Security"],
+    folder: "Java/20260909",
+    readTime: 17,
+  },
+  {
     date: "2026-09-08",
     day: "DAY 39",
     title: "Spring Boot 테스트, MVC와 Thymeleaf",
