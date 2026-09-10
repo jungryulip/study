@@ -11,10 +11,10 @@ Oracle SQL부터 Java, 웹 프론트엔드, Spring Boot와 미니프로젝트까
 | 분야 | 기록 수 | 바로가기 |
 | --- | ---: | --- |
 | Oracle SQL | 9일 | [SQL 학습 기록](./Oracle_SQL/) |
-| Java·Spring Boot | 16일 | [Java 학습 기록](./Java/) |
+| Java·Spring Boot | 17일 | [Java 학습 기록](./Java/) |
 | HTML·CSS·JavaScript | 7일 | [웹 학습 기록](./HTML/) |
 | BookMate 미니프로젝트 | 8일 | [프로젝트 기록](./Project/) |
-| **전체** | **40일** | [GitHub Pages에서 검색하기](https://jungryulip.github.io/study/) |
+| **전체** | **41일** | [GitHub Pages에서 검색하기](https://jungryulip.github.io/study/) |
 
 ## 전체 학습 일지
 
@@ -23,6 +23,7 @@ Oracle SQL부터 Java, 웹 프론트엔드, Spring Boot와 미니프로젝트까
 
 | 일차 | 날짜 | 분야 | 배운 내용 | 기록 |
 | --- | --- | --- | --- | --- |
+| DAY 41 | 2026-09-10 | Spring Boot | Spring Boot 프로필과 애플리케이션 빌드·배포 | [기록 보기](./Java/20260910/) |
 | DAY 40 | 2026-09-09 | Spring Boot | Spring MVC 폼 처리와 Spring Security 인증·인가 | [기록 보기](./Java/20260909/) |
 | DAY 39 | 2026-09-08 | Spring Boot | Spring Boot 테스트, MVC와 Thymeleaf | [기록 보기](./Java/20260908/) |
 | DAY 38 | 2026-09-07 | Spring Boot | Spring Boot 서비스 계층, DTO와 JPA 연관관계 | [기록 보기](./Java/20260907/) |

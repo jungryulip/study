@@ -7,6 +7,7 @@ Java 수업에서 배운 개념과 직접 작성한 코드를 날짜별로 정�
 
 | 날짜 | 주요 학습 내용 | 기록 |
 | --- | --- | --- |
+| 2026-09-10 | Spring Profiles, Gradle bootJar, JAR·WAR, AWS·Docker 배포 기초 | [DAY 41 보기](./20260910/) |
 | 2026-09-09 | Spring MVC 폼·JPA 저장과 수정, Spring Security 인증·인가, BCrypt, URL 권한 | [DAY 40 보기](./20260909/) |
 | 2026-09-08 | Spring Boot 테스트, JUnit 생명주기, Spring MVC, Thymeleaf | [DAY 39 보기](./20260908/) |
 | 2026-09-07 | Service 계층, DTO, Transaction, JPA 연관관계·Auditing, REST CRUD | [DAY 38 보기](./20260907/) |

@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-09-10",
+    day: "DAY 41",
+    title: "Spring Boot 프로필과 애플리케이션 빌드·배포",
+    summary:
+      "Spring Profiles로 개발·테스트 환경의 데이터베이스 설정을 분리하고, Gradle bootJar로 실행 가능한 JAR를 생성해 dev 프로필로 직접 실행했다. JAR와 WAR의 차이, AWS·VPC·Elastic Beanstalk와 Docker·Compose의 배포 역할도 정리했다.",
+    learned: [
+      "Spring Profiles로 dev·test 설정 분리",
+      "Gradle bootJar와 실행 가능한 JAR 생성",
+      "JAR·WAR 패키징과 배포 방식 차이",
+      "AWS·VPC·Elastic Beanstalk·Docker 기초",
+    ],
+    tags: ["Spring Boot", "Build·Deployment", "Spring Profiles"],
+    folder: "Java/20260910",
+    readTime: 17,
+  },
+  {
     date: "2026-09-09",
     day: "DAY 40",
     title: "Spring MVC 폼 처리와 Spring Security 인증·인가",
