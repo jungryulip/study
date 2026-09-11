@@ -1,12 +1,13 @@
-# Java 학습 기록
+# Java·Spring Boot·Linux 학습 기록
 
-Java 수업에서 배운 개념과 직접 작성한 코드를 날짜별로 정리합니다.
+Java와 Spring Boot 수업, Linux 기초에서 배운 개념과 실습 내용을 날짜별로 정리합니다.
 날짜를 클릭하면 학습 요약, 수업 노트와 실습 화면을 함께 볼 수 있습니다.
 
 ## 날짜별 기록
 
 | 날짜 | 주요 학습 내용 | 기록 |
 | --- | --- | --- |
+| 2026-09-11 | 리눅스 소개, 가상 머신, 셸 개념, 파일 시스템과 디렉터리 명령 | [DAY 42 보기](./20260911/) |
 | 2026-09-10 | Spring Profiles, Gradle bootJar, JAR·WAR, AWS·Docker 배포 기초 | [DAY 41 보기](./20260910/) |
 | 2026-09-09 | Spring MVC 폼·JPA 저장과 수정, Spring Security 인증·인가, BCrypt, URL 권한 | [DAY 40 보기](./20260909/) |
 | 2026-09-08 | Spring Boot 테스트, JUnit 생명주기, Spring MVC, Thymeleaf | [DAY 39 보기](./20260908/) |
@@ -36,5 +37,5 @@ Java/
     └── images/
 ```
 
-새로운 Java 학습 기록은 `YYYYMMDD` 형식의 날짜 폴더를 만들고, 그 안에
+새로운 Java·Spring Boot·Linux 학습 기록은 `YYYYMMDD` 형식의 날짜 폴더를 만들고, 그 안에
 학습 요약 `README.md`, 수업 노트와 실습 화면을 넣어 관리합니다.
