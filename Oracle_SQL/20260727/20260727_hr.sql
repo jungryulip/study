@@ -94,7 +94,7 @@ order by weight;
 --insert
 
 insert into student
-values(10110, '홍길동', 'hong', '1', '8501011143098', '85/01/01', '041)630-3114', 170, 70, 101, 9903);
+values(10110, '홍길동', 'hong', '1', '850101-1XXXXXX', '85/01/01', '041-XXX-XXXX', 170, 70, 101, 9903);
 
 select studno, name
 from student

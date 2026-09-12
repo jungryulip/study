@@ -272,9 +272,9 @@ C:\app\kosa\product\21c\homes\OraDB21Home1\network\admin// 내가 찾은 위치
 
 
 15)
-SQL> conn hr/hr
+SQL> conn hr/<PASSWORD>
 -- 연결되었습니다.//나혼자 로컬 서버에 있다.
-SQL> conn hr/hr@xe
+SQL> conn hr/<PASSWORD>@xe
 -- 연결되었습니다. //lisenter로 연결하는 것?
 
 
@@ -282,7 +282,7 @@ SQL> conn hr/hr@xe
 1)os
 2)database startup
 3)listener 구동
-4)conn hr/hr@xe
+4)conn hr/<PASSWORD>@xe
 
 16)
 SQL> shutdown immediate;
@@ -311,7 +311,7 @@ Redo Buffers                6918144 bytes
 Oracle Database 21c Express Edition Release 21.0.0.0.0 - Production
 Version 21.3.0.0.0
 
-SQL> conn hr/hr@xe
+SQL> conn hr/<PASSWORD>@xe
 연결되었습니다.
 SQL>
 

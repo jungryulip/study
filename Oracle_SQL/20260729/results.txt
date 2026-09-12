@@ -284,7 +284,7 @@ SCOTT	STUDENT	SCOTT	SELECT	NO	NO	NO	TABLE	NO
 
 38)
 //SQL Plus에서 접속하여 권한 철회
-SQL> conn scott/tiger
+SQL> conn scott/<PASSWORD>
 --연결되었습니다.
 SQL> revoke update on student from tiger;
 --권한이 취소되었습니다.
@@ -297,9 +297,9 @@ select * from scott.student;
 
 39~42
 role
-SQL> conn tiger/tiger123
+SQL> conn tiger/<PASSWORD>
 
-SQL> conn system/oracle
+SQL> conn system/<PASSWORD>
 연결되었습니다
 
 SQL> alter session set "_oracle_script"=true;
@@ -315,7 +315,7 @@ SQL> create role hr_mgr;
 --롤이 생성되었습니다.
 
 SQL> create role hr_mgr1
-  2  identified by manager;
+  2  identified by <ROLE_PASSWORD>;
 
 --롤이 생성되었습니다.
 
@@ -335,7 +335,7 @@ SQL> grant hr_clerk to tiger;
 
 --권한이 부여되었습니다.
 
-SQL> conn tiger/tiger123
+SQL> conn tiger/<PASSWORD>
 연결되었습니다.
 SQL> select * from scott.student;
 
@@ -405,7 +405,7 @@ SQL> conn /as sysdba
 --연결되었습니다.
 SQL> alter session set "_oracle_script"=true;
 --세션이 변경되었습니다.
-SQL> create user kosa identified by kosa
+SQL> create user kosa identified by <USER_PASSWORD>
   2  default tablespace users
   3  temporary tablespace temp;
 --사용자가 생성되었습니다.

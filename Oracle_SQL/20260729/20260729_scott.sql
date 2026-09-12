@@ -54,7 +54,7 @@ select * from user_sys_privs;
 
 세션이 변경되었습니다.
 
-SQL> create user tiger identified by tiger123
+SQL> create user tiger identified by <USER_PASSWORD>
   2  default tablespace users
   3  temporary tablespace temp;
-create user tiger identified by tiger123
+create user tiger identified by <USER_PASSWORD>

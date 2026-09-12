@@ -59,7 +59,7 @@ select * from tab;// 모든 테이블이 나옴
 desc address;
 
 insert into address
-values (1, 'HGDONG', 'SEOUL', '123-4567', 'gdhong@cwunet.ac.kr');
+values (1, 'HGDONG', 'SEOUL', '123-4567', 'gdhong@example.com');
 
 commit;
 select * from address;//들어갔는지 확인

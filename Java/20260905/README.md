@@ -190,12 +190,10 @@ public class MemberController {
 Postman에서 JSON 본문을 담은 `POST /api/members` 요청을 보내 회원이 저장되고, 응답에 생성된
 `id`가 포함되는지 확인했다.
 
-![Postman으로 회원 생성 요청](./images/postman-create-member.png)
+> 실습 응답에 이름과 이메일이 포함되어 있어 공개 저장소에서는 화면 캡처를 제외했다.
 
 이어서 `GET /api/members/1` 요청으로 기본키가 1인 회원을 조회했다. 요청 주소, HTTP 메서드,
 응답 상태 `200 OK`와 JSON 본문을 한 번에 확인할 수 있었다.
-
-![Postman으로 회원 한 건 조회](./images/postman-get-member.png)
 
 ## 수정과 삭제 검증
 
@@ -214,8 +212,6 @@ public void delete(@PathVariable Long id) {
     memberRepository.deleteById(id);
 }
 ```
-
-![Postman으로 회원 전체 수정](./images/postman-update-member.png)
 
 `PUT` 요청에서 일부 필드를 보내지 않으면 해당 값이 `null`로 저장될 수 있다는 것도 확인했다.
 따라서 `PUT`은 전체 상태를 전달하는 방식으로 사용하고, 일부 속성만 변경하려면 기존 엔티티를

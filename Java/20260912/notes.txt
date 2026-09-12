@@ -1,0 +1,497 @@
+01
+kosa@ubuntu:~/Downloads$ cd
+kosa@ubuntu:~$ cd ../Pictures
+bash: cd: ../Pictures: No such file or directory
+kosa@ubuntu:~$ cd ../Pictures/
+bash: cd: ../Pictures/: No such file or directory
+kosa@ubuntu:~$ cd Downloads
+kosa@ubuntu:~/Downloads$ cd ../Pictures/
+kosa@ubuntu:~/Pictures$ pwd
+/home/kosa/Pictures
+kosa@ubuntu:~/Pictures$ cd ../../..
+kosa@ubuntu:/$ pwd
+/
+kosa@ubuntu:/$
+
+
+02
+kosa@ubuntu:/$ cd animals/
+bash: cd: animals/: No such file or directory
+kosa@ubuntu:/$ cd
+kosa@ubuntu:~$ cd animals/
+kosa@ubuntu:~/animals$ ls
+cat  cow  dog
+kosa@ubuntu:~/animals$
+kosa@ubuntu:~/animals$ cd ..
+kosa@ubuntu:~$ mkdir animals/snake
+kosa@ubuntu:~$ cd animals/
+kosa@ubuntu:~/animals$ ls
+cat  cow  dog  snake
+kosa@ubuntu:~/animals$
+
+03
+kosa@ubuntu:~/animals$ cd
+kosa@ubuntu:~$ pwd
+/home/kosa
+kosa@ubuntu:~$ mkdir fruits/apple
+mkdir: cannot create directory ‘fruits/apple’: No such file or directory
+kosa@ubuntu:~$ ls
+ animals   Documents   hello   'hello world'   Pictures   snap        Videos
+ Desktop   Downloads   hello2   Music          Public     Templates
+kosa@ubuntu:~$ mkdir -p fruits/apple
+kosa@ubuntu:~$ ls
+ animals   Documents   fruits   hello2         Music      Public   Templates
+ Desktop   Downloads   hello   'hello world'   Pictures   snap     Videos
+kosa@ubuntu:~$ ls fruits/
+apple
+kosa@ubuntu:~$
+
+04
+kosa@ubuntu:~$ whoami
+kosa
+kosa@ubuntu:~$ cd animals/
+kosa@ubuntu:~/animals$ rmdir cat
+kosa@ubuntu:~/animals$ ls
+
+cow  dog  snake
+kosa@ubuntu:~/animals$
+kosa@ubuntu:~/animals$ ls -al
+total 20
+drwxrwxr-x  5 kosa kosa 4096 Sep 12 09:42 .
+drwxr-x--- 17 kosa kosa 4096 Sep 12 09:32 ..
+drwxrwxr-x  2 kosa kosa 4096 Sep 11 14:31 cow
+drwxrwxr-x  2 kosa kosa 4096 Sep 11 14:31 dog
+drwxrwxr-x  2 kosa kosa 4096 Sep 12 09:31 snake
+kosa@ubuntu:~/animals$ rmdir cow dog snake
+kosa@ubuntu:~/animals$ ls
+kosa@ubuntu:~/animals$ cd
+kosa@ubuntu:~$ rmdir amimals
+rmdir: failed to remove 'amimals': No such file or directory
+kosa@ubuntu:~$ cd animals
+kosa@ubuntu:~/animals$ cd ..
+kosa@ubuntu:~$ rmdir animals/
+kosa@ubuntu:~$
+
+05
+kosa@ubuntu:~$ pwd
+/home/kosa
+kosa@ubuntu:~$ ls fruits/
+apple
+kosa@ubuntu:~$ rmdit fruits/
+Command 'rmdit' not found, did you mean:
+  command 'rmdic' from deb canna-utils (3.7p3-20)
+  command 'rmdir' from deb coreutils (9.4-3ubuntu6.2)
+Try: sudo apt install <deb name>
+kosa@ubuntu:~$ rmdir -p fruits/apple/
+kosa@ubuntu:~$ ls
+ Desktop     Downloads   hello2         Music      Public   Templates
+ Documents   hello      'hello world'   Pictures   snap     Videos
+kosa@ubuntu:~$
+
+06 cp cat
++ ">" 리다이렉션
+kosa@ubuntu:~$ mkdir testdir
+kosa@ubuntu:~$ cd testdir
+kosa@ubuntu:~/testdir$ pwd
+/home/kosa/testdir
+kosa@ubuntu:~/testdir$ echo "hello world" >greetings
+kosa@ubuntu:~/testdir$ ls
+greetings
+kosa@ubuntu:~/testdir$ cat greetings
+
+hello world
+kosa@ubuntu:~/testdir$
+kosa@ubuntu:~/testdir$ ls
+greetings
+kosa@ubuntu:~/testdir$ cp greetings say_hello
+kosa@ubuntu:~/testdir$ ls
+greetings  say_hello
+kosa@ubuntu:~/testdir$ cat say_hello
+hello world
+kosa@ubuntu:~/testdir$
+
+07
+kosa@ubuntu:~/testdir$ pwd
+/home/kosa/testdir
+kosa@ubuntu:~/testdir$ mkdir temporary
+kosa@ubuntu:~/testdir$ ls
+greetings  say_hello  temporary
+kosa@ubuntu:~/testdir$ cp greetings say_hello temporary/
+kosa@ubuntu:~/testdir$ ls
+greetings  say_hello  temporary
+kosa@ubuntu:~/testdir$ cd temporary/
+kosa@ubuntu:~/testdir/temporary$ ls
+greetings  say_hello
+kosa@ubuntu:~/testdir/temporary$ cat greetings
+hello world
+kosa@ubuntu:~/testdir/temporary$ cat say_hello
+hello world
+kosa@ubuntu:~/testdir/temporary$
+
+
+08
+kosa@ubuntu:~/testdir/temporary$ pwd
+/home/kosa/testdir/temporary
+kosa@ubuntu:~/testdir/temporary$ ls
+greetings  say_hello
+kosa@ubuntu:~/testdir/temporary$ mv say_hello hello
+kosa@ubuntu:~/testdir/temporary$ ls
+greetings  hello
+kosa@ubuntu:~/testdir/temporary$
+
+
+08-1
+kosa@ubuntu:~/testdir/temporary$ ls
+greetings  hello
+kosa@ubuntu:~/testdir/temporary$ mv greetings welcome
+kosa@ubuntu:~/testdir/temporary$ ls
+hello  welcome
+kosa@ubuntu:~/testdir/temporary$ cd ..
+kosa@ubuntu:~/testdir$ ls
+greetings  say_hello  temporary
+kosa@ubuntu:~/testdir$
+
+09
++"." 현재 디렉터리
++".." 상위 디렉터리
+kosa@ubuntu:~/testdir/temporary$ ls
+greetings  hello
+kosa@ubuntu:~/testdir/temporary$ mv greetings welcome
+kosa@ubuntu:~/testdir/temporary$ ls
+hello  welcome
+kosa@ubuntu:~/testdir/temporary$ cd ..
+kosa@ubuntu:~/testdir$ ls
+greetings  say_hello  temporary
+kosa@ubuntu:~/testdir$ ls temporary.
+ls: cannot access 'temporary.': No such file or directory
+kosa@ubuntu:~/testdir$ ls temporary/
+hello  welcome
+kosa@ubuntu:~/testdir$ mv temporary/hello ./
+kosa@ubuntu:~/testdir$ ls
+greetings  hello  say_hello  temporary
+kosa@ubuntu:~/testdir$ ls temporary/
+welcome
+kosa@ubuntu:~/testdir$
+
+10
+kosa@ubuntu:~/testdir$ dir
+greetings hello  say_hello  temporary
+
+11
+kosa@ubuntu:~/testdir$ mkdir haha
+kosa@ubuntu:~/testdir$ ls
+greetings  haha  hello  say_hello  temporary  WELCOME
+kosa@ubuntu:~/testdir$ mv haha huhu/
+kosa@ubuntu:~/testdir$ ls
+greetings  hello  huhu  say_hello  temporary  WELCOME
+kosa@ubuntu:~/testdir$
+
+12
+kosa@ubuntu:~/testdir$ ls
+greetings  hello  huhu  say_hello  temporary  WELCOME
+kosa@ubuntu:~/testdir$ mv huhu temporary/
+kosa@ubuntu:~/testdir$ ls temporary/
+huhu
+kosa@ubuntu:~/testdir$
+kosa@ubuntu:~/testdir$ mv temporary/huhu ./hihi
+kosa@ubuntu:~/testdir$ ls
+greetings  hello  hihi  say_hello  temporary  WELCOME
+kosa@ubuntu:~/testdir$
+
+13
+kosa@ubuntu:~/testdir$ rm say_hello
+kosa@ubuntu:~/testdir$ ls
+greetings  hello  hihi  temporary  WELCOME
+kosa@ubuntu:~/testdir$ rm -i hello
+rm: remove regular file 'hello'? y
+kosa@ubuntu:~/testdir$ ls
+greetings  hihi  temporary  WELCOME
+kosa@ubuntu:~/testdir$
+
+14
+"touch" 빈파일 생성
+kosa@ubuntu:~/testdir$ ls
+greetings  hihi  temporary  WELCOME
+kosa@ubuntu:~/testdir$ rm WELCOME greetings
+kosa@ubuntu:~/testdir$ ls
+hihi  temporary
+kosa@ubuntu:~/testdir$ cd hihi/
+kosa@ubuntu:~/testdir/hihi$ cd ..
+kosa@ubuntu:~/testdir$ ls hihi
+kosa@ubuntu:~/testdir$ ls
+hihi  temporary
+kosa@ubuntu:~/testdir$ ls temporary
+kosa@ubuntu:~/testdir$
+kosa@ubuntu:~/testdir$ touch hihi/newfile
+kosa@ubuntu:~/testdir$ ls hihi/
+newfile
+kosa@ubuntu:~/testdir$ rmdir temporary/
+kosa@ubuntu:~/testdir$ ls
+hihi
+kosa@ubuntu:~/testdir$ rm -i hihi/
+rm: cannot remove 'hihi/': Is a directory
+kosa@ubuntu:~/testdir$ rm -p hihi/
+rm: invalid option -- 'p'
+Try 'rm --help' for more information.
+kosa@ubuntu:~/testdir$ rm -f hihi/
+rm: cannot remove 'hihi/': Is a directory
+kosa@ubuntu:~/testdir$ rm -r hihi/
+kosa@ubuntu:~/testdir$ ls
+kosa@ubuntu:~/testdir$
+
+15
+kosa@ubuntu:~/testdir$ mkdir temporary/
+kosa@ubuntu:~/testdir$ ls
+temporary
+kosa@ubuntu:~/testdir$ cd temporary/
+kosa@ubuntu:~/testdir/temporary$ touch newfile
+kosa@ubuntu:~/testdir/temporary$ ls
+newfile
+kosa@ubuntu:~/testdir/temporary$ cd ..
+kosa@ubuntu:~/testdir$ ls
+temporary
+kosa@ubuntu:~/testdir$ pwd
+/home/kosa/testdir
+kosa@ubuntu:~/testdir$ /rm -r temporary/
+bash: /rm: No such file or directory
+kosa@ubuntu:~/testdir$ ls
+temporary
+kosa@ubuntu:~/testdir$ /rm -r temporary/
+bash: /rm: No such file or directory
+kosa@ubuntu:~/testdir$ rm -r temporary/
+kosa@ubuntu:~/testdir$ ls
+kosa@ubuntu:~/testdir$
+
+
+..
+
+소프트 링크. 하드 링크
+아이노드 : 각 파일에 대한 정보가 담기 자료구조
+데이터 블록: 파일의 실제 내용을 담고 있는 파일
+덴트리: 파일의 경로 정보가 담긴 자료구조
+
+소프트 링크 : 연결할 대상 파일의 경로를 저장. 심볼릭 링크 또는 심링크라고 함(원본이 한개)
+하드 링크 : 대상 파일의 복제본을 만드는 것으로, 대상 파일에 대한 별칭을 부여하는 것으로 볼 수 있음
+
+16
+kosa@ubuntu:~/Desktop$ cd
+kosa@ubuntu:~$ cd linktest/
+kosa@ubuntu:~/linktest$ cat target
+this is a target file
+kosa@ubuntu:~/linktest$ ln -s target s-link
+kosa@ubuntu:~/linktest$ ls -li
+total 4
+1097244 lrwxrwxrwx 1 kosa kosa  6 Sep 12 11:17 s-link -> target
+1097243 -rw-rw-r-- 1 kosa kosa 22 Sep 12 11:15 target
+kosa@ubuntu:~/linktest$ cat s-link
+this is a target file
+kosa@ubuntu:~/linktest$ stat target
+  File: target
+  Size: 22        	Blocks: 8          IO Block: 4096   regular file
+Device: 8,2	Inode: 1097243     Links: 1
+Access: (0664/-rw-rw-r--)  Uid: ( 1000/    kosa)   Gid: ( 1000/    kosa)
+Access: 2026-09-12 11:16:40.085181658 +0900
+Modify: 2026-09-12 11:15:45.392662084 +0900
+Change: 2026-09-12 11:15:45.392662084 +0900
+ Birth: 2026-09-12 11:15:45.392662084 +0900
+kosa@ubuntu:~/linktest$ stat s-link
+  File: s-link -> target
+  Size: 6         	Blocks: 0          IO Block: 4096   symbolic link
+Device: 8,2	Inode: 1097244     Links: 1
+Access: (0777/lrwxrwxrwx)  Uid: ( 1000/    kosa)   Gid: ( 1000/    kosa)
+Access: 2026-09-12 11:17:09.963438608 +0900
+Modify: 2026-09-12 11:17:00.381188524 +0900
+Change: 2026-09-12 11:17:00.381188524 +0900
+ Birth: 2026-09-12 11:17:00.381188524 +0900
+kosa@ubuntu:~/linktest$
+
+17
+kosa@ubuntu:~/linktest$ echo "this file is modified" > target
+kosa@ubuntu:~/linktest$ stat target
+  File: target
+  Size: 22        	Blocks: 8          IO Block: 4096   regular file
+Device: 8,2	Inode: 1097243     Links: 1
+Access: (0664/-rw-rw-r--)  Uid: ( 1000/    kosa)   Gid: ( 1000/    kosa)
+Access: 2026-09-12 11:16:40.085181658 +0900
+Modify: 2026-09-12 11:21:56.935858864 +0900
+Change: 2026-09-12 11:21:56.935858864 +0900
+ Birth: 2026-09-12 11:15:45.392662084 +0900
+kosa@ubuntu:~/linktest$ stat s-link
+  File: s-link -> target
+  Size: 6         	Blocks: 0          IO Block: 4096   symbolic link
+Device: 8,2	Inode: 1097244     Links: 1
+Access: (0777/lrwxrwxrwx)  Uid: ( 1000/    kosa)   Gid: ( 1000/    kosa)
+Access: 2026-09-12 11:17:09.963438608 +0900
+Modify: 2026-09-12 11:17:00.381188524 +0900
+Change: 2026-09-12 11:17:00.381188524 +0900
+ Birth: 2026-09-12 11:17:00.381188524 +0900
+kosa@ubuntu:~/linktest$
+
+18
+kosa@ubuntu:~/linktest$ ls -li
+total 4
+1097244 lrwxrwxrwx 1 kosa kosa  6 Sep 12 11:17 s-link -> target
+1097243 -rw-rw-r-- 1 kosa kosa 22 Sep 12 11:21 target
+kosa@ubuntu:~/linktest$ mv target moved_target
+kosa@ubuntu:~/linktest$ ls -li
+total 4
+1097243 -rw-rw-r-- 1 kosa kosa 22 Sep 12 11:21 moved_target
+1097244 lrwxrwxrwx 1 kosa kosa  6 Sep 12 11:17 s-link -> target
+kosa@ubuntu:~/linktest$ cat moved_target
+this file is modified
+kosa@ubuntu:~/linktest$ cat s-link
+cat: s-link: No such file or directory
+kosa@ubuntu:~/linktest$ mv moved_target target
+kosa@ubuntu:~/linktest$ ls -li
+total 4
+1097244 lrwxrwxrwx 1 kosa kosa  6 Sep 12 11:17 s-link -> target
+1097243 -rw-rw-r-- 1 kosa kosa 22 Sep 12 11:21 target
+kosa@ubuntu:~/linktest$ cat s-link
+this file is modified
+kosa@ubuntu:~/linktest$
+
+19
+kosa@ubuntu:~/linktest$ pwd
+/home/kosa/linktest
+kosa@ubuntu:~/linktest$ echo "this is a new target file" > new-target
+kosa@ubuntu:~/linktest$ cat new-target
+this is a new target file
+kosa@ubuntu:~/linktest$ ls -li
+total 8
+1097245 -rw-rw-r-- 1 kosa kosa 26 Sep 12 11:33 new-target
+1097244 lrwxrwxrwx 1 kosa kosa  6 Sep 12 11:17 s-link -> target
+1097243 -rw-rw-r-- 1 kosa kosa 22 Sep 12 11:21 target
+kosa@ubuntu:~/linktest$ ln new-target h-link
+kosa@ubuntu:~/linktest$ ls -li
+total 12
+1097245 -rw-rw-r-- 2 kosa kosa 26 Sep 12 11:33 h-link
+1097245 -rw-rw-r-- 2 kosa kosa 26 Sep 12 11:33 new-target
+1097244 lrwxrwxrwx 1 kosa kosa  6 Sep 12 11:17 s-link -> target
+1097243 -rw-rw-r-- 1 kosa kosa 22 Sep 12 11:21 target
+kosa@ubuntu:~/linktest$ clear
+
+20
+kosa@ubuntu:~/linktest$ echo "modified version of new target file" > new-target
+kosa@ubuntu:~/linktest$ cat new-target
+modified version of new target file
+kosa@ubuntu:~/linktest$ cat h-link
+modified version of new target file
+kosa@ubuntu:~/linktest$ stat new-target
+  File: new-target
+  Size: 36        	Blocks: 8          IO Block: 4096   regular file
+Device: 8,2	Inode: 1097245     Links: 2
+Access: (0664/-rw-rw-r--)  Uid: ( 1000/    kosa)   Gid: ( 1000/    kosa)
+Access: 2026-09-12 11:41:14.805391377 +0900
+Modify: 2026-09-12 11:41:11.295167677 +0900
+Change: 2026-09-12 11:41:11.295167677 +0900
+ Birth: 2026-09-12 11:33:30.548763440 +0900
+kosa@ubuntu:~/linktest$ stat h-link
+  File: h-link
+  Size: 36        	Blocks: 8          IO Block: 4096   regular file
+Device: 8,2	Inode: 1097245     Links: 2
+Access: (0664/-rw-rw-r--)  Uid: ( 1000/    kosa)   Gid: ( 1000/    kosa)
+Access: 2026-09-12 11:41:14.805391377 +0900
+Modify: 2026-09-12 11:41:11.295167677 +0900
+Change: 2026-09-12 11:41:11.295167677 +0900
+ Birth: 2026-09-12 11:33:30.548763440 +0900
+kosa@ubuntu:~/linktest$
+
+21
+kosa@ubuntu:~/linktest$ ls -li
+total 12
+1097245 -rw-rw-r-- 2 kosa kosa 36 Sep 12 11:41 h-link
+1097245 -rw-rw-r-- 2 kosa kosa 36 Sep 12 11:41 new-target
+1097244 lrwxrwxrwx 1 kosa kosa  6 Sep 12 11:17 s-link -> target
+1097243 -rw-rw-r-- 1 kosa kosa 22 Sep 12 11:21 target
+kosa@ubuntu:~/linktest$ mv new-target new-target2
+kosa@ubuntu:~/linktest$ ls -li
+total 12
+1097245 -rw-rw-r-- 2 kosa kosa 36 Sep 12 11:41 h-link
+1097245 -rw-rw-r-- 2 kosa kosa 36 Sep 12 11:41 new-target2
+1097244 lrwxrwxrwx 1 kosa kosa  6 Sep 12 11:17 s-link -> target
+1097243 -rw-rw-r-- 1 kosa kosa 22 Sep 12 11:21 target
+kosa@ubuntu:~/linktest$ rm new-target2
+kosa@ubuntu:~/linktest$ ls -li
+total 8
+1097245 -rw-rw-r-- 1 kosa kosa 36 Sep 12 11:41 h-link
+1097244 lrwxrwxrwx 1 kosa kosa  6 Sep 12 11:17 s-link -> target
+1097243 -rw-rw-r-- 1 kosa kosa 22 Sep 12 11:21 target
+kosa@ubuntu:~/linktest$
+
+..
+
+사용자
+root사용자:  리눅스 시스템의 모든 권한을 가진 관리자 계정
+시스템 사용자 : 리눅스 시스템에서 만든 사용자
+일반 사용자 : root사용자와 시스템 사용자를 제외한 모든 사용자
+
+sudo 특정사용자의 권한으로 단일 명령어 실행
+
+22
+kosa@ubuntu:~$ cat /etc/passwd
+.
+.
+.
+kosa:x:1000:1000:kosa:/home/kosa:/bin/bash
+// 사용자를 확인하는 부분
+//사용자 이름: 비번:사용자 id:추가설명:홈디렉토리: 로그인셀
+
+23
+kosa@ubuntu:~$ cat /etc/group
+.
+.
+.
+kosa:x:1000:
+//사용자 그룹 이름:비밀번호:사용자그룹 아이디:사용자목록
+
+24
+kosa@ubuntu:~$ sudo adduser john
+[sudo] password for kosa:
+info: Adding user `john' ...
+info: Selecting UID/GID from range 1000 to 59999 ...
+info: Adding new group `john' (1001) ...
+info: Adding new user `john' (1001) with group `john (1001)' ...
+info: Creating home directory `/home/john' ...
+info: Copying files from `/etc/skel' ...
+New password:
+BAD PASSWORD: The password is shorter than 8 characters
+Retype new password:
+passwd: password updated successfully
+Changing the user information for john
+Enter the new value, or press ENTER for the default
+	Full Name []:
+	Room Number []:
+	Work Phone []:
+	Home Phone []:
+	Other []:
+Is the information correct? [Y/n] y
+info: Adding new user `john' to supplemental / extra groups `users' ...
+info: Adding user `john' to group `users' ...
+kosa@ubuntu:~$
+
+25
+kosa@ubuntu:~$ cat /etc/passwd
+.
+.
+.
+kosa:x:1000:1000:kosa:/home/kosa:/bin/bash
+john:x:1001:1001:,,,:/home/john:/bin/bash
+kosa@ubuntu:~$
+
+26
+Ubuntu 로그인 화면에서 기존 kosa 계정과 새로 만든 john 계정이 함께 표시되는 것을 확인함.
+
+27
++grep 파일이나 텍스트에서 특정 문자열(패턴)을 찾아주는 리눅스 명령어
+kosa@ubuntu:~/Desktop$ cd
+kosa@ubuntu:~$ sudo deluser --remove-home john
+[sudo] password for kosa:
+info: Looking for files to backup/remove ...
+info: Removing files ...
+info: Removing crontab ...
+info: Removing user `john' ...
+kosa@ubuntu:~$ grep john /etc/passwd
+kosa@ubuntu:~$ grep john /etc/group
+kosa@ubuntu:~$ ls -al /home/john
+ls: cannot open directory '/home/john': Permission denied
+kosa@ubuntu:~$

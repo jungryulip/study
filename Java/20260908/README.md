@@ -87,7 +87,7 @@ void tearDown() {
 `@RepeatedTest`는 같은 테스트를 지정한 횟수만큼 반복하고, `@Disabled`는 아직 실행하지 않을
 테스트를 잠시 제외할 때 사용한다.
 
-![MemberRepository 전체 조회 테스트](./images/member-repository-test.png)
+> 테스트 결과 화면에는 실습 데이터의 개인정보가 포함되어 있어 공개 저장소에서 제외했다.
 
 ## 고정된 ID에 의존하지 않는 Service 테스트
 
@@ -118,8 +118,6 @@ void 회원_한건조회_테스트() {
 
 이렇게 하면 테스트가 특정 실행 순서나 데이터베이스의 현재 시퀀스 값에 묶이지 않는다. 테스트를
 여러 번 실행해도 같은 조건에서 같은 결과를 기대할 수 있다.
-
-![저장된 ID를 이용한 MemberService 테스트](./images/member-service-test.png)
 
 ## 웹 요청과 MVC 구조
 
@@ -189,7 +187,7 @@ Thymeleaf 템플릿은 일반 HTML 형태를 유지하면서 `th:*` 속성으로
 `${title}`은 Model에 담은 `title` 값을 읽는 변수 표현식이다. 실행 결과에서 Controller가 준비한
 두 문장이 HTML에 표시되는 것을 확인했다.
 
-![Thymeleaf로 출력한 도서 예제](./images/thymeleaf-book-result.png)
+> 결과 화면에는 실습 과정에서 제공된 인물 정보가 포함되어 있어 공개 저장소에서 제외했다.
 
 ## 객체의 속성 출력
 
@@ -219,8 +217,6 @@ public String getMember(Model model) {
 </ul>
 ```
 
-![Thymeleaf 회원 단건 출력 결과](./images/thymeleaf-member-result.png)
-
 ## `th:each`로 목록 반복 출력
 
 회원이나 상품처럼 여러 객체를 보여 줄 때는 `th:each`를 사용한다.
@@ -235,8 +231,6 @@ public String getMember(Model model) {
 
 `memberList`의 요소를 하나씩 `member`에 담아 `<tr>`을 반복 생성한다. Controller는 목록을
 준비하는 역할을 하고, View는 그 목록을 화면 구조에 맞게 표현한다.
-
-![회원 목록 반복 출력 결과](./images/thymeleaf-member-list.png)
 
 상품 번호, 상품명, 가격과 재고도 같은 방식으로 표에 출력했다. 데이터 종류가 달라도
 Controller → Model → View 흐름은 동일하다.

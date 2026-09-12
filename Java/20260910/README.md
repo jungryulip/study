@@ -138,7 +138,7 @@ public class DataInitializer implements ApplicationRunner {
 확인했다. 이를 통해 프로필 선택, 데이터베이스 연결, JPA 저장과 REST 응답이 한 흐름으로 동작한다는
 것을 검증했다.
 
-![회원 목록 API 실행 결과](./images/profile-member-api.png)
+> 회원 목록 응답에는 이름과 이메일이 포함되어 있어 공개 저장소에서 화면 캡처를 제외했다.
 
 ## 3. Gradle로 실행 가능한 JAR 만들기
 
@@ -287,7 +287,7 @@ public String getArticleList(
 연결했다. 화면에서 관리 메뉴를 감추는 것과 별개로 서버의 Spring Security 설정에서도
 `/member/**`를 관리자 권한으로 제한해야 한다.
 
-![관리자 회원 목록 화면](./images/bbs-member-admin.png)
+> 관리자 회원 목록 화면에는 개인정보가 포함되어 있어 공개 저장소에서 제외했다.
 
 ## 8. 오늘 정리한 배포 체크리스트
 

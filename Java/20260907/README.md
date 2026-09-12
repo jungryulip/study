@@ -176,7 +176,7 @@ public void deleteById(Long id) {
 }
 ```
 
-![회원 한 건 조회와 응답 DTO 확인](./images/member-search-result.png)
+> 회원 조회 화면에는 실습 참여자의 이름과 이메일이 포함되어 있어 공개 저장소에서 제외했다.
 
 존재하지 않는 식별자를 `null`이나 기본 예외로 처리하는 것은 학습 단계에서는 단순하지만, 실제
 API에서는 예외를 변환해 `404 Not Found`처럼 의미 있는 상태 코드를 반환하도록 개선할 수 있다.
@@ -257,7 +257,7 @@ public ArticleResponse create(Long memberId, ArticleRequest request) {
 `POST /members/1/articles` 요청으로 1번 회원의 게시글을 저장하고, 생성에 성공했다는
 `201 Created` 응답과 자동 기록된 시간을 확인했다.
 
-![Postman으로 회원의 게시글 생성](./images/article-create-response.png)
+> 게시글 API 화면에는 작성자 정보가 포함되어 있어 공개 저장소에서 제외했다.
 
 Repository 메서드 이름에서 연관 엔티티의 속성까지 탐색할 수 있다.
 
@@ -269,8 +269,6 @@ public interface ArticleRepository extends JpaRepository<Article, Long> {
 
 전체 목록은 `GET /articles`, 특정 회원의 목록은 `GET /articles?memberId=1`처럼 서로
 구분해 설계할 수 있다. 특정 게시글 한 건은 `GET /articles/{id}`로 조회한다.
-
-![게시글 전체 조회 결과](./images/article-list-response.png)
 
 ## 게시글 수정과 삭제
 
@@ -285,8 +283,6 @@ public ArticleResponse update(Long id, ArticleRequest request) {
     return mapToArticleResponse(articleRepository.save(article));
 }
 ```
-
-![Postman으로 게시글 수정과 수정 시간 확인](./images/article-update-response.png)
 
 `DELETE /articles/{id}` 요청은 Repository의 `deleteById(id)`와 연결했다. Postman에서
 요청이 정상 처리되고 응답 본문이 비어 있는 것을 확인했다.
