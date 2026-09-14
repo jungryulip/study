@@ -11,10 +11,10 @@ Oracle SQL부터 Java, 웹 프론트엔드, Spring Boot와 미니프로젝트까
 | 분야 | 기록 수 | 바로가기 |
 | --- | ---: | --- |
 | Oracle SQL | 9일 | [SQL 학습 기록](./Oracle_SQL/) |
-| Java·Spring Boot·Linux | 19일 | [Java·Spring Boot·Linux 학습 기록](./Java/) |
+| Java·Spring Boot·Linux | 20일 | [Java·Spring Boot·Linux 학습 기록](./Java/) |
 | HTML·CSS·JavaScript | 7일 | [웹 학습 기록](./HTML/) |
 | BookMate 미니프로젝트 | 8일 | [프로젝트 기록](./Project/) |
-| **전체** | **43일** | [GitHub Pages에서 검색하기](https://jungryulip.github.io/study/) |
+| **전체** | **44일** | [GitHub Pages에서 검색하기](https://jungryulip.github.io/study/) |
 
 ## 전체 학습 일지
 
@@ -23,6 +23,7 @@ Oracle SQL부터 Java, 웹 프론트엔드, Spring Boot와 미니프로젝트까
 
 | 일차 | 날짜 | 분야 | 배운 내용 | 기록 |
 | --- | --- | --- | --- | --- |
+| DAY 44 | 2026-09-14 | Linux | 리눅스 사용자·권한과 프로세스 관리 | [기록 보기](./Java/20260914/) |
 | DAY 43 | 2026-09-12 | Linux | 리눅스 파일·링크, 사용자와 권한 | [기록 보기](./Java/20260912/) |
 | DAY 42 | 2026-09-11 | Linux | 리눅스 기초와 파일·디렉터리 구조 | [기록 보기](./Java/20260911/) |
 | DAY 41 | 2026-09-10 | Spring Boot | Spring Boot 프로필과 애플리케이션 빌드·배포 | [기록 보기](./Java/20260910/) |

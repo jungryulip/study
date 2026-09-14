@@ -22,6 +22,10 @@
 .DS_Store
 *.pem
 
+# Do not publish Linux/Java course handouts with study journals.
+/Java/**/*.pdf
+/Java/**/*.PDF
+
 # debug
 npm-debug.log*
 yarn-debug.log*

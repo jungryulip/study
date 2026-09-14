@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-09-14",
+    day: "DAY 44",
+    title: "리눅스 사용자·권한과 프로세스 관리",
+    summary:
+      "사용자와 그룹을 추가·삭제하고 su·sudo로 계정을 전환하는 흐름을 실습했다. chown과 chmod로 파일·디렉터리의 소유권과 권한을 변경했으며, ps·kill·bg·fg를 사용해 프로세스를 조회하고 종료하거나 포어그라운드와 백그라운드 사이에서 전환했다.",
+    learned: [
+      "Linux 사용자·그룹 생성과 삭제",
+      "su·sudo를 이용한 사용자 전환과 관리자 권한",
+      "chown·chmod와 파일·디렉터리 권한",
+      "ps·kill·killall과 포어그라운드·백그라운드 작업",
+    ],
+    tags: ["Linux", "사용자·권한", "프로세스"],
+    folder: "Java/20260914",
+    readTime: 15,
+  },
+  {
     date: "2026-09-12",
     day: "DAY 43",
     title: "리눅스 파일·링크, 사용자와 권한",
