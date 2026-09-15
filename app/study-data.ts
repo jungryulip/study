@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-09-15",
+    day: "DAY 45",
+    title: "리눅스 리디렉션·파이프라인과 시스템 관리",
+    summary:
+      "표준 입력·출력·오류를 리디렉션하고 파이프로 명령을 연결하는 방법을 실습했다. APT 패키지 관리와 systemd 서비스 등록·실행 흐름을 익혔으며, grep·find·wc로 검색하고 df·du로 디스크 사용량을 확인한 뒤 tar로 파일을 묶고 압축·복원했다.",
+    learned: [
+      "표준 입출력·오류와 리디렉션",
+      "파이프라인과 명령 종료 상태",
+      "APT 패키지와 systemd 서비스 관리",
+      "grep·find·wc, df·du와 tar 활용",
+    ],
+    tags: ["Linux", "리디렉션·파이프", "systemd·tar"],
+    folder: "Java/20260915",
+    readTime: 17,
+  },
+  {
     date: "2026-09-14",
     day: "DAY 44",
     title: "리눅스 사용자·권한과 프로세스 관리",
