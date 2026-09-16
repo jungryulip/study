@@ -12,9 +12,9 @@ Oracle SQL부터 Java, 웹 프론트엔드, Spring Boot와 미니프로젝트까
 | --- | ---: | --- |
 | Oracle SQL | 9일 | [SQL 학습 기록](./Oracle_SQL/) |
 | Java·Spring Boot·Linux | 21일 | [Java·Spring Boot·Linux 학습 기록](./Java/) |
-| HTML·CSS·JavaScript | 7일 | [웹 학습 기록](./HTML/) |
+| HTML·CSS·JavaScript·React | 8일 | [웹 학습 기록](./HTML/) |
 | BookMate 미니프로젝트 | 8일 | [프로젝트 기록](./Project/) |
-| **전체** | **45일** | [GitHub Pages에서 검색하기](https://jungryulip.github.io/study/) |
+| **전체** | **46일** | [GitHub Pages에서 검색하기](https://jungryulip.github.io/study/) |
 
 ## 전체 학습 일지
 
@@ -23,6 +23,7 @@ Oracle SQL부터 Java, 웹 프론트엔드, Spring Boot와 미니프로젝트까
 
 | 일차 | 날짜 | 분야 | 배운 내용 | 기록 |
 | --- | --- | --- | --- | --- |
+| DAY 46 | 2026-09-16 | React | React 기초: Vite·컴포넌트·props와 이벤트 | [기록 보기](./HTML/20260916/) |
 | DAY 45 | 2026-09-15 | Linux | 리눅스 리디렉션·파이프라인과 시스템 관리 | [기록 보기](./Java/20260915/) |
 | DAY 44 | 2026-09-14 | Linux | 리눅스 사용자·권한과 프로세스 관리 | [기록 보기](./Java/20260914/) |
 | DAY 43 | 2026-09-12 | Linux | 리눅스 파일·링크, 사용자와 권한 | [기록 보기](./Java/20260912/) |

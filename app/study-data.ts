@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-09-16",
+    day: "DAY 46",
+    title: "React 기초: Vite·컴포넌트·props와 이벤트",
+    summary:
+      "React의 컴포넌트 기반 구조와 단방향 데이터 흐름을 이해하고 Vite로 개발 환경을 구성했다. JSX와 함수 컴포넌트를 작성하고 props의 전달·구조 분해·읽기 전용 특성을 확인했으며, 이벤트 콜백으로 자식과 부모를 연결하고 컴포넌트를 파일별로 모듈화했다.",
+    learned: [
+      "React·SPA와 Vite 개발 환경",
+      "JSX 규칙과 함수 컴포넌트",
+      "props 전달·구조 분해·읽기 전용 특성",
+      "이벤트 콜백과 컴포넌트 모듈화",
+    ],
+    tags: ["React", "Vite·JSX", "컴포넌트·props"],
+    folder: "HTML/20260916",
+    readTime: 16,
+  },
+  {
     date: "2026-09-15",
     day: "DAY 45",
     title: "리눅스 리디렉션·파이프라인과 시스템 관리",
