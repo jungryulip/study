@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-09-17",
+    day: "DAY 47",
+    title: "React 상태·스타일·폼 처리와 React Router",
+    summary:
+      "useState로 상태를 관리하고 조건부 렌더링과 폼 입력 처리를 실습했다. 인라인 스타일과 이미지를 적용하고 객체 상태의 얕은 비교와 불변성을 확인했으며, React Router로 기본·중첩·Not Found 라우트와 활성 링크를 구성하고 URL 경로와 쿼리스트링을 다뤘다.",
+    learned: [
+      "useState와 조건부 렌더링",
+      "React 스타일·이미지와 폼 처리",
+      "얕은 비교와 불변한 상태 갱신",
+      "React Router·중첩 라우트와 URL Hook",
+    ],
+    tags: ["React", "State·Form", "React Router"],
+    folder: "HTML/20260917",
+    readTime: 18,
+  },
+  {
     date: "2026-09-16",
     day: "DAY 46",
     title: "React 기초: Vite·컴포넌트·props와 이벤트",
