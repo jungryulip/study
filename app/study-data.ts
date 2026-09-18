@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-09-18",
+    day: "DAY 48",
+    title: "Python 기초: 숫자·문자열과 리스트",
+    summary:
+      "Python의 특징과 실행 환경을 살펴보고 숫자형·변수·입력과 산술 연산을 실습했다. 문자열의 인덱싱·슬라이싱·포매팅과 주요 메서드를 익혔으며, 리스트의 생성·조회·수정과 중첩 리스트 및 다양한 리스트 메서드를 연습했다.",
+    learned: [
+      "Python과 Spyder·Jupyter Notebook 실행 환경",
+      "숫자형·변수·입력과 산술 연산자",
+      "문자열 인덱싱·슬라이싱·포매팅과 메서드",
+      "리스트·중첩 리스트와 항목 수정·메서드",
+    ],
+    tags: ["Python", "문자열", "리스트"],
+    folder: "Python/20260918",
+    readTime: 15,
+  },
+  {
     date: "2026-09-17",
     day: "DAY 47",
     title: "React 상태·스타일·폼 처리와 React Router",

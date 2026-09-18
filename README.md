@@ -1,6 +1,6 @@
 # 코드하루 — 학습 포트폴리오
 
-Oracle SQL부터 Java, 웹 프론트엔드, Spring Boot와 미니프로젝트까지 배운 내용을 하루 단위로
+Oracle SQL부터 Java, 웹 프론트엔드, Spring Boot, Python과 미니프로젝트까지 배운 내용을 하루 단위로
 정리한 저장소입니다. 아래 표에서 **몇 일차에 무엇을 배웠는지** 한눈에 확인하고 각 학습 일지로
 바로 이동할 수 있습니다.
 
@@ -13,8 +13,9 @@ Oracle SQL부터 Java, 웹 프론트엔드, Spring Boot와 미니프로젝트까
 | Oracle SQL | 9일 | [SQL 학습 기록](./Oracle_SQL/) |
 | Java·Spring Boot·Linux | 21일 | [Java·Spring Boot·Linux 학습 기록](./Java/) |
 | HTML·CSS·JavaScript·React | 9일 | [웹 학습 기록](./HTML/) |
+| Python | 1일 | [Python 학습 기록](./Python/) |
 | BookMate 미니프로젝트 | 8일 | [프로젝트 기록](./Project/) |
-| **전체** | **47일** | [GitHub Pages에서 검색하기](https://jungryulip.github.io/study/) |
+| **전체** | **48일** | [GitHub Pages에서 검색하기](https://jungryulip.github.io/study/) |
 
 ## 전체 학습 일지
 
@@ -23,6 +24,7 @@ Oracle SQL부터 Java, 웹 프론트엔드, Spring Boot와 미니프로젝트까
 
 | 일차 | 날짜 | 분야 | 배운 내용 | 기록 |
 | --- | --- | --- | --- | --- |
+| DAY 48 | 2026-09-18 | Python | Python 기초: 숫자·문자열과 리스트 | [기록 보기](./Python/20260918/) |
 | DAY 47 | 2026-09-17 | React | React 상태·스타일·폼 처리와 React Router | [기록 보기](./HTML/20260917/) |
 | DAY 46 | 2026-09-16 | React | React 기초: Vite·컴포넌트·props와 이벤트 | [기록 보기](./HTML/20260916/) |
 | DAY 45 | 2026-09-15 | Linux | 리눅스 리디렉션·파이프라인과 시스템 관리 | [기록 보기](./Java/20260915/) |
@@ -78,6 +80,7 @@ study/
 ├── Oracle_SQL/   SQL·SQLD 학습 기록
 ├── Java/         Java·JDBC·Spring Boot·Linux 학습 기록
 ├── HTML/         HTML·CSS·JavaScript 학습 기록
+├── Python/       Python 문법과 실습 기록
 ├── Project/      BookMate 미니프로젝트 일지
 └── app/          GitHub Pages 포트폴리오 화면
 ```

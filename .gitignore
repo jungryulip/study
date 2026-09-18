@@ -30,6 +30,10 @@
 /HTML/**/*.pdf
 /HTML/**/*.PDF
 
+# Do not publish Python course handouts with study journals.
+/Python/**/*.pdf
+/Python/**/*.PDF
+
 # debug
 npm-debug.log*
 yarn-debug.log*
