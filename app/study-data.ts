@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-09-19",
+    day: "DAY 49",
+    title: "React 라이프사이클과 useEffect 데이터 통신",
+    summary:
+      "컴포넌트의 마운트·업데이트·언마운트를 구분하고 useEffect의 실행 순서, 의존성 배열과 cleanup 동작을 실습했다. state 변경에 따른 재렌더링을 확인하고, 로컬 JSON과 외부 API를 불러와 state에 저장한 뒤 목록으로 출력했다.",
+    learned: [
+      "마운트·업데이트·언마운트와 렌더링 순서",
+      "useEffect 의존성 배열과 cleanup 함수",
+      "state 변경에 따른 재렌더링",
+      "로컬 JSON·외부 API 요청과 비동기 상태 처리",
+    ],
+    tags: ["React", "useEffect", "Fetch API"],
+    folder: "HTML/20260919",
+    readTime: 16,
+  },
+  {
     date: "2026-09-18",
     day: "DAY 48",
     title: "Python 기초: 숫자·문자열과 리스트",
