@@ -12,10 +12,10 @@ Oracle SQL부터 Java, 웹 프론트엔드, Spring Boot, Python과 미니프로�
 | --- | ---: | --- |
 | Oracle SQL | 9일 | [SQL 학습 기록](./Oracle_SQL/) |
 | Java·Spring Boot·Linux | 21일 | [Java·Spring Boot·Linux 학습 기록](./Java/) |
-| HTML·CSS·JavaScript·React | 10일 | [웹 학습 기록](./HTML/) |
+| HTML·CSS·JavaScript·React | 11일 | [웹 학습 기록](./HTML/) |
 | Python | 1일 | [Python 학습 기록](./Python/) |
 | BookMate 미니프로젝트 | 8일 | [프로젝트 기록](./Project/) |
-| **전체** | **49일** | [GitHub Pages에서 검색하기](https://jungryulip.github.io/study/) |
+| **전체** | **50일** | [GitHub Pages에서 검색하기](https://jungryulip.github.io/study/) |
 
 ## 전체 학습 일지
 
@@ -24,6 +24,7 @@ Oracle SQL부터 Java, 웹 프론트엔드, Spring Boot, Python과 미니프로�
 
 | 일차 | 날짜 | 분야 | 배운 내용 | 기록 |
 | --- | --- | --- | --- | --- |
+| DAY 50 | 2026-09-21 | React·Spring Boot | React 성능 최적화 Hook과 Spring Boot REST API 연동 | [기록 보기](./HTML/20260921/) |
 | DAY 49 | 2026-09-19 | React | React 라이프사이클과 useEffect 데이터 통신 | [기록 보기](./HTML/20260919/) |
 | DAY 48 | 2026-09-18 | Python | Python 기초: 숫자·문자열과 리스트 | [기록 보기](./Python/20260918/) |
 | DAY 47 | 2026-09-17 | React | React 상태·스타일·폼 처리와 React Router | [기록 보기](./HTML/20260917/) |

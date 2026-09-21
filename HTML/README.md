@@ -7,6 +7,7 @@
 
 | 날짜 | 주요 학습 내용 | 기록 |
 | --- | --- | --- |
+| 2026-09-21 | React 성능 최적화 Hook, Spring Boot JPA·REST API, CORS, Axios, Swagger | [DAY 50 보기](./20260921/) |
 | 2026-09-19 | React 라이프사이클, useEffect·cleanup·의존성 배열, JSON·외부 API 통신 | [DAY 49 보기](./20260919/) |
 | 2026-09-17 | React 상태·스타일·폼, 얕은 비교와 불변성, React Router | [DAY 47 보기](./20260917/) |
 | 2026-09-16 | React와 SPA, Vite, JSX·컴포넌트, props, 이벤트, 컴포넌트 모듈화 | [DAY 46 보기](./20260916/) |
@@ -25,10 +26,9 @@ HTML/
 ├── README.md
 └── YYYYMMDD/
     ├── README.md
-    ├── notes.txt
-    ├── example.html
-    └── images/
+    └── images/     필요한 경우 공개용으로 정리한 화면만 저장
 ```
 
-새 학습 기록은 `YYYYMMDD` 날짜 폴더에 요약 문서와 원본 예제, 필요한 이미지를
-함께 넣어 관리합니다.
+새 학습 기록은 `YYYYMMDD` 날짜 폴더의 요약 문서와 필요한 이미지만으로 관리합니다. 원본
+메모·프로젝트·설정 파일은 그대로 올리지 않고, 공개에 필요한 코드만 비밀정보 없이 다시
+정리합니다.

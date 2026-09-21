@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-09-21",
+    day: "DAY 50",
+    title: "React 성능 최적화 Hook과 Spring Boot REST API 연동",
+    summary:
+      "useRef·useMemo·useCallback·useId의 역할과 메모이제이션을 실습했다. Spring Boot와 JPA로 REST API를 구성하고 CORS를 설정한 뒤, React에서 fetch와 Axios로 데이터를 요청해 표에 렌더링하고 Swagger UI에서 API 명세를 확인했다.",
+    learned: [
+      "useRef·useMemo·useCallback·useId",
+      "Spring Boot JPA 엔티티와 Repository",
+      "REST CRUD API와 CORS 설정",
+      "React·Axios 연동과 Swagger 문서화",
+    ],
+    tags: ["React", "Spring Boot", "REST API"],
+    folder: "HTML/20260921",
+    readTime: 18,
+  },
+  {
     date: "2026-09-19",
     day: "DAY 49",
     title: "React 라이프사이클과 useEffect 데이터 통신",
