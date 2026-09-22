@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-09-22",
+    day: "DAY 51",
+    title: "AWS EC2에 Spring Boot 애플리케이션 배포하기",
+    summary:
+      "클라우드 컴퓨팅과 AWS 주요 서비스, 리전과 EC2의 개념을 익혔다. 보안 그룹의 22·80·443번 포트를 구분하고 Ubuntu에 Java 17을 설치한 뒤, Gradle로 빌드한 Spring Boot JAR을 실행해 외부 HTTP 접속을 확인하고 실습 자원을 정리했다.",
+    learned: [
+      "클라우드 컴퓨팅·AWS 리전과 EC2",
+      "보안 그룹과 22·80·443번 포트",
+      "Ubuntu·Java 17과 Gradle 빌드",
+      "Spring Boot 배포·접속 확인과 자원 정리",
+    ],
+    tags: ["AWS·EC2", "Spring Boot", "배포"],
+    folder: "Java/20260922",
+    readTime: 17,
+  },
+  {
     date: "2026-09-21",
     day: "DAY 50",
     title: "React 성능 최적화 Hook과 Spring Boot REST API 연동",
