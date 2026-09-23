@@ -14,8 +14,8 @@ Oracle SQL부터 Java, 웹 프론트엔드, Spring Boot, Python과 미니프로�
 | Java·Spring Boot·Linux | 22일 | [Java·Spring Boot·Linux 학습 기록](./Java/) |
 | HTML·CSS·JavaScript·React | 11일 | [웹 학습 기록](./HTML/) |
 | Python | 1일 | [Python 학습 기록](./Python/) |
-| BookMate 미니프로젝트 | 8일 | [프로젝트 기록](./Project/) |
-| **전체** | **51일** | [GitHub Pages에서 검색하기](https://jungryulip.github.io/study/) |
+| 팀 미니프로젝트 | 9일 | [프로젝트 기록](./Project/) |
+| **전체** | **52일** | [GitHub Pages에서 검색하기](https://jungryulip.github.io/study/) |
 
 ## 전체 학습 일지
 
@@ -24,6 +24,7 @@ Oracle SQL부터 Java, 웹 프론트엔드, Spring Boot, Python과 미니프로�
 
 | 일차 | 날짜 | 분야 | 배운 내용 | 기록 |
 | --- | --- | --- | --- | --- |
+| DAY 52 | 2026-09-23 | Project | 미니프로젝트 II 개발환경 설정과 통합 구조 확인 | [기록 보기](./Project/20260923/) |
 | DAY 51 | 2026-09-22 | AWS·Spring Boot | AWS EC2에 Spring Boot 애플리케이션 배포하기 | [기록 보기](./Java/20260922/) |
 | DAY 50 | 2026-09-21 | React·Spring Boot | React 성능 최적화 Hook과 Spring Boot REST API 연동 | [기록 보기](./HTML/20260921/) |
 | DAY 49 | 2026-09-19 | React | React 라이프사이클과 useEffect 데이터 통신 | [기록 보기](./HTML/20260919/) |
@@ -84,7 +85,7 @@ study/
 ├── Java/         Java·JDBC·Spring Boot·Linux 학습 기록
 ├── HTML/         HTML·CSS·JavaScript 학습 기록
 ├── Python/       Python 문법과 실습 기록
-├── Project/      BookMate 미니프로젝트 일지
+├── Project/      팀 미니프로젝트 일지
 └── app/          GitHub Pages 포트폴리오 화면
 ```
 
