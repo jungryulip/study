@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-09-29",
+    day: "DAY 54",
+    title: "미니프로젝트 II 디자인 시스템과 기획 발표 완성",
+    summary:
+      "CertMaster의 의미 중심 색상 토큰과 다크·라이트 모드, 글꼴·간격·형태 규칙 및 공통 컴포넌트를 디자인 시스템으로 정리했다. 문제 정의, 사용자 흐름, 복습 규칙, 데이터·권한·시스템 구성과 MVP 범위를 18쪽 기획 발표 자료로 완성했다.",
+    learned: [
+      "의미 중심 색상 토큰과 다크·라이트 모드",
+      "타이포그래피·8px 간격·모서리·테두리·그림자 규칙",
+      "공통 컴포넌트의 용도·크기·상태별 변형",
+      "사용자 흐름·데이터·권한·MVP 기획 발표",
+    ],
+    tags: ["Mini Project II", "Design System", "기획 발표"],
+    folder: "Project/20260929",
+    readTime: 16,
+  },
+  {
     date: "2026-09-28",
     day: "DAY 53",
     title: "미니프로젝트 II 화면 설계와 기획 발표 자료 작성",
