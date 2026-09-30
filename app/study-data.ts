@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-09-30",
+    day: "DAY 55",
+    title: "미니프로젝트 II DB 초기 데이터 구성과 메인 페이지 구현",
+    summary:
+      "정보처리기사 학습 콘텐츠를 DB에 넣기 위해 키워드를 주제·기술·학습 진단·세부 개념으로 분류하고 초기 데이터 구조를 정리했다. React 메인 화면에 검색창과 정보처리기사·SQLD·ADsP 자격증 카드를 배치하고 공통 스타일을 적용해 화면을 렌더링했다.",
+    learned: [
+      "자격증·키워드 초기 데이터 분류와 시드 설계",
+      "학습 분석을 위한 키워드 카테고리 구조",
+      "React Router 오류 확인과 화면 복구",
+      "검색창·자격증 카드와 공통 스타일 적용",
+    ],
+    tags: ["Mini Project II", "DB Seed Data", "React UI"],
+    folder: "Project/20260930",
+    readTime: 12,
+  },
+  {
     date: "2026-09-29",
     day: "DAY 54",
     title: "미니프로젝트 II 디자인 시스템과 기획 발표 완성",

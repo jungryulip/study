@@ -14,8 +14,8 @@ Oracle SQL부터 Java, 웹 프론트엔드, Spring Boot, Python과 미니프로�
 | Java·Spring Boot·Linux | 22일 | [Java·Spring Boot·Linux 학습 기록](./Java/) |
 | HTML·CSS·JavaScript·React | 11일 | [웹 학습 기록](./HTML/) |
 | Python | 1일 | [Python 학습 기록](./Python/) |
-| 팀 미니프로젝트 | 11일 | [프로젝트 기록](./Project/) |
-| **전체** | **54일** | [GitHub Pages에서 검색하기](https://jungryulip.github.io/study/) |
+| 팀 미니프로젝트 | 12일 | [프로젝트 기록](./Project/) |
+| **전체** | **55일** | [GitHub Pages에서 검색하기](https://jungryulip.github.io/study/) |
 
 ## 전체 학습 일지
 
@@ -24,6 +24,7 @@ Oracle SQL부터 Java, 웹 프론트엔드, Spring Boot, Python과 미니프로�
 
 | 일차 | 날짜 | 분야 | 배운 내용 | 기록 |
 | --- | --- | --- | --- | --- |
+| DAY 55 | 2026-09-30 | Project | 미니프로젝트 II DB 초기 데이터 구성과 메인 페이지 구현 | [기록 보기](./Project/20260930/) |
 | DAY 54 | 2026-09-29 | Project | 미니프로젝트 II 디자인 시스템과 기획 발표 완성 | [기록 보기](./Project/20260929/) |
 | DAY 53 | 2026-09-28 | Project | 미니프로젝트 II 화면 설계와 기획 발표 자료 작성 | [기록 보기](./Project/20260928/) |
 | DAY 52 | 2026-09-23 | Project | 미니프로젝트 II 개발환경 설정과 통합 구조 확인 | [기록 보기](./Project/20260923/) |
