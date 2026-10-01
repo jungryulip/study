@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-10-01",
+    day: "DAY 56",
+    title: "미니프로젝트 II 비회원 시험 응시·채점 흐름 구현",
+    summary:
+      "홈에서 자격증을 선택하고 회차를 고른 뒤 문제를 풀고 제출해 점수·오답·해설을 확인하는 흐름을 Spring Boot와 React로 연결했다. 문제 조회, 응시 기록, 답안 저장과 자동 채점 API를 구현하고 이어풀기와 헷갈림 표시 UI를 더했으며, 익명 식별과 복습 표시 영속화는 다음 보완점으로 정리했다.",
+    learned: [
+      "자격증·시험 회차·문제 조회 API 설계",
+      "응시 기록과 답안 스냅샷 저장",
+      "제출·자동 채점과 문항별 결과 조회",
+      "React 시험 흐름·이어풀기·헷갈림 표시 UI",
+    ],
+    tags: ["Mini Project II", "Spring Boot·React", "Exam Workflow"],
+    folder: "Project/20261001",
+    readTime: 17,
+  },
+  {
     date: "2026-09-30",
     day: "DAY 55",
     title: "미니프로젝트 II DB 초기 데이터 구성과 메인 페이지 구현",
