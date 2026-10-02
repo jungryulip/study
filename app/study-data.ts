@@ -13,6 +13,21 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-10-02",
+    day: "DAY 57",
+    title: "미니프로젝트 II 프론트 변경사항 정리와 UI 디자인 수정",
+    summary:
+      "팀 파일 충돌로 기능 개발을 잠시 멈추고, 담당 시험 화면에서 발전시킬 프론트 변경사항을 정리했다. 시험 회차와 응시 상태, 작업 버튼이 잘 구분되도록 UI 디자인 수정안을 만들었다.",
+    learned: [
+      "파일 충돌 상황에서 작업 범위 다시 정리하기",
+      "담당 프론트 변경사항과 개발 항목 정리",
+      "시험 회차·응시 상태·작업 버튼 UI 수정",
+    ],
+    tags: ["Mini Project II", "Frontend", "UI Design"],
+    folder: "Project/20261002",
+    readTime: 3,
+  },
+  {
     date: "2026-10-01",
     day: "DAY 56",
     title: "미니프로젝트 II 비회원 시험 응시·채점 흐름 구현",
