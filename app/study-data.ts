@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-10-03",
+    day: "DAY 58",
+    title: "비회원 시험 응시와 공개 채점 흐름 구현",
+    summary:
+      "로그인하지 않은 사용자가 시험 회차를 선택해 문제를 풀고 채점 결과를 확인하는 흐름을 구현했다. 비회원 답안은 프론트 상태에서만 관리하고 공개 채점 API로 점수와 문항별 결과를 받도록 회원 학습 기록과 분리했다.",
+    learned: [
+      "회원·비회원 시험 흐름과 기록 저장 분리",
+      "React 상태 기반 비회원 답안 관리",
+      "Spring Boot 공개 채점 API와 요청 검증",
+      "시험·학습 모드와 시작 안내 UI 구성",
+    ],
+    tags: ["Mini Project II", "Guest Exam", "React·Spring Boot"],
+    folder: "Project/20261003",
+    readTime: 12,
+  },
+  {
     date: "2026-10-02",
     day: "DAY 57",
     title: "미니프로젝트 II 프론트 변경사항 정리와 UI 디자인 수정",
