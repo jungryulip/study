@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-10-06",
+    day: "DAY 59",
+    title: "학습 모드 기록 도구와 Google 소셜 로그인 연동",
+    summary:
+      "학습 모드에서 메모·하이라이트·밑줄·그림을 저장하고 복원하는 기능을 구현하고 시험·학습 모드의 문제 이동 패널을 공통화했다. PR을 반영한 뒤에는 OAuth 클라이언트를 준비하고 Google 소셜 로그인 흐름을 연결하는 작업을 이어 갔다.",
+    learned: [
+      "학습 메모·강조·그림 저장과 복원",
+      "시험·학습 모드 공통 문제 이동 UI",
+      "학습 기록을 활용한 AI 요약 분석",
+      "Google OAuth 2.0 소셜 로그인 연동",
+    ],
+    tags: ["Mini Project II", "Study Annotation", "Google OAuth"],
+    folder: "Project/20261006",
+    readTime: 15,
+  },
+  {
     date: "2026-10-03",
     day: "DAY 58",
     title: "비회원 시험 응시와 공개 채점 흐름 구현",
