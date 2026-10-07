@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-10-07",
+    day: "DAY 60",
+    title: "Google Drive 오답노트 내보내기 연동과 검증",
+    summary:
+      "Google 계정 연결과 drive.file 최소 권한을 구성하고, 여러 학습 기록에서 고른 오답·메모·AI 내용을 Google 문서로 만드는 흐름을 구현했다. OAuth 테스트 사용자 오류를 해결한 뒤 실제 78문항 문서 생성과 Drive 확인까지 검증했다.",
+    learned: [
+      "Google 로그인과 기존 회원 계정 연결",
+      "drive.file 최소 권한과 OAuth 동의 흐름",
+      "필기·실기별 오답노트 문서 구성",
+      "백그라운드 Google 문서 생성과 상태 조회",
+    ],
+    tags: ["Mini Project II", "Google Drive API", "OAuth 2.0"],
+    folder: "Project/20261007",
+    readTime: 14,
+  },
+  {
     date: "2026-10-06",
     day: "DAY 59",
     title: "학습 모드 기록 도구와 Google 소셜 로그인 연동",

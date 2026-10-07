@@ -14,8 +14,8 @@ Oracle SQL부터 Java, 웹 프론트엔드, Spring Boot, Python과 미니프로�
 | Java·Spring Boot·Linux | 22일 | [Java·Spring Boot·Linux 학습 기록](./Java/) |
 | HTML·CSS·JavaScript·React | 11일 | [웹 학습 기록](./HTML/) |
 | Python | 1일 | [Python 학습 기록](./Python/) |
-| 팀 미니프로젝트 | 16일 | [프로젝트 기록](./Project/) |
-| **전체** | **59일** | [GitHub Pages에서 검색하기](https://jungryulip.github.io/study/) |
+| 팀 미니프로젝트 | 17일 | [프로젝트 기록](./Project/) |
+| **전체** | **60일** | [GitHub Pages에서 검색하기](https://jungryulip.github.io/study/) |
 
 ## 전체 학습 일지
 
@@ -24,6 +24,7 @@ Oracle SQL부터 Java, 웹 프론트엔드, Spring Boot, Python과 미니프로�
 
 | 일차 | 날짜 | 분야 | 배운 내용 | 기록 |
 | --- | --- | --- | --- | --- |
+| DAY 60 | 2026-10-07 | Project | Google Drive 오답노트 내보내기 연동과 검증 | [기록 보기](./Project/20261007/) |
 | DAY 59 | 2026-10-06 | Project | 학습 모드 기록 도구와 Google 소셜 로그인 연동 | [기록 보기](./Project/20261006/) |
 | DAY 58 | 2026-10-03 | Project | 비회원 시험 응시와 공개 채점 흐름 구현 | [기록 보기](./Project/20261003/) |
 | DAY 57 | 2026-10-02 | Project | 미니프로젝트 II 프론트 변경사항 정리와 UI 디자인 수정 | [기록 보기](./Project/20261002/) |
