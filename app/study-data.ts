@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-10-08",
+    day: "DAY 61",
+    title: "Google 앱 게시 준비와 라이트 모드 UI 개편",
+    summary:
+      "Google 앱 게시에 필요한 개인정보처리방침·이용약관과 OAuth 복귀 처리를 추가했다. 이후 CSS 토큰과 React Context로 라이트·다크 모드를 구현하고 내 학습·학습 홈·분석·복습·문제 풀이 화면과 탈퇴 복구 흐름을 정리했다.",
+    learned: [
+      "Google OAuth 앱 게시용 정책 페이지와 공개 링크",
+      "브라우저 화면 복원 시 OAuth 이동 버튼 잠금 해제",
+      "React Context와 CSS 토큰 기반 라이트·다크 모드",
+      "내 학습·분석·복습·문제 풀이 UI와 탈퇴 복구",
+    ],
+    tags: ["Mini Project II", "Google OAuth", "Light·Dark Theme"],
+    folder: "Project/20261008",
+    readTime: 13,
+  },
+  {
     date: "2026-10-07",
     day: "DAY 60",
     title: "Google Drive 오답노트 내보내기 연동과 검증",
