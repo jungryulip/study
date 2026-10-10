@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-10-10",
+    day: "DAY 62",
+    title: "반응형 프론트 개편과 CBTfy 시연 영상 제작",
+    summary:
+      "객관식 답안 자동 이동과 최근 진행 시험 표시를 보완하고, 모바일 390px부터 큰 데스크톱 2560px까지 주요 화면의 반응형 레이아웃을 정리했다. 기능별 화면을 녹화해 내레이션·자막과 마스킹을 더한 CBTfy 시연 영상도 완성했다.",
+    learned: [
+      "객관식 답안 자동 이동과 최근 진행 시험 표시",
+      "모바일 서랍 메뉴와 화면별 반응형 레이아웃",
+      "홈 자격증 카드 모션과 브랜드 시각 효과",
+      "기능 녹화·내레이션·자막을 활용한 시연 영상 제작",
+    ],
+    tags: ["Mini Project II", "Responsive Web", "Demo Video"],
+    folder: "Project/20261010",
+    readTime: 11,
+  },
+  {
     date: "2026-10-08",
     day: "DAY 61",
     title: "Google 앱 게시 준비와 라이트 모드 UI 개편",
