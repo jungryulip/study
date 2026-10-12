@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-10-12",
+    day: "DAY 63",
+    title: "CBTfy 최종 발표와 Python 자료형·조건문 기초",
+    summary:
+      "CBTfy의 서비스 흐름과 담당 기능, 설계·성능 개선 및 배포 경험을 최종 발표로 정리했다. 이후 Python의 튜플·딕셔너리·집합·불 자료형을 학습하고 변수의 참조와 복사, if·elif·else 조건문을 실습했다.",
+    learned: [
+      "CBTfy 서비스와 담당 기능의 최종 발표",
+      "튜플·딕셔너리·집합의 특징과 주요 연산",
+      "불 자료형과 변경 가능한 객체의 참조·복사",
+      "if·elif·else 조건문과 입력값 형 변환",
+    ],
+    tags: ["CBTfy", "Python", "Tuple·Dict·Set", "Conditional"],
+    folder: "Python/20261012",
+    readTime: 17,
+  },
+  {
     date: "2026-10-10",
     day: "DAY 62",
     title: "반응형 프론트 개편과 CBTfy 시연 영상 제작",
