@@ -13,9 +13,9 @@ Oracle SQL부터 Java, 웹 프론트엔드, Spring Boot, Python과 미니프로�
 | Oracle SQL | 9일 | [SQL 학습 기록](./Oracle_SQL/) |
 | Java·Spring Boot·Linux | 22일 | [Java·Spring Boot·Linux 학습 기록](./Java/) |
 | HTML·CSS·JavaScript·React | 11일 | [웹 학습 기록](./HTML/) |
-| Python | 2일 | [Python 학습 기록](./Python/) |
+| Python | 3일 | [Python 학습 기록](./Python/) |
 | 팀 미니프로젝트 | 19일 | [프로젝트 기록](./Project/) |
-| **전체** | **63일** | [GitHub Pages에서 검색하기](https://jungryulip.github.io/study/) |
+| **전체** | **64일** | [GitHub Pages에서 검색하기](https://jungryulip.github.io/study/) |
 
 ## 전체 학습 일지
 
@@ -24,6 +24,7 @@ Oracle SQL부터 Java, 웹 프론트엔드, Spring Boot, Python과 미니프로�
 
 | 일차 | 날짜 | 분야 | 배운 내용 | 기록 |
 | --- | --- | --- | --- | --- |
+| DAY 64 | 2026-10-13 | Project·Python | 발표 마무리와 Python 반복문·함수·파일·클래스 | [기록 보기](./Python/20261013/) |
 | DAY 63 | 2026-10-12 | Project·Python | CBTfy 최종 발표와 Python 자료형·조건문 기초 | [기록 보기](./Python/20261012/) |
 | DAY 62 | 2026-10-10 | Project | 반응형 프론트 개편과 CBTfy 시연 영상 제작 | [기록 보기](./Project/20261010/) |
 | DAY 61 | 2026-10-08 | Project | Google 앱 게시 준비와 라이트 모드 UI 개편 | [기록 보기](./Project/20261008/) |

@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-10-13",
+    day: "DAY 64",
+    title: "발표 마무리와 Python 반복문·함수·파일·클래스",
+    summary:
+      "프로젝트 발표를 진행한 뒤 Python의 while·for 반복문, 함수와 가변 인자, 파일 입출력, 클래스·생성자·상속·메서드 오버라이딩을 실습했다. 마지막에는 함수와 반복문을 결합해 커피 주문 흐름을 완성했다.",
+    learned: [
+      "while·for와 break·continue 흐름 제어",
+      "함수·가변 인자·변수 범위와 lambda",
+      "파일 읽기·쓰기 모드와 with문",
+      "클래스·생성자·상속과 메서드 오버라이딩",
+    ],
+    tags: ["Project·Python", "Loop·Function", "File I/O·Class"],
+    folder: "Python/20261013",
+    readTime: 18,
+  },
+  {
     date: "2026-10-12",
     day: "DAY 63",
     title: "CBTfy 최종 발표와 Python 자료형·조건문 기초",
