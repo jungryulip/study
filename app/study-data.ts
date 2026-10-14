@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-10-14",
+    day: "DAY 65",
+    title: "Python 모듈·예외 처리와 Pandas 데이터프레임 기초",
+    summary:
+      "Python 모듈과 실행 진입점, 예외 처리와 주요 내장 함수를 학습했다. 이어서 Pandas로 TSV 데이터를 불러와 Series·DataFrame을 구분하고 loc·iloc 선택, 그룹 집계, 조건 필터링, 날짜 계산과 저장 형식을 실습했다.",
+    learned: [
+      "모듈 import 방식과 __name__ 실행 진입점",
+      "try·except·else·finally와 여러 예외 처리",
+      "Pandas Series·DataFrame과 loc·iloc 선택",
+      "그룹 집계·조건 필터·날짜 계산과 데이터 저장",
+    ],
+    tags: ["Python", "Module·Exception", "Pandas·DataFrame"],
+    folder: "Python/20261014",
+    readTime: 19,
+  },
+  {
     date: "2026-10-13",
     day: "DAY 64",
     title: "발표 마무리와 Python 반복문·함수·파일·클래스",
