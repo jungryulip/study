@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-10-15",
+    day: "DAY 66",
+    title: "Matplotlib·Seaborn 시각화와 Pandas 데이터 분석",
+    summary:
+      "Anscombe quartet으로 시각화의 필요성을 확인하고 Matplotlib·Seaborn의 분포·관계 그래프를 실습했다. 이어서 여러 주유 가격 파일을 Pandas로 합치고 정제해 셀프 여부·상표·자치구별 가격 차이를 집계하고 시각화했다.",
+    learned: [
+      "Matplotlib Figure·Axes와 2×2 subplot 구성",
+      "히스토그램·산점도·박스플롯과 다변량 표현",
+      "Seaborn 분포·회귀 그래프와 범주별 비교",
+      "Pandas 파일 병합·전처리·그룹 집계와 시각화",
+    ],
+    tags: ["Python", "Matplotlib·Seaborn", "Pandas·Visualization"],
+    folder: "Python/20261015",
+    readTime: 17,
+  },
+  {
     date: "2026-10-14",
     day: "DAY 65",
     title: "Python 모듈·예외 처리와 Pandas 데이터프레임 기초",
