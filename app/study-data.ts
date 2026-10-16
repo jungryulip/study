@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-10-16",
+    day: "DAY 67",
+    title: "Folium 지도 시각화와 k-NN 펭귄 분류",
+    summary:
+      "Folium으로 지도·마커·클러스터를 만들고 서울 공공자전거 대여소를 시각화했다. 이어서 머신러닝의 학습 유형을 정리하고 펭귄 데이터를 전처리·시각화한 뒤 k-NN 분류 모델을 학습·평가하고 k값에 따른 성능 변화를 비교했다.",
+    learned: [
+      "Folium 지도·마커·팝업과 공공자전거 MarkerCluster",
+      "지도·비지도·강화학습과 분류·회귀·군집화",
+      "펭귄 데이터 결측치 처리·탐색적 시각화·원-핫 인코딩",
+      "훈련·테스트 분리와 k-NN 학습·평가·k값 비교",
+    ],
+    tags: ["Python", "Folium·Map", "Machine Learning·k-NN"],
+    folder: "Python/20261016",
+    readTime: 18,
+  },
+  {
     date: "2026-10-15",
     day: "DAY 66",
     title: "Matplotlib·Seaborn 시각화와 Pandas 데이터 분석",

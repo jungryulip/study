@@ -13,9 +13,9 @@ Oracle SQL부터 Java, 웹 프론트엔드, Spring Boot, Python과 미니프로�
 | Oracle SQL | 9일 | [SQL 학습 기록](./Oracle_SQL/) |
 | Java·Spring Boot·Linux | 22일 | [Java·Spring Boot·Linux 학습 기록](./Java/) |
 | HTML·CSS·JavaScript·React | 11일 | [웹 학습 기록](./HTML/) |
-| Python | 5일 | [Python 학습 기록](./Python/) |
+| Python | 6일 | [Python 학습 기록](./Python/) |
 | 팀 미니프로젝트 | 19일 | [프로젝트 기록](./Project/) |
-| **전체** | **66일** | [GitHub Pages에서 검색하기](https://jungryulip.github.io/study/) |
+| **전체** | **67일** | [GitHub Pages에서 검색하기](https://jungryulip.github.io/study/) |
 
 ## 전체 학습 일지
 
@@ -24,6 +24,7 @@ Oracle SQL부터 Java, 웹 프론트엔드, Spring Boot, Python과 미니프로�
 
 | 일차 | 날짜 | 분야 | 배운 내용 | 기록 |
 | --- | --- | --- | --- | --- |
+| DAY 67 | 2026-10-16 | Python | Folium 지도 시각화와 k-NN 펭귄 분류 | [기록 보기](./Python/20261016/) |
 | DAY 66 | 2026-10-15 | Python | Matplotlib·Seaborn 시각화와 Pandas 데이터 분석 | [기록 보기](./Python/20261015/) |
 | DAY 65 | 2026-10-14 | Python | Python 모듈·예외 처리와 Pandas 데이터프레임 기초 | [기록 보기](./Python/20261014/) |
 | DAY 64 | 2026-10-13 | Project·Python | 발표 마무리와 Python 반복문·함수·파일·클래스 | [기록 보기](./Python/20261013/) |
