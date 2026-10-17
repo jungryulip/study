@@ -13,6 +13,22 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-10-17",
+    day: "DAY 68",
+    title: "Iris 데이터 탐색과 머신러닝 분류 모델 비교",
+    summary:
+      "인공지능·머신러닝·딥러닝의 관계와 지도학습 분류 알고리즘을 정리했다. Iris 데이터를 탐색한 뒤 k-NN·SVM·로지스틱 회귀·의사결정나무를 같은 테스트셋에서 학습·평가하고 결과를 비교했다.",
+    learned: [
+      "인공지능·머신러닝·딥러닝과 지도·비지도·강화학습",
+      "Iris 데이터 로드·DataFrame 구성과 품질 확인",
+      "히트맵·분포 그래프·pairplot을 활용한 데이터 탐색",
+      "k-NN·SVM·로지스틱 회귀·의사결정나무 비교",
+    ],
+    tags: ["Python", "Machine Learning·Classification", "scikit-learn·Iris"],
+    folder: "Python/20261017",
+    readTime: 18,
+  },
+  {
     date: "2026-10-16",
     day: "DAY 67",
     title: "Folium 지도 시각화와 k-NN 펭귄 분류",
