@@ -13,6 +13,23 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-10-19",
+    day: "DAY 69",
+    title: "금융 데이터 시각화와 웹 크롤링 실습",
+    summary:
+      "FinanceDataReader로 KRX 종목과 삼성전자 일별 시세를 불러와 수익률을 계산하고 Matplotlib·Plotly로 시계열을 시각화했다. requests·BeautifulSoup·Selenium으로 정적·동적 웹 페이지 수집과 브라우저 자동화를 실습하며 크롤링 윤리와 결과 검증의 중요성도 확인했다.",
+    learned: [
+      "FinanceDataReader로 KRX 목록과 주식 OHLCV 데이터 조회",
+      "shift·diff·pct_change를 활용한 변화량과 수익률 계산",
+      "Plotly 선·면적 그래프와 범위 슬라이더 구성",
+      "requests·BeautifulSoup·Selenium 웹 크롤링 실습",
+      "생성형 AI·LLM 개념과 웹 수집의 윤리·보안 원칙",
+    ],
+    tags: ["Python", "Data Analysis·Plotly", "Web Crawling"],
+    folder: "Python/20261019",
+    readTime: 18,
+  },
+  {
     date: "2026-10-17",
     day: "DAY 68",
     title: "Iris 데이터 탐색과 머신러닝 분류 모델 비교",
