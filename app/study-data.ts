@@ -13,6 +13,23 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-10-20",
+    day: "DAY 70",
+    title: "LLM 기초와 OpenAI API·Streamlit 챗봇 실습",
+    summary:
+      "LLM의 사전학습·미세조정·RLHF와 환각·RAG·AI 에이전트를 정리했다. Python OpenAI SDK로 역할 프롬프트와 zero·one·few-shot, single·multi-turn 대화를 비교하고 Streamlit session_state로 대화 기록이 유지되는 챗봇을 구성했다.",
+    learned: [
+      "파운데이션 모델과 사전학습·미세조정·RLHF",
+      "환각의 한계와 RAG·도구 호출·AI 에이전트",
+      "역할 프롬프트와 zero·one·few-shot 비교",
+      "OpenAI SDK의 messages·temperature·응답 구조",
+      "single·multi-turn 문맥 관리와 Streamlit 챗봇",
+    ],
+    tags: ["Python", "LLM·Prompt Engineering", "OpenAI API·Streamlit"],
+    folder: "Python/20261020",
+    readTime: 20,
+  },
+  {
     date: "2026-10-19",
     day: "DAY 69",
     title: "금융 데이터 시각화와 웹 크롤링 실습",
