@@ -13,9 +13,9 @@ Oracle SQL부터 Java, 웹 프론트엔드, Spring Boot, Python과 미니프로�
 | Oracle SQL | 9일 | [SQL 학습 기록](./Oracle_SQL/) |
 | Java·Spring Boot·Linux | 22일 | [Java·Spring Boot·Linux 학습 기록](./Java/) |
 | HTML·CSS·JavaScript·React | 11일 | [웹 학습 기록](./HTML/) |
-| Python | 9일 | [Python 학습 기록](./Python/) |
+| Python | 10일 | [Python 학습 기록](./Python/) |
 | 팀 미니프로젝트 | 19일 | [프로젝트 기록](./Project/) |
-| **전체** | **70일** | [GitHub Pages에서 검색하기](https://jungryulip.github.io/study/) |
+| **전체** | **71일** | [GitHub Pages에서 검색하기](https://jungryulip.github.io/study/) |
 
 ## 전체 학습 일지
 
@@ -24,6 +24,7 @@ Oracle SQL부터 Java, 웹 프론트엔드, Spring Boot, Python과 미니프로�
 
 | 일차 | 날짜 | 분야 | 배운 내용 | 기록 |
 | --- | --- | --- | --- | --- |
+| DAY 71 | 2026-10-21 | Python·AI | 문서·음성·이미지 AI와 Function Calling·RAG 챗봇 | [기록 보기](./Python/20261021/) |
 | DAY 70 | 2026-10-20 | Python·AI | LLM·프롬프트 엔지니어링과 OpenAI API·Streamlit 챗봇 | [기록 보기](./Python/20261020/) |
 | DAY 69 | 2026-10-19 | Python | 금융 데이터 시각화와 웹 크롤링 실습 | [기록 보기](./Python/20261019/) |
 | DAY 68 | 2026-10-17 | Python | Iris 데이터 탐색과 머신러닝 분류 모델 비교 | [기록 보기](./Python/20261017/) |

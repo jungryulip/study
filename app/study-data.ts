@@ -13,6 +13,23 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-10-21",
+    day: "DAY 71",
+    title: "멀티모달 AI와 Function Calling·RAG 실습",
+    summary:
+      "PyMuPDF로 PDF를 전처리·요약하고 음성 STT·번역, 회의록 교정, 이미지 분석과 TTS를 실습했다. Function Calling으로 세계 시간·yfinance 데이터를 조회하는 챗봇을 만들고 LangChain·Chroma 기반 RAG와 Query Augmentation으로 문서 근거 답변을 구성했다.",
+    learned: [
+      "PyMuPDF PDF 본문 추출·전처리와 AI 문서 요약",
+      "음성 STT·번역과 화자별 회의록 요약·교정",
+      "이미지 URL·Base64 분석과 TTS 음성 생성",
+      "Function Calling 기반 세계 시간·주식 정보 도구",
+      "LangChain·Chroma RAG와 Query Augmentation",
+    ],
+    tags: ["Python·Multimodal AI", "Function Calling", "LangChain·RAG"],
+    folder: "Python/20261021",
+    readTime: 22,
+  },
+  {
     date: "2026-10-20",
     day: "DAY 70",
     title: "LLM 기초와 OpenAI API·Streamlit 챗봇 실습",
