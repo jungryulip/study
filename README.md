@@ -1,8 +1,8 @@
 # 코드하루 — 학습 포트폴리오
 
-Oracle SQL부터 Java, 웹 프론트엔드, Spring Boot, Python과 미니프로젝트까지 배운 내용을 하루 단위로
-정리한 저장소입니다. 아래 표에서 **몇 일차에 무엇을 배웠는지** 한눈에 확인하고 각 학습 일지로
-바로 이동할 수 있습니다.
+Oracle SQL부터 Java, 웹 프론트엔드, Spring Boot, Python, 미니프로젝트와 개발자 취업 준비까지
+배운 내용을 하루 단위로 정리한 저장소입니다. 아래 표에서 **몇 일차에 무엇을 배웠는지** 한눈에
+확인하고 각 학습 일지로 바로 이동할 수 있습니다.
 
 > 포트폴리오: <https://jungryulip.github.io/study/>
 
@@ -15,15 +15,17 @@ Oracle SQL부터 Java, 웹 프론트엔드, Spring Boot, Python과 미니프로�
 | HTML·CSS·JavaScript·React | 11일 | [웹 학습 기록](./HTML/) |
 | Python | 10일 | [Python 학습 기록](./Python/) |
 | 팀 미니프로젝트 | 19일 | [프로젝트 기록](./Project/) |
-| **전체** | **71일** | [GitHub Pages에서 검색하기](https://jungryulip.github.io/study/) |
+| 개발자 진로·취업 | 1일 | [진로·취업 준비 기록](./Career/) |
+| **전체** | **72일** | [GitHub Pages에서 검색하기](https://jungryulip.github.io/study/) |
 
 ## 전체 학습 일지
 
-최신 기록부터 정리되어 있습니다. `기록 보기`를 누르면 그날 배운 개념, 코드 예제와 실습 화면을
-함께 볼 수 있습니다.
+최신 기록부터 정리되어 있습니다. `기록 보기`를 누르면 그날 배운 개념과 정리 내용, 필요한 경우
+코드 예제나 실습 화면을 함께 볼 수 있습니다.
 
 | 일차 | 날짜 | 분야 | 배운 내용 | 기록 |
 | --- | --- | --- | --- | --- |
+| DAY 72 | 2026-10-22 | Career·Full Stack | 신입 개발자를 위한 풀스택 로드맵과 취업 준비 | [기록 보기](./Career/20261022/) |
 | DAY 71 | 2026-10-21 | Python·AI | 문서·음성·이미지 AI와 Function Calling·RAG 챗봇 | [기록 보기](./Python/20261021/) |
 | DAY 70 | 2026-10-20 | Python·AI | LLM·프롬프트 엔지니어링과 OpenAI API·Streamlit 챗봇 | [기록 보기](./Python/20261020/) |
 | DAY 69 | 2026-10-19 | Python | 금융 데이터 시각화와 웹 크롤링 실습 | [기록 보기](./Python/20261019/) |
@@ -105,6 +107,7 @@ study/
 ├── HTML/         HTML·CSS·JavaScript 학습 기록
 ├── Python/       Python 문법과 실습 기록
 ├── Project/      팀 미니프로젝트 일지
+├── Career/       개발자 진로·면접·포트폴리오 준비 기록
 └── app/          GitHub Pages 포트폴리오 화면
 ```
 

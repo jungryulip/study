@@ -13,6 +13,23 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-10-22",
+    day: "DAY 72",
+    title: "신입 개발자를 위한 풀스택 로드맵과 취업 준비",
+    summary:
+      "새 강사님과의 첫 수업에서 SPA·MPA와 오버로딩·오버라이딩을 면접 관점으로 정리했다. 프론트엔드·백엔드·데이터베이스·DevOps·AI 학습 로드맵을 살펴보고, AI의 제안을 직접 검증한 과정까지 포트폴리오에 남겨야 한다는 방향을 세웠다.",
+    learned: [
+      "SPA·MPA의 렌더링 방식과 책임 분배",
+      "Java 오버로딩과 오버라이딩의 정확한 차이",
+      "프론트엔드·백엔드·데이터베이스 학습 로드맵",
+      "Docker·AWS 배포와 AI·RAG 활용 역량",
+      "검증 과정과 협업 기록을 보여주는 포트폴리오",
+    ],
+    tags: ["Career·Orientation", "Full Stack Roadmap", "Interview·Portfolio"],
+    folder: "Career/20261022",
+    readTime: 16,
+  },
+  {
     date: "2026-10-21",
     day: "DAY 71",
     title: "멀티모달 AI와 Function Calling·RAG 실습",

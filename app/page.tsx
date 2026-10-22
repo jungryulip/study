@@ -46,11 +46,11 @@ export default function Home() {
       <section className="profile" id="top">
         <div className="avatar" aria-hidden="true">CODE</div>
         <div className="profile-copy">
-          <p className="profile-label">ORACLE SQL &amp; JAVA STUDY LOG</p>
+          <p className="profile-label">FULL STACK STUDY LOG</p>
           <h1>배운 것을 하루씩 기록합니다.</h1>
           <p>
-            Oracle SQL, SQLD, Java와 HTML을 공부하며 새롭게 알게 된 것,
-            헷갈렸던 것, 직접 실행해 본 코드와 쿼리를 날짜별로 남기는 공간입니다.
+            Oracle SQL, Java, Spring Boot, 웹 프론트엔드, Python·AI와 프로젝트를
+            공부하며 배운 것과 직접 검증한 과정을 날짜별로 남기는 공간입니다.
           </p>
           <div className="profile-stats">
             <span><strong>{posts.length}</strong>개의 기록</span>
@@ -101,7 +101,7 @@ export default function Home() {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      실습 코드 보기 <span aria-hidden="true">→</span>
+                      상세 기록 보기 <span aria-hidden="true">→</span>
                     </a>
                   </div>
                 </div>
@@ -120,7 +120,7 @@ export default function Home() {
 
       <footer>
         <a className="logo" href="#top">코드<span>하루</span></a>
-        <p>Oracle SQL, Java와 HTML을 배우는 매일의 기록 · 2026</p>
+        <p>풀스택 개발과 AI를 배우는 매일의 기록 · 2026</p>
       </footer>
     </main>
   );
