@@ -13,6 +13,23 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-10-23",
+    day: "DAY 73",
+    title: "기술 선택의 근거와 Java·Spring 웹 동작 원리",
+    summary:
+      "신입 개발자가 프로젝트 기술을 선택한 이유를 문제·측정·결과의 흐름으로 설명하는 방법을 배웠다. 웹 서버와 WAS, Spring Boot, 데이터 접근, 트랜잭션, JVM 메모리, IoC·DI, 동기화와 직렬화의 역할을 하나의 요청 처리 과정으로 연결해 이해했다.",
+    learned: [
+      "문제·가설·측정·결과로 기술 선택 근거 설명하기",
+      "브라우저·웹 서버·WAS·DB의 요청 처리 흐름",
+      "Spring Boot 파일 구조와 Lombok·어노테이션",
+      "ORM·MyBatis와 서비스 트랜잭션의 역할",
+      "JVM 메모리·IoC·DI·동기화·직렬화 기초",
+    ],
+    tags: ["Career·Problem Solving", "Java·Spring", "Web Architecture·Database"],
+    folder: "Career/20261023",
+    readTime: 20,
+  },
+  {
     date: "2026-10-22",
     day: "DAY 72",
     title: "신입 개발자를 위한 풀스택 로드맵과 취업 준비",
