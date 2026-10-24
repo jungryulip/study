@@ -13,6 +13,23 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-10-24",
+    day: "DAY 74",
+    title: "개인 프로젝트 고도화: 목표 관리 UI와 케어 사용 통계",
+    summary:
+      "수업 대신 개인 프로젝트를 진행했다. 목표·루틴 관리 서비스에서는 공통 오류 처리와 로그인 보안, 코드 포맷 자동화 및 데스크톱 화면을 개선했고, 생활 관리 서비스에서는 기능 중심 MVC 구조와 제품 케어 기록·사용 통계를 구현해 단위·웹·DB 테스트로 검증했다.",
+    learned: [
+      "Lombok·공통 오류 응답과 로그인 보안 보강",
+      "Prettier·Spotless 코드 포맷 자동화",
+      "목표·루틴 대시보드와 만다라트 데스크톱 UI",
+      "기능 중심 MVC 구조와 제품 케어 기록 흐름",
+      "기존 데이터를 활용한 케어 통계와 테스트",
+    ],
+    tags: ["Personal Project", "Spring Boot·Security", "UI·Data Analytics"],
+    folder: "Project/20261024",
+    readTime: 18,
+  },
+  {
     date: "2026-10-23",
     day: "DAY 73",
     title: "기술 선택의 근거와 Java·Spring 웹 동작 원리",
