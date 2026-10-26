@@ -13,6 +13,23 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-10-26",
+    day: "DAY 75",
+    title: "데이터베이스 모델링: 관계·정규화와 설계 패턴",
+    summary:
+      "eXERD로 엔티티·속성·식별/비식별 관계, 1:1·1:N·N:M과 슈퍼타입·서브타입을 모델링했다. 주문·설문·은행 사례로 정규화와 관계 설계를 연습하고, OLTP·OLAP와 대량 페이징 및 템플릿 메서드·팩토리 패턴의 선택 기준을 비교했다.",
+    learned: [
+      "엔티티·속성·식별자와 관계 카디널리티",
+      "식별·비식별 관계와 슈퍼타입·서브타입",
+      "제1·제2·제3정규형과 데이터 이상 현상",
+      "OLTP·OLAP와 대량 데이터 페이징",
+      "템플릿 메서드·팩토리 메서드·추상 팩토리",
+    ],
+    tags: ["Database Modeling·eXERD", "Normalization·OLTP/OLAP", "Design Patterns"],
+    folder: "Oracle_SQL/20261026",
+    readTime: 22,
+  },
+  {
     date: "2026-10-24",
     day: "DAY 74",
     title: "개인 프로젝트 고도화: 목표 관리 UI와 케어 사용 통계",
