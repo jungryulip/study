@@ -13,6 +13,23 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-10-27",
+    day: "DAY 76",
+    title: "데이터베이스 설계 심화: 반정규화와 물리 모델링",
+    summary:
+      "정규화된 모델에서 중복·파생 컬럼, 테이블 병합·분할과 이력 테이블을 적용하는 기준을 비교했다. eXERD에서 Oracle 물리 모델 초안을 만들고, 그룹별 Top-N과 복합키·대체키, 재귀 관계, UML·CRUD 매트릭스 및 범위 파티션을 정리했다.",
+    learned: [
+      "반정규화의 적용 기준과 데이터 정합성 관리",
+      "슈퍼타입·서브타입 구현과 수평·수직 테이블 분할",
+      "이력 테이블과 ROW_NUMBER()를 이용한 그룹별 최신 행",
+      "복합키·대체키, 재귀 관계와 CRUD 매트릭스",
+      "Oracle 물리 모델링과 범위 파티셔닝",
+    ],
+    tags: ["Database Modeling·eXERD", "Denormalization·Physical Model", "Oracle SQL·UML"],
+    folder: "Oracle_SQL/20261027",
+    readTime: 20,
+  },
+  {
     date: "2026-10-26",
     day: "DAY 75",
     title: "데이터베이스 모델링: 관계·정규화와 설계 패턴",

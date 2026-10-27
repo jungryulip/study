@@ -10,13 +10,13 @@ Oracle SQL부터 Java, 웹 프론트엔드, Spring Boot, Python, 미니프로젝
 
 | 분야 | 기록 수 | 바로가기 |
 | --- | ---: | --- |
-| Oracle SQL·DB 모델링 | 10일 | [SQL·DB 모델링 기록](./Oracle_SQL/) |
+| Oracle SQL·DB 모델링 | 11일 | [SQL·DB 모델링 기록](./Oracle_SQL/) |
 | Java·Spring Boot·Linux | 22일 | [Java·Spring Boot·Linux 학습 기록](./Java/) |
 | HTML·CSS·JavaScript·React | 11일 | [웹 학습 기록](./HTML/) |
 | Python | 10일 | [Python 학습 기록](./Python/) |
 | 팀·개인 프로젝트 | 20일 | [프로젝트 기록](./Project/) |
 | 개발자 진로·취업 | 2일 | [진로·취업 준비 기록](./Career/) |
-| **전체** | **75일** | [GitHub Pages에서 검색하기](https://jungryulip.github.io/study/) |
+| **전체** | **76일** | [GitHub Pages에서 검색하기](https://jungryulip.github.io/study/) |
 
 ## 전체 학습 일지
 
@@ -25,6 +25,7 @@ Oracle SQL부터 Java, 웹 프론트엔드, Spring Boot, Python, 미니프로젝
 
 | 일차 | 날짜 | 분야 | 배운 내용 | 기록 |
 | --- | --- | --- | --- | --- |
+| DAY 76 | 2026-10-27 | Database Modeling·Oracle | 반정규화와 물리 모델링, 그룹별 Top-N과 설계 보조 도구 | [기록 보기](./Oracle_SQL/20261027/) |
 | DAY 75 | 2026-10-26 | Database Modeling | 관계·정규화와 설계 패턴을 적용한 eXERD 모델링 | [기록 보기](./Oracle_SQL/20261026/) |
 | DAY 74 | 2026-10-24 | Project·Spring Boot | 개인 프로젝트 고도화: 목표 관리 UI와 케어 사용 통계 | [기록 보기](./Project/20261024/) |
 | DAY 73 | 2026-10-23 | Career·Java·Spring | 기술 선택의 근거와 Java·Spring 웹 동작 원리 | [기록 보기](./Career/20261023/) |
