@@ -13,6 +13,23 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-10-28",
+    day: "DAY 77",
+    title: "Oracle PL/SQL: 커서·프로시저·트리거 실습",
+    summary:
+      "SQL Developer의 hr 접속에 준비된 EMP·DEPT 실습 테이블로 PL/SQL 블록과 제어문을 실행했다. 명시적 커서와 커서 FOR문, 예외 처리, 프로시저·함수·인라인 뷰, 문장·행 레벨 트리거와 입력 검증을 실습했다.",
+    learned: [
+      "PL/SQL 블록과 %TYPE·%ROWTYPE·SELECT INTO",
+      "조건문·반복문과 표준·사용자 정의 예외 처리",
+      "명시적 커서와 커서 FOR 반복문의 차이",
+      "IN·OUT 매개변수 프로시저와 값을 반환하는 함수",
+      "BEFORE·AFTER 및 문장·행 레벨 트리거",
+    ],
+    tags: ["Oracle PL/SQL", "Cursor·Procedure·Function", "Trigger·Exception"],
+    folder: "Oracle_SQL/20261028",
+    readTime: 18,
+  },
+  {
     date: "2026-10-27",
     day: "DAY 76",
     title: "데이터베이스 설계 심화: 반정규화와 물리 모델링",
