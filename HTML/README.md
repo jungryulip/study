@@ -7,6 +7,7 @@
 
 | 날짜 | 주요 학습 내용 | 기록 |
 | --- | --- | --- |
+| 2026-10-29 | 모던 JavaScript, 배열 메서드, 이벤트, spread, module, 구조 분해와 기본값 | [DAY 78 보기](./20261029/) |
 | 2026-09-21 | React 성능 최적화 Hook, Spring Boot JPA·REST API, CORS, Axios, Swagger | [DAY 50 보기](./20260921/) |
 | 2026-09-19 | React 라이프사이클, useEffect·cleanup·의존성 배열, JSON·외부 API 통신 | [DAY 49 보기](./20260919/) |
 | 2026-09-17 | React 상태·스타일·폼, 얕은 비교와 불변성, React Router | [DAY 47 보기](./20260917/) |

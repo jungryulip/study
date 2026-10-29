@@ -13,6 +13,23 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-10-29",
+    day: "DAY 78",
+    title: "모던 JavaScript: 배열 메서드와 실무 문법 실습",
+    summary:
+      "화살표 함수와 콜백으로 객체·배열을 순회하고 forEach·map·filter의 차이를 실습했다. DOM 이벤트 전파, 객체 리터럴 축약과 spread, ES module, 템플릿 리터럴, 구조 분해, 널 병합 연산자와 기본 매개변수까지 React에서 자주 쓰는 모던 JavaScript 문법을 연결해 정리했다.",
+    learned: [
+      "화살표 함수·콜백과 객체·중첩 배열 순회",
+      "forEach·map·filter의 역할과 불변 배열 처리",
+      "preventDefault와 stopPropagation의 차이",
+      "객체 리터럴 축약·spread의 얕은 복사·ES module",
+      "템플릿 리터럴·구조 분해·널 병합·기본 매개변수",
+    ],
+    tags: ["Modern JavaScript", "Array·Callback", "DOM Event·Module"],
+    folder: "HTML/20261029",
+    readTime: 18,
+  },
+  {
     date: "2026-10-28",
     day: "DAY 77",
     title: "Oracle PL/SQL: 커서·프로시저·트리거 실습",
