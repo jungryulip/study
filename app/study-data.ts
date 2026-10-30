@@ -13,6 +13,23 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-10-30",
+    day: "DAY 79",
+    title: "Java 함수형 프로그래밍과 WebSocket 실시간 게시판",
+    summary:
+      "명령형과 선언형 코드를 비교하고 함수형 인터페이스·람다·메서드 참조와 Stream 파이프라인을 실습했다. Spring Boot REST API로 저장한 게시글을 STOMP로 브로드캐스트하고, React 구독 상태와 실시간 알림 목록에 반영하는 흐름까지 구현했다.",
+    learned: [
+      "명령형과 선언형 처리 및 함수형 프로그래밍 원칙",
+      "함수형 인터페이스·람다식과 메서드 참조",
+      "Stream 중간·최종 연산과 지연 실행·일회성",
+      "Spring Boot REST 저장과 STOMP 브로드캐스트",
+      "React WebSocket 구독·상태 반영과 메모리 저장 한계",
+    ],
+    tags: ["Java·Lambda", "Stream API", "Spring Boot·React·WebSocket"],
+    folder: "Java/20261030",
+    readTime: 21,
+  },
+  {
     date: "2026-10-29",
     day: "DAY 78",
     title: "모던 JavaScript: 배열 메서드와 실무 문법 실습",

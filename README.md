@@ -11,12 +11,12 @@ Oracle SQL부터 Java, 웹 프론트엔드, Spring Boot, Python, 미니프로젝
 | 분야 | 기록 수 | 바로가기 |
 | --- | ---: | --- |
 | Oracle SQL·DB 모델링 | 12일 | [SQL·DB 모델링 기록](./Oracle_SQL/) |
-| Java·Spring Boot·Linux | 22일 | [Java·Spring Boot·Linux 학습 기록](./Java/) |
+| Java·Spring Boot·Linux | 23일 | [Java·Spring Boot·Linux 학습 기록](./Java/) |
 | HTML·CSS·JavaScript·React | 12일 | [웹 학습 기록](./HTML/) |
 | Python | 10일 | [Python 학습 기록](./Python/) |
 | 팀·개인 프로젝트 | 20일 | [프로젝트 기록](./Project/) |
 | 개발자 진로·취업 | 2일 | [진로·취업 준비 기록](./Career/) |
-| **전체** | **78일** | [GitHub Pages에서 검색하기](https://jungryulip.github.io/study/) |
+| **전체** | **79일** | [GitHub Pages에서 검색하기](https://jungryulip.github.io/study/) |
 
 ## 전체 학습 일지
 
@@ -25,6 +25,7 @@ Oracle SQL부터 Java, 웹 프론트엔드, Spring Boot, Python, 미니프로젝
 
 | 일차 | 날짜 | 분야 | 배운 내용 | 기록 |
 | --- | --- | --- | --- | --- |
+| DAY 79 | 2026-10-30 | Java·Stream·WebSocket | 함수형 프로그래밍과 Spring Boot·React 실시간 게시판 | [기록 보기](./Java/20261030/) |
 | DAY 78 | 2026-10-29 | Modern JavaScript | 배열 메서드와 모던 문법을 React 방식의 데이터 처리로 연결 | [기록 보기](./HTML/20261029/) |
 | DAY 77 | 2026-10-28 | Oracle PL/SQL | 커서·프로시저·함수와 트리거로 절차형 데이터 처리 | [기록 보기](./Oracle_SQL/20261028/) |
 | DAY 76 | 2026-10-27 | Database Modeling·Oracle | 반정규화와 물리 모델링, 그룹별 Top-N과 설계 보조 도구 | [기록 보기](./Oracle_SQL/20261027/) |
