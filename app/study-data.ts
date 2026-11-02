@@ -13,6 +13,23 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-11-02",
+    day: "DAY 81",
+    title: "Spring AI와 ChatClient로 생성형 AI 연결하기",
+    summary:
+      "생성형 AI와 머신러닝의 기본 분류를 살펴보고 Spring AI의 ChatModel·ChatClient, 시스템·사용자 프롬프트와 Structured Output 개념을 정리했다. 제품 정보를 바탕으로 마케팅 문구를 생성하는 Spring Boot 서비스를 만들고, Thymeleaf에서 REST API와 React·Vite 화면으로 확장했다.",
+    learned: [
+      "생성형 AI와 지도·비지도·강화학습의 차이",
+      "Spring AI의 ChatModel과 ChatClient 역할 비교",
+      "SystemMessage·UserMessage를 이용한 프롬프트 구성",
+      "Spring Boot·Thymeleaf AI 마케팅 문구 생성 흐름",
+      "REST API와 React의 로딩·오류·미리보기·URL 검증",
+    ],
+    tags: ["Spring AI", "ChatClient·Prompt", "Spring Boot·React"],
+    folder: "Java/20261102",
+    readTime: 16,
+  },
+  {
     date: "2026-10-31",
     day: "DAY 80",
     title: "날씨 기반 코디 추천과 React 화면 전환",

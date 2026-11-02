@@ -7,6 +7,7 @@ Java와 Spring Boot 수업, Linux 기초에서 배운 개념과 실습 내용을
 
 | 날짜 | 주요 학습 내용 | 기록 |
 | --- | --- | --- |
+| 2026-11-02 | Spring AI, ChatModel·ChatClient, 프롬프트와 AI 마케팅 문구 생성 | [DAY 81 보기](./20261102/) |
 | 2026-10-30 | 함수형 인터페이스·람다·Stream API와 Spring Boot·React WebSocket 게시판 | [DAY 79 보기](./20261030/) |
 | 2026-09-22 | AWS·EC2, 보안 그룹, Ubuntu·Java 17, Gradle 빌드와 Spring Boot 배포 | [DAY 51 보기](./20260922/) |
 | 2026-09-15 | 표준 입출력·리디렉션, 파이프라인, APT, systemd, grep·find·wc, df·du, tar | [DAY 45 보기](./20260915/) |
