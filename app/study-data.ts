@@ -13,6 +13,23 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-10-31",
+    day: "DAY 80",
+    title: "날씨 기반 코디 추천과 React 화면 전환",
+    summary:
+      "개인 프로젝트에서 기상 예보·보유 의류·사용자 피드백을 연결한 코디 추천을 구현하고, 저장 코디 CRUD와 착용 기록을 추가했다. 주요 화면을 React로 전환하며 공통 UI·요청·오류·설정·시간 처리 구조와 테스트도 함께 정리했다.",
+    learned: [
+      "기상 예보·체감온도와 사용자 설정을 이용한 복장 추천",
+      "보유 의류 속성·착용 이력과 피드백 기반 개인화",
+      "저장 코디 CRUD와 코디·개별 옷 착용 기록 연동",
+      "Spring Boot 화면 데이터를 이용한 점진적 React 전환",
+      "공통 요청·오류·기능 설정·Clock 리팩터링과 테스트",
+    ],
+    tags: ["Personal Project", "Spring Boot·React", "Weather·Outfit"],
+    folder: "Project/20261031",
+    readTime: 18,
+  },
+  {
     date: "2026-10-30",
     day: "DAY 79",
     title: "Java 함수형 프로그래밍과 WebSocket 실시간 게시판",
