@@ -13,6 +13,23 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-11-03",
+    day: "DAY 82",
+    title: "대화 기억·스트리밍·구조화 출력과 Ollama 로컬 AI, Docker 기초",
+    summary:
+      "LLM 메시지 역할을 정리하고 이전 대화를 기억하는 챗봇을 만들었다. WebFlux의 Flux로 AI 응답을 스트리밍하고 BeanOutputConverter로 응답을 DTO로 받았으며, Ollama gemma3 모델과 ChatMemory로 노트별 대화를 기억하는 로컬 챗봇을 구현했다. 마지막으로 Docker 명령어와 Nginx 컨테이너 실행을 실습했다.",
+    learned: [
+      "System·User·Assistant·Tool 메시지 역할과 대화 기억 챗봇",
+      "동기·비동기, 블로킹·논블로킹과 WebFlux Mono·Flux",
+      "ChatModel·ChatOptions 일반 응답과 스트리밍 응답",
+      "BeanOutputConverter·entity()로 AI 응답을 DTO로 변환",
+      "Ollama gemma3·ChatMemory 로컬 챗봇과 Docker Nginx 실습",
+    ],
+    tags: ["Spring AI·WebFlux", "Ollama·ChatMemory", "Docker"],
+    folder: "Java/20261103",
+    readTime: 18,
+  },
+  {
     date: "2026-11-02",
     day: "DAY 81",
     title: "Spring AI와 ChatClient로 생성형 AI 연결하기",
