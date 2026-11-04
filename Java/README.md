@@ -7,6 +7,7 @@ Java와 Spring Boot 수업, Linux 기초에서 배운 개념과 실습 내용을
 
 | 날짜 | 주요 학습 내용 | 기록 |
 | --- | --- | --- |
+| 2026-11-04 | Spring AI Vision·이미지 생성, OCR×Vision 보험금 청구, 파일 업로드, Docker 볼륨·MySQL | [DAY 83 보기](./20261104/) |
 | 2026-11-03 | Spring AI 대화 기억·스트리밍·Structured Output, Ollama 로컬 챗봇, Docker Nginx 실습 | [DAY 82 보기](./20261103/) |
 | 2026-11-02 | Spring AI, ChatModel·ChatClient, 프롬프트와 AI 마케팅 문구 생성 | [DAY 81 보기](./20261102/) |
 | 2026-10-30 | 함수형 인터페이스·람다·Stream API와 Spring Boot·React WebSocket 게시판 | [DAY 79 보기](./20261030/) |

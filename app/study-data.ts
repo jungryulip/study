@@ -13,6 +13,23 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-11-04",
+    day: "DAY 83",
+    title: "Spring AI 비전·이미지 생성과 OCR 보험금 청구, Docker 볼륨",
+    summary:
+      "UserMessage에 Media를 붙여 사진을 분석하고 ImageModel로 텍스트를 이미지로 생성했다. Google Vision OCR과 Spring AI Vision을 교차 검증하고 지급액은 규칙 코드로 계산하는 보험금 청구 예제를 만들었으며, 파일 업로드 구조와 Docker 볼륨으로 MySQL 데이터를 보존하는 방법을 실습했다.",
+    learned: [
+      "일반 채팅·이미지 생성·Vision의 입출력 차이",
+      "UserMessage + Media 이미지 분석과 Flux 스트리밍",
+      "ImageModel·ImagePrompt 이미지 생성과 base64 응답 처리",
+      "OCR × Vision 교차 검증과 규칙 기반 보험금 계산",
+      "MultipartFile 업로드 구조와 Docker 볼륨 MySQL 실습",
+    ],
+    tags: ["Spring AI Vision", "OCR·Image", "Docker Volume"],
+    folder: "Java/20261104",
+    readTime: 18,
+  },
+  {
     date: "2026-11-03",
     day: "DAY 82",
     title: "대화 기억·스트리밍·구조화 출력과 Ollama 로컬 AI, Docker 기초",
