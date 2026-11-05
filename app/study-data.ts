@@ -13,6 +13,23 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-11-05",
+    day: "DAY 84",
+    title: "Spring AI 대화 기억과 PDF RAG 파이프라인",
+    summary:
+      "H2와 JPA로 사용자별 대화를 저장해 Prompt에 복원하고, PDF 텍스트를 청크로 나누어 임베딩한 뒤 PGVector에서 관련 문서를 검색하는 RAG 흐름을 구현했다. 검색 문맥을 포함한 답변을 SSE로 스트리밍하고 React 업로드·질의응답 화면에 연결했다.",
+    learned: [
+      "H2·JPA를 이용한 사용자별 질문·AI 답변 저장과 복원",
+      "Entity와 DTO의 역할 및 대화 메시지 Prompt 구성",
+      "토큰·청크·임베딩과 PGVector 유사도 검색",
+      "PDF 추출·분할·벡터 저장과 Top-K 문맥 검색",
+      "Spring AI SSE 스트리밍과 React 질의응답 UI",
+    ],
+    tags: ["Spring AI·RAG", "H2·JPA·PGVector", "SSE·React"],
+    folder: "Java/20261105",
+    readTime: 17,
+  },
+  {
     date: "2026-11-04",
     day: "DAY 83",
     title: "Spring AI 비전·이미지 생성과 OCR 보험금 청구, Docker 볼륨",

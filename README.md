@@ -11,12 +11,12 @@ Oracle SQL부터 Java, 웹 프론트엔드, Spring Boot, Python, 미니프로젝
 | 분야 | 기록 수 | 바로가기 |
 | --- | ---: | --- |
 | Oracle SQL·DB 모델링 | 12일 | [SQL·DB 모델링 기록](./Oracle_SQL/) |
-| Java·Spring Boot·Linux | 26일 | [Java·Spring Boot·Linux 학습 기록](./Java/) |
+| Java·Spring Boot·Linux | 27일 | [Java·Spring Boot·Linux 학습 기록](./Java/) |
 | HTML·CSS·JavaScript·React | 12일 | [웹 학습 기록](./HTML/) |
 | Python | 10일 | [Python 학습 기록](./Python/) |
 | 팀·개인 프로젝트 | 21일 | [프로젝트 기록](./Project/) |
 | 개발자 진로·취업 | 2일 | [진로·취업 준비 기록](./Career/) |
-| **전체** | **83일** | [GitHub Pages에서 검색하기](https://jungryulip.github.io/study/) |
+| **전체** | **84일** | [GitHub Pages에서 검색하기](https://jungryulip.github.io/study/) |
 
 ## 전체 학습 일지
 
@@ -25,6 +25,7 @@ Oracle SQL부터 Java, 웹 프론트엔드, Spring Boot, Python, 미니프로젝
 
 | 일차 | 날짜 | 분야 | 배운 내용 | 기록 |
 | --- | --- | --- | --- | --- |
+| DAY 84 | 2026-11-05 | Spring AI·RAG·PGVector | 대화 기억과 PDF 임베딩·검색·스트리밍 RAG 파이프라인 | [기록 보기](./Java/20261105/) |
 | DAY 83 | 2026-11-04 | Spring AI Vision·OCR·Docker | 이미지 분석·생성과 OCR 교차 검증 보험금 청구, Docker 볼륨 | [기록 보기](./Java/20261104/) |
 | DAY 82 | 2026-11-03 | Spring AI·Ollama·Docker | 대화 기억·스트리밍·DTO 출력과 로컬 LLM 챗봇, Docker 컨테이너 기초 | [기록 보기](./Java/20261103/) |
 | DAY 81 | 2026-11-02 | Spring AI·Spring Boot·React | ChatClient와 프롬프트를 이용한 AI 마케팅 문구 생성 | [기록 보기](./Java/20261102/) |
