@@ -13,6 +13,23 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-11-06",
+    day: "DAY 85",
+    title: "RAG 검색 조절과 호텔 FAQ 챗봇, Tool Calling·MCP, Dockerfile 배포",
+    summary:
+      "RAG 검색 결과를 조절하는 topK와 similarityThreshold를 정리하고 호텔 FAQ를 줄 단위로 임베딩해 상담 챗봇을 만들었다. @Tool로 날짜·직원 취미 조회 도구를 등록해 Tool Calling을 실습하고 MCP와 AI Agent의 차이를 정리했으며, Dockerfile로 Spring Boot JAR를 이미지로 만들어 컨테이너로 실행했다.",
+    learned: [
+      "topK와 similarityThreshold로 RAG 검색 결과 조절",
+      "호텔 FAQ 줄 단위 임베딩과 환각을 막는 프롬프트",
+      "@Tool·.tools()로 LLM이 Java 메서드를 호출하는 Tool Calling",
+      "MCP 개념과 Tool Calling·AI Agent 비교",
+      "Dockerfile로 Spring Boot 이미지 빌드·실행",
+    ],
+    tags: ["Spring AI RAG", "Tool Calling·MCP", "Dockerfile"],
+    folder: "Java/20261106",
+    readTime: 16,
+  },
+  {
     date: "2026-11-05",
     day: "DAY 84",
     title: "Spring AI 대화 기억과 PDF RAG 파이프라인",
