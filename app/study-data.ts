@@ -13,6 +13,23 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-11-07",
+    day: "DAY 86",
+    title: "RAG 수업자료 학습 도우미 구현",
+    summary:
+      "수업자료 PDF를 근거로 답하고 출처를 보여 주는 RAG 학습 도우미를 개인 프로젝트에 구현했다. 업로드 검사, 쪽 단위 청크 분할과 출처 표시, 근거가 없으면 AI를 부르지 않는 답변 제한, SSE 스트리밍, 질문 10개로 topK·임계값을 비교하는 검색 품질 평가를 구현했다.",
+    learned: [
+      "PDF 업로드 검사(크기·시그니처·SHA-256 중복)",
+      "쪽마다 청크를 나눠 출처 쪽 번호 유지",
+      "근거 부족 시 AI 호출 없이 답변 제한",
+      "출처 우선 SSE 이벤트 설계와 fetch 기반 SSE 파서",
+      "Hit@K·Precision으로 topK·임계값 비교",
+    ],
+    tags: ["Spring AI RAG", "pgvector·SSE", "Project"],
+    folder: "Java/20261107",
+    readTime: 18,
+  },
+  {
     date: "2026-11-06",
     day: "DAY 85",
     title: "RAG 검색 조절과 호텔 FAQ 챗봇, Tool Calling·MCP, Dockerfile 배포",
