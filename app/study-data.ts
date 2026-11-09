@@ -13,6 +13,23 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-11-09",
+    day: "DAY 87",
+    title: "Tool Calling 차단기와 MCP 서버·클라이언트, 카카오맵 여행 에이전트",
+    summary:
+      "번호판 사진을 Vision으로 인식하고 등록 조회·차단기 제어 도구를 호출하는 예제로 AI와 시스템의 역할을 나눴다. @McpTool로 MCP 서버를 만들고 Streamable HTTP로 클라이언트를 연결했으며, Oracle 주문 조회를 MCP 도구로 공개했다. 카카오 PlayMCP 카카오맵 도구와 로컬 일정 저장 도구, 대화 기억을 함께 쓰는 여행·맛집 에이전트도 만들었다.",
+    learned: [
+      "AI가 맡을 일과 DB·시스템이 맡을 일 구분",
+      "Vision + Tool Calling 번호판 차단기",
+      "@McpTool MCP 서버와 Streamable HTTP 클라이언트 연결",
+      "@Tool·MethodToolCallbackProvider와 @McpTool 등록 방식 차이",
+      "원격 MCP 도구와 로컬 @Tool을 함께 쓰는 여행 에이전트",
+    ],
+    tags: ["Tool Calling", "MCP", "Spring AI Agent"],
+    folder: "Java/20261109",
+    readTime: 20,
+  },
+  {
     date: "2026-11-07",
     day: "DAY 86",
     title: "RAG 수업자료 학습 도우미 구현",

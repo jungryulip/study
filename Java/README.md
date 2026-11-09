@@ -7,6 +7,7 @@ Java와 Spring Boot 수업, Linux 기초에서 배운 개념과 실습 내용을
 
 | 날짜 | 주요 학습 내용 | 기록 |
 | --- | --- | --- |
+| 2026-11-09 | Vision + Tool Calling 차단기, MCP 서버·클라이언트, 주문 조회 MCP, 카카오맵 여행 에이전트 | [DAY 87 보기](./20261109/) |
 | 2026-11-07 | RAG 수업자료 학습 도우미 구현: 업로드 검사·쪽 단위 청크·근거 부족 처리·SSE 출처·검색 품질 평가 | [DAY 86 보기](./20261107/) |
 | 2026-11-06 | RAG topK·임계값과 호텔 FAQ 챗봇, Tool Calling·MCP, Dockerfile로 Spring Boot 배포 | [DAY 85 보기](./20261106/) |
 | 2026-11-05 | Spring AI 대화 기억, H2·JPA, PDF 임베딩, PGVector와 RAG 스트리밍 | [DAY 84 보기](./20261105/) |
