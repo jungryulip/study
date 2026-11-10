@@ -13,6 +13,23 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-11-10",
+    day: "DAY 88",
+    title: "MCP 전송 방식과 Notion 공식 MCP 연결, AI Agent 단계와 멀티 에이전트",
+    summary:
+      "MCP 메시지를 주고받는 STDIO·SSE·Streamable HTTP 전송 방식을 비교하고, mcp-remote로 OAuth 인증한 Notion 공식 MCP 서버를 STDIO 방식으로 Spring AI에 연결해 노션 문서를 검색·요약했다. 쓰기 도구를 막고 조회 도구만 넘기는 방법과, 기본 챗봇에서 MCP 에이전트까지의 7단계, Supervisor가 역할을 나누는 멀티 에이전트 구조를 정리했다.",
+    learned: [
+      "MCP 전송 방식 STDIO·SSE·Streamable HTTP 비교",
+      "mcp-remote로 OAuth 원격 MCP를 STDIO로 연결",
+      "Notion 공식 MCP 도구로 노션 문서 검색·요약",
+      "조회 도구만 골라 넘기고 쓰기 도구 차단",
+      "AI Agent 7단계와 멀티 에이전트 역할 분담",
+    ],
+    tags: ["MCP", "Notion MCP", "Multi-Agent"],
+    folder: "Java/20261110",
+    readTime: 15,
+  },
+  {
     date: "2026-11-09",
     day: "DAY 87",
     title: "Tool Calling 차단기와 MCP 서버·클라이언트, 카카오맵 여행 에이전트",
