@@ -11,12 +11,12 @@ Oracle SQL부터 Java, 웹 프론트엔드, Spring Boot, Python, 미니프로젝
 | 분야 | 기록 수 | 바로가기 |
 | --- | ---: | --- |
 | Oracle SQL·DB 모델링 | 12일 | [SQL·DB 모델링 기록](./Oracle_SQL/) |
-| Java·Spring Boot·Linux | 31일 | [Java·Spring Boot·Linux 학습 기록](./Java/) |
+| Java·Spring Boot·Linux | 32일 | [Java·Spring Boot·Linux 학습 기록](./Java/) |
 | HTML·CSS·JavaScript·React | 12일 | [웹 학습 기록](./HTML/) |
 | Python | 10일 | [Python 학습 기록](./Python/) |
 | 팀·개인 프로젝트 | 21일 | [프로젝트 기록](./Project/) |
 | 개발자 진로·취업 | 2일 | [진로·취업 준비 기록](./Career/) |
-| **전체** | **88일** | [GitHub Pages에서 검색하기](https://jungryulip.github.io/study/) |
+| **전체** | **89일** | [GitHub Pages에서 검색하기](https://jungryulip.github.io/study/) |
 
 ## 전체 학습 일지
 
@@ -25,6 +25,7 @@ Oracle SQL부터 Java, 웹 프론트엔드, Spring Boot, Python, 미니프로젝
 
 | 일차 | 날짜 | 분야 | 배운 내용 | 기록 |
 | --- | --- | --- | --- | --- |
+| DAY 89 | 2026-11-11 | DeepWiki MCP·Dockerfile | 에이전트 설계, DeepWiki 저장소 분석 에이전트, Dockerfile 이미지 만들기 | [기록 보기](./Java/20261111/) |
 | DAY 88 | 2026-11-10 | MCP Transport·Notion MCP | MCP 전송 방식 비교, Notion 공식 MCP 연결, 멀티 에이전트 | [기록 보기](./Java/20261110/) |
 | DAY 87 | 2026-11-09 | Tool Calling·MCP | 번호판 차단기, MCP 서버·클라이언트, 카카오맵 여행 에이전트 | [기록 보기](./Java/20261109/) |
 | DAY 86 | 2026-11-07 | RAG·pgvector·SSE | 수업자료 학습 도우미 구현과 검색 품질 평가 | [기록 보기](./Java/20261107/) |

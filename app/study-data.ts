@@ -13,6 +13,23 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-11-11",
+    day: "DAY 89",
+    title: "DeepWiki MCP 에이전트와 Dockerfile 이미지 만들기",
+    summary:
+      "에이전트 구성 요소의 역할과 LLM 중심·워크플로 기반 에이전트의 차이를 정리하고, DeepWiki MCP를 연결해 Spring AI 저장소 구조를 분석하는 에이전트를 만들었다. 허용 도구만 등록하고 ToolCallback 래퍼로 결과 길이를 제한했으며, Dockerfile의 COPY·RUN과 nginx 정적 페이지, .dockerignore와 Docker Compose를 익혔다.",
+    learned: [
+      "에이전트 구성 요소별 역할 분담",
+      "LLM 중심 vs 워크플로 기반 에이전트",
+      "DeepWiki MCP 허용 도구 등록과 결과 길이 제한",
+      "Dockerfile COPY·RUN·ENTRYPOINT 실행 시점",
+      "nginx 정적 페이지, .dockerignore, Docker Compose",
+    ],
+    tags: ["MCP Agent", "DeepWiki", "Dockerfile"],
+    folder: "Java/20261111",
+    readTime: 15,
+  },
+  {
     date: "2026-11-10",
     day: "DAY 88",
     title: "MCP 전송 방식과 Notion 공식 MCP 연결, AI Agent 단계와 멀티 에이전트",

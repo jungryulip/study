@@ -7,6 +7,7 @@ Java와 Spring Boot 수업, Linux 기초에서 배운 개념과 실습 내용을
 
 | 날짜 | 주요 학습 내용 | 기록 |
 | --- | --- | --- |
+| 2026-11-11 | 에이전트 구성 요소·워크플로 에이전트, DeepWiki MCP 에이전트, Dockerfile COPY·RUN·nginx, .dockerignore·Compose | [DAY 89 보기](./20261111/) |
 | 2026-11-10 | MCP 전송 방식(STDIO·SSE·Streamable HTTP), Notion 공식 MCP 연결, AI Agent 단계와 멀티 에이전트 | [DAY 88 보기](./20261110/) |
 | 2026-11-09 | Vision + Tool Calling 차단기, MCP 서버·클라이언트, 주문 조회 MCP, 카카오맵 여행 에이전트 | [DAY 87 보기](./20261109/) |
 | 2026-11-07 | RAG 수업자료 학습 도우미 구현: 업로드 검사·쪽 단위 청크·근거 부족 처리·SSE 출처·검색 품질 평가 | [DAY 86 보기](./20261107/) |
