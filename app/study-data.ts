@@ -13,6 +13,23 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-11-12",
+    day: "DAY 90",
+    title: "최종 프로젝트 SpaceLink 화면 목업 정리 (화면설계서 동기화)",
+    summary:
+      "최종 프로젝트 SpaceLink의 Figma 목업을 화면설계서 기준으로 정리했다. 메인 홈 헤더를 컴포넌트로 만들어 26개 화면에 적용하고 하위 화면·로그인 화면 규격을 통일했으며, 공매 화면을 목록 안 라벨 방식으로 바꾸고 누락된 상태 화면을 추가했다. 바뀐 결정은 기획안과 화면설계서에도 반영했다.",
+    learned: [
+      "공통 헤더 컴포넌트화와 인스턴스 교체",
+      "4의 배수 간격 등 화면 규격 통일",
+      "화면 ID별 상태 화면(모달·만료·확인 창) 대조",
+      "공매 물건을 목록 안 라벨로 통합",
+      "목업·기획안·화면설계서 동기화",
+    ],
+    tags: ["Final Project", "Figma", "UI Design"],
+    folder: "Java/20261112",
+    readTime: 8,
+  },
+  {
     date: "2026-11-11",
     day: "DAY 89",
     title: "DeepWiki MCP 에이전트와 Dockerfile 이미지 만들기",
