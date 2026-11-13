@@ -11,12 +11,12 @@ Oracle SQL부터 Java, 웹 프론트엔드, Spring Boot, Python, 미니프로젝
 | 분야 | 기록 수 | 바로가기 |
 | --- | ---: | --- |
 | Oracle SQL·DB 모델링 | 12일 | [SQL·DB 모델링 기록](./Oracle_SQL/) |
-| Java·Spring Boot·Linux | 33일 | [Java·Spring Boot·Linux 학습 기록](./Java/) |
+| Java·Spring Boot·Linux | 34일 | [Java·Spring Boot·Linux 학습 기록](./Java/) |
 | HTML·CSS·JavaScript·React | 12일 | [웹 학습 기록](./HTML/) |
 | Python | 10일 | [Python 학습 기록](./Python/) |
 | 팀·개인 프로젝트 | 21일 | [프로젝트 기록](./Project/) |
 | 개발자 진로·취업 | 2일 | [진로·취업 준비 기록](./Career/) |
-| **전체** | **90일** | [GitHub Pages에서 검색하기](https://jungryulip.github.io/study/) |
+| **전체** | **91일** | [GitHub Pages에서 검색하기](https://jungryulip.github.io/study/) |
 
 ## 전체 학습 일지
 
@@ -25,6 +25,7 @@ Oracle SQL부터 Java, 웹 프론트엔드, Spring Boot, Python, 미니프로젝
 
 | 일차 | 날짜 | 분야 | 배운 내용 | 기록 |
 | --- | --- | --- | --- | --- |
+| DAY 91 | 2026-11-13 | 최종 프로젝트·화면설계·ERD | 문서 대조와 시연값 교체, 신규 화면, 유저플로우·ERD 정리 | [기록 보기](./Java/20261113/) |
 | DAY 90 | 2026-11-12 | 최종 프로젝트·Figma | SpaceLink 화면 목업을 화면설계서 기준으로 정리 | [기록 보기](./Java/20261112/) |
 | DAY 89 | 2026-11-11 | DeepWiki MCP·Dockerfile | 에이전트 설계, DeepWiki 저장소 분석 에이전트, Dockerfile 이미지 만들기 | [기록 보기](./Java/20261111/) |
 | DAY 88 | 2026-11-10 | MCP Transport·Notion MCP | MCP 전송 방식 비교, Notion 공식 MCP 연결, 멀티 에이전트 | [기록 보기](./Java/20261110/) |
