@@ -7,6 +7,7 @@ Java와 Spring Boot 수업, Linux 기초에서 배운 개념과 실습 내용을
 
 | 날짜 | 주요 학습 내용 | 기록 |
 | --- | --- | --- |
+| 2026-11-16 | JAR·Dockerfile 실행, Docker Compose로 Spring Boot + MySQL 연결, Git 팀 협업 흐름 | [DAY 92 보기](./20261116/) |
 | 2026-11-13 | SpaceLink 화면설계 마감: 문서 대조·결정, 시연값 교체, 상세 공통 구성, 탈퇴 유예·개인정보처리방침, 유저플로우·ERD | [DAY 91 보기](./20261113/) |
 | 2026-11-12 | 최종 프로젝트 SpaceLink 화면 목업 정리: 헤더 컴포넌트화, 화면 규격 통일, 누락 화면 추가, 기획안·화면설계서 동기화 | [DAY 90 보기](./20261112/) |
 | 2026-11-11 | 에이전트 구성 요소·워크플로 에이전트, DeepWiki MCP 에이전트, Dockerfile COPY·RUN·nginx, .dockerignore·Compose | [DAY 89 보기](./20261111/) |

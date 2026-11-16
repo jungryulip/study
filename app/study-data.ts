@@ -13,6 +13,23 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-11-16",
+    day: "DAY 92",
+    title: "Docker Compose로 Spring Boot + MySQL 실행하기, Git 팀 협업 흐름",
+    summary:
+      "bootJar로 만든 JAR를 로컬과 Docker 이미지로 실행하고, docker-compose.yml에 Spring Boot와 MySQL 서비스를 정의해 한 번에 띄운 뒤 DB 연결을 확인했다. healthcheck와 depends_on으로 실행 순서를 맞추고 서비스 이름으로 접속하는 방법을 배웠으며, main·develop·feature 브랜치와 PR·코드 리뷰·충돌 해결로 이어지는 Git 팀 협업 흐름을 정리했다.",
+    learned: [
+      "bootJar 생성 위치와 java -jar 실행",
+      "Dockerfile 이미지 빌드·실행·로그 확인",
+      "docker-compose.yml로 app + mysql 정의",
+      "healthcheck·depends_on과 서비스 이름 접속",
+      "Git Flow 브랜치 전략과 PR·리뷰·충돌 해결",
+    ],
+    tags: ["Docker Compose", "MySQL", "Git"],
+    folder: "Java/20261116",
+    readTime: 12,
+  },
+  {
     date: "2026-11-13",
     day: "DAY 91",
     title: "SpaceLink 화면설계 마감: 문서 대조, 시연값 교체, 유저플로우와 ERD",
