@@ -13,6 +13,23 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-11-17",
+    day: "DAY 93",
+    title: "SpaceLink 맞춤 청약정보 불러오기 목업과 화면 정합성",
+    summary:
+      "최종 프로젝트 SpaceLink에서 기관·요청자료 선택, 정보 제공 동의, 본인인증, 기관별 자료 수신, 읽기 전용 조회 결과 저장으로 이어지는 맞춤 청약정보 흐름을 목업으로 정리했다. 간편인증 상태와 허용 수단, 구간·날짜·점수 표시, 소셜 가입과 마이페이지 요약을 같은 기준으로 맞추고 문서에 남은 정책·값의 후속 동기화 항목도 정리했다.",
+    learned: [
+      "기관·요청자료 선택부터 조회 결과 저장까지의 사용자 흐름",
+      "간편인증 입력·대기·완료 상태와 허용 수단 제한",
+      "기관별 요청·수신·실패 상태와 부분 재시도 설계",
+      "기간·횟수·금액·날짜·점수 표시와 마이페이지 동기화",
+      "탈퇴 정책·구간값·혼인 기간 계산의 문서 정합성 점검",
+    ],
+    tags: ["Final Project", "Figma·UX", "Subscription Flow"],
+    folder: "Java/20261117",
+    readTime: 11,
+  },
+  {
     date: "2026-11-16",
     day: "DAY 92",
     title: "Docker Compose로 Spring Boot + MySQL 실행하기, Git 팀 협업 흐름",
