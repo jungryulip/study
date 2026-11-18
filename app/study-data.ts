@@ -13,6 +13,23 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-11-18",
+    day: "DAY 94",
+    title: "SpaceLink 매물 추천 점수와 AI 개인화 기준",
+    summary:
+      "집·상가·오피스의 목적에 맞춰 기본 가중치를 분리하고, 자료가 없는 항목은 점수와 가중치를 함께 제외해 다시 계산하도록 정리했다. 집과 오피스의 인원 조건을 추천 점수보다 먼저 적용하며, 필수 조건을 통과한 매물에 기본 기준 70%와 사용자 선호 30%를 반영하는 AI 개인화 흐름과 Java 구현 방향을 정했다.",
+    learned: [
+      "집·상가·오피스 용도별 기본 점수 가중치",
+      "0점과 누락값을 구분한 유효 가중치 재계산",
+      "방 수·좌석 수를 이용한 인원 필수 조건 선필터",
+      "기본 70%와 사용자 선호 30%의 AI 개인화",
+      "Java 계산과 근거 부족 상태를 구분한 구현 방향",
+    ],
+    tags: ["Final Project", "Recommendation", "Personalization"],
+    folder: "Java/20261118",
+    readTime: 8,
+  },
+  {
     date: "2026-11-17",
     day: "DAY 93",
     title: "SpaceLink 맞춤 청약정보 불러오기 목업과 화면 정합성",
