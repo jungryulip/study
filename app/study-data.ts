@@ -13,6 +13,23 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-11-19",
+    day: "DAY 95",
+    title: "SpaceLink 반응형 설계와 프론트 컴포넌트 구조",
+    summary:
+      "데스크톱 화면을 단순 축소하는 초안을 폐기하고 데스크톱·태블릿·모바일 전용 레이아웃으로 72개 프레임을 다시 구성했다. 누락된 오피스 화면을 복구하고 모바일 후보 비교를 카드·스와이프 방식으로 바꿨으며, 프론트 폴더·CSS Modules·디자인 토큰·import 규칙을 정한 뒤 Figma 컴포넌트 86개를 React로 변환하고 공통 모달과 렌더링 검사를 정리했다.",
+    learned: [
+      "브레이크포인트별 전용 모듈을 사용한 반응형 설계",
+      "UI-013 오피스 화면 복구와 UI-014 모바일 카드 비교",
+      "common·layout·domain으로 나눈 프론트 컴포넌트 구조",
+      "디자인 토큰·CSS Modules·절대 경로 import 규칙",
+      "86개 React 컴포넌트 변환과 공통 모달·렌더링 검증",
+    ],
+    tags: ["Final Project", "Responsive", "React Architecture"],
+    folder: "Java/20261119",
+    readTime: 9,
+  },
+  {
     date: "2026-11-18",
     day: "DAY 94",
     title: "SpaceLink 매물 추천 점수와 AI 개인화 기준",
