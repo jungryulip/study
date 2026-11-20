@@ -13,6 +13,23 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-11-20",
+    day: "DAY 96",
+    title: "SpaceLink 공통 화면과 소셜 로그인 트러블슈팅",
+    summary:
+      "공통 안내·오류 화면과 사용자·관리자 레이아웃을 연결하고, 세션 로그인과 회원가입 흐름을 구현했다. OAuth 인증 후 백엔드 루트로 이동해 404가 발생하던 원인을 찾아 사용자 상태별 후처리를 추가했으며, 구글 로그인을 확인하고 카카오·네이버 연동을 계속 점검하고 있다.",
+    learned: [
+      "사용자·관리자 공통 레이아웃과 라우트 연결",
+      "세션 로그인과 회원가입 중복 확인",
+      "OAuth2 성공 후 사용자 상태별 후처리",
+      "이메일 인증과 Redis 요청 제한",
+      "프론트 테스트 54개와 빌드 검증",
+    ],
+    tags: ["Final Project", "OAuth2", "Troubleshooting"],
+    folder: "Java/20261120",
+    readTime: 7,
+  },
+  {
     date: "2026-11-19",
     day: "DAY 95",
     title: "SpaceLink 반응형 설계와 프론트 컴포넌트 구조",
