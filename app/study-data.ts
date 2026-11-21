@@ -13,6 +13,23 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-11-21",
+    day: "DAY 97",
+    title: "SpaceLink 회원 기능 마무리와 탈퇴 처리 설계",
+    summary:
+      "이메일 인증 가입, 구글·카카오·네이버 소셜 로그인, 아이디 찾기와 1회용 비밀번호 재설정 링크, 마이페이지 회원정보·알림 설정을 완성해 PR #1·#2로 병합했다. 탈퇴 계정은 30일 보관 후 복구하거나 API 서버 예약 작업으로 연결 데이터까지 삭제하도록 설계했고, PostgreSQL init.sh 실행 권한 문제를 정리했다.",
+    learned: [
+      "Gmail SMTP 인증번호와 발송 횟수 제한",
+      "소셜 로그인 3종 연동과 계정 선택 화면",
+      "30분·1회용 재설정 링크와 다른 기기 로그아웃",
+      "탈퇴 30일 보관·복구·자동 삭제 흐름",
+      "Git 실행 권한(update-index --chmod=+x)",
+    ],
+    tags: ["Final Project", "Auth", "Account Lifecycle"],
+    folder: "Java/20261121",
+    readTime: 8,
+  },
+  {
     date: "2026-11-20",
     day: "DAY 96",
     title: "SpaceLink 공통 화면과 소셜 로그인 트러블슈팅",

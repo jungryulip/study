@@ -11,12 +11,12 @@ Oracle SQL부터 Java, 웹 프론트엔드, Spring Boot, Python, 미니프로젝
 | 분야 | 기록 수 | 바로가기 |
 | --- | ---: | --- |
 | Oracle SQL·DB 모델링 | 12일 | [SQL·DB 모델링 기록](./Oracle_SQL/) |
-| Java·Spring Boot·Linux | 39일 | [Java·Spring Boot·Linux 학습 기록](./Java/) |
+| Java·Spring Boot·Linux | 40일 | [Java·Spring Boot·Linux 학습 기록](./Java/) |
 | HTML·CSS·JavaScript·React | 12일 | [웹 학습 기록](./HTML/) |
 | Python | 10일 | [Python 학습 기록](./Python/) |
 | 팀·개인 프로젝트 | 21일 | [프로젝트 기록](./Project/) |
 | 개발자 진로·취업 | 2일 | [진로·취업 준비 기록](./Career/) |
-| **전체** | **96일** | [GitHub Pages에서 검색하기](https://jungryulip.github.io/study/) |
+| **전체** | **97일** | [GitHub Pages에서 검색하기](https://jungryulip.github.io/study/) |
 
 ## 전체 학습 일지
 
@@ -25,6 +25,7 @@ Oracle SQL부터 Java, 웹 프론트엔드, Spring Boot, Python, 미니프로젝
 
 | 일차 | 날짜 | 분야 | 배운 내용 | 기록 |
 | --- | --- | --- | --- | --- |
+| DAY 97 | 2026-11-21 | 최종 프로젝트·회원 기능 | 이메일 인증·소셜 로그인·계정 찾기·마이페이지, 탈퇴 복구와 자동 삭제 | [기록 보기](./Java/20261121/) |
 | DAY 96 | 2026-11-20 | 최종 프로젝트·OAuth2·트러블슈팅 | 공통 화면과 세션 로그인 연결, 소셜 로그인 후처리와 구글·카카오 점검 | [기록 보기](./Java/20261120/) |
 | DAY 95 | 2026-11-19 | 최종 프로젝트·Figma·React | 반응형 화면 재설계와 프론트 컴포넌트 구조·공통 모달 정리 | [기록 보기](./Java/20261119/) |
 | DAY 94 | 2026-11-18 | 최종 프로젝트·추천 알고리즘 | 용도별 가중치와 누락값 재계산, 인원 필터, AI 개인화 기준 | [기록 보기](./Java/20261118/) |
