@@ -13,6 +13,23 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-11-23",
+    day: "DAY 98",
+    title: "SpaceLink 맞춤 조건 설정과 로그인 유지",
+    summary:
+      "회원가입 직후 자동 로그인해 맞춤 청약 조건 설정으로 이어지도록 했다. 간편인증으로 기관별 자료를 받아 청약 프로필을 저장·수정하고, 결과가 없는 항목은 '확인 필요'로 남겼다. 집·상가·오피스별 희망 조건 API와 금액 구간 enum, 회원 유형 계산 규칙을 만들고, 로그인 상태 유지 30일과 로그인 후 이전 화면 복귀를 구현했다.",
+    learned: [
+      "세션 고정 공격을 막는 공통 로그인 처리",
+      "간편인증 입력 정보의 최소 보관",
+      "대상별 희망 조건 API와 금액 구간 enum",
+      "Spring Session 로그인 상태 유지 30일",
+      "로그인 후 복귀와 오픈 리다이렉트 방지",
+    ],
+    tags: ["Final Project", "Session", "Preferences"],
+    folder: "Java/20261123",
+    readTime: 9,
+  },
+  {
     date: "2026-11-21",
     day: "DAY 97",
     title: "SpaceLink 회원 기능 마무리와 탈퇴 처리 설계",
