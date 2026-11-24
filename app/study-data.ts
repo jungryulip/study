@@ -13,6 +13,23 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-11-24",
+    day: "DAY 99",
+    title: "CI/CD·EC2 배포 실습과 SpaceLink 관리자 화면",
+    summary:
+      "GitHub Actions로 이미지를 만들어 ECR에 올리고 EC2에서 실행하는 배포 흐름을 배우고, EC2에 SSH로 접속하며 Windows 키 파일 권한 문제를 해결했다. 프로젝트에서는 관리자 대시보드·공고 검토·자격 규칙·문의·공지·회원 관리·처리 이력·알림 발송을 API에 연결하고 마케팅 메일 즉시·예약 발송과 알림함을 만들었다.",
+    learned: [
+      "GitHub Actions·ECR·EC2 배포 흐름",
+      "IAM 최소 권한과 GitHub Secrets",
+      "SSH 키 권한 오류와 icacls·PuTTY",
+      "서버에서 지키는 관리자 권한 규칙",
+      "모달 속 달력 잘림을 포털로 해결",
+    ],
+    tags: ["CI/CD", "AWS", "Final Project"],
+    folder: "Java/20261124",
+    readTime: 10,
+  },
+  {
     date: "2026-11-23",
     day: "DAY 98",
     title: "SpaceLink 맞춤 조건 설정과 로그인 유지",
