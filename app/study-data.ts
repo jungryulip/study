@@ -13,6 +13,23 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-11-25",
+    day: "DAY 100",
+    title: "SpaceLink AI 고객상담과 관리자 화면 마무리",
+    summary:
+      "서비스 이용 문의만 답하는 AI 고객상담을 만들었다. 질문과 대화의 개인정보를 정규식으로 가린 뒤 공개 FAQ를 근거로 AI 서버에 보내고, 답변은 SSE로 실시간 표시하며 중지하면 AI 호출도 끊는다. 상담 요약은 1:1 문의 폼에 채워지고 사용자가 직접 등록한다. 관리자 화면 9개와 공지·FAQ·찜을 서버 데이터로 연결했다.",
+    learned: [
+      "AI 전송 전 개인정보 마스킹",
+      "프롬프트로 답변 범위와 인젝션 대비 규칙 정하기",
+      "SseEmitter와 Flux 구독 취소",
+      "Structured Output으로 문의 초안 만들기",
+      "여러 화면의 찜 상태를 서버 하나로 통일",
+    ],
+    tags: ["Spring AI", "SSE", "Final Project"],
+    folder: "Java/20261125",
+    readTime: 10,
+  },
+  {
     date: "2026-11-24",
     day: "DAY 99",
     title: "CI/CD·EC2 배포 실습과 SpaceLink 관리자 화면",
