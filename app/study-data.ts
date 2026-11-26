@@ -13,6 +13,23 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-11-26",
+    day: "DAY 101",
+    title: "AI 고객상담 범위 정리와 필터 링크, Zustand 전환",
+    summary:
+      "AI 고객상담을 사이트 이용 안내로 좁히고, 매물 질문은 AI 없이 질문에서 뽑은 자치구·유형·가격·면적·접수 상태 필터가 걸린 목록 링크로 안내했다. 이어지는 질문, 참고 FAQ, 대화 복사를 붙이고 목록 화면이 주소로 필터를 받게 했다. 공용 상태를 Zustand로 옮기고 홈 디자인을 정리했으며, 환경 데이터 청크 커밋 재수집을 확인했다.",
+    learned: [
+      "AI 호출 전 서버에서 질문 범위 분류",
+      "정규식으로 질문에서 목록 필터 추출",
+      "URL 쿼리로 목록 필터 공유",
+      "Zustand로 공용 상태 정리",
+      "청크 커밋으로 DB 메모리 한도 지키기",
+    ],
+    tags: ["Spring AI", "Zustand", "Final Project"],
+    folder: "Java/20261126",
+    readTime: 9,
+  },
+  {
     date: "2026-11-25",
     day: "DAY 100",
     title: "SpaceLink AI 고객상담과 관리자 화면 마무리",
