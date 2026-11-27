@@ -13,6 +13,23 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-11-27",
+    day: "DAY 102",
+    title: "SpaceLink 관리자 검토와 매물 비교·문의 기능 보완",
+    summary:
+      "관리자 매물 수집·검토 화면에서 원본과 수정값을 비교하고 복원·공개 기준을 보완했다. 실제 매물 상세 API로 비교표를 구성해 지도와 선택 상태를 연결했으며, 고객센터 접근 제어와 답변 상태, 회원가입 알림, 데이터 출처·제출서류 안내를 함께 정리했다.",
+    learned: [
+      "수집 원본과 관리자 수정값 비교·복원",
+      "검토 완료 매물의 공개 기준과 수집 오류 집계",
+      "실제 API 기반 매물 비교표와 지도 선택 연동",
+      "비회원 접근 제어와 문의 상태 자동 변경",
+      "알림 초기 설정과 제출서류·데이터 출처 안내",
+    ],
+    tags: ["Final Project", "Admin Review", "Property Comparison"],
+    folder: "Java/20261127",
+    readTime: 7,
+  },
+  {
     date: "2026-11-26",
     day: "DAY 101",
     title: "AI 고객상담 범위 정리와 필터 링크, Zustand 전환",

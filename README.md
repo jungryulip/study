@@ -11,12 +11,12 @@ Oracle SQL부터 Java, 웹 프론트엔드, Spring Boot, Python, 미니프로젝
 | 분야 | 기록 수 | 바로가기 |
 | --- | ---: | --- |
 | Oracle SQL·DB 모델링 | 12일 | [SQL·DB 모델링 기록](./Oracle_SQL/) |
-| Java·Spring Boot·Linux | 44일 | [Java·Spring Boot·Linux 학습 기록](./Java/) |
+| Java·Spring Boot·Linux | 45일 | [Java·Spring Boot·Linux 학습 기록](./Java/) |
 | HTML·CSS·JavaScript·React | 12일 | [웹 학습 기록](./HTML/) |
 | Python | 10일 | [Python 학습 기록](./Python/) |
 | 팀·개인 프로젝트 | 21일 | [프로젝트 기록](./Project/) |
 | 개발자 진로·취업 | 2일 | [진로·취업 준비 기록](./Career/) |
-| **전체** | **101일** | [GitHub Pages에서 검색하기](https://jungryulip.github.io/study/) |
+| **전체** | **102일** | [GitHub Pages에서 검색하기](https://jungryulip.github.io/study/) |
 
 ## 전체 학습 일지
 
@@ -25,6 +25,7 @@ Oracle SQL부터 Java, 웹 프론트엔드, Spring Boot, Python, 미니프로젝
 
 | 일차 | 날짜 | 분야 | 배운 내용 | 기록 |
 | --- | --- | --- | --- | --- |
+| DAY 102 | 2026-11-27 | 최종 프로젝트·관리자 검토·매물 비교 | 관리자 수집 검토와 원본 복원·공개 기준, 실제 API 비교표·지도 연동, 고객센터·알림 보완 | [기록 보기](./Java/20261127/) |
 | DAY 101 | 2026-11-26 | 최종 프로젝트·AI 상담 보강 | 상담 범위 분류, 필터 링크, Zustand 공용 상태 | [기록 보기](./Java/20261126/) |
 | DAY 100 | 2026-11-25 | 최종 프로젝트·Spring AI | AI 고객상담(개인정보 가리기·실시간 답변), 관리자·공지·찜 연동 | [기록 보기](./Java/20261125/) |
 | DAY 99 | 2026-11-24 | CI/CD·AWS EC2·최종 프로젝트 | GitHub Actions 배포 흐름과 EC2 SSH 접속, 관리자 화면 API 연결 | [기록 보기](./Java/20261124/) |
