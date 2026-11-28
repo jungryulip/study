@@ -13,6 +13,23 @@ export type DailyPost = {
 // folder에는 GitHub 저장소 안의 날짜별 폴더 경로를 입력합니다.
 export const posts: DailyPost[] = [
   {
+    date: "2026-11-28",
+    day: "DAY 103",
+    title: "서류 PDF로 청약 프로필 채우기와 메일 발송 복구",
+    summary:
+      "회원가입 뒤 청약 프로필을 본인인증 대신 서류 PDF 7종으로도 채울 수 있게 했다. PDFBox로 글자를 뽑아 규칙으로 값을 찾고, 파일은 남기지 않고 SHA-256으로 중복만 확인하며 읽은 값은 AES로 암호화해 세션에 10분 보관한다. 서버가 꺼졌다 켜져도 지난 공고 알림은 보내기 직전에 거르고, 마케팅 예약과 발송 진행을 Redis에 두어 이어 보내도록 했다. AI 고객상담은 Bucket4j 요청 제한과 FAQ 대체 답변을 붙이고 관리자 화면을 정리한 뒤 main에 병합했다.",
+    learned: [
+      "PDFBox 텍스트 추출과 규칙 기반 서류 값 찾기",
+      "파일 미보관·SHA-256 중복 확인·세션 암호화 보관",
+      "보내기 직전 유효성 재확인으로 지난 알림 거르기",
+      "Redis에 예약·발송 상태를 두어 재시작 뒤 이어 보내기",
+      "Bucket4j 요청 제한과 AI 장애 시 FAQ 대체 답변",
+    ],
+    tags: ["Final Project", "PDFBox", "Redis"],
+    folder: "Java/20261128",
+    readTime: 8,
+  },
+  {
     date: "2026-11-27",
     day: "DAY 102",
     title: "SpaceLink 관리자 검토와 매물 비교·문의 기능 보완",
